@@ -20,19 +20,23 @@ Deliver sustained **carbon-free high-grade heat** at temperatures unreachable by
 
 ## Key Design Philosophy
 
-1. **Fuel as the first barrier.** TRISO coatings retain fission products up to ~1600 °C, well above any credible accident temperature. The reactor is designed so that peak fuel temperature *never* approaches this limit.
+1. **Simplicity above all.** Fewer components means fewer failure modes, easier maintenance, and lower cost. Every added component must justify itself.
 
-2. **Graphite as a thermal flywheel.** The large graphite heat capacity and negative temperature coefficient provide inherent self-regulation.
+2. **Fuel as the first barrier.** TRISO coatings retain fission products up to ~1600 °C, well above any credible accident temperature. The reactor is designed so that peak fuel temperature *never* approaches this limit.
 
-3. **Helium purity is safety-critical.** Moisture and CO₂ attack graphite at high temperature; the helium purification system is a first-class design concern.
+3. **Graphite as a thermal flywheel.** The large graphite heat capacity and negative temperature coefficient provide inherent self-regulation.
 
-4. **Modularity.** Target a unit size that can be factory-fabricated and truck-shipped to enable rapid deployment.
+4. **Helium does one job.** The same helium that cools the core drives the turbine directly. No intermediate heat exchanger, no secondary loop, no steam generators.
+
+5. **Helium purity is safety-critical.** Moisture and CO₂ attack graphite at high temperature; the helium purification system is a first-class design concern.
+
+6. **Modularity.** Target a unit size that can be factory-fabricated and truck-shipped to enable rapid deployment.
 
 ## Open Design Decisions
 
 - [ ] Core geometry: **prismatic block** (GT-MHR heritage, higher power density) vs. **pebble bed** (online refueling, simpler fuel handling)
 - [ ] Thermal power rating: 100 MW(th), 200 MW(th), or larger?
-- [ ] Power conversion: direct Brayton (helium turbine) vs. indirect (IHX + secondary loop)?
+- [x] **Power conversion: direct Brayton cycle** — helium from core drives turbine directly; no IHX
 - [ ] Hydrogen interface: S–I thermochemical cycle vs. high-temperature electrolysis (HTE)?
 - [ ] Fuel enrichment: LEU (< 5%) with shorter cycle vs. HALEU (5–20%) for longer burnup?
 

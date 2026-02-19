@@ -70,23 +70,53 @@ Helium's low molecular weight (4 g/mol) means low enthalpy drop per turbine stag
 
 Preliminary estimate: 4–6 turbine stages and 4–6 compressor stages. Exact count depends on final pressure ratio and allowable tip speed, which are set by blade material limits.
 
-## Turbine Blade Materials — The Key Challenge
+## Turbine Blade Materials
 
-At 950 °C turbine inlet, metal blade temperatures will approach 900–930 °C. This is beyond the comfortable operating range of conventional nickel superalloys, and internal film cooling — standard practice in gas turbines — cannot be used here because there is no separate coolant stream (the working fluid *is* helium).
+### Why Not Nickel Superalloys
 
-### Candidate Materials
+At 950 °C turbine inlet, blade metal temperatures approach 900–930 °C. Nickel superalloys are at their absolute limit here, and the standard mitigation — internal film cooling — is not available because the working fluid *is* helium. There is no separate cooling stream to bleed through blade passages. Creep life at sustained 930 °C with no cooling margin is the fundamental objection to Ni alloys in this application.
 
-| Material | Max use temp | Advantage | Risk |
-|---|---|---|---|
-| Single-crystal Ni superalloy (e.g. CMSX-4) | ~950 °C | Mature industrial technology, high strength | At the very limit; creep life uncertain at sustained 930 °C |
-| ODS (oxide dispersion strengthened) alloys | ~1100 °C | Superior creep strength at high T | Difficult to manufacture in complex blade shapes |
-| SiC/SiC ceramic matrix composite (CMC) | ~1400 °C | No creep concern; used in jet engines | Brittle, attachment/root design challenges; newer technology |
+### Selected Material: SiC/SiC Ceramic Matrix Composite (CMC)
 
-The absence of oxygen in pure helium is a significant advantage: oxidation and hot corrosion — major blade degradation mechanisms in air-breathing turbines — do not occur. The dominant failure mode is **creep** under sustained load, which pure temperature and stress govern.
+SiC fibers in a SiC matrix, typically manufactured by chemical vapor infiltration (CVI) of the SiC matrix around woven SiC fiber preforms.
 
-### Design Approach
+**Why CMC is a stronger choice here than in air-breathing turbines:**
 
-Design for creep life at the blade root (highest stress point) as the primary structural constraint. The blade tip section runs hotter but at lower stress. Thermal barrier coatings (TBCs) are not needed in helium service.
+In jet engines, SiC/SiC faces a serious degradation mechanism: water vapor in the combustion gas reacts with SiO₂ (the native oxide on SiC surfaces) to form volatile Si(OH)₄, causing progressive material recession. Environmental barrier coatings (EBCs) are required to protect CMC hardware in aircraft engines.
+
+In pure helium, this mechanism does not exist. There is no water vapor, no oxygen, no sulfur. The degradation modes that make CMC challenging in air — oxidation, hot corrosion, EBC spallation — are simply absent. The material can operate at its intrinsic temperature and creep limits without protective coatings.
+
+**Relevant properties of SiC/SiC:**
+
+| Property | SiC/SiC CMC | Ni superalloy (CMSX-4) |
+|---|---|---|
+| Max service temperature | ~1350 °C | ~950 °C (uncooled) |
+| Density | ~2.7 g/cm³ | ~8.9 g/cm³ |
+| Creep rate at 950 °C | Negligible | Significant — limiting factor |
+| Oxidation in He | None | None |
+| Fracture toughness | ~15–25 MPa√m | ~80+ MPa√m |
+
+The density advantage is significant: CMC blades are ~70% lighter than equivalent Ni blades, reducing centrifugal stress on the rotor disk and enabling higher tip speeds if needed.
+
+**The TRISO connection:**
+
+SiC is already the pressure-retaining fission product barrier in TRISO fuel particles. This design uses the same material class as both the fuel's pressure vessel and the turbine blades. The high-temperature nuclear behavior of SiC is therefore already central to the design's safety case, and the material knowledge base applies across both applications.
+
+### The Root Attachment Problem
+
+The primary engineering challenge for CMC blades is not temperature — it is the blade root, where the blade attaches to the rotor disk.
+
+Conventional fir-tree root profiles create stress concentrations that brittle ceramics handle poorly. Several approaches are under development:
+
+1. **Compliant metal root insert:** A metallic (e.g. Ni alloy) shim bonded or mechanically interlocked to the CMC blade shank, transferring load gradually. The root metal runs cooler than the airfoil so Ni alloy is acceptable there.
+2. **Pin-loaded composite root:** Load transferred through ceramic pins through holes in a thickened CMC root tab — distributes load more uniformly.
+3. **Integral ceramic disk:** If rotor disk and blades are co-manufactured as a ceramic blisk, the attachment problem is eliminated. Manufacturing complexity shifts to the blisk fabrication.
+
+This is an open engineering problem. It is the primary risk item for the turbine design and warrants dedicated development effort.
+
+### No Thermal Barrier Coating Required
+
+TBCs (typically yttria-stabilized zirconia in gas turbines) serve two purposes: thermal insulation and oxidation protection. In helium service, neither is needed. The CMC surface is the functional surface. This simplifies blade manufacturing and eliminates a spallation failure mode.
 
 ## Radioactivity of the Helium Circuit
 
@@ -110,7 +140,8 @@ Compared to an indirect cycle with an IHX:
 ## Open Questions
 
 - [ ] Final pressure ratio and number of stages (requires thermodynamic optimization)
-- [ ] Blade material selection: single-crystal Ni vs. CMC — cost and manufacturing readiness
+- [x] **Blade material: SiC/SiC CMC** — selected; root attachment method is the key development item
+- [ ] Root attachment approach: compliant metal insert, pin-loaded tab, or ceramic blisk?
 - [ ] Magnetic bearing design and redundancy for safety case
 - [ ] Precooler design: air-cooled or water-cooled? (affects siting flexibility)
 - [ ] Partial-load control strategy: bypass valve, variable speed, or inventory control?

@@ -38,7 +38,7 @@ Deliver sustained **carbon-free high-grade heat** at temperatures unreachable by
 - [ ] Thermal power rating: 100 MW(th), 200 MW(th), or larger?
 - [x] **Power conversion: direct Brayton cycle** — helium from core drives turbine directly; no IHX
 - [ ] Hydrogen interface: S–I thermochemical cycle vs. high-temperature electrolysis (HTE)?
-- [ ] Fuel enrichment: LEU (< 5%) with shorter cycle vs. HALEU (5–20%) for longer burnup?
+- [x] **Fuel enrichment: LEU (< 5% ²³⁵U)** — proliferation resistance is non-negotiable for widespread deployment; standard enrichment supply chain
 
 ## Relationship to Prior Designs
 

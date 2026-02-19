@@ -44,12 +44,42 @@ Stellarator fusion devices face a structurally identical problem: find a 3D geom
 
 The same mathematical machinery applies here. The relationship between channel cross-section, axial profile, and local heat transfer coefficient distribution is non-intuitive. Adjoint-based CFD shape optimisation can search this space systematically, finding geometries that are better than anything derivable by hand.
 
-**What optimised geometry might look like:**
+**Selected direction: TPMS-informed channel geometry**
 
-- **Non-circular cross-sections** — lobed, re-entrant, or spiralling profiles that increase wetted perimeter without proportionally increasing hydraulic diameter, improving the Nusselt/friction trade-off
-- **Axially varying cross-section** — wider where the neutron flux (and therefore heat generation) peaks at core mid-plane; tighter at the low-power top and bottom. Channel shape follows the power profile.
-- **Triply periodic minimal surface (TPMS) structures** — mathematical surfaces (gyroid, Schwartz-P) used in advanced heat exchanger design that achieve very high surface-area-to-volume ratios with smooth, continuous flow paths. Manufacturable by additive graphite fabrication.
-- **Integrated fuel compact geometry** — co-optimised fuel channel and coolant channel positions within the block, rather than treating them as independent decisions
+**Triply Periodic Minimal Surfaces (TPMS)** are the target geometry class for the coolant channels. TPMS are mathematically defined surfaces — zero mean curvature everywhere, repeating periodically in all three spatial directions — that partition space into two interpenetrating, continuously connected domains. In a fuel block context, one domain carries the helium coolant and the other is the graphite/fuel solid.
+
+Key properties that make TPMS compelling here:
+
+| Property | Significance |
+|---|---|
+| Maximum surface area per unit volume | Highest possible heat transfer area in a given block volume |
+| Smooth, continuous surfaces | No sharp corners, no flow separation, low pressure drop for a given heat transfer rate |
+| Mathematically defined | Exactly reproducible; parameterisable for computational optimisation |
+| Additive-manufacture-native | Cannot be drilled or conventionally machined; requires additive fabrication — which we already need for this design |
+
+The **gyroid** is the leading candidate TPMS geometry. It has no self-intersections, excellent flow connectivity, and has been demonstrated in metal additive manufacturing for compact heat exchangers with performance exceeding conventional designs by 30–50% in surface area density.
+
+```
+  Conventional prismatic block:     TPMS gyroid block:
+
+  ○ ○ ○ ○ ○ ○ ○                    ╔═══════════════╗
+  ○ ● ○ ● ○ ● ○                    ║  ∿∿∿∿∿∿∿∿∿∿∿ ║
+  ○ ○ ○ ○ ○ ○ ○   →                ║ ∿∿∿∿∿∿∿∿∿∿∿∿ ║
+  ○ ● ○ ● ○ ● ○                    ║  ∿∿∿∿∿∿∿∿∿∿∿ ║
+  ○ ○ ○ ○ ○ ○ ○                    ╚═══════════════╝
+  (● fuel, ○ coolant/graphite)      (interpenetrating domains)
+```
+
+The TPMS geometry is not a single fixed shape — it has tunable parameters (unit cell size, surface offset, wall thickness) that can be adjusted to vary the solid-to-void fraction and the characteristic length scale. This is the handle for computational optimisation: the TPMS parameters are varied, the conjugate heat transfer performance is evaluated, and the optimum is found for the specific conditions at each axial position in the core.
+
+**Axially graded TPMS** — varying the unit cell parameters along the fuel block height — allows the geometry to follow the axial neutron flux profile. Where flux is high (core mid-plane), denser surface structure; where flux is low (top and bottom), coarser structure. Every element of the geometry earns its place.
+
+**Manufacturing route:** Additive graphite fabrication — specifically binder jetting of nuclear-grade graphite powder followed by densification sintering. Several industrial suppliers (Schunk Carbon, Toyo Tanso) are developing additive graphite processes. TPMS graphite blocks represent a significant but technically credible step beyond current capability, on a clear development trajectory.
+
+**What conventional optimisation still covers:**
+
+- **Axially varying cross-section** — a simpler but manufacturable-today approach for early prototypes before full TPMS fabrication is qualified
+- **Integrated fuel compact seating** — co-manufactured tight-tolerance seats that locate fuel compacts precisely, improving thermal contact regardless of the surrounding channel geometry
 
 **The optimisation loop:**
 

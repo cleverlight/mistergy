@@ -102,17 +102,47 @@ The density advantage is significant: CMC blades are ~70% lighter than equivalen
 
 SiC is already the pressure-retaining fission product barrier in TRISO fuel particles. This design uses the same material class as both the fuel's pressure vessel and the turbine blades. The high-temperature nuclear behavior of SiC is therefore already central to the design's safety case, and the material knowledge base applies across both applications.
 
-### The Root Attachment Problem
+### Rotor Architecture: Full Ceramic Blisk
 
-The primary engineering challenge for CMC blades is not temperature — it is the blade root, where the blade attaches to the rotor disk.
+The blade root attachment problem is eliminated entirely by co-manufacturing blades and disk as a single integrated ceramic component — a **blisk** (bladed disk). There are no attachment interfaces, no stress concentration at a root joint, no differential thermal expansion between blade and disk material.
 
-Conventional fir-tree root profiles create stress concentrations that brittle ceramics handle poorly. Several approaches are under development:
+This is the correct application of the design principle: solve the problem with manufacturing, not with a mechanical solution that adds complexity.
 
-1. **Compliant metal root insert:** A metallic (e.g. Ni alloy) shim bonded or mechanically interlocked to the CMC blade shank, transferring load gradually. The root metal runs cooler than the airfoil so Ni alloy is acceptable there.
-2. **Pin-loaded composite root:** Load transferred through ceramic pins through holes in a thickened CMC root tab — distributes load more uniformly.
-3. **Integral ceramic disk:** If rotor disk and blades are co-manufactured as a ceramic blisk, the attachment problem is eliminated. Manufacturing complexity shifts to the blisk fabrication.
+```
+  Traditional:  [blade] ──fir-tree root──► [disk]   ← two parts, joint is the failure mode
+  Blisk:        [blade + disk]                       ← one part, no joint
+```
 
-This is an open engineering problem. It is the primary risk item for the turbine design and warrants dedicated development effort.
+**Mechanical advantage of an all-ceramic blisk:**
+
+The low density of SiC (~2.7 g/cm³ vs ~8.9 for Ni superalloy) means centrifugal stress on the rotor at a given tip speed is approximately 3× lower than an equivalent metal blisk. This creates design margin that can be used in two ways:
+- Accept the same tip speed with greatly reduced stress → longer fatigue life
+- Run at higher tip speed → fewer stages required for the same pressure ratio
+
+A smaller stage count simplifies the turbomachine and reduces its axial length — consistent with fitting inside the 20 m envelope.
+
+**Shaft interface:**
+
+The ceramic blisk attaches to a metallic shaft. This ceramic-to-metal interface is the one remaining mechanical joint that requires careful design: SiC has a coefficient of thermal expansion (CTE) of ~4 × 10⁻⁶ /°C, while typical shaft steels are ~11–13 × 10⁻⁶ /°C. The joint design must accommodate this differential without generating damaging stresses on heat-up and cool-down. Options include a metallic hub insert with controlled interference fit, or a compliant coupling layer. This is a well-understood problem in ceramic engineering — it does not require novel solutions.
+
+**Containment:**
+
+A ceramic blade liberation event produces different fragment characteristics than a metal blade liberation. The containment ring surrounding the turbine stage must be designed for ceramic fragment ballistics — typically higher velocity, smaller fragments than metal. This drives the containment casing design but is not a fundamental barrier.
+
+### Manufacturing Trajectory: Additive Ceramics
+
+The blisk geometry — complex 3D airfoil surfaces, internal structure, precise dimensional tolerances — is ideally suited to additive manufacturing rather than traditional subtractive processes.
+
+**Current capability (2025):**
+- High-resolution ceramic stereolithography (SLA/DLP): systems such as Lithoz CeraFab produce dense, complex alumina and zirconia parts at sub-100 µm resolution. SiC variants are in active development.
+- Binder jetting of SiC: near-net-shape parts, post-process sintering. Suitable for complex geometry; surface finish and density improving rapidly.
+- Both routes produce **monolithic SiC** or **short-fibre reinforced SiC** — not continuous-fibre CMC.
+
+**Near-term route:** Monolithic or short-fibre SiC blisk by ceramic binder jetting or SLA, sintered to near-full density. Lower fracture toughness than continuous-fibre CMC, but adequate for this application given the low centrifugal stress and benign (no oxidation, no corrosion) helium environment.
+
+**Medium-term route:** Continuous-fibre SiC/SiC blisk by additive lay-up of SiC fibre tows with ceramic matrix infiltration. Several research programmes are pursuing fibre-reinforced ceramic additive manufacturing. This route recovers the full toughness of CMC in an additively manufactured form.
+
+The design targets the medium-term route as its baseline. The near-term monolithic route provides a credible path to early prototyping and proof-of-concept testing while the continuous-fibre capability matures.
 
 ### No Thermal Barrier Coating Required
 
@@ -137,13 +167,24 @@ Compared to an indirect cycle with an IHX:
 - ❌ Secondary loop chemistry and inventory management
 - ❌ IHX tube failure as a loss-of-coolant pathway
 
+## Precooler
+
+**Selected: air-cooled.** No water supply required; the unit works anywhere.
+
+The precooler rejects heat from the helium stream before it enters the compressor. Compressor inlet temperature is the primary variable — the colder the inlet, the lower the compression work and the higher the net cycle efficiency.
+
+**Baseline design assumption:** ISO standard conditions, ~15 °C ambient air temperature. The standard 20 m × 20 m × 20 m envelope is designed around this baseline.
+
+**Hot-climate variant:** In high-ambient-temperature environments (Middle East, arid Africa, inland Australia), the air-cooled precooler becomes less effective and compressor inlet temperature rises — reducing cycle efficiency. Rather than over-engineering the baseline unit for worst-case conditions, the hot-climate variant is handled as a **bolt-on module**: an extended precooler section that attaches outside the standard envelope. The nuclear island and turbomachine are unchanged. The bolt-on is a conventional air-cooled heat exchanger with increased face area; no nuclear engineering is required.
+
+This preserves the simplicity of the standard unit while providing a defined upgrade path for hot-climate sites.
+
 ## Open Questions
 
-- [ ] Final pressure ratio and number of stages (requires thermodynamic optimization)
-- [x] **Blade material: SiC/SiC CMC** — selected; root attachment method is the key development item
-- [ ] Root attachment approach: compliant metal insert, pin-loaded tab, or ceramic blisk?
+- [ ] Final pressure ratio and number of stages (requires thermodynamic optimisation)
+- [x] **Rotor: full ceramic blisk** — SiC/SiC CMC, additive manufacturing target; eliminates root attachment problem
+- [x] **Precooler: air-cooled** — baseline for ISO conditions; hot-climate bolt-on defined
 - [ ] Magnetic bearing design and redundancy for safety case
-- [ ] Precooler design: air-cooled or water-cooled? (affects siting flexibility)
 - [ ] Partial-load control strategy: bypass valve, variable speed, or inventory control?
 
 ---

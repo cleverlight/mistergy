@@ -18,8 +18,8 @@ The same helium that cools the core drives the turbine directly — no intermedi
 | 04 | [Neutronics](design/04-neutronics.md) | Stub | Neutron physics, criticality, reactivity coefficients |
 | 05 | [Thermal-Hydraulics](design/05-thermal-hydraulics.md) | Stub | Coolant flow, heat transfer, temperature profiles |
 | 06 | [Materials](design/06-materials.md) | Stub | High-temperature material selection |
-| 07 | [Safety](design/07-safety.md) | Stub | Passive safety systems, accident scenarios |
-| 08 | [Power Conversion](design/08-power-conversion.md) | Draft | Direct Brayton cycle, SiC/SiC CMC turbine blades |
+| 07 | [Safety](design/07-safety.md) | Draft | Walk-away safety, air-cooled RCCS, DLOFC, confinement |
+| 08 | [Power Conversion](design/08-power-conversion.md) | Draft | Direct Brayton cycle, full ceramic blisk, precooler |
 | 09 | [Hydrogen Production](design/09-hydrogen.md) | Draft | HTE secondary capability via SOEC |
 | 10 | [Fuel Cycle](design/10-fuel-cycle.md) | Draft | LEU, burnup strategy, spent fuel composition, proliferation assessment |
 | — | [References](references.md) | Draft | Prior programmes, standards, key papers |
@@ -32,10 +32,11 @@ The same helium that cools the core drives the turbine directly — no intermedi
 | Physical envelope | 20 m × 20 m × 20 m |
 | Coolant | Helium — direct Brayton (no IHX) |
 | Core geometry | Annular prismatic block |
-| Turbine blades | SiC/SiC ceramic matrix composite |
+| Turbine rotor | Full ceramic blisk (SiC/SiC CMC, additive manufacturing) |
 | Fuel enrichment | LEU < 5% ²³⁵U |
 | Fuel management | 3-batch, 12-month cycle, target 80–100 GWd/tHM |
-| Precooler | Air-cooled — works anywhere, no water supply |
+| Precooler | Air-cooled baseline; hot-climate bolt-on module |
+| RCCS | Air-cooled passive natural convection; below-grade preferred |
 | Hydrogen | HTE/SOEC electrical secondary |
 
 ## Design Heritage

@@ -25,6 +25,7 @@ Deliver **grid-connected AC electricity** from a self-contained, factory-built n
 | Target discharge burnup | 80–100 GWd/tHM | Maximise energy extracted per fuel load |
 | Refueling interval | 12 months | Annual site visit; spent fuel removed each visit |
 | Precooler | Air-cooled | No water supply dependency; works anywhere |
+| RCCS | Air-cooled, passive natural convection | No water; works anywhere; below-grade preferred |
 | Passive decay heat removal | Yes — no active systems required | Walk-away safety |
 
 ## Key Design Philosophy
@@ -71,7 +72,7 @@ The remaining space in the 20 m footprint accommodates the precooler, helium pur
 - [x] **Core geometry: annular prismatic block**
 - [x] **Power conversion: direct Brayton cycle** — helium from core drives turbine directly; no IHX
 - [x] **Fuel enrichment: LEU (< 5% ²³⁵U)** — proliferation resistance non-negotiable
-- [x] **Turbine blades: SiC/SiC CMC** — temperature-capable, no cooling needed in helium
+- [x] **Turbine rotor: full ceramic blisk** — SiC/SiC CMC, additive manufacturing target; blades and disk co-manufactured, no attachment joints
 - [x] **Physical envelope: 20 m × 20 m × 20 m**
 - [ ] Thermal power rating: optimise for engineering margins within envelope — scaling is a later concern
 - [x] **Hydrogen: HTE (SOEC) as electrical secondary** — reactor unchanged; electrolyzer modules consume generator output; S–I rejected (requires IHX, contradicts simplicity)

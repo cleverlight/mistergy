@@ -16,7 +16,7 @@ The same helium that cools the core drives the turbine directly — no intermedi
 | 02 | [Fuel](design/02-fuel.md) | Draft | TRISO particle spec, fuel compact, Gen 1/2 TPMS block design |
 | 03 | [Core](design/03-core.md) | Draft | Annular prismatic geometry, sizing, fuel management |
 | 04 | [Neutronics](design/04-neutronics.md) | Draft | C/U ratio, reactivity coefficients, burnup, power distribution, calculation requirements |
-| 05 | [Thermal-Hydraulics](design/05-thermal-hydraulics.md) | Stub | Coolant flow, heat transfer, temperature profiles |
+| 05 | [Thermal-Hydraulics](design/05-thermal-hydraulics.md) | Draft | Flow circuit, TPMS heat transfer, peak fuel temp, DLOFC analysis |
 | 06 | [Materials](design/06-materials.md) | Draft | Helium chemistry, purification system, impurity limits, material stubs |
 | 07 | [Safety](design/07-safety.md) | Draft | Walk-away safety, air-cooled RCCS, DLOFC, confinement |
 | 08 | [Power Conversion](design/08-power-conversion.md) | Draft | Direct Brayton cycle, full ceramic blisk, precooler |

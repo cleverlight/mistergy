@@ -22,6 +22,7 @@ The same helium that cools the core drives the turbine directly — no intermedi
 | 08 | [Power Conversion](design/08-power-conversion.md) | Draft | Direct Brayton cycle, full ceramic blisk, precooler |
 | 09 | [Hydrogen Production](design/09-hydrogen.md) | Draft | HTE secondary capability via SOEC |
 | 10 | [Fuel Cycle](design/10-fuel-cycle.md) | Draft | LEU, burnup strategy, spent fuel composition, proliferation assessment |
+| 11 | [Siting](design/11-siting.md) | Draft | Below-grade installation, civil layout, refueling access, multi-unit sites |
 | — | [References](references.md) | Draft | Prior programmes, standards, key papers |
 
 ## Key Decisions Made
@@ -36,7 +37,8 @@ The same helium that cools the core drives the turbine directly — no intermedi
 | Fuel enrichment | LEU < 5% ²³⁵U |
 | Fuel management | 3-batch, 12-month cycle, target 80–100 GWd/tHM |
 | Precooler | Air-cooled baseline; hot-climate bolt-on module |
-| RCCS | Air-cooled passive natural convection; below-grade preferred |
+| RCCS | Air-cooled passive natural convection; ~20 m chimney height |
+| Installation | Below-grade; ~12 m cavity, ~8 m above-grade building |
 | Hydrogen | HTE/SOEC electrical secondary |
 
 ## Design Heritage

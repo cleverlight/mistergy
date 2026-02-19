@@ -48,24 +48,22 @@ Deliver **grid-connected AC electricity** from a self-contained, factory-built n
 
 ## Physical Layout Concept
 
-Within the 20 m × 20 m × 20 m envelope, two main pressure vessels sit side by side, connected by a coaxial cross-vessel at the top (hot helium in the inner duct, return in the annulus):
+The 20 m × 20 m × 20 m envelope spans **below and above grade**. Approximately 10–12 m is below grade (reactor vessel, lower turbomachine, cross-vessel); 8–10 m is above grade (upper turbomachine, building, RCCS exhaust stack). The full 20 m vertical dimension acts as the RCCS chimney height.
 
 ```
-  ┌──────────────┐     ┌──────────────┐
-  │              │     │  TURBINE     │
-  │   REACTOR    │═════│  GENERATOR   │
-  │   VESSEL     │     │  COMPRESSOR  │
-  │   ~5.5m dia  │     │  ~2.5m dia   │
-  │   ~14m tall  │     │  ~6m tall    │
-  │              │     │              │
-  │              │     │ RECUPERATOR  │
-  │              │     │  (PCHE)      │
-  └──────────────┘     └──────────────┘
-     ~6m wide              ~6m wide
-     ←————————— ~14m total ————————→
+  GRADE LEVEL  ═══════════════════════════════════════════════
+               │  [RCCS exhaust]  │   [building / access]    │  ~8–10m above
+               │                  │                           │
+               │   REACTOR        │   TURBINE                 │
+  ─ ─ ─ ─ ─ ─ ┤   VESSEL    ═════╪═  GENERATOR  ─ ─ ─ ─ ─ ─ ┤ ─ cross-vessel
+               │   ~5.5m dia      │   COMPRESSOR              │
+               │   ~14m tall      │   RECUPERATOR             │  ~10–12m below
+               │                  │   (PCHE)                  │
+  CAVITY FLOOR ═══════════════════════════════════════════════
+               ←────────────── ~20m footprint ───────────────→
 ```
 
-The remaining space in the 20 m footprint accommodates the precooler, helium purification system, control systems, and maintenance access. The RCCS (reactor cavity cooling system) is integrated into the walls of the reactor vessel cavity.
+The below-grade depth is not wasted envelope — it contributes chimney height to the air RCCS, seismic isolation, radiation shielding mass, and physical security. The above-grade surface expression is a compact industrial building. See [§11 · Siting](11-siting.md) for full civil layout.
 
 ## Open Design Decisions
 
@@ -78,6 +76,7 @@ The remaining space in the 20 m footprint accommodates the precooler, helium pur
 - [x] **Hydrogen: HTE (SOEC) as electrical secondary** — reactor unchanged; electrolyzer modules consume generator output; S–I rejected (requires IHX, contradicts simplicity)
 - [x] **Precooler: air-cooled** — no water supply dependency; unit works anywhere
 - [x] **Refueling interval: 12 months** — annual site visit; fresh fuel in, spent fuel out; limits on-site spent fuel inventory
+- [x] **Below-grade installation** — reactor vessel sited ~10–12 m below grade; 20 m envelope spans total depth + above-grade height
 
 ## Relationship to Prior Designs
 

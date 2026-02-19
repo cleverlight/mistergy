@@ -52,11 +52,11 @@ Ambient air enters the RCCS at low-level inlets around the base of the reactor c
 
 ### Chimney Height and Siting
 
-The strength of the natural draft is proportional to the chimney height and the temperature difference between the rising air column and the ambient. A taller chimney provides more airflow and more heat removal capacity.
+The strength of the natural draft is proportional to the total height between the lowest air inlet (at cavity floor level) and the exhaust outlet at the top of the above-grade building.
 
-This creates a preference for **below-grade installation**: if the reactor vessel sits in a below-grade pit, the full above-grade height of the building contributes to the effective chimney, in addition to the below-grade depth. A 10 m deep installation with a 10 m building above gives a ~20 m effective chimney — substantially more than an above-grade vessel with a short exhaust stack.
+The reactor is installed below grade (see §11), with the cavity floor ~12 m below grade and the RCCS exhaust at ~+8 m above grade. **Effective chimney height: ~20 m** — the full vertical span of the 20 m envelope. This is an inherent benefit of the below-grade layout; no additional stack structure is required to achieve good RCCS performance.
 
-Below-grade installation also provides natural seismic isolation, shielding mass, and physical security — benefits beyond the RCCS performance.
+Below-grade installation also provides seismic isolation, shielding mass, and physical security as co-benefits.
 
 ### Decay Heat Load
 

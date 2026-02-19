@@ -22,19 +22,21 @@ Deliver sustained **carbon-free high-grade heat** at temperatures unreachable by
 
 1. **Simplicity above all.** Fewer components means fewer failure modes, easier maintenance, and lower cost. Every added component must justify itself.
 
-2. **Fuel as the first barrier.** TRISO coatings retain fission products up to ~1600 °C, well above any credible accident temperature. The reactor is designed so that peak fuel temperature *never* approaches this limit.
+2. **Solve hard problems with better materials and manufacturing — not more components.** When a constraint seems to demand a new system, the preferred answer is a material or process that makes the system unnecessary. The CMC turbine blade is the template: rather than adding blade cooling infrastructure, use a material that doesn't need it. This principle applies across the design.
 
-3. **Graphite as a thermal flywheel.** The large graphite heat capacity and negative temperature coefficient provide inherent self-regulation.
+3. **Fuel as the first barrier.** TRISO coatings retain fission products up to ~1600 °C, well above any credible accident temperature. The reactor is designed so that peak fuel temperature *never* approaches this limit.
 
-4. **Helium does one job.** The same helium that cools the core drives the turbine directly. No intermediate heat exchanger, no secondary loop, no steam generators.
+4. **Graphite as a thermal flywheel.** The large graphite heat capacity and negative temperature coefficient provide inherent self-regulation.
 
-5. **Helium purity is safety-critical.** Moisture and CO₂ attack graphite at high temperature; the helium purification system is a first-class design concern.
+5. **Helium does one job.** The same helium that cools the core drives the turbine directly. No intermediate heat exchanger, no secondary loop, no steam generators.
 
-6. **Modularity.** Target a unit size that can be factory-fabricated and truck-shipped to enable rapid deployment.
+6. **Helium purity is safety-critical.** Moisture and CO₂ attack graphite at high temperature; the helium purification system is a first-class design concern.
+
+7. **Modularity.** Target a unit size that can be factory-fabricated and truck-shipped to enable rapid deployment.
 
 ## Open Design Decisions
 
-- [ ] Core geometry: **prismatic block** (GT-MHR heritage, higher power density) vs. **pebble bed** (online refueling, simpler fuel handling)
+- [x] **Core geometry: prismatic block** — fixed geometry, uniform coolant channels, predictable outlet temperature; simpler operational equipment than pebble bed
 - [ ] Thermal power rating: 100 MW(th), 200 MW(th), or larger?
 - [x] **Power conversion: direct Brayton cycle** — helium from core drives turbine directly; no IHX
 - [ ] Hydrogen interface: S–I thermochemical cycle vs. high-temperature electrolysis (HTE)?

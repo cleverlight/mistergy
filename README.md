@@ -21,7 +21,7 @@ The same helium that cools the core drives the turbine directly — no intermedi
 | 07 | [Safety](design/07-safety.md) | Stub | Passive safety systems, accident scenarios |
 | 08 | [Power Conversion](design/08-power-conversion.md) | Draft | Direct Brayton cycle, SiC/SiC CMC turbine blades |
 | 09 | [Hydrogen Production](design/09-hydrogen.md) | Draft | HTE secondary capability via SOEC |
-| 10 | [Fuel Cycle](design/10-fuel-cycle.md) | Draft | LEU, high burnup strategy, waste management |
+| 10 | [Fuel Cycle](design/10-fuel-cycle.md) | Draft | LEU, burnup strategy, spent fuel composition, proliferation assessment |
 | — | [References](references.md) | Draft | Prior programmes, standards, key papers |
 
 ## Key Decisions Made
@@ -34,7 +34,8 @@ The same helium that cools the core drives the turbine directly — no intermedi
 | Core geometry | Annular prismatic block |
 | Turbine blades | SiC/SiC ceramic matrix composite |
 | Fuel enrichment | LEU < 5% ²³⁵U |
-| Fuel management | 3-batch, target 100–120 GWd/tHM |
+| Fuel management | 3-batch, 12-month cycle, target 80–100 GWd/tHM |
+| Precooler | Air-cooled — works anywhere, no water supply |
 | Hydrogen | HTE/SOEC electrical secondary |
 
 ## Design Heritage

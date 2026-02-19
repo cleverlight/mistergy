@@ -68,27 +68,68 @@ A 3-batch scheme is the baseline. 4-batch would push average burnup higher but i
 
 ### Cycle Length
 
-With LEU and 3-batch management at 100 MW(th):
-- Approximate fissile inventory: ~250–300 kg ²³⁵U per full core load (to be calculated in §04)
-- At 100 MW(th) and ~33% capacity utilization of fissile material per batch:
-- **Estimated cycle length: 12–18 months** per batch
+**Refueling interval: 12 months** — fixed by the annual site visit model. Each visit inserts a fresh batch and removes the discharged batch. The reactor does not accumulate spent fuel on site beyond the current discharge batch.
 
-This is comparable to a LWR refueling cycle. Refueling outages also serve as scheduled turbomachine maintenance windows — the outage is not dead time.
+With a 12-month interval and 3-batch management, each fuel batch spends 3 years in the core before discharge. The exact discharge burnup achieved depends on the fissile loading and power density — this requires a full neutronics calculation (§04) to confirm. Preliminary estimate: **80–100 GWd/tHM** is achievable at reasonable power density with LEU at ~4.5% enrichment.
+
+Refueling outages double as scheduled turbomachine maintenance windows. The outage is productive, not dead time.
 
 ## Spent Fuel: A Manageable Waste Form
 
-### TRISO Spent Fuel
+### Spent Fuel Isotopic Composition
 
-TRISO spent fuel is fundamentally different from LWR spent fuel, and the differences are mostly favourable:
+At 80–100 GWd/tHM discharge burnup in a thermal graphite-moderated spectrum, the spent fuel contains:
+
+**Residual uranium**
+- U-238: largely intact (~99% remains — only a small fraction is transmuted)
+- U-235: mostly burned; a small residual remains (~5–10% of original loading)
+- U-236: minor activation product, not fissile
+
+**Plutonium** — inevitable in any uranium reactor; U-238 neutron capture always produces Pu-239. Net inventory at discharge is approximately 4–8 kg per tonne of heavy metal. High burnup fissions much of the early-cycle Pu in-situ, reducing the net inventory compared to a lightly-irradiated core.
+
+Approximate isotopic split at 80–100 GWd/tHM:
+
+| Isotope | Fraction | Notes |
+|---|---|---|
+| Pu-239 | ~45–50% | Fissile; the weapons-relevant fraction |
+| Pu-240 | ~30–35% | Spontaneous fission source — the proliferation barrier |
+| Pu-241 | ~10–15% | Fissile; decays to Am-241 (t½ = 14.4 yr) |
+| Pu-242 | ~5–10% | Non-fissile, long-lived |
+
+This is firmly **reactor-grade plutonium**. The IAEA classification requires >93% Pu-239 for weapons-grade material. Pu-240 emits spontaneous fission neutrons that cause pre-initiation (fizzle) in simple weapon designs — the reason reactor-grade plutonium is considered essentially unusable for first-generation weapons without sophisticated implosion engineering beyond most actors' reach.
+
+**Minor actinides** — the long-term radiotoxicity concern:
+- Np-237, Am-241, Am-243, Cm-244: produced by successive neutron captures
+- These dominate repository dose after ~1,000 years
+- In a thermal spectrum, they cannot be efficiently transmuted in-situ; they go to disposal with the spent fuel
+- Quantities are small but not zero — this is a known characteristic of thermal-spectrum reactors
+
+**Fission products** — retained within TRISO coatings under normal burnup conditions: Cs-137, Sr-90 (30-yr half-lives, dominant short-to-medium term heat source), Kr-85, I-129, Tc-99.
+
+### Proliferation Assessment of Spent TRISO Fuel
+
+Two independent barriers make the spent fuel highly resistant to diversion for weapons use:
+
+1. **Isotopic quality:** The Pu-240 content (~30–35%) makes the material unsuitable for reliable weapons without sophisticated implosion designs. The IAEA classifies material of this composition as requiring substantial further processing before it is of direct weapons concern.
+
+2. **Physical form:** Extracting plutonium from TRISO spent fuel requires breaking the SiC coating layer on millions of sub-millimetre particles, dissolving the UO₂ kernels, and running a chemical separation. The SiC layer is specifically designed to resist chemical attack. This is far more difficult than reprocessing LWR spent fuel rods, which can be dissolved directly. The IAEA formally recognises TRISO spent fuel as having high intrinsic proliferation resistance.
+
+The combination of reactor-grade isotopics and a physically resistant form means the spent fuel presents a lower proliferation risk than LWR spent fuel of equivalent energy content.
+
+### Annual Removal Model
+
+Spent fuel is removed at every 12-month refueling visit — it does not accumulate on site. This limits the at-any-time on-site inventory to approximately one batch, keeps safeguards accounting straightforward, and allows central facility storage and monitoring. The annual service model is a natural fit with international safeguards frameworks.
+
+### TRISO Spent Fuel as a Waste Form
 
 - Fission products remain encapsulated in SiC/PyC coatings — the fuel particle is its own primary waste containment
 - Lower decay heat density per unit volume than LWR spent fuel → dry storage manageable from day one
 - Cannot be readily reprocessed (a proliferation feature, not a bug)
 - No liquid chemistry — solid, compact, mechanically stable particles
 
-The disposal pathway is straightforward: interim dry storage on site, then geological repository. The TRISO form requires no additional conditioning before disposal, unlike LWR spent fuel which requires vitrification or other immobilisation of dissolved fission products.
+The disposal pathway is direct: interim dry storage, then geological repository. The TRISO form requires no additional conditioning before disposal, unlike LWR spent fuel.
 
-At 100–120 GWd/tHM discharge burnup, the spent fuel volume per unit energy generated is substantially lower than LEU LWR fuel at ~45–55 GWd/tHM. More energy per gram of fuel means less spent fuel per kWh.
+At 80–100 GWd/tHM discharge burnup, the spent fuel volume per unit energy generated is substantially lower than LEU LWR fuel at ~45–55 GWd/tHM.
 
 ### The Graphite Waste Stream
 
@@ -117,9 +158,10 @@ The kernel and coating deposition process is specialized but not classified or p
 
 ## Open Questions
 
-- [ ] Target burnup: 80 GWd/tHM or push toward 100+ with optimized coating design?
-- [ ] Pebble vs. prismatic refueling — awaiting core geometry decision (§03)
-- [ ] Spent fuel interim storage design: on-site pool vs. dry casks from day one?
+- [ ] Confirm discharge burnup via neutronics calculation (§04): is 80–100 GWd/tHM achievable with LEU at ~4.5% and 12-month cycles?
+- [ ] Number of batches: 3-batch baseline, or increase to push burnup higher?
+- [ ] Spent fuel transport packaging: what container standard applies to TRISO spent fuel blocks for annual removal?
+- [ ] Minor actinide inventory: quantify Am/Cm/Np per discharge batch for waste classification purposes
 
 ---
 

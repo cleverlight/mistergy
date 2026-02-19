@@ -22,7 +22,9 @@ Deliver **grid-connected AC electricity** from a self-contained, factory-built n
 | Power conversion | Direct Brayton — helium drives turbine | No IHX, no secondary loop |
 | Primary pressure | ~7 MPa | Balance of pumping power vs. heat capacity |
 | Fuel enrichment | < 5% ²³⁵U (LEU) | Proliferation resistance; standard supply chain |
-| Target discharge burnup | 100–120 GWd/tHM | Maximise energy extracted per fuel load |
+| Target discharge burnup | 80–100 GWd/tHM | Maximise energy extracted per fuel load |
+| Refueling interval | 12 months | Annual site visit; spent fuel removed each visit |
+| Precooler | Air-cooled | No water supply dependency; works anywhere |
 | Passive decay heat removal | Yes — no active systems required | Walk-away safety |
 
 ## Key Design Philosophy
@@ -71,9 +73,10 @@ The remaining space in the 20 m footprint accommodates the precooler, helium pur
 - [x] **Fuel enrichment: LEU (< 5% ²³⁵U)** — proliferation resistance non-negotiable
 - [x] **Turbine blades: SiC/SiC CMC** — temperature-capable, no cooling needed in helium
 - [x] **Physical envelope: 20 m × 20 m × 20 m**
-- [ ] Thermal power rating: 100 MW(th) vs 150 MW(th) — needs envelope sizing study
+- [ ] Thermal power rating: optimise for engineering margins within envelope — scaling is a later concern
 - [x] **Hydrogen: HTE (SOEC) as electrical secondary** — reactor unchanged; electrolyzer modules consume generator output; S–I rejected (requires IHX, contradicts simplicity)
-- [ ] Precooler: air-cooled (simpler siting) vs. water-cooled (smaller, needs water supply)?
+- [x] **Precooler: air-cooled** — no water supply dependency; unit works anywhere
+- [x] **Refueling interval: 12 months** — annual site visit; fresh fuel in, spent fuel out; limits on-site spent fuel inventory
 
 ## Relationship to Prior Designs
 

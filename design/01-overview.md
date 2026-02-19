@@ -2,9 +2,9 @@
 
 ## Mission
 
-Deliver **grid-connected AC electricity** from a self-contained, factory-built nuclear power unit. The entire reactor and power conversion system fits within a **20 m × 20 m × 20 m** envelope, enabling deployment as a single shipped unit with minimal site preparation.
+Deliver **grid-connected AC electricity** from a self-contained, factory-built nuclear power unit no larger than **20 m × 20 m × 20 m**. The entire reactor and power conversion system ships as a unit with minimal site preparation.
 
-Secondary mission: the high-grade heat available at 950 °C can be offered as industrial process heat or hydrogen production at future sites where demand justifies it. Electricity is the primary product.
+**Secondary capability:** carbon-free hydrogen production via high-temperature electrolysis, using generator output when hydrogen demand exists. The nuclear island is identical in both modes.
 
 ## Top-Level Requirements
 

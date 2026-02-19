@@ -83,21 +83,44 @@ With LEU (< 5% ²³⁵U), a single enrichment level across the core is the simpl
 
 **Starting assumption:** uniform enrichment, accept the axial peaking factor, optimise later if the cycle length target demands it.
 
-## Core Dimensions and Power Rating
+## Core Dimensions and the 20 m Envelope
 
-Core dimensions are set by the passive safety constraint: the annular geometry must be thin enough that decay heat conducted to the outer vessel wall keeps peak fuel temperature below 1600 °C in a depressurised loss-of-forced-cooling event.
+Core dimensions are driven by two constraints working together:
 
-This sets a characteristic **fuel annulus thickness of roughly 1 metre**, largely independent of core height. Power is then set by core height and power density.
+1. **Passive safety** sets the fuel annulus thickness at ~1 m, independent of power. This ensures decay heat can conduct to the outer vessel wall and radiate to the RCCS without active cooling.
+2. **The 20 m × 20 m × 20 m physical envelope** sets the maximum reactor vessel size, which in turn caps thermal power.
 
-Thermal power is currently **TBD** — a sizing study is needed. The likely range for a factory-fabricable, truck-shippable unit is 100–300 MW(th). This is the next major parameter to fix.
+### Sizing Estimate
+
+Assumed geometry:
+- Inner reflector radius: 0.8 m
+- Fuel annulus: 1.0 m → outer fuel radius: 1.8 m
+- Outer reflector: 0.5 m → outer core radius: 2.3 m → core diameter: 4.6 m
+- Reactor vessel outer diameter: ~5.5 m (vessel wall + insulation)
+- Vessel total height: active height + ~8 m (top/bottom reflectors, plenums, control rod drives above)
+
+Fuel annulus cross-sectional area:
+π × (1.8² − 0.8²) = π × 2.6 ≈ **8.2 m²**
+
+At a conservative power density of 4 MW(th)/m³:
+
+| Thermal power | Active height | Total vessel height |
+|---|---|---|
+| 100 MW(th) | 3.0 m | ~11 m |
+| 125 MW(th) | 3.8 m | ~12 m |
+| 150 MW(th) | 4.6 m | ~13 m |
+
+All three fit within the 20 m height envelope, with room for the cross-vessel connection to the turbomachine at the top. The turbomachine vessel (vertical, ~2.5 m dia, ~6 m tall) sits alongside within the 20 m footprint.
+
+**Working assumption: 100–150 MW(th)**, to be fixed once a full sizing study is done. At ~47% cycle efficiency this delivers **~50–70 MW(e)** net to the grid.
 
 ## Open Questions
 
-- [ ] Thermal power rating — needs sizing study against passive safety constraint
-- [ ] Fuel block channel geometry: baseline circular holes vs. optimised profiles — when to make this choice?
+- [ ] Thermal power: 100 MW(th) vs 150 MW(th) — detailed envelope study needed
+- [ ] Fuel block channel geometry: circular baseline vs. optimised profiles — manufacturing readiness decision
 - [ ] Control rod count and worth distribution in inner reflector
-- [ ] Enrichment zoning: uniform to start, but at what cycle length does zoning become necessary?
-- [ ] Number of fuel columns in the annulus (function of final core diameter)
+- [ ] Enrichment zoning: uniform first, revisit if cycle length target requires it
+- [ ] Number of fuel columns in the annulus (set by final core diameter)
 
 ---
 

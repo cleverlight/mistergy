@@ -72,7 +72,7 @@ The remaining space in the 20 m footprint accommodates the precooler, helium pur
 - [x] **Turbine blades: SiC/SiC CMC** — temperature-capable, no cooling needed in helium
 - [x] **Physical envelope: 20 m × 20 m × 20 m**
 - [ ] Thermal power rating: 100 MW(th) vs 150 MW(th) — needs envelope sizing study
-- [ ] Hydrogen interface: retain as secondary capability or electricity-only?
+- [x] **Hydrogen: HTE (SOEC) as electrical secondary** — reactor unchanged; electrolyzer modules consume generator output; S–I rejected (requires IHX, contradicts simplicity)
 - [ ] Precooler: air-cooled (simpler siting) vs. water-cooled (smaller, needs water supply)?
 
 ## Relationship to Prior Designs

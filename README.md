@@ -13,7 +13,7 @@ The same helium that cools the core drives the turbine directly — no intermedi
 | # | Section | Status | Summary |
 |---|---|---|---|
 | 01 | [Overview](design/01-overview.md) | Draft | Mission, requirements, key decisions, layout |
-| 02 | [Fuel](design/02-fuel.md) | Stub | TRISO particle and fuel element design |
+| 02 | [Fuel](design/02-fuel.md) | Draft | TRISO particle spec, fuel compact, Gen 1/2 TPMS block design |
 | 03 | [Core](design/03-core.md) | Draft | Annular prismatic geometry, sizing, fuel management |
 | 04 | [Neutronics](design/04-neutronics.md) | Stub | Neutron physics, criticality, reactivity coefficients |
 | 05 | [Thermal-Hydraulics](design/05-thermal-hydraulics.md) | Stub | Coolant flow, heat transfer, temperature profiles |

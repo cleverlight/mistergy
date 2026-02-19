@@ -33,19 +33,21 @@ Deliver **grid-connected AC electricity** from a self-contained, factory-built n
 
 1. **Simplicity above all.** Fewer components means fewer failure modes, easier maintenance, and lower cost. Every added component must justify itself.
 
-2. **Solve hard problems with better materials and manufacturing — not more components.** When a constraint seems to demand a new system, the preferred answer is a material or process that makes the system unnecessary. The CMC turbine blade is the template: rather than adding blade cooling infrastructure, use a material that doesn't need it. This principle applies across the design.
+2. **Solve hard problems with better materials, manufacturing, and geometry — not more components.** When a constraint seems to demand a new system, the preferred answer is a material, process, or optimised geometry that makes the system unnecessary. The CMC turbine blade is the template: rather than adding blade cooling infrastructure, use a material that doesn't need it. Coolant channel geometry is the next application: rather than raising primary pressure to improve heat transfer, optimise the channel shape computationally and validate physically.
 
-3. **Sweat the fuel.** Extract maximum energy from every fuel load. Multi-batch fuel management and high target burnup minimise fuel throughput, reduce spent fuel volume, and reduce cost per kWh. The TRISO form is itself a robust waste form — the design should exploit this.
+3. **Use computational optimisation to find geometries that intuition cannot.** Stellarator fusion devices find coil geometries using adjoint-based shape optimisation that outperform anything a human designer would produce. The same approach applies to coolant channel geometry in the fuel blocks — optimise the shape against conjugate heat transfer physics, prototype in graphite, validate with air-flow testing, iterate. Manufacture what the physics demands.
 
-4. **Fuel as the first barrier.** TRISO coatings retain fission products up to ~1600 °C, well above any credible accident temperature. The reactor is designed so that peak fuel temperature *never* approaches this limit.
+4. **Sweat the fuel.** Extract maximum energy from every fuel load. Multi-batch fuel management and high target burnup minimise fuel throughput, reduce spent fuel volume, and reduce cost per kWh. The TRISO form is itself a robust waste form — the design should exploit this.
 
-5. **Graphite as a thermal flywheel.** The large graphite heat capacity and negative temperature coefficient provide inherent self-regulation.
+5. **Fuel as the first barrier.** TRISO coatings retain fission products up to ~1600 °C, well above any credible accident temperature. The reactor is designed so that peak fuel temperature *never* approaches this limit.
 
-6. **Helium does one job.** The same helium that cools the core drives the turbine directly. No intermediate heat exchanger, no secondary loop, no steam generators.
+6. **Graphite as a thermal flywheel.** The large graphite heat capacity and negative temperature coefficient provide inherent self-regulation.
 
-7. **Helium purity is safety-critical.** Moisture and CO₂ attack graphite at high temperature; the helium purification system is a first-class design concern.
+7. **Helium does one job.** The same helium that cools the core drives the turbine directly. No intermediate heat exchanger, no secondary loop, no steam generators.
 
-8. **Modularity.** The 20 m envelope is a hard constraint, not an aspiration. A site can host multiple units; scale by replication, not by building bigger reactors.
+8. **Helium purity is safety-critical.** Moisture and CO₂ attack graphite at high temperature; the helium purification system is a first-class design concern.
+
+9. **Modularity.** The 20 m envelope is a hard constraint, not an aspiration. A site can host multiple units; scale by replication, not by building bigger reactors.
 
 ## Physical Layout Concept
 

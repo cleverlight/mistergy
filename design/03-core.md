@@ -32,17 +32,56 @@ Each block contains two types of axial channels drilled through it:
 
 The ratio of fuel channels to coolant channels per block, and their diameters, sets the local power density, peak fuel temperature, and coolant outlet temperature. This geometry is fixed at manufacture.
 
-### The Manufacturing Opportunity
+### Channel Geometry Optimisation
 
-Traditional prismatic blocks use circular drilled holes — a manufacturing constraint, not a physics requirement. The coolant channel profile is a pure drilling artifact.
+Traditional prismatic blocks use circular drilled holes — a manufacturing constraint, not a physics requirement. The coolant channel profile is a pure drilling artifact. This design treats channel geometry as a free variable to be optimised, then asks what manufacturing process can realise the optimum.
 
-Advanced manufacturing opens this up. With precision graphite machining or near-net-shape graphite fabrication, coolant channel cross-sections can be optimised for heat transfer rather than ease of drilling. Options include:
+**The objective:** minimise peak fuel temperature (and therefore maximise margin to the 1600 °C TRISO limit) for a given thermal power and pumping power budget. This is a conjugate heat transfer optimisation — the solid graphite temperature field and the helium flow field are coupled and must be optimised together.
 
-- **Lobed or finned channel profiles** — increased surface area without increased flow resistance
-- **Varying channel diameter with axial position** — wider channels in the high-flux (high heat generation) zone at core mid-plane, tighter at top and bottom
-- **Integrated fuel compact seating** — co-manufactured tight-tolerance seats that locate compacts precisely, improving thermal contact and reducing inter-compact gaps
+**The precedent: stellarator coil optimisation**
 
-The principle: use manufacturing capability to do what extra components would otherwise do. Better channel geometry replaces a more complex thermal-hydraulic design.
+Stellarator fusion devices face a structurally identical problem: find a 3D geometry such that the resulting physics field (magnetic, in their case) achieves desired confinement properties. The relationship between coil shape and field behaviour is too complex for intuition — the answer is computational optimisation using adjoint methods and iterative shape search. Wendelstein 7-X found coil geometries no human designer would have produced, and they outperform intuitive designs significantly.
+
+The same mathematical machinery applies here. The relationship between channel cross-section, axial profile, and local heat transfer coefficient distribution is non-intuitive. Adjoint-based CFD shape optimisation can search this space systematically, finding geometries that are better than anything derivable by hand.
+
+**What optimised geometry might look like:**
+
+- **Non-circular cross-sections** — lobed, re-entrant, or spiralling profiles that increase wetted perimeter without proportionally increasing hydraulic diameter, improving the Nusselt/friction trade-off
+- **Axially varying cross-section** — wider where the neutron flux (and therefore heat generation) peaks at core mid-plane; tighter at the low-power top and bottom. Channel shape follows the power profile.
+- **Triply periodic minimal surface (TPMS) structures** — mathematical surfaces (gyroid, Schwartz-P) used in advanced heat exchanger design that achieve very high surface-area-to-volume ratios with smooth, continuous flow paths. Manufacturable by additive graphite fabrication.
+- **Integrated fuel compact geometry** — co-optimised fuel channel and coolant channel positions within the block, rather than treating them as independent decisions
+
+**The optimisation loop:**
+
+```
+  1. Parametric or topology-based geometry definition
+           │
+           ▼
+  2. Conjugate CFD simulation (helium flow + graphite heat conduction)
+           │
+           ▼
+  3. Neutronics coupling (channel geometry affects local moderation ratio)
+           │
+           ▼
+  4. Objective evaluation (peak fuel T, pressure drop, power peaking factor)
+           │
+           ▼
+  5. Shape update (adjoint gradient or gradient-free: genetic algorithm, Bayesian)
+           │
+           └──── iterate until convergence ────┘
+```
+
+**Physical testing with air:**
+
+Before committing a geometry to helium service, it is validated experimentally using air. This is standard HTGR practice and is physically justified: helium and air have similar Prandtl numbers (~0.66 vs ~0.71), so heat transfer correlations from air experiments scale directly to helium service via the Reynolds and Nusselt number similarity. Air is cheap, safe to handle at scale, and allows high-iteration physical testing at a fraction of the cost of helium testing.
+
+The sequence: optimise computationally → prototype channel geometry in test graphite blocks → validate heat transfer and pressure drop in an air flow rig → refine → iterate. The air rig is a low-cost, high-throughput development tool.
+
+**At 4 MPa, this optimisation matters more**
+
+The decision to run at 4 MPa rather than 7 MPa reduces helium density by ~43%. For the same thermal power, the channels must work harder per unit of driving pressure. An optimised channel geometry compensates for the lower density by improving the heat transfer coefficient — achieving equivalent or better thermal performance with a physically simpler (lower pressure) primary circuit. The optimisation is not just desirable; it is part of how the 4 MPa design closes.
+
+The principle: use manufacturing capability and computational optimisation to do what higher pressure would otherwise do. Better geometry replaces a more demanding engineering specification.
 
 ## Reflector Design
 

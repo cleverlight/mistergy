@@ -12,6 +12,7 @@ The same helium that cools the core drives the turbine directly — no intermedi
 
 | # | Section | Status | Summary |
 |---|---|---|---|
+| — | [Design Summary](design/00-summary.md) | Draft | All key numbers consolidated — start here |
 | 01 | [Overview](design/01-overview.md) | Draft | Mission, requirements, key decisions, layout |
 | 02 | [Fuel](design/02-fuel.md) | Draft | TRISO particle spec, fuel compact, Gen 1/2 TPMS block design |
 | 03 | [Core](design/03-core.md) | Draft | Annular prismatic geometry, sizing, fuel management |
@@ -35,7 +36,7 @@ The same helium that cools the core drives the turbine directly — no intermedi
 | Core geometry | Annular prismatic block |
 | Turbine rotor | Full ceramic blisk (SiC/SiC CMC, additive manufacturing) |
 | Fuel enrichment | LEU < 5% ²³⁵U |
-| Fuel management | 3-batch, 12-month cycle, target 80–100 GWd/tHM |
+| Fuel management | 6–10 batch, 12-month cycle, target 80–100 GWd/tHM |
 | Precooler | Air-cooled baseline; hot-climate bolt-on module |
 | RCCS | Air-cooled passive natural convection; ~20 m chimney height |
 | Installation | Below-grade; ~12 m cavity, ~8 m above-grade building |

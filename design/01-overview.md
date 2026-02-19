@@ -15,6 +15,7 @@ Deliver **grid-connected AC electricity** from a self-contained, factory-built n
 | Thermal power | ~100–150 MW(th) | Sized to fit envelope; see §03 |
 | Net electrical output | ~50–70 MW(e) | ~47% cycle efficiency × thermal power |
 | Core outlet temperature | ≥ 950 °C | Enables ~47–50% Brayton efficiency |
+| Core inlet temperature | ~580 °C | Recuperator cold outlet; from §05 Brayton cycle analysis |
 | Coolant | Helium | Chemically inert, single-phase, direct Brayton working fluid |
 | Moderator | Nuclear-grade graphite | Excellent high-T properties, neutron economy |
 | Fuel form | TRISO particles in graphite matrix | Coated-particle safety, high burnup tolerance |

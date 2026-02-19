@@ -7,7 +7,7 @@
 - Helium coolant properties at operating conditions
 - Coolant flow path (top-entry vs. bottom-entry)
 - Core inlet / outlet temperatures and ΔT
-- Primary coolant pressure (~7 MPa baseline)
+- Primary coolant pressure: **4 MPa** (reduced from conventional 7 MPa for vessel simplification and tritium management; lower helium density requires careful channel sizing to maintain heat transfer)
 - Mass flow rate and pumping power
 - Fuel centerline and surface temperatures
 - Peak fuel temperature margin to TRISO failure limit (1600 °C)

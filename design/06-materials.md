@@ -61,12 +61,19 @@ A continuous **slip-stream purification loop** processes ~1–5% of the main hel
 
 The cryogenic trap is periodically regenerated (warmed, impurities vented to a hold-up tank for decay). Ar-41 decays to stable Ca-41 within ~24 hours of being held.
 
-**Tritium management** is handled separately. Tritium passes through molecular sieves and charcoal at normal temperatures. Options include:
-- Isotopic exchange: react T₂ with oxygen to form HTO, then absorb with molecular sieves
-- Periodic purge of a small helium inventory fraction to a tritium hold-up and decay system
-- Continuous monitoring with tritium-specific sensors; action on threshold
+**Tritium management** requires a layered approach because tritium passes through standard molecular sieves and ambient charcoal traps without being captured:
 
-Tritium is the most operationally demanding impurity because of its long half-life and small molecular size (it can permeate through metal walls at high temperature). Keeping the primary circuit at high pressure minimises outward permeation.
+1. **Reduce generation at source — graphite specification.** Tritium in this reactor is produced primarily by the reaction Li-6(n,α)T, where Li-6 is a trace impurity in the graphite moderator. Li-6 is 7.6% of natural lithium. By specifying graphite with lithium content below 0.1 ppm, tritium generation is reduced to a very small fraction of what standard graphite would produce. This is the primary control — addressed in the graphite section below.
+
+2. **Lower operating pressure.** At 4 MPa (vs. a higher-pressure alternative), tritium partial pressure in the circuit is lower, reducing the driving force for permeation through metal walls by ~√(4/7) ≈ 24% compared to 7 MPa. Additionally, the smaller total helium inventory means less total tritium dissolved in the circuit.
+
+3. **Cold trap (cryogenic charcoal, ~−180 °C).** Tritium as HT or T₂ adsorbs onto activated charcoal at liquid nitrogen temperatures. The purification system cryogenic stage captures a fraction of the tritium on each pass through the slip-stream.
+
+4. **Periodic monitored purge.** A small fraction of the helium inventory is periodically purged to a tritium hold-up and decay tank. Given the 12.3-year half-life, purged inventory is managed by dilution and decay rather than treatment.
+
+5. **Continuous monitoring.** Tritium-specific sensors (ionisation chambers or liquid scintillation sampling) at the purification outlet and in the building atmosphere provide ongoing measurement and early warning of elevated levels.
+
+Tritium remains the most operationally demanding impurity. The design manages it primarily through graphite specification (reducing generation) rather than through circuit design, which is the correct order of priority.
 
 ### Helium Specification
 
@@ -105,21 +112,78 @@ This monitoring system provides early warning of fuel integrity issues well befo
 
 ### Helium Inventory Management
 
-At ~7 MPa, the primary circuit contains a large helium inventory. During refueling, the circuit is depressurised — helium must be recovered rather than vented (both economic and radiological reasons).
+At 4 MPa, the primary circuit helium inventory is approximately 57% of what it would be at 7 MPa for the same circuit volume — a direct consequence of the lower operating pressure. This reduces the cost of the initial helium charge, the volume of high-pressure storage required, and the total tritium inventory dissolved in the circuit at any time.
+
+During refueling, the circuit is depressurised — helium must be recovered rather than vented (both economic and radiological reasons).
 
 The **helium inventory system** consists of:
-- High-pressure storage cylinders (~30–50 MPa) for compressed helium storage during shutdown
+- High-pressure storage cylinders (~30 MPa) for compressed helium storage during shutdown
 - A recovery compressor to transfer helium from primary circuit to storage
 - Re-pressurisation path back to primary circuit at restart
 - Make-up supply for topping-up losses and providing fresh helium after purging
 
-This system is located above grade in the main building. The helium in long-term storage is cool and has had time for Ar-41 to decay — significantly reducing the dose rate to the inventory system.
+This system is located above grade in the main building. The helium in storage is cool and has had time for Ar-41 to decay before personnel access is required.
+
+## Graphite
+
+### Role
+
+Nuclear-grade graphite performs four functions simultaneously in this design:
+
+1. **Neutron moderator** — thermalises fast fission neutrons to the thermal energies where U-235 fissions efficiently
+2. **Structural material** — fuel blocks, reflector blocks, and core support are all graphite
+3. **Thermal flywheel** — the large graphite heat capacity slows temperature transients and gives passive safety margin
+4. **Primary tritium control point** — lithium impurity content governs tritium generation rate
+
+### Specification: Low-Lithium Nuclear Grade
+
+**Lithium content: < 0.1 ppm (by mass)**
+
+This is the primary tritium control measure. Tritium generation in the core is dominated by the Li-6(n,α)T reaction:
+
+```
+  Li-6  +  n  →  He-4  +  T        (thermal cross-section: 940 barns)
+```
+
+Li-6 is 7.6% of natural lithium. Reducing graphite lithium content from a typical ~0.5 ppm to < 0.1 ppm reduces tritium generation by a factor of ~5. Commercially available nuclear graphite grades can meet this specification:
+
+| Grade | Manufacturer | Li content | Notes |
+|---|---|---|---|
+| IG-110 | Toyo Tanso (Japan) | < 0.1 ppm | Used in HTTR and HTR-10; well-characterised |
+| IG-430 | Toyo Tanso | < 0.1 ppm | Higher strength variant |
+| NBG-18 | SGL Carbon (Germany) | ~0.1–0.2 ppm | Large-grain, good isotropy |
+
+IG-110 is the baseline candidate — it has the most extensive irradiation database from HTTR and HTR-10 operation, directly applicable to this design.
+
+### Other Impurity Concerns
+
+Beyond lithium, nuclear graphite purity matters for neutron economy and activation:
+
+- **Boron** (strong neutron absorber): < 0.5 ppm — high boron content would significantly parasitically absorb neutrons and reduce k-effective
+- **Nitrogen**: low N content reduces ¹⁴C production
+- **Sulphur, chlorine**: avoid — activate to produce problematic radioisotopes or attack graphite at high temperature
+
+Nuclear-grade graphite specifications address all of these. The lithium limit is the additional constraint beyond standard nuclear graphite requirements.
+
+### Irradiation Behaviour
+
+Graphite undergoes dimensional changes under fast neutron irradiation — initially shrinking, then expanding at higher fluence. The change depends on temperature and fast neutron dose. This must be accounted for in:
+
+- Fuel block and reflector block clearances (gaps must accommodate dimensional change without jamming)
+- Stress analysis of restrained components
+- Reflector replacement schedule (outer reflector blocks see lower flux and change slowly; inner reflector blocks see higher flux)
+
+Detailed irradiation behaviour data for IG-110 up to high fluence is available from HTTR operation — a key reason it is the preferred grade.
+
+### Wigner Energy
+
+Fast neutron irradiation displaces carbon atoms from their lattice positions, storing energy (Wigner energy). Below ~300 °C, this energy accumulates. Above ~300 °C, it anneals continuously. Since our graphite operates well above 300 °C throughout the core, **Wigner energy is not a concern during normal operation** — it continuously anneals. It is a relevant consideration only for the outer reflector blocks that run at lower temperatures, and for storage and disposal of removed graphite blocks.
 
 ## Other Materials (Stub)
 
 The following material topics remain to be developed:
 
-- **Graphite:** grade selection (IG-110, NBG-18, etc.), irradiation behaviour, oxidation limits
+- **Graphite:** irradiation behaviour detail, reflector replacement schedule (grade selection above)
 - **TRISO coatings:** SiC layer integrity at high burnup and temperature
 - **Reactor pressure vessel:** material selection and temperature limits for an air-cooled vessel (vessel outer surface is cooler than in water-cooled designs — this is an advantage)
 - **Control rods and reserve shutdown:** B₄C absorber, graphite sleeve, SiC composite spine

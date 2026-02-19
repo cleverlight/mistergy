@@ -20,7 +20,8 @@ Deliver **grid-connected AC electricity** from a self-contained, factory-built n
 | Fuel form | TRISO particles in graphite matrix | Coated-particle safety, high burnup tolerance |
 | Core geometry | Annular prismatic block | Passive safety, uniform outlet T, simple operation |
 | Power conversion | Direct Brayton — helium drives turbine | No IHX, no secondary loop |
-| Primary pressure | ~7 MPa | Balance of pumping power vs. heat capacity |
+| Primary pressure | 4 MPa | Thinner vessel walls, lower stored energy, reduced tritium permeation vs. 7 MPa |
+| Graphite specification | Low-lithium nuclear grade (Li < 0.1 ppm) | Reduces tritium generation at source |
 | Fuel enrichment | < 5% ²³⁵U (LEU) | Proliferation resistance; standard supply chain |
 | Target discharge burnup | 80–100 GWd/tHM | Maximise energy extracted per fuel load |
 | Refueling interval | 12 months | Annual site visit; spent fuel removed each visit |

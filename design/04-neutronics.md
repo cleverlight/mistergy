@@ -76,6 +76,40 @@ Compare:
 
 The dominant response to loss of cooling is temperature rise → Doppler feedback → reactor self-shuts down. The helium serves only as the heat transfer medium; the neutron physics is independent of whether it's present.
 
+### Contrast with Historic Graphite-Moderated Reactors
+
+This design shares graphite moderation with a class of historic reactors — most notoriously the Soviet **RBMK**, the reactor type involved in the 1986 Chernobyl accident. The comparison is instructive because the RBMK also had graphite as its moderator, yet had a strongly *positive* void coefficient. Understanding why reveals why this design architecture is fundamentally different.
+
+**Why the RBMK had a positive void coefficient:**
+
+In the RBMK, graphite was the moderator and water was the coolant. These were physically separate roles. At operating conditions the water was partially boiling, and crucially, the water acted as a *neutron absorber* — it captured neutrons that the graphite had already thermalised. When coolant voids formed (more steam, less liquid water):
+
+```
+More steam → less neutron absorption by water → more neutrons available for fission
+           → positive reactivity insertion → more heat → more steam → runaway
+```
+
+The graphite continued moderating throughout; losing the water only removed its absorbing function. The result was a positive feedback loop — the reactor accelerated when it should have shut down.
+
+**Why this cannot happen here:**
+
+Helium plays no absorbing or moderating role in this reactor. At 4 MPa and operating temperature, helium density is ~2.3 kg/m³; its thermal neutron absorption cross-section is ~0.007 barns. For comparison, water at PWR conditions has a cross-section of ~0.66 barns at roughly 300× higher density — roughly 28,000× more neutron absorption per unit volume.
+
+Losing helium — whether by depressurisation, loss of flow, or complete blowdown — removes nothing meaningful from the neutron balance. The graphite moderates in the same way with or without helium present.
+
+The actual response to loss of helium cooling is:
+
+```
+Coolant flow stops → fuel temperature rises → Doppler broadening of U-238 resonances
+                  → negative reactivity → fission rate falls → reactor self-shuts down
+```
+
+This is the inverse of the RBMK sequence. The shutdown mechanism is *thermally driven and instantaneous*; it requires no active systems and no operator action. It cannot be defeated by the progression of the accident, because the hotter the fuel gets, the harder the reactor shuts down.
+
+**The architectural lesson:**
+
+The RBMK's positive void coefficient was a consequence of using a neutron-absorbing coolant in a graphite-moderated core. Any reactor where the coolant doubles as a neutron absorber or moderator will have a coupled void/reactivity response — potentially positive if the geometry is unfavourable. This design eliminates the coupling entirely: helium is neutronically inert, so the neutron physics and the thermal-hydraulic accident progression are decoupled. The safety case rests solely on the Doppler coefficient and the graphite thermal mass, both of which are negative feedbacks.
+
 ### Xenon and Samarium Poisoning
 
 **Xe-135** (t½ = 9.2 hr) is produced both directly as a fission product (~0.3% yield) and from decay of I-135 (from Te-135 fission product chain, t½ = 6.6 hr). Xe-135 has an enormous thermal neutron absorption cross-section (~2.6 × 10⁶ barns). At full power, xenon builds to equilibrium in ~40–50 hours and represents a significant negative reactivity worth (~3–5% Δk/k for thermal reactors).

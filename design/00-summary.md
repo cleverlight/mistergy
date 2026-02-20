@@ -213,4 +213,15 @@ A **Very High Temperature Reactor (VHTR)** — helium-cooled, graphite-moderated
 
 ---
 
-*[README](../README.md) · [01 · Overview](01-overview.md) · [02 · Fuel](02-fuel.md) · [03 · Core](03-core.md) · [04 · Neutronics](04-neutronics.md) · [05 · Thermal-Hydraulics](05-thermal-hydraulics.md) · [06 · Materials](06-materials.md) · [07 · Safety](07-safety.md) · [08 · Power Conversion](08-power-conversion.md) · [09 · Hydrogen](09-hydrogen.md) · [10 · Fuel Cycle](10-fuel-cycle.md) · [11 · Siting](11-siting.md)*
+## Economics Headline
+
+| Metric | FOAK | NOAK | Mature Fleet |
+|---|---|---|---|
+| Capital cost ($/kW(e)) | ~5,900 | ~3,700 | ~3,000 |
+| LCOE ($/MWh) | ~83 | ~57 | ~44 |
+
+The economic case rests on eliminating the steam system, containment building, emergency core cooling, and cooling water infrastructure — roughly half the systems in a conventional nuclear plant. Full analysis in [§12 · Economics](12-economics.md).
+
+---
+
+*[README](../README.md) · [01 · Overview](01-overview.md) · [02 · Fuel](02-fuel.md) · [03 · Core](03-core.md) · [04 · Neutronics](04-neutronics.md) · [05 · Thermal-Hydraulics](05-thermal-hydraulics.md) · [06 · Materials](06-materials.md) · [07 · Safety](07-safety.md) · [08 · Power Conversion](08-power-conversion.md) · [09 · Hydrogen](09-hydrogen.md) · [10 · Fuel Cycle](10-fuel-cycle.md) · [11 · Siting](11-siting.md) · [12 · Economics](12-economics.md)*

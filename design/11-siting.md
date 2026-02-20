@@ -125,4 +125,4 @@ Units are otherwise independent — no shared safety systems, no shared primary 
 
 ---
 
-*Previous: [10 · Fuel Cycle](10-fuel-cycle.md)*
+*Previous: [10 · Fuel Cycle](10-fuel-cycle.md) · Next: [12 · Economics](12-economics.md)*

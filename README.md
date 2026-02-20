@@ -1,5 +1,7 @@
 # VHTR Design Project
 
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
 A theoretical **Very High Temperature Reactor (VHTR)** design developed iteratively as a living document.
 
 ## Concept
@@ -24,6 +26,7 @@ The same helium that cools the core drives the turbine directly — no intermedi
 | 09 | [Hydrogen Production](design/09-hydrogen.md) | Draft | HTE secondary capability via SOEC |
 | 10 | [Fuel Cycle](design/10-fuel-cycle.md) | Draft | LEU, burnup strategy, spent fuel composition, proliferation assessment |
 | 11 | [Siting](design/11-siting.md) | Draft | Below-grade installation, civil layout, refueling access, multi-unit sites |
+| 12 | [Economics](design/12-economics.md) | Draft | Capital cost, LCOE, comparison to alternatives, cost reduction pathway |
 | — | [References](references.md) | Draft | Prior programmes, standards, key papers |
 
 ## Key Decisions Made

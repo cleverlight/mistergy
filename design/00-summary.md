@@ -74,9 +74,9 @@ A **Very High Temperature Reactor (VHTR)** — helium-cooled, graphite-moderated
 | Parameter | Value |
 |---|---|
 | Enrichment | 4.8% ²³⁵U |
-| Particles per compact | ~11,000 |
-| U-235 per compact | ~0.22 g |
-| Total uranium per compact | ~4.6 g |
+| Particles per compact | ~5,000 |
+| U-235 per compact | ~0.14 g |
+| Total uranium per compact | ~3.0 g |
 
 ### Fuel Compact
 

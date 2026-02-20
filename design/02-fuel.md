@@ -47,9 +47,9 @@ TRISO particles are embedded in a **cylindrical graphite matrix compact**. The c
 | Matrix material | Nuclear-grade graphite | IG-110 equivalent; same low-Li spec as moderator |
 
 At 35% packing fraction with 500 μm kernels at 4.8% enrichment:
-- ~11,000 TRISO particles per compact
-- U-235 per compact: ~0.22 g
-- U (total) per compact: ~4.6 g
+- ~5,000 TRISO particles per compact
+- U-235 per compact: ~0.14 g
+- U (total) per compact: ~3.0 g
 
 ### Fissile Loading Estimate
 
@@ -103,7 +103,7 @@ Every surface of the TPMS structure is simultaneously:
 - A moderating surface (thermalising neutrons from the fuel)
 - A structural surface (carrying the block loads)
 
-Peak fuel temperature in Gen 2 is lower than Gen 1 for the same thermal power, because the maximum distance from any fuel particle to the nearest coolant surface is set by the TPMS unit cell size (~10–15 mm), not by the compact diameter (12.5 mm) plus the graphite land between compact and coolant channel.
+Peak fuel temperature in Gen 2 is lower than Gen 1 for the same thermal power, because the maximum distance from any fuel particle to the nearest coolant surface is set by the TPMS unit cell size (Gen 2 target: ~10–15 mm, smaller than the Gen 1 baseline of 15–20 mm), not by the compact diameter (12.5 mm) plus the graphite land between compact and coolant channel.
 
 **Manufacturing route:** Requires infiltration of a pre-formed TPMS graphite skeleton with TRISO-bearing graphite matrix slurry, followed by sintering. An alternative is to print the TPMS structure using a TRISO-doped graphite feedstock — a significant additive manufacturing challenge but physically feasible. This route awaits qualification of the fabrication process.
 

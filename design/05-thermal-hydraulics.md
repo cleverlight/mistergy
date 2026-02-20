@@ -172,7 +172,7 @@ At the axial and radial hot spot (core mid-plane, outer face of fuel annulus), w
 
 **Margin to TRISO failure limit: 1600 − 1,240 = 360 °C**
 
-This is a substantial margin. The design target is to keep peak fuel temperature below **1,200 °C** in normal operation — achievable with optimised TPMS geometry reducing the film and wall ΔT terms. The 360°C residual margin provides confidence for the accident analysis.
+This is a substantial margin. The first-principles estimate of ~1,240 °C is conservative — the design target is to push peak fuel temperature below **1,200 °C** through TPMS geometry optimisation that reduces the film and wall ΔT terms. Even at the pre-optimisation estimate, the 360°C residual margin provides confidence for the accident analysis.
 
 Note: these are first-principles estimates. The full conjugate CFD calculation will refine each term, particularly the TPMS film resistance which is geometry-dependent.
 

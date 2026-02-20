@@ -36,7 +36,7 @@ A conventional PWR's secondary side and safety systems account for roughly 30–
 
 ## Capital Cost Estimate
 
-The table below shows three configurations: the **FOAK unit** (850 °C metallic turbine, de-risked; see §08 phased strategy), the **NOAK unit** (950 °C ceramic blisk, proven design), and a 950 °C FOAK for comparison. All are based on the same thermal power — electrical output differs due to cycle efficiency.
+The table below shows three configurations: the **FOAK unit** (850 °C metallic turbine, de-risked; see §08 phased strategy), the **NOAK unit** (950 °C ceramic blisk, proven design), and a 950 °C FOAK for comparison. All are based on the same ~130 MW(th) thermal power (mid-range of the 100–150 MW(th) envelope; see §03) — electrical output differs due to cycle efficiency.
 
 ### Component Breakdown
 

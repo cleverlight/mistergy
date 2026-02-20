@@ -168,7 +168,7 @@ At a conservative power density of 4 MW(th)/m³:
 
 All three fit within the 20 m height envelope, with room for the cross-vessel connection to the turbomachine at the top. The turbomachine vessel (vertical, ~2.5 m dia, ~6 m tall) sits alongside within the 20 m footprint.
 
-**Working assumption: 100–150 MW(th)**, to be fixed once a full sizing study is done. At ~47% cycle efficiency this delivers **~50–70 MW(e)** net to the grid.
+**Working assumption: 100–150 MW(th)**, to be fixed once a full sizing study is done. At ~43–47% cycle efficiency (depending on turbine inlet temperature; see §08 phased strategy) this delivers **~43–70 MW(e)** net to the grid.
 
 ## Open Questions
 

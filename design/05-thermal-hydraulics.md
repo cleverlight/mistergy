@@ -35,6 +35,31 @@ Working backwards from the cycle parameters established in §08:
 
 This is set by the thermodynamic cycle, not by an independent choice. It feeds directly into the mass flow rate calculation.
 
+### FOAK Variant: 850 °C Core Outlet
+
+The FOAK units operate with a metallic turbine at 850 °C (see §08 phased strategy). The nuclear island is identical; only the turbomachine and recuperator material differ. The temperature chain recalculates as:
+
+| Point | Location | 950 °C Target | 850 °C FOAK |
+|---|---|---|---|
+| 1 | Core outlet / turbine inlet | 950 °C | 850 °C |
+| 2 | Turbine outlet / recuperator hot inlet | ~600 °C | ~540 °C |
+| 3 | Recuperator hot outlet / precooler inlet | ~215 °C | ~210 °C |
+| 4 | Precooler outlet / compressor inlet | 35 °C | 35 °C |
+| 5 | Compressor outlet / recuperator cold inlet | ~195 °C | ~190 °C |
+| 6 | Recuperator cold outlet / core inlet | ~580 °C | ~520 °C |
+| | **Core ΔT** | **370 °C** | **330 °C** |
+| | **Net cycle efficiency** | **~47%** | **~43%** |
+
+At the lower ΔT, mass flow rates are slightly higher for the same thermal power:
+
+| Thermal power | 950 °C mass flow | 850 °C mass flow |
+|---|---|---|
+| 100 MW(th) | 52 kg/s | 58 kg/s |
+| 125 MW(th) | 65 kg/s | 73 kg/s |
+| 150 MW(th) | 78 kg/s | 87 kg/s |
+
+The higher mass flow at 850 °C increases Reynolds number and heat transfer coefficient, partially offsetting the narrower temperature margin. Peak fuel temperature at 850 °C outlet is ~1,140 °C, giving a margin of ~460 °C to the TRISO 1,600 °C limit — substantially more comfortable than the 360 °C margin at 950 °C.
+
 ### Mass Flow Rate
 
 For thermal power Q and core ΔT:

@@ -129,7 +129,7 @@ A full Monte Carlo calculation (OpenMC or Serpent 2) is required to confirm k-ef
 - TRISO particle geometry: 500 μm kernel, standard coating stack (§02)
 - Packing fraction: 35% (starting point; may be adjusted based on C/U result)
 - Block geometry: hexagonal prism, compact and TPMS coolant arrangement (§03)
-- Helium coolant at 4 MPa, 490–950 °C temperature range
+- Helium coolant at 4 MPa, 520–950 °C temperature range
 - Graphite: IG-110 properties (density, scattering cross-sections)
 - Annular core geometry with inner and outer reflectors (§03)
 

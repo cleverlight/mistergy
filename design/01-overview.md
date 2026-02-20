@@ -13,9 +13,9 @@ Deliver **grid-connected AC electricity** from a self-contained, factory-built n
 | Primary output | AC electricity to grid | Core mission |
 | Physical envelope | 20 m × 20 m × 20 m | Factory-fabricable, shippable as a unit |
 | Thermal power | ~100–150 MW(th) | Sized to fit envelope; see §03 |
-| Net electrical output | ~50–70 MW(e) | ~47% cycle efficiency × thermal power |
-| Core outlet temperature | ≥ 950 °C | Enables ~47–50% Brayton efficiency |
-| Core inlet temperature | ~580 °C | Recuperator cold outlet; from §05 Brayton cycle analysis |
+| Net electrical output | ~43–70 MW(e) | ~43% (FOAK 850 °C) to ~47% (target 950 °C) × thermal power |
+| Core outlet temperature | 850 °C (FOAK) / 950 °C (target) | FOAK: metallic turbine, de-risked; target: ceramic blisk, ~47% Brayton efficiency |
+| Core inlet temperature | ~520 °C (FOAK) / ~580 °C (target) | Set by recuperator effectiveness and cycle temperatures |
 | Coolant | Helium | Chemically inert, single-phase, direct Brayton working fluid |
 | Moderator | Nuclear-grade graphite | Excellent high-T properties, neutron economy |
 | Fuel form | TRISO particles in graphite matrix | Coated-particle safety, high burnup tolerance |
@@ -63,7 +63,7 @@ The below-grade depth is not wasted envelope — it contributes chimney height t
 - [x] **Core geometry: annular prismatic block**
 - [x] **Power conversion: direct Brayton cycle** — helium from core drives turbine directly; no IHX
 - [x] **Fuel enrichment: LEU (< 5% ²³⁵U)** — proliferation resistance non-negotiable
-- [x] **Turbine rotor: full ceramic blisk** — SiC/SiC CMC, additive manufacturing target; blades and disk co-manufactured, no attachment joints
+- [x] **Turbine rotor: phased strategy** — FOAK: Ni superalloy turbine at 850 °C (proven, off-the-shelf); target: SiC/SiC CMC ceramic blisk at 950 °C (additive manufacturing)
 - [x] **Physical envelope: 20 m × 20 m × 20 m**
 - [ ] Thermal power rating: optimise for engineering margins within envelope — scaling is a later concern
 - [x] **Hydrogen: HTE (SOEC) as electrical secondary** — reactor unchanged; electrolyzer modules consume generator output; S–I rejected (requires IHX, contradicts simplicity)

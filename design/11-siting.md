@@ -27,6 +27,23 @@ The cavity floor sits ~12 m below grade. The tallest above-grade element (RCCS e
 
 **Flood resilience.** With appropriate civil design (drainage, waterproofing, sealed penetrations), the below-grade cavity is isolated from surface flooding. The reactor does not need elevated levees or berms.
 
+### Cavity Construction: Modular Pre-Cast Segments
+
+The below-grade cavity is constructed from **factory-produced pre-cast concrete ring segments**, borrowed from the tunnelling industry. The cavity geometry is identical for every unit — exactly the condition where pre-cast excels.
+
+**Construction sequence:**
+
+1. Excavation to ~12 m depth, ~20 × 20 m footprint
+2. Pour base slab with embedded services and drainage
+3. Lower pre-cast ring segments by crane; bolt and grout together
+4. Weld steel cavity liner in situ (inner surface of pre-cast rings)
+5. Backfill and compact around the external cavity wall
+6. Install RCCS air ducts in the annular gap between liner and vessel
+
+Each ring segment is factory-cast to tight tolerances, with embedded rebar, lifting points, and alignment keys. A complete cavity can be assembled in **2–3 weeks** on site — compared to 2–3 months for conventional in-situ concrete construction.
+
+**Cost impact:** modular cavity construction reduces the below-grade civil cost by ~$5–7M per unit (see §12). The saving increases with fleet size as the pre-cast mould tooling is amortised across more units.
+
 ## Above-Grade Surface Expression
 
 The above-grade building is compact — roughly 15 m × 12 m in plan, 8 m tall. It houses:

@@ -14,27 +14,27 @@ A **Very High Temperature Reactor (VHTR)** — helium-cooled, graphite-moderated
 
 ### Power and Efficiency
 
-| Parameter | Value | Source |
-|---|---|---|
-| Thermal power | ~100–150 MW(th) | [§03](03-core.md) |
-| Net electrical output | ~50–70 MW(e) | [§08](08-power-conversion.md) |
-| Cycle efficiency (Brayton) | ~47% | [§08](08-power-conversion.md) |
-| Hydrogen output (full H₂ mode) | ~1,300 kg/day | [§09](09-hydrogen.md) |
+| Parameter | FOAK (850 °C) | Target (950 °C) | Source |
+|---|---|---|---|
+| Thermal power | ~100–150 MW(th) | ~100–150 MW(th) | [§03](03-core.md) |
+| Net electrical output | ~43–65 MW(e) | ~47–70 MW(e) | [§08](08-power-conversion.md) |
+| Cycle efficiency (Brayton) | ~43% | ~47% | [§08](08-power-conversion.md) |
+| Hydrogen output (full H₂ mode) | ~1,100 kg/day | ~1,300 kg/day | [§09](09-hydrogen.md) |
 
 ### Temperatures
 
-| Location | Temperature | Source |
-|---|---|---|
-| Compressor inlet (precooler outlet) | 35 °C | [§05](05-thermal-hydraulics.md) |
-| Compressor outlet (recuperator cold inlet) | ~195 °C | [§05](05-thermal-hydraulics.md) |
-| Core inlet (recuperator cold outlet) | ~580 °C | [§05](05-thermal-hydraulics.md) |
-| Core outlet / turbine inlet | 950 °C | [§01](01-overview.md) |
-| Turbine outlet (recuperator hot inlet) | ~600 °C | [§05](05-thermal-hydraulics.md) |
-| Recuperator hot outlet (precooler inlet) | ~215 °C | [§05](05-thermal-hydraulics.md) |
-| **Core temperature rise (ΔT)** | **370 °C** | [§05](05-thermal-hydraulics.md) |
-| Peak fuel temperature (normal operation) | ~1,240 °C | [§05](05-thermal-hydraulics.md) |
-| TRISO failure limit | 1,600 °C | [§02](02-fuel.md) |
-| Temperature margin (normal operation) | 360 °C | [§05](05-thermal-hydraulics.md) |
+| Location | FOAK (850 °C) | Target (950 °C) | Source |
+|---|---|---|---|
+| Compressor inlet (precooler outlet) | 35 °C | 35 °C | [§05](05-thermal-hydraulics.md) |
+| Compressor outlet (recuperator cold inlet) | ~190 °C | ~195 °C | [§05](05-thermal-hydraulics.md) |
+| Core inlet (recuperator cold outlet) | ~520 °C | ~580 °C | [§05](05-thermal-hydraulics.md) |
+| Core outlet / turbine inlet | 850 °C | 950 °C | [§01](01-overview.md) |
+| Turbine outlet (recuperator hot inlet) | ~540 °C | ~600 °C | [§05](05-thermal-hydraulics.md) |
+| Recuperator hot outlet (precooler inlet) | ~210 °C | ~215 °C | [§05](05-thermal-hydraulics.md) |
+| **Core temperature rise (ΔT)** | **330 °C** | **370 °C** | [§05](05-thermal-hydraulics.md) |
+| Peak fuel temperature (normal operation) | ~1,140 °C | ~1,240 °C | [§05](05-thermal-hydraulics.md) |
+| TRISO failure limit | 1,600 °C | 1,600 °C | [§02](02-fuel.md) |
+| Temperature margin (normal operation) | 460 °C | 360 °C | [§05](05-thermal-hydraulics.md) |
 
 ### Flow Circuit
 
@@ -42,8 +42,8 @@ A **Very High Temperature Reactor (VHTR)** — helium-cooled, graphite-moderated
 |---|---|---|
 | Primary pressure | 4 MPa | [§01](01-overview.md) |
 | Pressure ratio | 2.5 | [§08](08-power-conversion.md) |
-| Mass flow rate (100 MW(th)) | ~52 kg/s | [§05](05-thermal-hydraulics.md) |
-| Mass flow rate (150 MW(th)) | ~78 kg/s | [§05](05-thermal-hydraulics.md) |
+| Mass flow rate (100 MW(th)) | ~52 kg/s (target) / ~58 kg/s (FOAK) | [§05](05-thermal-hydraulics.md) |
+| Mass flow rate (150 MW(th)) | ~78 kg/s (target) / ~87 kg/s (FOAK) | [§05](05-thermal-hydraulics.md) |
 | Core pressure drop (target) | < 0.15 MPa | [§05](05-thermal-hydraulics.md) |
 | Total circuit pressure drop | ~0.30 MPa | [§05](05-thermal-hydraulics.md) |
 | Helium density at core inlet (4 MPa, 580 °C) | ~2.3 kg/m³ | [§05](05-thermal-hydraulics.md) |
@@ -173,10 +173,11 @@ A **Very High Temperature Reactor (VHTR)** — helium-cooled, graphite-moderated
 |---|---|---|
 | Moderator / reflector | IG-110 nuclear graphite, Li < 0.1 ppm | Low neutron absorption; low tritium generation |
 | TRISO SiC layer | β-SiC, CVD deposited, 35 μm | Primary fission product barrier; 1600 °C rated |
-| Turbine rotor | Full ceramic blisk, SiC/SiC CMC | No blade cooling required at 950 °C inlet |
-| Turbine blisk manufacture | Additive (3D-printed SiC near-term target) | No attachment joints; co-manufactured |
+| Turbine rotor (FOAK) | Ni superalloy (IN-738 / CM-247) | Proven at 850 °C; off-the-shelf supply chain |
+| Turbine rotor (target) | Full ceramic blisk, SiC/SiC CMC | No blade cooling required at 950 °C inlet; additive manufacture |
 | Vessel | High-temperature ferritic / austenitic steel | Standard nuclear vessel code |
-| Recuperator | Printed circuit heat exchanger (PCHE), Alloy 617 or equivalent | Compact, high-effectiveness |
+| Recuperator (FOAK) | PCHE, 316H stainless steel | Hot side ~540 °C; lower cost |
+| Recuperator (target) | PCHE, Alloy 617 or equivalent | Hot side ~600 °C; compact, high-effectiveness |
 
 ---
 
@@ -203,11 +204,11 @@ A **Very High Temperature Reactor (VHTR)** — helium-cooled, graphite-moderated
 | Coolant channel geometry | TPMS gyroid | 20–40% higher Nu; recovers 4 MPa pressure drop penalty |
 | Fuel form | TRISO in graphite | 1600 °C rated; robust waste form |
 | Fuel enrichment | LEU < 5% U-235 | Non-proliferation; standard supply chain |
-| Turbine rotor | Full ceramic blisk | No blade cooling; SiC density advantage; no root joints |
+| Turbine rotor | Phased: Ni superalloy FOAK / ceramic blisk target | De-risk with proven 850 °C turbine; upgrade to 950 °C CMC blisk |
 | Fuel management | 6–10 batch, 12-month cycle | High burnup with annual site visits |
 | Precooler | Air-cooled | No water dependency; works anywhere |
 | RCCS | Air-cooled passive | No water; below-grade chimney; walk-away safe |
-| Installation | Below-grade | RCCS chimney height; seismic; security; shielding |
+| Installation | Below-grade, modular pre-cast cavity | RCCS chimney height; seismic; security; factory segments |
 | Hydrogen | HTE/SOEC electrical secondary | Nuclear island unchanged; S-I rejected (requires IHX) |
 | Graphite specification | Li < 0.1 ppm | Tritium source term reduction ~5× |
 
@@ -215,12 +216,13 @@ A **Very High Temperature Reactor (VHTR)** — helium-cooled, graphite-moderated
 
 ## Economics Headline
 
-| Metric | FOAK | NOAK | Mature Fleet |
-|---|---|---|---|
-| Capital cost ($/kW(e)) | ~5,900 | ~3,700 | ~3,000 |
-| LCOE ($/MWh) | ~83 | ~57 | ~44 |
+| Metric | FOAK 850 °C | FOAK 950 °C | NOAK | Mature Fleet |
+|---|---|---|---|---|
+| Capital cost | ~$326M | ~$349M | ~$218M | ~$180M |
+| $/kW(e) | ~5,900 | ~5,800 | ~3,600 | ~3,000 |
+| LCOE ($/MWh) | ~88 | ~85 | ~56 | ~42 |
 
-The economic case rests on eliminating the steam system, containment building, emergency core cooling, and cooling water infrastructure — roughly half the systems in a conventional nuclear plant. Full analysis in [§12 · Economics](12-economics.md).
+The 850 °C FOAK has similar $/kW(e) to the 950 °C FOAK despite lower output — the turbine and recuperator savings roughly offset the output penalty. The real advantage is risk: the metallic turbine is off-the-shelf, and total capital is $23M less. Full analysis in [§12 · Economics](12-economics.md).
 
 ---
 

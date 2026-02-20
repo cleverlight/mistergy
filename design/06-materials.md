@@ -43,7 +43,7 @@ At 950 °C core outlet, even trace moisture will attack graphite. The purificati
 A continuous **slip-stream purification loop** processes ~1–5% of the main helium flow at all times. It operates at reduced temperature and pressure, treating the helium before returning it to the primary circuit.
 
 ```
-  PRIMARY CIRCUIT (7 MPa, up to 950 °C)
+  PRIMARY CIRCUIT (4 MPa, up to 950 °C)
          │
          ├──── 1–5% slip-stream ────►  PURIFICATION TRAIN  ────► return
          │

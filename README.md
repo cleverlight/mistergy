@@ -22,7 +22,7 @@ The same helium that cools the core drives the turbine directly — no intermedi
 | 05 | [Thermal-Hydraulics](design/05-thermal-hydraulics.md) | Draft | Flow circuit, TPMS heat transfer, peak fuel temp, DLOFC analysis |
 | 06 | [Materials](design/06-materials.md) | Draft | Helium chemistry, purification system, impurity limits, material stubs |
 | 07 | [Safety](design/07-safety.md) | Draft | Walk-away safety, air-cooled RCCS, DLOFC, confinement |
-| 08 | [Power Conversion](design/08-power-conversion.md) | Draft | Direct Brayton cycle, full ceramic blisk, precooler |
+| 08 | [Power Conversion](design/08-power-conversion.md) | Draft | Direct Brayton cycle, phased turbine strategy, precooler |
 | 09 | [Hydrogen Production](design/09-hydrogen.md) | Draft | HTE secondary capability via SOEC |
 | 10 | [Fuel Cycle](design/10-fuel-cycle.md) | Draft | LEU, burnup strategy, spent fuel composition, proliferation assessment |
 | 11 | [Siting](design/11-siting.md) | Draft | Below-grade installation, civil layout, refueling access, multi-unit sites |
@@ -37,7 +37,7 @@ The same helium that cools the core drives the turbine directly — no intermedi
 | Physical envelope | 20 m × 20 m × 20 m |
 | Coolant | Helium — direct Brayton (no IHX) |
 | Core geometry | Annular prismatic block |
-| Turbine rotor | Full ceramic blisk (SiC/SiC CMC, additive manufacturing) |
+| Turbine rotor | Phased: Ni superalloy at 850 °C (FOAK) → SiC/SiC CMC ceramic blisk at 950 °C (target) |
 | Fuel enrichment | LEU < 5% ²³⁵U |
 | Fuel management | 6–10 batch, 12-month cycle, target 80–100 GWd/tHM |
 | Precooler | Air-cooled baseline; hot-climate bolt-on module |

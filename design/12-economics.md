@@ -6,6 +6,16 @@ The economic case rests on a structural argument: this design **eliminates rough
 
 The goal is firm, baseload, carbon-free electricity at a cost competitive with natural gas and cheaper than firmed renewables — a bridge until fusion reaches commercial scale.
 
+### Terminology
+
+This section uses standard power-industry cost terminology:
+
+- **FOAK** — First-Of-A-Kind: the first unit built, carrying full development, licensing, and engineering costs.
+- **NOAK** — Nth-Of-A-Kind: a unit built after the design is proven and the supply chain is established (roughly the 10th–20th unit). Engineering and licensing costs are amortised across the fleet.
+- **LCOE** — Levelized Cost of Electricity: the all-in cost per MWh over the plant's lifetime, including capital recovery, fuel, operations, and decommissioning. The standard metric for comparing generation technologies.
+- **WACC** — Weighted Average Cost of Capital: the blended financing rate (debt + equity) used to discount future cash flows.
+- **BOP** — Balance of Plant: all systems outside the nuclear island and power conversion — instrumentation, electrical distribution, site services.
+
 ## What This Design Eliminates
 
 | Eliminated System | Present in Conventional PWR | Impact |

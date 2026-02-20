@@ -9,7 +9,7 @@
 | AVR | Germany | Pebble bed | 46 MW(th) | 950 °C | Operated 1967–1988; first pebble-bed HTGR |
 | THTR-300 | Germany | Pebble bed | 750 MW(th) | 750 °C | Commercial scale, operated 1985–1989 |
 | Peach Bottom | USA | Prismatic | 115 MW(th) | 700 °C | First US HTGR, 1967–1974 |
-| Fort St. Vrain | USA | Prismatic | 842 MW(th) | 775 °C | 1979–1989; helium Brayton cycle demonstrated |
+| Fort St. Vrain | USA | Prismatic | 842 MW(th) | 775 °C | 1979–1989; helium-cooled, steam Rankine cycle |
 
 ## Key Design Studies
 

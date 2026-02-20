@@ -59,7 +59,7 @@ A continuous **slip-stream purification loop** processes ~1–5% of the main hel
 5. **Cryogenic charcoal trap (~−180 °C)** — adsorbs Ar, Kr, Xe, N₂; this is where Ar-41 and fission gases are captured
 6. **Return to circuit** — purified helium at circuit pressure
 
-The cryogenic trap is periodically regenerated (warmed, impurities vented to a hold-up tank for decay). Ar-41 decays to stable Ca-41 within ~24 hours of being held.
+The cryogenic trap is periodically regenerated (warmed, impurities vented to a hold-up tank for decay). Ar-41 decays to stable K-41 (potassium) within ~24 hours of being held.
 
 **Tritium management** requires a layered approach because tritium passes through standard molecular sieves and ambient charcoal traps without being captured:
 
@@ -187,7 +187,7 @@ The following material topics remain to be developed:
 - **TRISO coatings:** SiC layer integrity at high burnup and temperature
 - **Reactor pressure vessel:** material selection and temperature limits for an air-cooled vessel (vessel outer surface is cooler than in water-cooled designs — this is an advantage)
 - **Control rods and reserve shutdown:** B₄C absorber, graphite sleeve, SiC composite spine
-- **Recuperator (PCHE):** material selection for high-pressure He-He service at 500–800 °C
+- **Recuperator (PCHE):** material selection for high-pressure He-He service at ~195–600 °C
 
 ---
 

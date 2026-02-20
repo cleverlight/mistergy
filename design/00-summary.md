@@ -19,7 +19,7 @@ A **Very High Temperature Reactor (VHTR)** — helium-cooled, graphite-moderated
 | Thermal power | ~100–150 MW(th) | ~100–150 MW(th) | [§03](03-core.md) |
 | Net electrical output | ~43–65 MW(e) | ~47–70 MW(e) | [§08](08-power-conversion.md) |
 | Cycle efficiency (Brayton) | ~43% | ~47% | [§08](08-power-conversion.md) |
-| Hydrogen output (full H₂ mode) | ~1,100 kg/day | ~1,300 kg/day | [§09](09-hydrogen.md) |
+| Hydrogen output (full H₂ mode) | ~35,000 kg/day | ~38,000 kg/day | [§09](09-hydrogen.md) |
 
 ### Temperatures
 
@@ -121,7 +121,7 @@ A **Very High Temperature Reactor (VHTR)** — helium-cooled, graphite-moderated
 | Fuel annulus thickness | 1.0 m | [§03](03-core.md) |
 | Outer fuel radius | 1.8 m | [§03](03-core.md) |
 | Outer reflector thickness | 0.5 m | [§03](03-core.md) |
-| Core radius (to vessel) | ~2.8 m | [§03](03-core.md) |
+| Core outer radius (incl. reflectors) | 2.3 m | [§03](03-core.md) |
 | Reactor vessel OD | ~5.5 m | [§03](03-core.md) |
 | Fuel annulus cross-section | ~8.2 m² | [§03](03-core.md) |
 | Active height (100 MW(th)) | ~3.0 m | [§03](03-core.md) |

@@ -122,7 +122,7 @@ The RBMK's positive void coefficient was a consequence of using a neutron-absorb
 
 **Target: k-effective ≥ 1.05 at beginning-of-life (BOL), fresh core**, providing sufficient reactivity to:
 - Overcome xenon equilibrium poisoning (~4% Δk/k)
-- Accommodate burnup reactivity swing over the cycle (~3–5% Δk/k for 3-batch management)
+- Accommodate burnup reactivity swing over the cycle (~3–6% Δk/k; see batch analysis below)
 - Maintain shutdown margin with all rods inserted and maximum stuck rod
 
 A full Monte Carlo calculation (OpenMC or Serpent 2) is required to confirm k-effective for our specific geometry. The calculation inputs are now fully defined:
@@ -141,10 +141,10 @@ A full Monte Carlo calculation (OpenMC or Serpent 2) is required to confirm k-ef
 
 As fuel burns, U-235 is depleted and k-effective decreases. Partially compensated by Pu-239 buildup from U-238 capture — Pu-239 is also fissile and contributes to the chain reaction.
 
-In a 3-batch core:
+In a multi-batch core (the analysis below concludes 6–10 batches are required):
 - Fresh batch: highest reactivity
-- Middle batch: moderate reactivity
-- Discharged batch: lowest reactivity
+- Middle batches: moderate reactivity
+- Oldest batch (approaching discharge): lowest reactivity
 - Net core reactivity relatively flat over the cycle compared to single-batch loading
 
 **Estimated BOC/EOC reactivity swing:** 3–6% Δk/k — manageable with control rods and/or burnable poison if needed.

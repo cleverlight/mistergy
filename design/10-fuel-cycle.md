@@ -42,7 +42,7 @@ TRISO fuel has demonstrated structural integrity at burnups well beyond conventi
 | HTR-10 (China) | ~80 GWd/tHM |
 | NRC-qualified US TRISO (BWXT) | ~170 GWd/tHM (irradiation test) |
 
-**Target discharge burnup: 100–120 GWd/tHM.** This is achievable with LEU at < 5% enrichment and proven TRISO coating performance. It represents roughly 2–3× the discharge burnup of a typical LWR fuel assembly.
+**Target discharge burnup: 80–100 GWd/tHM.** This is achievable with LEU at < 5% enrichment and proven TRISO coating performance. It represents roughly 2× the discharge burnup of a typical LWR fuel assembly.
 
 ### Multi-Batch Fuel Management
 
@@ -61,16 +61,16 @@ Multi-batch management reshuffles blocks at each outage:
 At each outage, the highest-burnup blocks (Zone C) are discharged. Others shift inward or outward. Fresh blocks fill the vacated positions. This:
 
 - Flattens the radial and axial power profile across the cycle
-- Allows every block to approach the 100–120 GWd/tHM target before discharge
+- Allows every block to approach the 80–100 GWd/tHM target before discharge
 - Reduces peak-to-average power ratio → lower peak fuel temperature → more margin
 
-A 3-batch scheme is the baseline. 4-batch would push average burnup higher but increases fuel management complexity at outages.
+A 6–10 batch scheme is the baseline (see §04 neutronics). More batches push average discharge burnup closer to the target and reduce per-batch reactivity swing, at the cost of more fuel management complexity at outages.
 
 ### Cycle Length
 
 **Refueling interval: 12 months** — fixed by the annual site visit model. Each visit inserts a fresh batch and removes the discharged batch. The reactor does not accumulate spent fuel on site beyond the current discharge batch.
 
-With a 12-month interval and 3-batch management, each fuel batch spends 3 years in the core before discharge. The exact discharge burnup achieved depends on the fissile loading and power density — this requires a full neutronics calculation (§04) to confirm. Preliminary estimate: **80–100 GWd/tHM** is achievable at reasonable power density with LEU at ~4.5% enrichment.
+With a 12-month interval and 6–10 batch management, each fuel batch spends 6–10 years in the core before discharge. The exact discharge burnup achieved depends on the fissile loading and power density — this requires a full neutronics calculation (§04) to confirm. Preliminary estimate: **80–100 GWd/tHM** is achievable at reasonable power density with LEU at 4.8% enrichment.
 
 Refueling outages double as scheduled turbomachine maintenance windows. The outage is productive, not dead time.
 
@@ -158,8 +158,8 @@ The kernel and coating deposition process is specialized but not classified or p
 
 ## Open Questions
 
-- [ ] Confirm discharge burnup via neutronics calculation (§04): is 80–100 GWd/tHM achievable with LEU at ~4.5% and 12-month cycles?
-- [ ] Number of batches: 3-batch baseline, or increase to push burnup higher?
+- [ ] Confirm discharge burnup via neutronics calculation (§04): is 80–100 GWd/tHM achievable with LEU at 4.8% and 12-month cycles?
+- [ ] Number of batches within the 6–10 range: optimise for burnup vs. fuel management complexity
 - [ ] Spent fuel transport packaging: what container standard applies to TRISO spent fuel blocks for annual removal?
 - [ ] Minor actinide inventory: quantify Am/Cm/Np per discharge batch for waste classification purposes
 

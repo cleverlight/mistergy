@@ -111,9 +111,9 @@ Peak fuel temperature in Gen 2 is lower than Gen 1 for the same thermal power, b
 
 ## Fission Product Retention
 
-Under normal operating conditions (peak fuel temperature < 1200 °C — well below the 1600 °C limit), TRISO coatings retain essentially all fission products within the particle. The SiC layer is the primary barrier for metallic fission products (Cs, Sr, Ag); the PyC layers contain fission gases.
+Under normal operating conditions (peak fuel temperature ~1,140–1,240 °C depending on core outlet temperature — well below the 1,600 °C limit), TRISO coatings retain essentially all fission products within the particle. The SiC layer is the primary barrier for metallic fission products (Cs, Sr, Ag); the PyC layers contain fission gases.
 
-The design margin — 1200 °C peak fuel temperature target vs. 1600 °C failure threshold — gives 400 °C of headroom. This is the margin that justifies the walk-away safety case: even in a depressurised loss-of-forced-cooling accident, the graphite thermal mass and RCCS ensure peak temperatures never approach the failure threshold (§07).
+The design margin — ~1,240 °C peak fuel temperature (at 950 °C outlet) vs. 1,600 °C failure threshold — gives 360 °C of headroom; at the FOAK 850 °C outlet the margin is 460 °C. This is the margin that justifies the walk-away safety case: even in a depressurised loss-of-forced-cooling accident, the graphite thermal mass and RCCS ensure peak temperatures never approach the failure threshold (§07).
 
 ## Fabrication
 

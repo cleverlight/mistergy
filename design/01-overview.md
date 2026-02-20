@@ -80,8 +80,8 @@ HTTR (Japan, prismatic, 950 °C demonstrated)
 GT-MHR (General Atomics)
   └── Annular prismatic core; direct Brayton cycle; side-by-side vessel layout
 
-Xe-100 (X-energy)
-  └── Modern SMR safety case; regulatory approach for prismatic HTGR
+Xe-100 (X-energy, pebble-bed)
+  └── Modern SMR safety case; NRC functional containment licensing; TRISO supply chain
 
 NGNP (US DOE)
   └── High-burnup TRISO performance data; multi-batch fuel management studies

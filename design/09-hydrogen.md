@@ -32,15 +32,15 @@ The nuclear island requires **no modification** for hydrogen mode. The integrati
 
 ### Waste Heat Recovery (Optional Enhancement)
 
-The Brayton cycle precooler rejects heat to the environment at ~150–200 °C. In electricity-only mode this heat is wasted. In hydrogen mode, this heat can preheat the electrolyzer feedwater — reducing the electrical energy needed to raise steam to SOEC operating temperature.
+The Brayton cycle precooler rejects heat to the environment — helium enters the precooler at ~210–215 °C (see §05 temperature chain). In electricity-only mode this heat is wasted. In hydrogen mode, this heat can preheat the electrolyzer feedwater — reducing the electrical energy needed to raise steam to SOEC operating temperature.
 
 This requires only a water-side heat exchanger between the precooler coolant loop and the electrolyzer feedwater supply — conventional technology, completely outside the high-pressure helium circuit. No changes to the nuclear island or Brayton cycle.
 
 ```
-  PRECOOLER  ──(He, ~150°C)──►  [water-side HX]  ──►  preheated feedwater to SOEC
+  PRECOOLER  ──(He, ~210°C)──►  [water-side HX]  ──►  preheated feedwater to SOEC
 ```
 
-Estimated benefit: preheating feedwater from ambient to ~100–150 °C recovers heat that would otherwise be rejected, modestly improving overall hydrogen production efficiency. The gain is incremental but costs essentially nothing in design complexity.
+Estimated benefit: preheating feedwater from ambient to ~150–180 °C recovers heat that would otherwise be rejected, modestly improving overall hydrogen production efficiency. The gain is incremental but costs essentially nothing in design complexity.
 
 ## Operating Modes
 
@@ -54,10 +54,11 @@ SOEC stacks are inherently modular — electrolyzer capacity is sized independen
 
 ## Hydrogen Output Estimate
 
-At 50 MW(e) net generation and 38 kWh/kg H₂ (SOEC with preheated feedwater):
+At ~55–60 MW(e) net generation (depending on variant; see §08) and ~38 kWh/kg H₂ (SOEC with preheated feedwater):
 
-- Full hydrogen mode: **~1,300 kg H₂/day** (~30 MW(e) equivalent chemical energy)
-- This is approximately the output of a mid-scale steam methane reformer — but carbon-free
+- Full hydrogen mode (FOAK 850 °C, ~55 MWe): **~35,000 kg H₂/day** (~48 MW(th) equivalent chemical energy, LHV)
+- Full hydrogen mode (target 950 °C, ~60 MWe): **~38,000 kg H₂/day** (~53 MW(th) equivalent chemical energy, LHV)
+- This is comparable to a large steam methane reformer — but carbon-free
 
 ## Technology Readiness
 

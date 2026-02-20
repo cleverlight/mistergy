@@ -2,7 +2,7 @@
 
 ## Design Thesis
 
-The economic case rests on a structural argument: this design **eliminates roughly half the systems** that drive conventional nuclear plant costs. The steam system, containment building, emergency core cooling, and cooling water infrastructure are not merely simplified — they do not exist. The question is whether the novel components (ceramic blisk, TPMS fuel blocks, TRISO at scale) can mature fast enough to realise the savings.
+The economic case rests on a structural argument: this design **eliminates roughly half the systems** that drive conventional nuclear plant costs. The steam system, pressure-rated containment (replaced by a simpler confinement building — see §07), emergency core cooling, and cooling water infrastructure are not merely simplified — they do not exist in their conventional form. The question is whether the novel components (ceramic blisk, TPMS fuel blocks, TRISO at scale) can mature fast enough to realise the savings.
 
 The goal is firm, baseload, carbon-free electricity at a cost competitive with natural gas and cheaper than firmed renewables — a bridge until fusion reaches commercial scale.
 

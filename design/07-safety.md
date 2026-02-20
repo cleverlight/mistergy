@@ -6,7 +6,15 @@ Safety is achieved by multiple independent barriers, each capable of limiting co
 
 ![Defence in depth — five independent barriers](../diagrams/defence-in-depth.svg)
 
-No single barrier failure leads to a public radiological consequence. The design is tolerant of any one barrier failing.
+The five barriers, from innermost to outermost:
+
+1. **UO₂ fuel kernel** — retains most fission products within the ceramic matrix
+2. **TRISO coatings** — the SiC layer is the primary pressure vessel for fission products, intact to 1,600 °C
+3. **Graphite fuel element matrix** — absorbs and delays diffusion of any fission products that escape the coatings
+4. **Helium pressure boundary** — the reactor vessel and primary piping contain the coolant and any circulating activity
+5. **Confinement building** — low-leakage structure that delays and filters any release to the environment
+
+This is the NRC functional containment model (SECY-18-0096): the first three barriers — all within the fuel itself — retain >99.99% of fission products under normal and accident conditions. No single barrier failure leads to a public radiological consequence. The design is tolerant of any one barrier failing.
 
 ## Walk-Away Safety Criterion
 

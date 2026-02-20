@@ -52,7 +52,7 @@ Deliver **grid-connected AC electricity** from a self-contained, factory-built n
 
 ## Physical Layout Concept
 
-The 20 m × 20 m × 20 m envelope spans **below and above grade**. Approximately 10–12 m is below grade (reactor vessel, lower turbomachine, cross-vessel); 8–10 m is above grade (upper turbomachine, building, RCCS exhaust stack). The full 20 m vertical dimension acts as the RCCS chimney height.
+The 20 m × 20 m × 20 m envelope spans **below and above grade**. Approximately 12 m is below grade (reactor vessel, lower turbomachine, cross-vessel); ~8 m is above grade (upper turbomachine, building, RCCS exhaust stack). The full 20 m vertical dimension acts as the RCCS chimney height.
 
 ![20m envelope elevation cross-section](../diagrams/envelope-elevation.svg)
 
@@ -69,7 +69,7 @@ The below-grade depth is not wasted envelope — it contributes chimney height t
 - [x] **Hydrogen: HTE (SOEC) as electrical secondary** — reactor unchanged; electrolyzer modules consume generator output; S–I rejected (requires IHX, contradicts simplicity)
 - [x] **Precooler: air-cooled** — no water supply dependency; unit works anywhere
 - [x] **Refueling interval: 12 months** — annual site visit; fresh fuel in, spent fuel out; limits on-site spent fuel inventory
-- [x] **Below-grade installation** — reactor vessel sited ~10–12 m below grade; 20 m envelope spans total depth + above-grade height
+- [x] **Below-grade installation** — reactor vessel sited ~12 m below grade; 20 m envelope spans total depth + above-grade height
 
 ## Relationship to Prior Designs
 

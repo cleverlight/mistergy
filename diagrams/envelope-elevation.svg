@@ -167,7 +167,7 @@
   <text x="265" y="410" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#ffffff">CORE</text>
   <text x="265" y="306" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#1565c0">CRDs</text>
   <text x="265" y="535" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#37474f">REACTOR VESSEL</text>
-  <text x="265" y="548" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#546e7a">~5.5 m OD · ~14 m tall</text>
+  <text x="265" y="548" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#546e7a">~5.5 m OD · ~11–13 m tall</text>
 
   <!-- ============================================ -->
   <!-- CROSS-VESSEL DUCT                            -->

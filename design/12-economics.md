@@ -76,7 +76,7 @@ The 850 °C FOAK has a similar $/kW(e) to the 950 °C FOAK despite lower output,
 
 ### Mature Fleet Projection (50th+ Unit)
 
-All mature fleet units use the 950 °C ceramic blisk with modular pre-cast cavity: **~$2,500–3,000/kW(e)**.
+All mature fleet units use the 950 °C ceramic blisk with modular pre-cast cavity: **~$3,000/kW(e)**, potentially falling to ~$2,500/kW(e) with sustained production beyond 50 units.
 
 ### Context
 
@@ -188,6 +188,8 @@ The modular design is explicitly intended for scale by replication. A 4-unit sit
 | Shared security perimeter | ~$2M/year |
 | Single grid connection | ~$5M capital |
 | Single operating licence (design cert) | ~$25M capital |
+| Shared civil works (site, RCCS structure) | ~$15M capital (vs. 4× individual site works) |
+| Shared BOP & I&C infrastructure | ~$10M capital |
 | Sequential refueling (stagger outages) | Maintains ~75% site output during any refueling |
 
 Effective 4-unit NOAK site cost: ~$3,200/kW(e) for the cluster, with site LCOE approaching ~$48/MWh.

@@ -19,7 +19,7 @@ A **Very High Temperature Reactor (VHTR)** — helium-cooled, graphite-moderated
 | Thermal power | ~100–150 MW(th) | ~100–150 MW(th) | [§03](03-core.md) |
 | Net electrical output | ~43–65 MW(e) | ~47–70 MW(e) | [§08](08-power-conversion.md) |
 | Cycle efficiency (Brayton) | ~43% | ~47% | [§08](08-power-conversion.md) |
-| Hydrogen output (full H₂ mode) | ~35,000 kg/day | ~38,000 kg/day | [§09](09-hydrogen.md) |
+| Hydrogen output (full H₂ mode, at ~130 MW(th)) | ~35,000 kg/day | ~38,000 kg/day | [§09](09-hydrogen.md) |
 
 ### Temperatures
 

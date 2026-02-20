@@ -1,111 +1,265 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 620">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 660">
   <!-- Background -->
-  <rect width="740" height="620" fill="#ffffff" rx="6"/>
+  <rect width="780" height="660" fill="#ffffff" rx="6"/>
 
   <!-- Title -->
-  <text x="370" y="32" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#24292f">Annular Prismatic Core — Cross-Section</text>
-  <text x="370" y="52" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#57606a">Plan view, not to scale</text>
+  <text x="340" y="30" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#24292f">Annular Prismatic Core — Plan View</text>
+  <text x="340" y="48" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#78909c">Cross-section at mid-plane, not to scale</text>
 
-  <!-- Core centred at (310, 310) -->
-  <!-- Scale: 1m = 95px -->
+  <!-- Core centred at (310, 310). Scale: ~95px per metre -->
+
+  <!-- Clip paths for zones -->
+  <defs>
+    <clipPath id="fuel-zone">
+      <path d="M 310,310 m -171,0 a 171,171 0 1,0 342,0 a 171,171 0 1,0 -342,0 Z M 310,310 m -76,0 a 76,76 0 1,1 152,0 a 76,76 0 1,1 -152,0 Z" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="outer-ref-zone">
+      <path d="M 310,310 m -219,0 a 219,219 0 1,0 438,0 a 219,219 0 1,0 -438,0 Z M 310,310 m -171,0 a 171,171 0 1,1 342,0 a 171,171 0 1,1 -342,0 Z" clip-rule="evenodd"/>
+    </clipPath>
+    <clipPath id="inner-ref-zone">
+      <circle cx="310" cy="310" r="76"/>
+    </clipPath>
+  </defs>
 
   <!-- RPV wall -->
-  <circle cx="310" cy="310" r="261" fill="none" stroke="#37474f" stroke-width="8"/>
-  <!-- RPV fill (between vessel wall and outer reflector) -->
-  <circle cx="310" cy="310" r="257" fill="#eceff1" stroke="none"/>
+  <circle cx="310" cy="310" r="261" fill="none" stroke="#37474f" stroke-width="7"/>
+  <!-- RPV-to-reflector gap -->
+  <circle cx="310" cy="310" r="257" fill="#f5f5f5" stroke="none"/>
 
-  <!-- Outer reflector -->
-  <circle cx="310" cy="310" r="219" fill="#b0bec5" stroke="#90a4ae" stroke-width="1.5"/>
+  <!-- Outer reflector background -->
+  <circle cx="310" cy="310" r="219" fill="#cfd8dc" stroke="none"/>
 
-  <!-- Fuel annulus -->
-  <circle cx="310" cy="310" r="171" fill="#ff8f00" stroke="#ef6c00" stroke-width="1"/>
+  <!-- Fuel annulus background -->
+  <circle cx="310" cy="310" r="171" fill="#ffb74d" stroke="none"/>
 
-  <!-- Hexagonal block pattern suggestion in fuel annulus -->
-  <!-- Row of hex outlines to suggest prismatic blocks -->
-  <g stroke="#e65100" stroke-width="0.8" fill="none" opacity="0.5">
-    <!-- Top hex blocks -->
-    <polygon points="310,155 330,167 330,191 310,203 290,191 290,167"/>
-    <polygon points="350,170 370,182 370,206 350,218 330,206 330,182"/>
-    <polygon points="270,170 290,182 290,206 270,218 250,206 250,182"/>
-    <polygon points="390,195 410,207 410,231 390,243 370,231 370,207"/>
-    <polygon points="230,195 250,207 250,231 230,243 210,231 210,207"/>
-    <!-- Middle row -->
-    <polygon points="410,235 430,247 430,271 410,283 390,271 390,247"/>
-    <polygon points="210,235 230,247 230,271 210,283 190,271 190,247"/>
-    <polygon points="420,275 440,287 440,311 420,323 400,311 400,287"/>
-    <polygon points="200,275 220,287 220,311 200,323 180,311 180,287"/>
-    <!-- Bottom blocks -->
-    <polygon points="410,315 430,327 430,351 410,363 390,351 390,327"/>
-    <polygon points="200,315 220,327 220,351 200,363 180,351 180,327"/>
-    <polygon points="390,355 410,367 410,391 390,403 370,391 370,367"/>
-    <polygon points="230,355 250,367 250,391 230,403 210,391 210,367"/>
-    <polygon points="350,380 370,392 370,416 350,428 330,416 330,392"/>
-    <polygon points="270,380 290,392 290,416 270,428 250,416 250,392"/>
-    <polygon points="310,395 330,407 330,431 310,443 290,431 290,407"/>
+  <!-- Inner reflector background -->
+  <circle cx="310" cy="310" r="76" fill="#e0e0e0" stroke="none"/>
+
+  <!-- Hex block pattern — FUEL ZONE (amber/orange) -->
+  <!-- Pointy-top hexagons, flat-to-flat ~28px -->
+  <!-- Hex: w=28, h=32.3, row spacing=24.2, col spacing=28, offset=14 -->
+  <g clip-path="url(#fuel-zone)" fill="#ff8f00" stroke="#e65100" stroke-width="0.7">
+    <!-- Generated hex grid covering the fuel annulus -->
+    <!-- Row -7 to +7, col -7 to +7 -->
+    <!-- Each hex: pointy-top, 14px radius (vertex), positioned on offset grid -->
+
+    <!-- Row 0 (y=310) -->
+    <polygon points="198,296 212,288 226,296 226,312 212,320 198,312"/>
+    <polygon points="226,296 240,288 254,296 254,312 240,320 226,312"/>
+    <polygon points="254,296 268,288 282,296 282,312 268,320 254,312"/>
+    <polygon points="338,296 352,288 366,296 366,312 352,320 338,312"/>
+    <polygon points="366,296 380,288 394,296 394,312 380,320 366,312"/>
+    <polygon points="394,296 408,288 422,296 422,312 408,320 394,312"/>
+
+    <!-- Row -1 (y=286) -->
+    <polygon points="155,272 169,264 183,272 183,288 169,296 155,288"/>
+    <polygon points="183,272 197,264 211,272 211,288 197,296 183,288"/>
+    <polygon points="211,272 225,264 239,272 239,288 225,296 211,288"/>
+    <polygon points="239,272 253,264 267,272 267,288 253,296 239,288"/>
+    <polygon points="353,272 367,264 381,272 381,288 367,296 353,288"/>
+    <polygon points="381,272 395,264 409,272 409,288 395,296 381,288"/>
+    <polygon points="409,272 423,264 437,272 437,288 423,296 409,288"/>
+    <polygon points="437,272 451,264 465,272 465,288 451,296 437,288"/>
+
+    <!-- Row +1 (y=334) -->
+    <polygon points="155,320 169,312 183,320 183,336 169,344 155,336"/>
+    <polygon points="183,320 197,312 211,320 211,336 197,344 183,336"/>
+    <polygon points="211,320 225,312 239,320 239,336 225,344 211,336"/>
+    <polygon points="239,320 253,312 267,320 267,336 253,344 239,336"/>
+    <polygon points="353,320 367,312 381,320 381,336 367,344 353,336"/>
+    <polygon points="381,320 395,312 409,320 409,336 395,344 381,336"/>
+    <polygon points="409,320 423,312 437,320 437,336 423,344 409,336"/>
+    <polygon points="437,320 451,312 465,320 465,336 451,344 437,336"/>
+
+    <!-- Row -2 (y=262) -->
+    <polygon points="148,248 162,240 176,248 176,264 162,272 148,264"/>
+    <polygon points="176,248 190,240 204,248 204,264 190,272 176,264"/>
+    <polygon points="204,248 218,240 232,248 232,264 218,272 204,264"/>
+    <polygon points="388,248 402,240 416,248 416,264 402,272 388,264"/>
+    <polygon points="416,248 430,240 444,248 444,264 430,272 416,264"/>
+    <polygon points="444,248 458,240 472,248 472,264 458,272 444,264"/>
+
+    <!-- Row +2 (y=358) -->
+    <polygon points="148,344 162,336 176,344 176,360 162,368 148,360"/>
+    <polygon points="176,344 190,336 204,344 204,360 190,368 176,360"/>
+    <polygon points="204,344 218,336 232,344 232,360 218,368 204,360"/>
+    <polygon points="388,344 402,336 416,344 416,360 402,368 388,360"/>
+    <polygon points="416,344 430,336 444,344 444,360 430,368 416,360"/>
+    <polygon points="444,344 458,336 472,344 472,360 458,368 444,360"/>
+
+    <!-- Row -3 (y=238) -->
+    <polygon points="155,224 169,216 183,224 183,240 169,248 155,240"/>
+    <polygon points="183,224 197,216 211,224 211,240 197,248 183,240"/>
+    <polygon points="409,224 423,216 437,224 437,240 423,248 409,240"/>
+    <polygon points="437,224 451,216 465,224 465,240 451,248 437,240"/>
+
+    <!-- Row +3 (y=382) -->
+    <polygon points="155,368 169,360 183,368 183,384 169,392 155,384"/>
+    <polygon points="183,368 197,360 211,368 211,384 197,392 183,384"/>
+    <polygon points="409,368 423,360 437,368 437,384 423,392 409,384"/>
+    <polygon points="437,368 451,360 465,368 465,384 451,392 437,384"/>
+
+    <!-- Row -4 (y=214) -->
+    <polygon points="176,200 190,192 204,200 204,216 190,224 176,216"/>
+    <polygon points="204,200 218,192 232,200 232,216 218,224 204,216"/>
+    <polygon points="388,200 402,192 416,200 416,216 402,224 388,216"/>
+    <polygon points="416,200 430,192 444,200 444,216 430,224 416,216"/>
+
+    <!-- Row +4 (y=406) -->
+    <polygon points="176,392 190,384 204,392 204,408 190,416 176,408"/>
+    <polygon points="204,392 218,384 232,392 232,408 218,416 204,408"/>
+    <polygon points="388,392 402,384 416,392 416,408 402,416 388,408"/>
+    <polygon points="416,392 430,384 444,392 444,408 430,416 416,408"/>
+
+    <!-- Row -5 (y=190) -->
+    <polygon points="211,176 225,168 239,176 239,192 225,200 211,192"/>
+    <polygon points="239,176 253,168 267,176 267,192 253,200 239,192"/>
+    <polygon points="353,176 367,168 381,176 381,192 367,200 353,192"/>
+    <polygon points="381,176 395,168 409,176 409,192 395,200 381,192"/>
+
+    <!-- Row +5 (y=430) -->
+    <polygon points="211,416 225,408 239,416 239,432 225,440 211,432"/>
+    <polygon points="239,416 253,408 267,416 267,432 253,440 239,432"/>
+    <polygon points="353,416 367,408 381,416 381,432 367,440 353,432"/>
+    <polygon points="381,416 395,408 409,416 409,432 395,440 381,432"/>
+
+    <!-- Row -6 (y=166) -->
+    <polygon points="254,152 268,144 282,152 282,168 268,176 254,168"/>
+    <polygon points="282,152 296,144 310,152 310,168 296,176 282,168"/>
+    <polygon points="310,152 324,144 338,152 338,168 324,176 310,168"/>
+    <polygon points="338,152 352,144 366,152 366,168 352,176 338,168"/>
+
+    <!-- Row +6 (y=454) -->
+    <polygon points="254,440 268,432 282,440 282,456 268,464 254,456"/>
+    <polygon points="282,440 296,432 310,440 310,456 296,464 282,456"/>
+    <polygon points="310,440 324,432 338,440 338,456 324,464 310,456"/>
+    <polygon points="338,440 352,432 366,440 366,456 352,464 338,456"/>
   </g>
 
-  <!-- Inner reflector -->
-  <circle cx="310" cy="310" r="76" fill="#cfd8dc" stroke="#90a4ae" stroke-width="1.5"/>
-
-  <!-- Control rod positions in inner reflector -->
-  <g fill="#1565c0" stroke="#0d47a1" stroke-width="1">
-    <circle cx="310" cy="270" r="8"/>
-    <circle cx="345" cy="290" r="8"/>
-    <circle cx="345" cy="330" r="8"/>
-    <circle cx="310" cy="350" r="8"/>
-    <circle cx="275" cy="330" r="8"/>
-    <circle cx="275" cy="290" r="8"/>
+  <!-- Hex block pattern — OUTER REFLECTOR (gray) -->
+  <g clip-path="url(#outer-ref-zone)" fill="#b0bec5" stroke="#78909c" stroke-width="0.6">
+    <!-- Sparse hex outlines to suggest reflector blocks -->
+    <!-- Top -->
+    <polygon points="254,128 268,120 282,128 282,144 268,152 254,144"/>
+    <polygon points="310,128 324,120 338,128 338,144 324,152 310,144"/>
+    <polygon points="366,128 380,120 394,128 394,144 380,152 366,144"/>
+    <!-- Upper sides -->
+    <polygon points="170,200 184,192 198,200 198,216 184,224 170,216"/>
+    <polygon points="422,200 436,192 450,200 450,216 436,224 422,216"/>
+    <polygon points="148,224 162,216 176,224 176,240 162,248 148,240"/>
+    <polygon points="444,224 458,216 472,224 472,240 458,248 444,240"/>
+    <!-- Sides -->
+    <polygon points="128,272 142,264 156,272 156,288 142,296 128,288"/>
+    <polygon points="464,272 478,264 492,272 492,288 478,296 464,288"/>
+    <polygon points="128,320 142,312 156,320 156,336 142,344 128,336"/>
+    <polygon points="464,320 478,312 492,320 492,336 478,344 464,336"/>
+    <!-- Lower sides -->
+    <polygon points="148,368 162,360 176,368 176,384 162,392 148,384"/>
+    <polygon points="444,368 458,360 472,368 472,384 458,392 444,384"/>
+    <polygon points="170,392 184,384 198,392 198,408 184,416 170,408"/>
+    <polygon points="422,392 436,384 450,392 450,408 436,416 422,408"/>
+    <!-- Bottom -->
+    <polygon points="254,464 268,456 282,464 282,480 268,488 254,480"/>
+    <polygon points="310,464 324,456 338,464 338,480 324,488 310,480"/>
+    <polygon points="366,464 380,456 394,464 394,480 380,488 366,480"/>
   </g>
 
-  <!-- Labels -->
+  <!-- Zone boundary circles (over hex blocks) -->
+  <circle cx="310" cy="310" r="219" fill="none" stroke="#78909c" stroke-width="1.5"/>
+  <circle cx="310" cy="310" r="171" fill="none" stroke="#e65100" stroke-width="1.5"/>
+  <circle cx="310" cy="310" r="76" fill="none" stroke="#78909c" stroke-width="1.5"/>
+
+  <!-- Control rod positions in INNER reflector -->
+  <g fill="#1565c0" stroke="#0d47a1" stroke-width="1.5">
+    <circle cx="310" cy="265" r="9"/>
+    <circle cx="349" cy="287" r="9"/>
+    <circle cx="349" cy="333" r="9"/>
+    <circle cx="310" cy="355" r="9"/>
+    <circle cx="271" cy="333" r="9"/>
+    <circle cx="271" cy="287" r="9"/>
+  </g>
+  <!-- Cross marks in control rods -->
+  <g stroke="#ffffff" stroke-width="1.5">
+    <line x1="306" y1="265" x2="314" y2="265"/><line x1="310" y1="261" x2="310" y2="269"/>
+    <line x1="345" y1="287" x2="353" y2="287"/><line x1="349" y1="283" x2="349" y2="291"/>
+    <line x1="345" y1="333" x2="353" y2="333"/><line x1="349" y1="329" x2="349" y2="337"/>
+    <line x1="306" y1="355" x2="314" y2="355"/><line x1="310" y1="351" x2="310" y2="359"/>
+    <line x1="267" y1="333" x2="275" y2="333"/><line x1="271" y1="329" x2="271" y2="337"/>
+    <line x1="267" y1="287" x2="275" y2="287"/><line x1="271" y1="283" x2="271" y2="291"/>
+  </g>
+
   <!-- Inner reflector label -->
   <text x="310" y="307" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#37474f">INNER</text>
   <text x="310" y="319" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#37474f">REFLECTOR</text>
 
-  <!-- Fuel annulus label (curved would be ideal, but use straight) -->
-  <text x="310" y="150" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#bf360c">FUEL ANNULUS</text>
-  <text x="310" y="164" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#bf360c">(prismatic blocks)</text>
+  <!-- Fuel annulus label -->
+  <text x="310" y="148" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#bf360c">FUEL ANNULUS</text>
+  <text x="310" y="162" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#bf360c">(prismatic hex blocks)</text>
 
   <!-- Outer reflector label -->
-  <text x="535" y="305" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#546e7a">OUTER</text>
-  <text x="535" y="319" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#546e7a">REFLECTOR</text>
-  <line x1="529" y1="310" x2="498" y2="310" stroke="#546e7a" stroke-width="1"/>
-  <polygon points="500,310 507,307 507,313" fill="#546e7a"/>
+  <text x="555" y="300" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#546e7a">OUTER</text>
+  <text x="555" y="314" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#546e7a">REFLECTOR</text>
+  <line x1="549" y1="305" x2="502" y2="305" stroke="#546e7a" stroke-width="1"/>
+  <polygon points="504,305 511,302 511,308" fill="#546e7a"/>
 
   <!-- RPV label -->
-  <text x="595" y="345" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#37474f">RPV</text>
-  <line x1="589" y1="342" x2="572" y2="325" stroke="#37474f" stroke-width="1"/>
+  <text x="610" y="350" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#37474f">RPV</text>
+  <line x1="604" y1="347" x2="572" y2="325" stroke="#37474f" stroke-width="1"/>
   <circle cx="572" cy="325" r="2" fill="#37474f"/>
 
   <!-- Control rod label -->
-  <text x="595" y="250" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#1565c0">Control rods</text>
-  <line x1="589" y1="248" x2="352" y2="287" stroke="#1565c0" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="580" y="242" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#1565c0">Control rods</text>
+  <text x="580" y="254" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#1565c0">(inner reflector)</text>
+  <line x1="574" y1="248" x2="358" y2="287" stroke="#1565c0" stroke-width="1" stroke-dasharray="3,2"/>
 
-  <!-- Dimension lines -->
+  <!-- Helium flow direction -->
+  <text x="575" y="395" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#546e7a">Helium flow:</text>
+  <text x="575" y="409" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#546e7a">top-down ↓</text>
+  <text x="575" y="423" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#78909c">(into page)</text>
+
+  <!-- Dimension lines (below the core) -->
   <!-- Inner reflector radius: 0.8m -->
-  <line x1="310" y1="530" x2="386" y2="530" stroke="#24292f" stroke-width="1"/>
-  <line x1="310" y1="524" x2="310" y2="536" stroke="#24292f" stroke-width="1"/>
-  <line x1="386" y1="524" x2="386" y2="536" stroke="#24292f" stroke-width="1"/>
-  <text x="348" y="526" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#24292f">0.8 m</text>
+  <line x1="310" y1="540" x2="386" y2="540" stroke="#24292f" stroke-width="1"/>
+  <line x1="310" y1="534" x2="310" y2="546" stroke="#24292f" stroke-width="1"/>
+  <line x1="386" y1="534" x2="386" y2="546" stroke="#24292f" stroke-width="1"/>
+  <text x="348" y="536" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#24292f">0.8 m</text>
 
   <!-- Fuel annulus outer radius: 1.8m -->
-  <line x1="310" y1="550" x2="481" y2="550" stroke="#24292f" stroke-width="1"/>
-  <line x1="310" y1="544" x2="310" y2="556" stroke="#24292f" stroke-width="1"/>
-  <line x1="481" y1="544" x2="481" y2="556" stroke="#24292f" stroke-width="1"/>
-  <text x="396" y="546" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#24292f">1.8 m</text>
+  <line x1="310" y1="558" x2="481" y2="558" stroke="#24292f" stroke-width="1"/>
+  <line x1="310" y1="552" x2="310" y2="564" stroke="#24292f" stroke-width="1"/>
+  <line x1="481" y1="552" x2="481" y2="564" stroke="#24292f" stroke-width="1"/>
+  <text x="396" y="554" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#24292f">1.8 m</text>
 
   <!-- Outer reflector outer radius: 2.3m -->
-  <line x1="310" y1="570" x2="529" y2="570" stroke="#24292f" stroke-width="1"/>
-  <line x1="310" y1="564" x2="310" y2="576" stroke="#24292f" stroke-width="1"/>
-  <line x1="529" y1="564" x2="529" y2="576" stroke="#24292f" stroke-width="1"/>
-  <text x="420" y="566" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#24292f">2.3 m</text>
+  <line x1="310" y1="576" x2="529" y2="576" stroke="#24292f" stroke-width="1"/>
+  <line x1="310" y1="570" x2="310" y2="582" stroke="#24292f" stroke-width="1"/>
+  <line x1="529" y1="570" x2="529" y2="582" stroke="#24292f" stroke-width="1"/>
+  <text x="420" y="572" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#24292f">2.3 m</text>
 
   <!-- RPV radius: ~2.75m -->
-  <line x1="310" y1="590" x2="571" y2="590" stroke="#24292f" stroke-width="1"/>
-  <line x1="310" y1="584" x2="310" y2="596" stroke="#24292f" stroke-width="1"/>
-  <line x1="571" y1="584" x2="571" y2="596" stroke="#24292f" stroke-width="1"/>
-  <text x="441" y="606" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#24292f">RPV radius ~2.75 m (OD ~5.5 m)</text>
+  <line x1="310" y1="594" x2="571" y2="594" stroke="#24292f" stroke-width="1"/>
+  <line x1="310" y1="588" x2="310" y2="600" stroke="#24292f" stroke-width="1"/>
+  <line x1="571" y1="588" x2="571" y2="600" stroke="#24292f" stroke-width="1"/>
+  <text x="441" y="610" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#24292f">RPV radius ~2.75 m (OD ~5.5 m)</text>
 
-  <!-- Dashed centre line -->
-  <line x1="310" y1="65" x2="310" y2="525" stroke="#bdbdbd" stroke-width="0.5" stroke-dasharray="6,4"/>
+  <!-- Centre line -->
+  <line x1="310" y1="65" x2="310" y2="530" stroke="#bdbdbd" stroke-width="0.5" stroke-dasharray="6,4"/>
+
+  <!-- LEGEND -->
+  <rect x="570" y="440" width="195" height="110" rx="6" fill="#fafafa" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="580" y="458" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#24292f">Legend</text>
+  <!-- Fuel block -->
+  <rect x="580" y="466" width="16" height="12" rx="1" fill="#ff8f00" stroke="#e65100" stroke-width="0.7"/>
+  <text x="602" y="476" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#57606a">Fuel block (TRISO + TPMS)</text>
+  <!-- Reflector block -->
+  <rect x="580" y="486" width="16" height="12" rx="1" fill="#b0bec5" stroke="#78909c" stroke-width="0.7"/>
+  <text x="602" y="496" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#57606a">Reflector block (graphite)</text>
+  <!-- Control rod -->
+  <circle cx="588" cy="512" r="6" fill="#1565c0" stroke="#0d47a1" stroke-width="1"/>
+  <line x1="584" y1="512" x2="592" y2="512" stroke="#ffffff" stroke-width="1"/>
+  <line x1="588" y1="508" x2="588" y2="516" stroke="#ffffff" stroke-width="1"/>
+  <text x="602" y="516" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#57606a">Control rod channel</text>
+  <!-- RPV -->
+  <rect x="580" y="526" width="16" height="12" rx="1" fill="none" stroke="#37474f" stroke-width="3"/>
+  <text x="602" y="536" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#57606a">RPV wall</text>
 </svg>

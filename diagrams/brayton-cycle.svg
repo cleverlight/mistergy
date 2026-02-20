@@ -1,121 +1,205 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 580">
   <!-- Background -->
-  <rect width="800" height="520" fill="#ffffff" rx="6"/>
+  <rect width="820" height="580" fill="#ffffff" rx="6"/>
 
   <!-- Title -->
-  <text x="400" y="28" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#24292f">Direct Helium Brayton Cycle</text>
-  <text x="400" y="46" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#78909c">Target configuration (950 °C) · FOAK operates at 850 °C with metallic turbine</text>
+  <text x="410" y="28" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#24292f">Direct Helium Brayton Cycle</text>
+  <text x="410" y="46" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#78909c">Target configuration (950 °C) · FOAK operates at 850 °C with metallic turbine</text>
 
-  <!-- Component boxes -->
+  <!-- ============================================ -->
+  <!-- COMPONENT BOXES                              -->
+  <!-- ============================================ -->
+
   <!-- Reactor Core (top centre) -->
-  <rect x="290" y="55" width="220" height="60" rx="6" fill="#c62828" stroke="#b71c1c" stroke-width="2"/>
-  <text x="400" y="82" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">REACTOR CORE</text>
-  <text x="400" y="100" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#ffcdd2">580 °C → 950 °C</text>
+  <rect x="290" y="62" width="220" height="60" rx="6" fill="#c62828" stroke="#b71c1c" stroke-width="2"/>
+  <text x="400" y="88" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">REACTOR CORE</text>
+  <text x="400" y="106" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#ffcdd2">ΔT = 370 °C</text>
 
   <!-- Turbine (right) -->
-  <rect x="590" y="160" width="150" height="55" rx="6" fill="#e65100" stroke="#bf360c" stroke-width="2"/>
-  <text x="665" y="183" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">TURBINE</text>
-  <text x="665" y="200" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#ffe0b2">η = 0.90</text>
+  <rect x="590" y="162" width="155" height="58" rx="6" fill="#e65100" stroke="#bf360c" stroke-width="2"/>
+  <text x="668" y="187" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">TURBINE</text>
+  <text x="668" y="205" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#ffe0b2">η = 0.90 · SiC/SiC CMC</text>
 
   <!-- Generator (far right, attached to shaft) -->
-  <rect x="620" y="240" width="90" height="40" rx="4" fill="#4527a0" stroke="#311b92" stroke-width="1.5"/>
-  <text x="665" y="265" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">GENERATOR</text>
+  <rect x="620" y="248" width="95" height="42" rx="4" fill="#4527a0" stroke="#311b92" stroke-width="1.5"/>
+  <text x="668" y="274" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">GENERATOR</text>
 
   <!-- Shaft indicator between turbine/generator/compressor -->
-  <line x1="665" y1="215" x2="665" y2="240" stroke="#37474f" stroke-width="4"/>
-  <line x1="665" y1="280" x2="665" y2="305" stroke="#37474f" stroke-width="4"/>
-  <text x="688" y="298" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#78909c">shaft</text>
+  <line x1="668" y1="220" x2="668" y2="248" stroke="#37474f" stroke-width="5"/>
+  <line x1="668" y1="290" x2="668" y2="310" stroke="#37474f" stroke-width="5"/>
+  <text x="693" y="305" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#78909c">shaft</text>
 
   <!-- Compressor (right, below generator) -->
-  <rect x="590" y="305" width="150" height="55" rx="6" fill="#0277bd" stroke="#01579b" stroke-width="2"/>
-  <text x="665" y="328" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#ffffff">COMPRESSOR</text>
-  <text x="665" y="345" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#b3e5fc">η = 0.88</text>
+  <rect x="590" y="310" width="155" height="58" rx="6" fill="#0277bd" stroke="#01579b" stroke-width="2"/>
+  <text x="668" y="335" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">COMPRESSOR</text>
+  <text x="668" y="353" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#b3e5fc">η = 0.88</text>
+
+  <!-- Dashed box around turbomachine -->
+  <rect x="582" y="152" width="172" height="225" rx="8" fill="none" stroke="#546e7a" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="668" y="390" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#546e7a">Single-shaft turbomachine</text>
 
   <!-- Recuperator (centre) -->
-  <rect x="290" y="200" width="220" height="120" rx="6" fill="#00695c" stroke="#004d40" stroke-width="2"/>
-  <text x="400" y="228" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">RECUPERATOR</text>
-  <text x="400" y="248" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#b2dfdb">ε = 0.95</text>
-  <!-- Hot side flow arrow -->
-  <text x="400" y="275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#ffab91">Hot: 600 → 215 °C  ↓</text>
-  <!-- Cold side flow arrow -->
-  <text x="400" y="295" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#80cbc4">Cold: 195 → 580 °C  ↑</text>
+  <rect x="290" y="210" width="220" height="125" rx="6" fill="#00695c" stroke="#004d40" stroke-width="2"/>
+  <text x="400" y="238" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">RECUPERATOR</text>
+  <text x="400" y="256" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#b2dfdb">ε = 0.95 · PCHE</text>
+  <!-- Hot side flow -->
+  <text x="400" y="283" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#ffab91">Hot: 600 → 215 °C  ↓</text>
+  <!-- Cold side flow -->
+  <text x="400" y="303" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#80cbc4">Cold: 195 → 580 °C  ↑</text>
   <!-- Counter-flow arrows -->
-  <line x1="340" y1="262" x2="340" y2="308" stroke="#ff8a65" stroke-width="1.5" opacity="0.6"/>
-  <polygon points="340,308 336,300 344,300" fill="#ff8a65" opacity="0.6"/>
-  <line x1="460" y1="308" x2="460" y2="262" stroke="#4db6ac" stroke-width="1.5" opacity="0.6"/>
-  <polygon points="460,262 456,270 464,270" fill="#4db6ac" opacity="0.6"/>
+  <line x1="340" y1="270" x2="340" y2="318" stroke="#ff8a65" stroke-width="1.5" opacity="0.6"/>
+  <polygon points="340,318 336,310 344,310" fill="#ff8a65" opacity="0.6"/>
+  <line x1="460" y1="318" x2="460" y2="270" stroke="#4db6ac" stroke-width="1.5" opacity="0.6"/>
+  <polygon points="460,270 456,278 464,278" fill="#4db6ac" opacity="0.6"/>
 
   <!-- Precooler (bottom centre) -->
-  <rect x="290" y="395" width="220" height="60" rx="6" fill="#0d47a1" stroke="#0a3280" stroke-width="2"/>
-  <text x="400" y="422" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">PRECOOLER</text>
-  <text x="400" y="440" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#bbdefb">Air-cooled · 215 → 35 °C</text>
+  <rect x="290" y="410" width="220" height="60" rx="6" fill="#0d47a1" stroke="#0a3280" stroke-width="2"/>
+  <text x="400" y="437" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#ffffff">PRECOOLER</text>
+  <text x="400" y="455" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#bbdefb">Air-cooled · No water required</text>
 
-  <!-- Connecting pipes with flow arrows and temperature labels -->
+  <!-- ============================================ -->
+  <!-- CONNECTING PIPES WITH STATE POINTS            -->
+  <!-- ============================================ -->
 
-  <!-- Core outlet → Turbine (top right) -->
-  <path d="M 510 85 L 590 85 L 590 160" fill="none" stroke="#ef5350" stroke-width="3"/>
-  <polygon points="590,155 586,145 594,145" fill="#ef5350"/>
-  <rect x="530" y="68" width="55" height="18" rx="3" fill="#fff3e0"/>
-  <text x="557" y="81" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#e65100">950 °C</text>
+  <!-- State point ① : Core outlet / Turbine inlet (950 °C) -->
+  <path d="M 510 92 L 590 92 L 590 162" fill="none" stroke="#ef5350" stroke-width="3"/>
+  <polygon points="590,157 586,147 594,147" fill="#ef5350"/>
+  <!-- State point circle -->
+  <circle cx="550" cy="92" r="12" fill="#ffffff" stroke="#e65100" stroke-width="1.5"/>
+  <text x="550" y="96" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#e65100">1</text>
+  <rect x="555" y="68" width="55" height="18" rx="3" fill="#fff3e0" stroke="#ffcc80" stroke-width="0.5"/>
+  <text x="582" y="81" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#e65100">950 °C</text>
 
-  <!-- Turbine outlet → Recuperator hot inlet (right to centre) -->
-  <path d="M 590 195 L 560 195 L 560 240 L 510 240" fill="none" stroke="#ff7043" stroke-width="3"/>
-  <polygon points="515,240 523,236 523,244" fill="#ff7043"/>
-  <rect x="536" y="222" width="50" height="18" rx="3" fill="#fff3e0"/>
-  <text x="561" y="235" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#e65100">600 °C</text>
+  <!-- State point ② : Turbine outlet / Recuperator hot inlet (600 °C) -->
+  <path d="M 590 200 L 560 200 L 560 248 L 510 248" fill="none" stroke="#ff7043" stroke-width="3"/>
+  <polygon points="515,248 523,244 523,252" fill="#ff7043"/>
+  <circle cx="560" cy="224" r="12" fill="#ffffff" stroke="#e65100" stroke-width="1.5"/>
+  <text x="560" y="228" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#e65100">2</text>
+  <rect x="536" y="198" width="50" height="16" rx="3" fill="#fff3e0" stroke="#ffcc80" stroke-width="0.5"/>
+  <text x="561" y="210" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#e65100">600 °C</text>
 
-  <!-- Recuperator hot outlet → Precooler (centre down) -->
-  <path d="M 400 320 L 400 395" fill="none" stroke="#42a5f5" stroke-width="3"/>
-  <polygon points="400,390 396,382 404,382" fill="#42a5f5"/>
-  <rect x="410" y="345" width="50" height="18" rx="3" fill="#e3f2fd"/>
-  <text x="435" y="358" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#0277bd">215 °C</text>
+  <!-- State point ③ : Recuperator hot outlet / Precooler inlet (215 °C) -->
+  <path d="M 400 335 L 400 410" fill="none" stroke="#42a5f5" stroke-width="3"/>
+  <polygon points="400,405 396,397 404,397" fill="#42a5f5"/>
+  <circle cx="400" cy="370" r="12" fill="#ffffff" stroke="#0277bd" stroke-width="1.5"/>
+  <text x="400" y="374" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#0277bd">3</text>
+  <rect x="415" y="362" width="50" height="16" rx="3" fill="#e3f2fd" stroke="#90caf9" stroke-width="0.5"/>
+  <text x="440" y="374" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#0277bd">215 °C</text>
 
-  <!-- Precooler outlet → Compressor (bottom right) -->
-  <path d="M 510 430 L 590 430 L 590 360" fill="none" stroke="#1565c0" stroke-width="3"/>
-  <polygon points="590,365 586,373 594,373" fill="#1565c0"/>
-  <rect x="530" y="432" width="45" height="18" rx="3" fill="#e3f2fd"/>
-  <text x="553" y="445" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#0277bd">35 °C</text>
+  <!-- State point ④ : Precooler outlet / Compressor inlet (35 °C) -->
+  <path d="M 510 445 L 590 445 L 590 368" fill="none" stroke="#1565c0" stroke-width="3"/>
+  <polygon points="590,373 586,381 594,381" fill="#1565c0"/>
+  <circle cx="550" cy="445" r="12" fill="#ffffff" stroke="#0277bd" stroke-width="1.5"/>
+  <text x="550" y="449" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#0277bd">4</text>
+  <rect x="555" y="453" width="42" height="16" rx="3" fill="#e3f2fd" stroke="#90caf9" stroke-width="0.5"/>
+  <text x="576" y="465" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#0277bd">35 °C</text>
 
-  <!-- Compressor outlet → Recuperator cold inlet (right to centre) -->
-  <path d="M 590 325 L 560 325 L 560 285 L 510 285" fill="none" stroke="#26a69a" stroke-width="3"/>
-  <polygon points="515,285 523,281 523,289" fill="#26a69a"/>
-  <rect x="536" y="298" width="50" height="18" rx="3" fill="#e0f2f1"/>
-  <text x="561" y="311" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#00695c">195 °C</text>
+  <!-- State point ⑤ : Compressor outlet / Recuperator cold inlet (195 °C) -->
+  <path d="M 590 330 L 560 330 L 560 295 L 510 295" fill="none" stroke="#26a69a" stroke-width="3"/>
+  <polygon points="515,295 523,291 523,299" fill="#26a69a"/>
+  <circle cx="560" cy="313" r="12" fill="#ffffff" stroke="#00695c" stroke-width="1.5"/>
+  <text x="560" y="317" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#00695c">5</text>
+  <rect x="536" y="322" width="50" height="16" rx="3" fill="#e0f2f1" stroke="#80cbc4" stroke-width="0.5"/>
+  <text x="561" y="334" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#00695c">195 °C</text>
 
-  <!-- Recuperator cold outlet → Core inlet (centre up to left side of core) -->
-  <path d="M 340 200 L 340 155 L 290 155 L 290 85 L 290 85" fill="none" stroke="#66bb6a" stroke-width="3"/>
-  <polygon points="290,90 286,98 294,98" fill="#66bb6a"/>
-  <rect x="248" y="140" width="50" height="18" rx="3" fill="#e8f5e9"/>
-  <text x="273" y="153" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#2e7d32">580 °C</text>
+  <!-- State point ⑥ : Recuperator cold outlet / Core inlet (580 °C) -->
+  <path d="M 340 210 L 340 160 L 290 160 L 290 92 L 290 92" fill="none" stroke="#66bb6a" stroke-width="3"/>
+  <polygon points="290,97 286,105 294,105" fill="#66bb6a"/>
+  <circle cx="290" cy="160" r="12" fill="#ffffff" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="290" y="164" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#2e7d32">6</text>
+  <rect x="248" y="138" width="52" height="16" rx="3" fill="#e8f5e9" stroke="#a5d6a7" stroke-width="0.5"/>
+  <text x="274" y="150" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#2e7d32">580 °C</text>
 
   <!-- Grid output arrow from generator -->
-  <line x1="710" y1="260" x2="745" y2="260" stroke="#4527a0" stroke-width="2.5"/>
-  <polygon points="745,260 737,256 737,264" fill="#4527a0"/>
-  <text x="755" y="255" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#4527a0">AC</text>
-  <text x="755" y="268" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#4527a0">Grid</text>
+  <line x1="715" y1="269" x2="755" y2="269" stroke="#4527a0" stroke-width="2.5"/>
+  <polygon points="755,269 747,265 747,273" fill="#4527a0"/>
+  <text x="768" y="264" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#4527a0">AC</text>
+  <text x="768" y="277" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#4527a0">Grid</text>
 
   <!-- Air rejection from precooler -->
-  <line x1="290" y1="430" x2="255" y2="445" stroke="#78909c" stroke-width="1.5"/>
-  <line x1="290" y1="420" x2="255" y2="435" stroke="#78909c" stroke-width="1.5"/>
-  <line x1="290" y1="440" x2="255" y2="455" stroke="#78909c" stroke-width="1.5"/>
-  <text x="220" y="445" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#78909c">waste heat</text>
-  <text x="220" y="458" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#78909c">to air</text>
+  <line x1="290" y1="445" x2="255" y2="460" stroke="#78909c" stroke-width="1.5"/>
+  <line x1="290" y1="435" x2="255" y2="450" stroke="#78909c" stroke-width="1.5"/>
+  <line x1="290" y1="455" x2="255" y2="470" stroke="#78909c" stroke-width="1.5"/>
+  <text x="222" y="460" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#78909c">waste heat</text>
+  <text x="222" y="473" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#78909c">to air</text>
 
-  <!-- Efficiency annotation -->
-  <rect x="55" y="65" width="170" height="55" rx="6" fill="#f5f5f5" stroke="#e0e0e0" stroke-width="1"/>
-  <text x="140" y="84" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#24292f">Cycle Efficiency</text>
-  <text x="140" y="102" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#2e7d32">~47%</text>
+  <!-- ============================================ -->
+  <!-- KEY PARAMETERS BOX (left side)               -->
+  <!-- ============================================ -->
+  <rect x="45" y="62" width="175" height="148" rx="6" fill="#fafafa" stroke="#e0e0e0" stroke-width="1"/>
 
-  <!-- Pressure annotation -->
-  <rect x="55" y="135" width="170" height="42" rx="6" fill="#f5f5f5" stroke="#e0e0e0" stroke-width="1"/>
-  <text x="140" y="153" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#24292f">Primary Pressure</text>
-  <text x="140" y="170" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#0277bd">4 MPa</text>
+  <text x="132" y="82" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#24292f">Cycle Efficiency</text>
+  <text x="132" y="102" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#2e7d32">~47%</text>
 
-  <!-- Single working fluid note -->
-  <rect x="55" y="192" width="170" height="28" rx="6" fill="#f5f5f5" stroke="#e0e0e0" stroke-width="1"/>
-  <text x="140" y="211" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#57606a">Single fluid · No IHX</text>
+  <line x1="65" y1="112" x2="200" y2="112" stroke="#e0e0e0" stroke-width="1"/>
 
-  <!-- Pressure ratio -->
-  <rect x="55" y="235" width="170" height="28" rx="6" fill="#f5f5f5" stroke="#e0e0e0" stroke-width="1"/>
-  <text x="140" y="254" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#57606a">Pressure ratio: 2.5</text>
+  <text x="132" y="130" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#24292f">Primary Pressure</text>
+  <text x="132" y="148" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#0277bd">4 MPa</text>
+
+  <line x1="65" y1="158" x2="200" y2="158" stroke="#e0e0e0" stroke-width="1"/>
+
+  <text x="132" y="176" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#57606a">Single fluid · No IHX</text>
+  <text x="132" y="192" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#57606a">Pressure ratio: 2.5</text>
+  <text x="132" y="205" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#78909c">Working fluid: He (γ = 1.667)</text>
+
+  <!-- ============================================ -->
+  <!-- T-s DIAGRAM INSET (bottom left)              -->
+  <!-- ============================================ -->
+  <rect x="45" y="340" width="200" height="170" rx="6" fill="#fafafa" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="145" y="358" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#24292f">T-s Diagram (Schematic)</text>
+
+  <!-- Axes -->
+  <line x1="75" y1="375" x2="75" y2="490" stroke="#9e9e9e" stroke-width="1"/>
+  <line x1="75" y1="490" x2="220" y2="490" stroke="#9e9e9e" stroke-width="1"/>
+  <text x="67" y="432" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#9e9e9e" transform="rotate(-90,67,432)">T (°C)</text>
+  <text x="148" y="502" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#9e9e9e">s (kJ/kg·K)</text>
+
+  <!-- Temperature reference lines -->
+  <line x1="72" y1="385" x2="78" y2="385" stroke="#9e9e9e" stroke-width="0.5"/>
+  <text x="67" y="388" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="7" fill="#9e9e9e">950</text>
+  <line x1="72" y1="415" x2="78" y2="415" stroke="#9e9e9e" stroke-width="0.5"/>
+  <text x="67" y="418" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="7" fill="#9e9e9e">580</text>
+  <line x1="72" y1="485" x2="78" y2="485" stroke="#9e9e9e" stroke-width="0.5"/>
+  <text x="67" y="488" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="7" fill="#9e9e9e">35</text>
+
+  <!-- Cycle path -->
+  <!-- 4→5: Isentropic compression (vertical up, left side) -->
+  <line x1="95" y1="485" x2="95" y2="455" stroke="#0277bd" stroke-width="2"/>
+  <!-- 5→6: Recuperator cold side (heat addition from hot exhaust) -->
+  <line x1="95" y1="455" x2="125" y2="415" stroke="#26a69a" stroke-width="2"/>
+  <!-- 6→1: Reactor heat addition (isobaric) -->
+  <line x1="125" y1="415" x2="175" y2="385" stroke="#c62828" stroke-width="2"/>
+  <!-- 1→2: Isentropic expansion (vertical down, right side) -->
+  <line x1="175" y1="385" x2="175" y2="420" stroke="#e65100" stroke-width="2"/>
+  <!-- 2→3: Recuperator hot side (heat rejection to cold stream) -->
+  <line x1="175" y1="420" x2="145" y2="455" stroke="#ff7043" stroke-width="2"/>
+  <!-- 3→4: Precooler (heat rejection to atmosphere) -->
+  <line x1="145" y1="455" x2="95" y2="485" stroke="#42a5f5" stroke-width="2"/>
+
+  <!-- State point labels on T-s -->
+  <circle cx="95" cy="485" r="5" fill="#ffffff" stroke="#0277bd" stroke-width="1"/>
+  <text x="95" y="488" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="7" font-weight="bold" fill="#0277bd">4</text>
+
+  <circle cx="95" cy="455" r="5" fill="#ffffff" stroke="#00695c" stroke-width="1"/>
+  <text x="95" y="458" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="7" font-weight="bold" fill="#00695c">5</text>
+
+  <circle cx="125" cy="415" r="5" fill="#ffffff" stroke="#2e7d32" stroke-width="1"/>
+  <text x="125" y="418" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="7" font-weight="bold" fill="#2e7d32">6</text>
+
+  <circle cx="175" cy="385" r="5" fill="#ffffff" stroke="#e65100" stroke-width="1"/>
+  <text x="175" y="388" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="7" font-weight="bold" fill="#e65100">1</text>
+
+  <circle cx="175" cy="420" r="5" fill="#ffffff" stroke="#e65100" stroke-width="1"/>
+  <text x="175" y="423" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="7" font-weight="bold" fill="#e65100">2</text>
+
+  <circle cx="145" cy="455" r="5" fill="#ffffff" stroke="#42a5f5" stroke-width="1"/>
+  <text x="145" y="458" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="7" font-weight="bold" fill="#42a5f5">3</text>
+
+  <!-- Recuperator internal heat transfer annotation -->
+  <line x1="108" y1="440" x2="162" y2="440" stroke="#00695c" stroke-width="0.8" stroke-dasharray="2,2"/>
+  <text x="135" y="436" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="7" fill="#00695c">recuperation</text>
+
+  <!-- State point key -->
+  <text x="55" y="520" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#78909c">① Core outlet  ② Turbine exit  ③ Precooler in</text>
+  <text x="55" y="532" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#78909c">④ Compressor in  ⑤ Compressor out  ⑥ Core inlet</text>
 </svg>

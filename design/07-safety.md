@@ -4,13 +4,7 @@
 
 Safety is achieved by multiple independent barriers, each capable of limiting consequences on its own:
 
-```
-  1. TRISO coatings         — fission products retained at kernel level
-  2. Helium pressure boundary — contains activated coolant
-  3. Reactor vessel          — secondary containment of helium
-  4. Reactor cavity          — structural barrier; houses RCCS
-  5. Confinement building    — final barrier against atmospheric release
-```
+![Defence in depth — five independent barriers](../diagrams/defence-in-depth.svg)
 
 No single barrier failure leads to a public radiological consequence. The design is tolerant of any one barrier failing.
 

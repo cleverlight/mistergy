@@ -54,18 +54,7 @@ Deliver **grid-connected AC electricity** from a self-contained, factory-built n
 
 The 20 m × 20 m × 20 m envelope spans **below and above grade**. Approximately 10–12 m is below grade (reactor vessel, lower turbomachine, cross-vessel); 8–10 m is above grade (upper turbomachine, building, RCCS exhaust stack). The full 20 m vertical dimension acts as the RCCS chimney height.
 
-```
-  GRADE LEVEL  ═══════════════════════════════════════════════
-               │  [RCCS exhaust]  │   [building / access]    │  ~8–10m above
-               │                  │                           │
-               │   REACTOR        │   TURBINE                 │
-  ─ ─ ─ ─ ─ ─ ┤   VESSEL    ═════╪═  GENERATOR  ─ ─ ─ ─ ─ ─ ┤ ─ cross-vessel
-               │   ~5.5m dia      │   COMPRESSOR              │
-               │   ~14m tall      │   RECUPERATOR             │  ~10–12m below
-               │                  │   (PCHE)                  │
-  CAVITY FLOOR ═══════════════════════════════════════════════
-               ←────────────── ~20m footprint ───────────────→
-```
+![20m envelope elevation cross-section](../diagrams/envelope-elevation.svg)
 
 The below-grade depth is not wasted envelope — it contributes chimney height to the air RCCS, seismic isolation, radiation shielding mass, and physical security. The above-grade surface expression is a compact industrial building. See [§11 · Siting](11-siting.md) for full civil layout.
 

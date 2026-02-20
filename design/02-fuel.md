@@ -4,24 +4,7 @@
 
 TRISO (TRi-structural ISOtropic) is a coated fuel particle: a uranium oxide kernel surrounded by four concentric coating layers, each with a distinct function. The complete particle is ~0.93 mm in diameter — smaller than a grain of rice.
 
-```
-       ┌─────────────────────────────┐
-       │  OPyC  (outer pyrocarbon)   │  40 μm   protects SiC during fabrication
-       │  ┌───────────────────────┐  │
-       │  │  SiC (silicon carbide)│  │  35 μm   primary pressure vessel
-       │  │  ┌─────────────────┐  │  │
-       │  │  │ IPyC (inner PyC)│  │  │  40 μm   structural support; bonds to SiC
-       │  │  │  ┌───────────┐  │  │  │
-       │  │  │  │  Buffer   │  │  │  │  100 μm  porous; absorbs fission gas, swelling
-       │  │  │  │ ┌───────┐ │  │  │  │
-       │  │  │  │ │  UO₂  │ │  │  │  │  500 μm  kernel — the fuel
-       │  │  │  │ └───────┘ │  │  │  │
-       │  │  │  └───────────┘  │  │  │
-       │  │  └─────────────────┘  │  │
-       │  └───────────────────────┘  │
-       └─────────────────────────────┘
-              Total OD: ~930 μm
-```
+![TRISO coated fuel particle cross-section](../diagrams/triso-particle.svg)
 
 ### Recommended Dimensions
 

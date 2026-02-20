@@ -4,29 +4,7 @@
 
 The same helium that cools the reactor core flows directly through the turbomachine. There is no intermediate heat exchanger and no secondary working fluid. This is the defining simplicity decision of the design.
 
-```
-  REACTOR CORE
-  [950 °C outlet]
-        │
-        ▼
-   TURBINE  ──────────────── shaft ──── GENERATOR
-        │
-        ▼
-   RECUPERATOR (hot side)
-        │
-        ▼
-   PRECOOLER (reject heat to environment)
-        │
-        ▼
-   COMPRESSOR ──────────────  (same shaft)
-        │
-        ▼
-   RECUPERATOR (cold side — helium preheated before returning to core)
-        │
-        ▼
-  REACTOR CORE
-  [~490 °C inlet]
-```
+![Direct helium Brayton cycle schematic](../diagrams/brayton-cycle.svg)
 
 The recuperator is essential: it transfers heat from the turbine exhaust back into the helium stream returning to the core, dramatically improving cycle efficiency without adding a second fluid.
 

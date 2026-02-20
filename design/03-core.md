@@ -4,20 +4,7 @@
 
 The core is an **annular arrangement of hexagonal graphite fuel block columns**, with a solid inner reflector at the centre and a solid outer reflector at the periphery. The fuel lives in the annular region between them.
 
-```
-        OUTER REFLECTOR
-      ┌─────────────────┐
-      │  FUEL ANNULUS   │
-      │   ┌─────────┐   │
-      │   │  INNER  │   │
-      │   │REFLECTOR│   │
-      │   └─────────┘   │
-      │  FUEL ANNULUS   │
-      └─────────────────┘
-        OUTER REFLECTOR
-
-        (cross-section, not to scale)
-```
+![Annular prismatic core cross-section](../diagrams/core-cross-section.svg)
 
 The annular geometry is the key passive safety enabler: decay heat conducted outward through the outer reflector to the reactor cavity cooling system (RCCS) is sufficient to keep peak fuel temperature below the TRISO failure limit with no active systems. A solid-core design at the same power level cannot guarantee this.
 

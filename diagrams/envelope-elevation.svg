@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620">
+  <!-- Background -->
+  <rect width="800" height="620" fill="#ffffff" rx="6"/>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#24292f">20 m Envelope — Elevation Cross-Section</text>
+
+  <!-- Ground / grade level -->
+  <rect x="60" y="240" width="680" height="6" fill="#8d6e63" stroke="#6d4c41" stroke-width="1"/>
+  <text x="752" y="245" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#6d4c41">GRADE</text>
+
+  <!-- Earth fill (below grade background) -->
+  <rect x="60" y="246" width="680" height="310" fill="#efebe9" stroke="none"/>
+  <!-- Earth hatching suggestion -->
+  <g stroke="#d7ccc8" stroke-width="0.5" opacity="0.6">
+    <line x1="60" y1="280" x2="740" y2="280"/>
+    <line x1="60" y1="320" x2="740" y2="320"/>
+    <line x1="60" y1="360" x2="740" y2="360"/>
+    <line x1="60" y1="400" x2="740" y2="400"/>
+    <line x1="60" y1="440" x2="740" y2="440"/>
+    <line x1="60" y1="480" x2="740" y2="480"/>
+    <line x1="60" y1="520" x2="740" y2="520"/>
+  </g>
+
+  <!-- Below-grade cavity -->
+  <rect x="160" y="250" width="480" height="300" fill="#fafafa" stroke="#78909c" stroke-width="2" stroke-dasharray="6,3"/>
+
+  <!-- Reactor vessel -->
+  <rect x="195" y="270" width="150" height="250" rx="12" fill="#b0bec5" stroke="#546e7a" stroke-width="3"/>
+  <!-- Vessel internals suggestion -->
+  <!-- Core region (annular) -->
+  <rect x="215" y="310" width="110" height="130" rx="4" fill="#ff8f00" stroke="#ef6c00" stroke-width="1.5" opacity="0.8"/>
+  <!-- Inner reflector -->
+  <rect x="245" y="320" width="50" height="110" rx="3" fill="#cfd8dc" stroke="#90a4ae" stroke-width="1"/>
+  <!-- Control rod drives at top -->
+  <g fill="#1565c0" stroke="#0d47a1" stroke-width="1">
+    <rect x="250" y="275" width="8" height="40" rx="2"/>
+    <rect x="262" y="275" width="8" height="40" rx="2"/>
+    <rect x="274" y="275" width="8" height="40" rx="2"/>
+  </g>
+  <text x="270" y="385" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="bold" fill="#ffffff">CORE</text>
+  <text x="270" y="295" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#1565c0">CRDs</text>
+
+  <!-- Vessel label -->
+  <text x="270" y="500" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#37474f">REACTOR</text>
+  <text x="270" y="512" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="bold" fill="#37474f">VESSEL</text>
+  <text x="270" y="525" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#546e7a">~5.5 m OD</text>
+  <text x="270" y="537" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#546e7a">~14 m tall</text>
+
+  <!-- Cross-vessel duct -->
+  <rect x="345" y="360" width="80" height="30" rx="4" fill="#90a4ae" stroke="#546e7a" stroke-width="2"/>
+  <text x="385" y="380" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#37474f">CROSS-VESSEL</text>
+
+  <!-- Turbomachine vessel -->
+  <rect x="425" y="290" width="100" height="220" rx="10" fill="#b0bec5" stroke="#546e7a" stroke-width="3"/>
+  <!-- Turbine section -->
+  <rect x="440" y="300" width="70" height="45" rx="4" fill="#e65100" stroke="#bf360c" stroke-width="1"/>
+  <text x="475" y="327" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="bold" fill="#ffffff">TURBINE</text>
+  <!-- Generator section -->
+  <rect x="440" y="350" width="70" height="35" rx="4" fill="#4527a0" stroke="#311b92" stroke-width="1"/>
+  <text x="475" y="372" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="bold" fill="#ffffff">GEN</text>
+  <!-- Compressor section -->
+  <rect x="440" y="390" width="70" height="45" rx="4" fill="#0277bd" stroke="#01579b" stroke-width="1"/>
+  <text x="475" y="417" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="bold" fill="#ffffff">COMPR</text>
+  <!-- Recuperator -->
+  <rect x="440" y="440" width="70" height="45" rx="4" fill="#00695c" stroke="#004d40" stroke-width="1"/>
+  <text x="475" y="462" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="bold" fill="#ffffff">RECUP</text>
+  <text x="475" y="475" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#b2dfdb">(PCHE)</text>
+
+  <!-- Turbomachine label -->
+  <text x="475" y="500" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#546e7a">~2.5 m OD</text>
+
+  <!-- Above-grade building -->
+  <rect x="160" y="100" width="480" height="140" fill="none" stroke="#546e7a" stroke-width="2"/>
+  <!-- Building roof -->
+  <line x1="160" y1="100" x2="640" y2="100" stroke="#37474f" stroke-width="3"/>
+
+  <!-- RCCS exhaust stack -->
+  <rect x="175" y="48" width="50" height="52" fill="none" stroke="#546e7a" stroke-width="2"/>
+  <text x="200" y="70" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="bold" fill="#546e7a">RCCS</text>
+  <text x="200" y="80" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#546e7a">EXHAUST</text>
+  <!-- Hot air arrows out -->
+  <g fill="#ef5350" stroke="none">
+    <polygon points="188,48 192,38 196,48"/>
+    <polygon points="200,48 204,38 208,48"/>
+    <polygon points="212,48 216,38 220,48"/>
+  </g>
+
+  <!-- RCCS air inlet arrows (at grade) -->
+  <g fill="#42a5f5" stroke="none">
+    <polygon points="165,250 155,246 155,254"/>
+    <polygon points="165,260 155,256 155,264"/>
+  </g>
+  <text x="130" y="260" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#0277bd">Cool</text>
+  <text x="130" y="270" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8" fill="#0277bd">air in</text>
+
+  <!-- RCCS air path (dotted line showing natural convection) -->
+  <path d="M 170 255 L 170 270 L 185 520 L 185 540 L 195 540 L 195 270 L 200 130 L 200 75" fill="none" stroke="#ef5350" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+
+  <!-- Building interior labels -->
+  <text x="420" y="140" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#546e7a">BUILDING / ACCESS</text>
+  <text x="420" y="155" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#546e7a">Fuel handling · Maintenance</text>
+
+  <!-- Dimension annotations -->
+  <!-- Total 20m (right side) -->
+  <line x1="690" y1="48" x2="690" y2="550" stroke="#24292f" stroke-width="1"/>
+  <line x1="684" y1="48" x2="696" y2="48" stroke="#24292f" stroke-width="1.5"/>
+  <line x1="684" y1="550" x2="696" y2="550" stroke="#24292f" stroke-width="1.5"/>
+  <polygon points="690,53 687,61 693,61" fill="#24292f"/>
+  <polygon points="690,545 687,537 693,537" fill="#24292f"/>
+  <text x="710" y="300" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#24292f" transform="rotate(90, 710, 300)">20 m total</text>
+
+  <!-- Above grade ~8m -->
+  <line x1="660" y1="48" x2="660" y2="240" stroke="#57606a" stroke-width="1"/>
+  <line x1="654" y1="48" x2="666" y2="48" stroke="#57606a" stroke-width="1"/>
+  <line x1="654" y1="240" x2="666" y2="240" stroke="#57606a" stroke-width="1"/>
+  <text x="660" y="150" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#57606a" transform="rotate(90, 660, 150)">~8 m above</text>
+
+  <!-- Below grade ~12m -->
+  <line x1="660" y1="246" x2="660" y2="550" stroke="#57606a" stroke-width="1"/>
+  <line x1="654" y1="246" x2="666" y2="246" stroke="#57606a" stroke-width="1"/>
+  <line x1="654" y1="550" x2="666" y2="550" stroke="#57606a" stroke-width="1"/>
+  <text x="660" y="400" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#57606a" transform="rotate(90, 660, 400)">~12 m below</text>
+
+  <!-- Footprint dimension (bottom) -->
+  <line x1="160" y1="575" x2="640" y2="575" stroke="#24292f" stroke-width="1"/>
+  <line x1="160" y1="569" x2="160" y2="581" stroke="#24292f" stroke-width="1.5"/>
+  <line x1="640" y1="569" x2="640" y2="581" stroke="#24292f" stroke-width="1.5"/>
+  <polygon points="165,575 173,572 173,578" fill="#24292f"/>
+  <polygon points="635,575 627,572 627,578" fill="#24292f"/>
+  <text x="400" y="592" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#24292f">~20 m footprint</text>
+
+  <!-- Cavity floor label -->
+  <text x="400" y="562" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#78909c">CAVITY FLOOR</text>
+</svg>

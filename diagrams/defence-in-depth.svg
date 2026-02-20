@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 460">
+  <!-- Background -->
+  <rect width="760" height="460" fill="#ffffff" rx="6"/>
+
+  <!-- Title -->
+  <text x="380" y="30" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#24292f">Defence in Depth — Five Independent Barriers</text>
+
+  <!-- Nested rectangles from outside in -->
+  <!-- Barrier 5: Confinement building (outermost) -->
+  <rect x="60" y="55" width="640" height="350" rx="12" fill="#e8eaf6" stroke="#5c6bc0" stroke-width="3"/>
+
+  <!-- Barrier 4: Reactor cavity -->
+  <rect x="110" y="85" width="540" height="290" rx="10" fill="#e0f2f1" stroke="#26a69a" stroke-width="2.5"/>
+
+  <!-- RCCS panels (indicated on cavity walls) -->
+  <g fill="#26a69a" opacity="0.3">
+    <rect x="114" y="100" width="8" height="260" rx="2"/>
+    <rect x="638" y="100" width="8" height="260" rx="2"/>
+  </g>
+  <text x="106" y="230" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="7" fill="#00695c" transform="rotate(-90, 106, 230)">RCCS PANELS</text>
+  <text x="656" y="230" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="7" fill="#00695c" transform="rotate(90, 656, 230)">RCCS PANELS</text>
+
+  <!-- Barrier 3: Reactor vessel -->
+  <rect x="190" y="110" width="200" height="240" rx="14" fill="#eceff1" stroke="#546e7a" stroke-width="4"/>
+
+  <!-- Barrier 2: Helium pressure boundary (inside vessel, vessel + internals) -->
+  <rect x="205" y="125" width="170" height="210" rx="10" fill="#fff8e1" stroke="#ffb300" stroke-width="2.5"/>
+  <text x="290" y="152" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" fill="#ff8f00">He at 4 MPa</text>
+
+  <!-- Core region inside -->
+  <rect x="230" y="170" width="120" height="140" rx="6" fill="#ff8f00" stroke="#ef6c00" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- Barrier 1: TRISO coatings (innermost — individual fuel particles) -->
+  <!-- Small circles representing TRISO particles -->
+  <g fill="#e65100" stroke="#bf360c" stroke-width="0.8">
+    <circle cx="260" cy="200" r="8"/>
+    <circle cx="280" cy="195" r="8"/>
+    <circle cx="300" cy="200" r="8"/>
+    <circle cx="320" cy="195" r="8"/>
+    <circle cx="270" cy="218" r="8"/>
+    <circle cx="290" cy="215" r="8"/>
+    <circle cx="310" cy="218" r="8"/>
+    <circle cx="260" cy="236" r="8"/>
+    <circle cx="280" cy="233" r="8"/>
+    <circle cx="300" cy="236" r="8"/>
+    <circle cx="320" cy="233" r="8"/>
+    <circle cx="270" cy="254" r="8"/>
+    <circle cx="290" cy="251" r="8"/>
+    <circle cx="310" cy="254" r="8"/>
+    <circle cx="260" cy="272" r="8"/>
+    <circle cx="280" cy="269" r="8"/>
+    <circle cx="300" cy="272" r="8"/>
+    <circle cx="320" cy="269" r="8"/>
+    <circle cx="270" cy="290" r="8"/>
+    <circle cx="290" cy="287" r="8"/>
+    <circle cx="310" cy="290" r="8"/>
+  </g>
+
+  <!-- Core label -->
+  <text x="290" y="316" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="bold" fill="#bf360c">FUEL CORE</text>
+
+  <!-- Turbomachine vessel (also within pressure boundary) -->
+  <rect x="430" y="140" width="90" height="200" rx="8" fill="#eceff1" stroke="#546e7a" stroke-width="3"/>
+  <text x="475" y="185" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="bold" fill="#546e7a">TURBO-</text>
+  <text x="475" y="197" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="bold" fill="#546e7a">MACHINE</text>
+
+  <!-- Cross-vessel -->
+  <rect x="390" y="220" width="40" height="24" rx="3" fill="#90a4ae" stroke="#546e7a" stroke-width="2"/>
+
+  <!-- Labels with leader lines -->
+  <!-- Barrier 1 -->
+  <line x1="328" y1="200" x2="555" y2="122" stroke="#e65100" stroke-width="1"/>
+  <circle cx="328" cy="200" r="2" fill="#e65100"/>
+  <rect x="545" y="100" width="165" height="40" rx="4" fill="#fff3e0" stroke="#e65100" stroke-width="1"/>
+  <text x="555" y="116" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#e65100">1  TRISO Coatings</text>
+  <text x="555" y="132" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#57606a">Fission products at kernel</text>
+
+  <!-- Barrier 2 -->
+  <line x1="375" y1="155" x2="555" y2="155" stroke="#ffb300" stroke-width="1"/>
+  <circle cx="375" cy="155" r="2" fill="#ffb300"/>
+  <rect x="545" y="148" width="165" height="40" rx="4" fill="#fff8e1" stroke="#ffb300" stroke-width="1"/>
+  <text x="555" y="164" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#ff8f00">2  He Pressure Boundary</text>
+  <text x="555" y="180" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#57606a">Contains activated coolant</text>
+
+  <!-- Barrier 3 -->
+  <line x1="390" y1="210" x2="555" y2="210" stroke="#546e7a" stroke-width="1"/>
+  <circle cx="390" cy="210" r="2" fill="#546e7a"/>
+  <rect x="545" y="196" width="165" height="40" rx="4" fill="#eceff1" stroke="#546e7a" stroke-width="1"/>
+  <text x="555" y="212" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#37474f">3  Reactor Vessel</text>
+  <text x="555" y="228" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#57606a">Steel pressure vessel</text>
+
+  <!-- Barrier 4 -->
+  <line x1="130" y1="380" x2="555" y2="290" stroke="#26a69a" stroke-width="1"/>
+  <circle cx="130" cy="380" r="2" fill="#26a69a"/>
+  <rect x="545" y="244" width="165" height="52" rx="4" fill="#e0f2f1" stroke="#26a69a" stroke-width="1"/>
+  <text x="555" y="260" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#00695c">4  Reactor Cavity</text>
+  <text x="555" y="276" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#57606a">Concrete + RCCS panels</text>
+  <text x="555" y="290" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#57606a">Passive decay heat removal</text>
+
+  <!-- Barrier 5 -->
+  <line x1="80" y1="410" x2="555" y2="340" stroke="#5c6bc0" stroke-width="1"/>
+  <circle cx="80" cy="410" r="2" fill="#5c6bc0"/>
+  <rect x="545" y="308" width="165" height="52" rx="4" fill="#e8eaf6" stroke="#5c6bc0" stroke-width="1"/>
+  <text x="555" y="324" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#3949ab">5  Confinement Building</text>
+  <text x="555" y="340" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#57606a">Low-leakage industrial</text>
+  <text x="555" y="354" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#57606a">Final atmospheric barrier</text>
+
+  <!-- Safety note -->
+  <rect x="170" y="400" width="340" height="40" rx="6" fill="#e8f5e9" stroke="#66bb6a" stroke-width="1"/>
+  <text x="340" y="418" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#2e7d32">Walk-away safe: peak fuel T &lt; 1,600 °C</text>
+  <text x="340" y="433" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#2e7d32">No operator action · No active systems · Indefinitely</text>
+</svg>

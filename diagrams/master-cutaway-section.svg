@@ -1,0 +1,1636 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" role="img" aria-labelledby="ttl desc">
+<title id="ttl">VHTR 100–150 MW(th) — Annotated Engineering Cutaway</title>
+<desc id="desc">Widescreen general-arrangement plate. Vertical section through a helium-cooled, graphite-moderated very high temperature reactor installed in a below-grade pre-cast concrete cavity, with direct Brayton turbomachine, recuperator, air-cooled precooler and passive air-cooled reactor cavity cooling system. Enlarged details of the TPMS gyroid fuel block and the TRISO particle, the primary-circuit state chain, key numbers and legends.</desc>
+<defs>
+  <!-- ============ MATERIAL GRADIENTS ============ -->
+  <linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#EDF2F5"/>
+    <stop offset="1" stop-color="#FBFAF7"/>
+  </linearGradient>
+  <linearGradient id="gEarth" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#E5DBCB"/>
+    <stop offset="0.35" stop-color="#DCCFBA"/>
+    <stop offset="1" stop-color="#C9B89E"/>
+  </linearGradient>
+  <linearGradient id="gConc" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#B9B2A4"/>
+    <stop offset="0.35" stop-color="#D2CDC4"/>
+    <stop offset="1" stop-color="#858076"/>
+  </linearGradient>
+  <linearGradient id="gConcH" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#D2CDC4"/>
+    <stop offset="1" stop-color="#858076"/>
+  </linearGradient>
+  <linearGradient id="gSteel" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#67757F"/>
+    <stop offset="0.14" stop-color="#CDD6DC"/>
+    <stop offset="0.34" stop-color="#E6EBEE"/>
+    <stop offset="0.52" stop-color="#CDD6DC"/>
+    <stop offset="0.78" stop-color="#8FA3B0"/>
+    <stop offset="1" stop-color="#4F5A61"/>
+  </linearGradient>
+  <linearGradient id="gSteelV" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#E6EBEE"/>
+    <stop offset="0.5" stop-color="#CDD6DC"/>
+    <stop offset="1" stop-color="#67757F"/>
+  </linearGradient>
+  <linearGradient id="gLiner" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#8FA3B0"/>
+    <stop offset="0.5" stop-color="#E6EBEE"/>
+    <stop offset="1" stop-color="#67757F"/>
+  </linearGradient>
+  <linearGradient id="gGraphite" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#5C6670"/>
+    <stop offset="0.5" stop-color="#40474E"/>
+    <stop offset="1" stop-color="#292E32"/>
+  </linearGradient>
+  <linearGradient id="gGraphiteL" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#79828A"/>
+    <stop offset="0.5" stop-color="#4E575F"/>
+    <stop offset="1" stop-color="#40474E"/>
+  </linearGradient>
+  <!-- Fuel annulus: helium warms 580 -> 950 top-down, anchors only -->
+  <linearGradient id="gFuel" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#E8A31E"/>
+    <stop offset="0.35" stop-color="#EF8B1F"/>
+    <stop offset="1" stop-color="#D9481A"/>
+  </linearGradient>
+  <linearGradient id="gBuild" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#F8F9FA"/>
+    <stop offset="1" stop-color="#E4EAEE"/>
+  </linearGradient>
+  <linearGradient id="gRoof" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#67757F"/>
+    <stop offset="1" stop-color="#4F5A6180"/>
+  </linearGradient>
+
+  <!-- ============ TEMPERATURE RAMP ============
+       Working-fluid domain 0-1,000 C. Stops are the canonical anchors placed
+       at offset = T/1000; the 0.000 stop holds 35 C flat below the first
+       anchor and the 1.000 stop is the 950/1,240 interpolation at 1,000 C. -->
+  <linearGradient id="gRamp" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0.000" stop-color="#12417F"/>
+    <stop offset="0.035" stop-color="#12417F"/>
+    <stop offset="0.195" stop-color="#1D76B8"/>
+    <stop offset="0.215" stop-color="#2E8FB4"/>
+    <stop offset="0.580" stop-color="#E8A31E"/>
+    <stop offset="0.600" stop-color="#EF8B1F"/>
+    <stop offset="0.950" stop-color="#D9481A"/>
+    <stop offset="1.000" stop-color="#D14118"/>
+  </linearGradient>
+  <linearGradient id="gHotDuct" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#E05C43"/>
+    <stop offset="0.5" stop-color="#D9481A"/>
+    <stop offset="1" stop-color="#9C3413"/>
+  </linearGradient>
+  <linearGradient id="gColdDuct" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#466B9B"/>
+    <stop offset="0.5" stop-color="#12417F"/>
+    <stop offset="1" stop-color="#0D2E59"/>
+  </linearGradient>
+  <linearGradient id="gWarmDuct" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ECB446"/>
+    <stop offset="0.5" stop-color="#E8A31E"/>
+    <stop offset="1" stop-color="#A77516"/>
+  </linearGradient>
+
+  <!-- Glow behind the hot core -->
+  <radialGradient id="gCoreGlow" cx="0.5" cy="0.5" r="0.5">
+    <stop offset="0" stop-color="#F2582A" stop-opacity="0.55"/>
+    <stop offset="0.55" stop-color="#D9481A" stop-opacity="0.22"/>
+    <stop offset="1" stop-color="#A81D0E" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="gBubble" cx="0.34" cy="0.28" r="0.85">
+    <stop offset="0" stop-color="#FFFFFF"/>
+    <stop offset="0.7" stop-color="#F2F6F8"/>
+    <stop offset="1" stop-color="#E4EAEE"/>
+  </radialGradient>
+  <!-- UO2 kernel, canonical recurring-object gradient (house style 2b) -->
+  <radialGradient id="gKernel" cx="0.36" cy="0.30" r="0.80">
+    <stop offset="0" stop-color="#DC501B"/>
+    <stop offset="0.42" stop-color="#D24218"/>
+    <stop offset="0.74" stop-color="#BE3013"/>
+    <stop offset="1" stop-color="#A81D0E"/>
+  </radialGradient>
+
+  <!-- ============ PATTERNS ============ -->
+  <!-- cut face: grey cross-hatch on light ground -->
+  <pattern id="pConcrete" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <rect width="9" height="9" fill="none"/>
+    <line x1="0" y1="0" x2="0" y2="9" stroke="#5A7280" stroke-width="0.6" opacity="0.5"/>
+    <line x1="0" y1="0" x2="9" y2="0" stroke="#5A7280" stroke-width="0.6" opacity="0.5"/>
+  </pattern>
+  <pattern id="pConcAgg" width="26" height="26" patternUnits="userSpaceOnUse">
+    <circle cx="5" cy="7" r="1.5" fill="#66625A" opacity="0.35"/>
+    <circle cx="18" cy="4" r="1.1" fill="#66625A" opacity="0.3"/>
+    <circle cx="12" cy="17" r="1.7" fill="#66625A" opacity="0.32"/>
+    <circle cx="22" cy="21" r="1.2" fill="#66625A" opacity="0.28"/>
+  </pattern>
+  <pattern id="pEarth" width="34" height="34" patternUnits="userSpaceOnUse">
+    <circle cx="6" cy="8" r="1.6" fill="#A08D6E" opacity="0.42"/>
+    <circle cx="21" cy="3" r="1.1" fill="#A08D6E" opacity="0.34"/>
+    <circle cx="28" cy="15" r="1.7" fill="#A08D6E" opacity="0.38"/>
+    <circle cx="13" cy="20" r="1.2" fill="#A08D6E" opacity="0.32"/>
+    <circle cx="3" cy="27" r="1.5" fill="#A08D6E" opacity="0.36"/>
+    <circle cx="24" cy="30" r="1.1" fill="#A08D6E" opacity="0.3"/>
+    <path d="M15,10 l3,2 l-2,2 z" fill="#9A865F" opacity="0.25"/>
+    <path d="M31,25 l2.5,1.6 l-1.7,1.7 z" fill="#9A865F" opacity="0.22"/>
+  </pattern>
+  <pattern id="pGraphite" width="14" height="14" patternUnits="userSpaceOnUse">
+    <circle cx="3" cy="4" r="0.9" fill="#79828A" opacity="0.30"/>
+    <circle cx="10" cy="2" r="0.6" fill="#79828A" opacity="0.24"/>
+    <circle cx="7" cy="9" r="1.0" fill="#79828A" opacity="0.26"/>
+    <circle cx="12" cy="12" r="0.7" fill="#79828A" opacity="0.22"/>
+    <circle cx="1" cy="11" r="0.6" fill="#79828A" opacity="0.2"/>
+  </pattern>
+  <pattern id="pFuelSpeck" width="11" height="11" patternUnits="userSpaceOnUse">
+    <circle cx="2.5" cy="3" r="1.0" fill="#F6DAA5" opacity="0.45"/>
+    <circle cx="8" cy="1.5" r="0.7" fill="#F2CC83" opacity="0.4"/>
+    <circle cx="5.5" cy="7.5" r="1.1" fill="#F9E8C7" opacity="0.42"/>
+    <circle cx="9.5" cy="9" r="0.8" fill="#F2CC83" opacity="0.38"/>
+  </pattern>
+  <pattern id="pPCHE" width="8" height="8" patternUnits="userSpaceOnUse">
+    <rect width="8" height="8" fill="none"/>
+    <line x1="0" y1="2" x2="8" y2="2" stroke="#1D76B8" stroke-width="0.7" opacity="0.55"/>
+    <line x1="0" y1="6" x2="8" y2="6" stroke="#EF8B1F" stroke-width="0.7" opacity="0.5"/>
+    <line x1="4" y1="0" x2="4" y2="8" stroke="#90A4AE" stroke-width="0.4" opacity="0.3"/>
+  </pattern>
+  <pattern id="pFins" width="6" height="10" patternUnits="userSpaceOnUse">
+    <line x1="1.5" y1="0" x2="1.5" y2="10" stroke="#67757F" stroke-width="1.4" opacity="0.6"/>
+    <line x1="4.5" y1="0" x2="4.5" y2="10" stroke="#8FA3B0" stroke-width="0.9" opacity="0.45"/>
+  </pattern>
+  <pattern id="pLouvre" width="7" height="7" patternUnits="userSpaceOnUse">
+    <line x1="0" y1="6" x2="7" y2="1" stroke="#67757F" stroke-width="1.5" opacity="0.75"/>
+  </pattern>
+  <!-- gyroid: solid = nuclear graphite, void = helium channel, drawn neutral as on sheet B -->
+  <pattern id="pGyroid" width="30" height="30" patternUnits="userSpaceOnUse">
+    <rect width="30" height="30" fill="#5C6670"/>
+    <path d="M0,15 C5,4 10,4 15,15 C20,26 25,26 30,15" fill="none" stroke="#E3E9EC" stroke-width="3.6"/>
+    <path d="M15,0 C26,5 26,10 15,15 C4,20 4,25 15,30" fill="none" stroke="#BABFC2" stroke-width="3.2"/>
+  </pattern>
+  <pattern id="pTriso" width="9" height="9" patternUnits="userSpaceOnUse">
+    <circle cx="4.5" cy="4.5" r="2.4" fill="none" stroke="#0F8074" stroke-width="0.7" opacity="0.9"/>
+    <circle cx="4.5" cy="4.5" r="1.1" fill="#BF360C" opacity="0.9"/>
+  </pattern>
+  <pattern id="pBackfill" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(-30)">
+    <line x1="0" y1="0" x2="0" y2="16" stroke="#B09A76" stroke-width="0.6" opacity="0.3"/>
+  </pattern>
+
+  <!-- ============ MARKERS ============ -->
+  <marker id="mArrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+    <path d="M0,1 L9,5 L0,9 z" fill="context-stroke"/>
+  </marker>
+  <marker id="mArrowHot" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M0,1 L9,5 L0,9 z" fill="#D9481A"/>
+  </marker>
+  <marker id="mArrowCold" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <path d="M0,1 L9,5 L0,9 z" fill="#12417F"/>
+  </marker>
+  <marker id="mArrowAir" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5.6" markerHeight="5.6" orient="auto-start-reverse">
+    <path d="M0,1 L9,5 L0,9 z" fill="#2FA88C"/>
+  </marker>
+  <marker id="mArrowAirH" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5.6" markerHeight="5.6" orient="auto-start-reverse">
+    <path d="M0,1 L9,5 L0,9 z" fill="#2FA88C"/>
+  </marker>
+  <marker id="mDot" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="5" markerHeight="5">
+    <circle cx="4" cy="4" r="2.6" fill="#5A7280"/>
+  </marker>
+  <marker id="mDotSm" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="4" markerHeight="4">
+    <circle cx="4" cy="4" r="2.8" fill="#5A7280"/>
+  </marker>
+  <marker id="mTick" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+    <path d="M5,0 L5,10" stroke="#12242E" stroke-width="1.6"/>
+  </marker>
+
+  <!-- ============ FILTERS ============ -->
+  <filter id="fSoft" x="-25%" y="-25%" width="150%" height="150%">
+    <feGaussianBlur stdDeviation="5"/>
+  </filter>
+  <filter id="fDrop" x="-20%" y="-20%" width="150%" height="150%">
+    <feDropShadow dx="1.5" dy="2.5" stdDeviation="2.6" flood-color="#12242E" flood-opacity="0.22"/>
+  </filter>
+  <filter id="fDropSm" x="-20%" y="-20%" width="150%" height="150%">
+    <feDropShadow dx="0.8" dy="1.4" stdDeviation="1.5" flood-color="#12242E" flood-opacity="0.26"/>
+  </filter>
+
+  <!-- ============ CLIPS ============ -->
+  <clipPath id="clipCavity"><rect x="385" y="640" width="650" height="374"/></clipPath>
+  <clipPath id="clipVessel"><rect x="456" y="620" width="198" height="392" rx="16"/></clipPath>
+  <clipPath id="clipDA"><circle cx="1494" cy="226" r="96"/></clipPath>
+  <clipPath id="clipDB"><circle cx="1494" cy="466" r="92"/></clipPath>
+  <clipPath id="clipBuilding"><rect x="425" y="366" width="570" height="252"/></clipPath>
+</defs>
+
+<g font-family="Helvetica Neue, Helvetica, Arial, Liberation Sans, sans-serif">
+
+<!-- ==================== PAGE ==================== -->
+<rect width="1920" height="1080" fill="#FBFAF7"/>
+<rect x="12" y="12" width="1896" height="1056" fill="none" stroke="#CCD8DE" stroke-width="1.2" rx="3"/>
+
+<!-- ==================== TITLE BLOCK ==================== -->
+<g id="titleblock">
+  <rect x="40" y="20" width="6" height="62" fill="#D9481A"/>
+  <text x="62" y="52" font-size="30" font-weight="700" fill="#12242E" letter-spacing="-0.2">VERY HIGH TEMPERATURE REACTOR</text>
+  <text x="62" y="78" font-size="12.5" fill="#5A7280" letter-spacing="0.3">HELIUM-COOLED · GRAPHITE-MODERATED · TRISO-FUELLED · DIRECT BRAYTON — LONGITUDINAL SECTION A–A</text>
+
+  <line x1="836" y1="20" x2="836" y2="86" stroke="#CCD8DE" stroke-width="1"/>
+  <text x="860" y="32" font-size="11" font-weight="700" fill="#12242E" letter-spacing="0.2">WHAT THE SECTION SHOWS</text>
+  <g font-size="9.5" fill="#5A7280">
+    <text x="860" y="49">A 20-metre cube. Twelve metres of it sit below grade, and that depth is not spare volume — it is the chimney that makes the cooling passive.</text>
+    <text x="860" y="63">Helium at 4 MPa leaves the core at 950 °C, turns the turbine directly, and comes back through a recuperator to that same core: no intermediate</text>
+    <text x="860" y="77">heat exchanger, no secondary loop, no cooling water, and not one valve, fan or pump anywhere in either air circuit.</text>
+  </g>
+
+  <text x="1880" y="32" font-size="9.5" font-weight="700" fill="#5A7280" letter-spacing="1.1" text-anchor="end">VHTR DESIGN PROJECT · MASTER SET · SHEET 1 OF 4</text>
+
+  <g font-size="10" fill="#5A7280">
+    <rect x="1560" y="42" width="320" height="44" rx="3" fill="#FFFFFF" stroke="#CCD8DE" stroke-width="1.4"/>
+    <line x1="1560" y1="64" x2="1880" y2="64" stroke="#DBE4E9" stroke-width="1"/>
+    <line x1="1700" y1="42" x2="1700" y2="86" stroke="#DBE4E9" stroke-width="1"/>
+    <text x="1572" y="57">ENVELOPE</text><text x="1712" y="57" font-weight="700" fill="#12242E">20 × 20 × 20 m</text>
+    <text x="1572" y="79">CORE OUTLET</text><text x="1712" y="79" font-weight="700" fill="#D9481A">950 °C @ 4 MPa</text>
+  </g>
+
+  <line x1="40" y1="92" x2="1880" y2="92" stroke="#12242E" stroke-width="1.6"/>
+  <line x1="40" y1="96.5" x2="1880" y2="96.5" stroke="#12242E" stroke-width="0.6"/>
+</g>
+
+<!-- column divider between the section band and the detail stack -->
+<line x1="1376" y1="100" x2="1376" y2="868" stroke="#CCD8DE" stroke-width="1.2"/>
+
+<!-- ============== SECTION A–A — 36 px = 1 m, vertical AND horizontal ============== -->
+<g id="sectionband" transform="translate(0,-206)">
+<!-- ==================== GROUND, CAVITY, CIVIL ==================== -->
+<g id="civil">
+  <!-- sky / atmosphere above grade -->
+  <rect x="262" y="306" width="890" height="312" fill="url(#gSky)"/>
+
+  <!-- earth mass -->
+  <g>
+    <path d="M262,618 H350 V1050 H1070 V618 H1152 V1078 H262 Z" fill="url(#gEarth)"/>
+    <path d="M262,618 H350 V1050 H1070 V618 H1152 V1078 H262 Z" fill="url(#pEarth)"/>
+    <path d="M262,618 H350 V1050 H1070 V618 H1152 V1078 H262 Z" fill="url(#pBackfill)"/>
+    <!-- strata lines -->
+    <g stroke="#b39c78" stroke-width="0.9" opacity="0.5" fill="none">
+      <path d="M262,672 C286,668 312,676 350,672"/>
+      <path d="M1070,672 C1100,668 1126,676 1152,672"/>
+      <path d="M262,760 C290,754 318,764 350,758"/>
+      <path d="M1070,758 C1102,752 1128,762 1152,756"/>
+      <path d="M262,868 C288,862 316,872 350,866"/>
+      <path d="M1070,866 C1100,860 1130,870 1152,864"/>
+      <path d="M262,966 C292,960 320,970 350,964"/>
+      <path d="M1070,964 C1104,958 1128,968 1152,962"/>
+      <path d="M262,1058 C400,1050 560,1064 710,1056 C860,1048 1020,1064 1152,1054"/>
+    </g>
+  </g>
+
+  <!-- ===== pre-cast concrete cavity shell ===== -->
+  <g filter="url(#fDrop)">
+    <!-- outer shell body -->
+    <path d="M350,618 H1070 V1050 H350 Z" fill="none"/>
+    <!-- left wall -->
+    <rect x="350" y="618" width="29" height="432" fill="url(#gConc)"/>
+    <!-- right wall -->
+    <rect x="1041" y="618" width="29" height="432" fill="url(#gConc)"/>
+    <!-- grade slab / cavity roof -->
+    <rect x="350" y="618" width="720" height="22" fill="url(#gConcH)"/>
+    <!-- base slab -->
+    <rect x="350" y="1014" width="720" height="36" fill="url(#gConcH)"/>
+  </g>
+  <g>
+    <rect x="350" y="618" width="29" height="432" fill="url(#pConcrete)"/>
+    <rect x="1041" y="618" width="29" height="432" fill="url(#pConcrete)"/>
+    <rect x="350" y="618" width="720" height="22" fill="url(#pConcrete)"/>
+    <rect x="350" y="1014" width="720" height="36" fill="url(#pConcrete)"/>
+    <rect x="350" y="1014" width="720" height="36" fill="url(#pConcAgg)"/>
+    <rect x="350" y="618" width="29" height="432" fill="url(#pConcAgg)"/>
+    <rect x="1041" y="618" width="29" height="432" fill="url(#pConcAgg)"/>
+  </g>
+  <g fill="none" stroke="#66625A" stroke-width="1.4">
+    <rect x="350" y="618" width="29" height="432"/>
+    <rect x="1041" y="618" width="29" height="432"/>
+    <rect x="350" y="618" width="720" height="22"/>
+    <rect x="350" y="1014" width="720" height="36"/>
+  </g>
+
+  <!-- pre-cast ring segment joints (5 rings, 86.4 px = 2.4 m lift each) -->
+  <g stroke="#53504A" stroke-width="1.5" opacity="0.85">
+    <line x1="350" y1="704" x2="379" y2="704"/><line x1="1041" y1="704" x2="1070" y2="704"/>
+    <line x1="350" y1="790" x2="379" y2="790"/><line x1="1041" y1="790" x2="1070" y2="790"/>
+    <line x1="350" y1="876" x2="379" y2="876"/><line x1="1041" y1="876" x2="1070" y2="876"/>
+    <line x1="350" y1="962" x2="379" y2="962"/><line x1="1041" y1="962" x2="1070" y2="962"/>
+  </g>
+  <!-- bolted / grouted joint detail: keys -->
+  <g fill="#858076" stroke="#53504A" stroke-width="0.7">
+    <rect x="360" y="700" width="9" height="8" rx="1.5"/><rect x="1051" y="700" width="9" height="8" rx="1.5"/>
+    <rect x="360" y="786" width="9" height="8" rx="1.5"/><rect x="1051" y="786" width="9" height="8" rx="1.5"/>
+    <rect x="360" y="872" width="9" height="8" rx="1.5"/><rect x="1051" y="872" width="9" height="8" rx="1.5"/>
+    <rect x="360" y="958" width="9" height="8" rx="1.5"/><rect x="1051" y="958" width="9" height="8" rx="1.5"/>
+  </g>
+  <text x="364" y="836" font-size="10" fill="#5A7280" letter-spacing="1.1" text-anchor="middle" transform="rotate(-90,364,836)">PRE-CAST RING SEGMENTS</text>
+
+  <!-- ===== welded steel cavity liner ===== -->
+  <g>
+    <rect x="379" y="640" width="6" height="374" fill="url(#gLiner)"/>
+    <rect x="1035" y="640" width="6" height="374" fill="url(#gLiner)"/>
+    <rect x="385" y="1008" width="650" height="6" fill="#CDD6DC"/>
+    <rect x="385" y="640" width="650" height="5" fill="#CDD6DC"/>
+  </g>
+  <g stroke="#5A7280" stroke-width="0.6" opacity="0.8">
+    <line x1="379" y1="734" x2="385" y2="734"/><line x1="379" y1="828" x2="385" y2="828"/><line x1="379" y1="922" x2="385" y2="922"/>
+    <line x1="1035" y1="734" x2="1041" y2="734"/><line x1="1035" y1="828" x2="1041" y2="828"/><line x1="1035" y1="922" x2="1041" y2="922"/>
+  </g>
+
+  <!-- cavity void background -->
+  <rect x="385" y="645" width="650" height="363" fill="#F2F6F8"/>
+  <rect x="385" y="645" width="650" height="363" fill="#F2F6F8" opacity="0.5"/>
+
+  <!-- internal partition: reactor cavity | balance-of-plant bay -->
+  <rect x="726" y="645" width="8" height="363" fill="url(#gConcH)" stroke="#66625A" stroke-width="1"/>
+  <rect x="726" y="645" width="8" height="363" fill="url(#pConcrete)"/>
+  <text x="730" y="686" font-size="10" fill="#5A7280" letter-spacing="0.8" text-anchor="middle" transform="rotate(-90,730,686)">SHIELD WALL</text>
+
+  <!-- base slab embedded services -->
+  <g stroke="#8FA3B0" stroke-width="1.6" fill="none" opacity="0.75">
+    <path d="M400,1032 H1020"/>
+    <path d="M470,1024 V1040"/><path d="M600,1024 V1040"/><path d="M800,1024 V1040"/><path d="M940,1024 V1040"/>
+  </g>
+  <text x="710" y="1047" font-size="10" fill="#5A7280" text-anchor="middle" letter-spacing="0.9">BASE SLAB — EMBEDDED SERVICES &amp; DRAINAGE</text>
+
+  <!-- ===== GRADE LINE ===== -->
+  <g>
+    <line x1="262" y1="618" x2="1152" y2="618" stroke="#6D4C41" stroke-width="2.5" stroke-dasharray="12,4,3,4"/>
+    <polygon points="268,618 279,604 290,618" fill="#6D4C41"/>
+    <polygon points="1124,618 1135,604 1146,618" fill="#6D4C41"/>
+    <g fill="#6D4C41" opacity="0.55">
+      <path d="M300,618 l7,-9 M316,618 l7,-9 M332,618 l7,-9"/>
+    </g>
+  </g>
+</g>
+<!-- ==================== ABOVE-GRADE BUILDING ==================== -->
+<g id="building">
+  <!-- shell -->
+  <rect x="425" y="366" width="570" height="252" fill="url(#gBuild)" stroke="#5A7280" stroke-width="2.2"/>
+  <rect x="419" y="356" width="582" height="12" fill="url(#gRoof)" stroke="#12242E" stroke-width="1.4"/>
+  <!-- cladding rib lines -->
+  <g stroke="#DBE4E9" stroke-width="0.8" opacity="0.9">
+    <line x1="455" y1="368" x2="455" y2="616"/><line x1="620" y1="368" x2="620" y2="616"/>
+    <line x1="668" y1="368" x2="668" y2="616"/><line x1="742" y1="368" x2="742" y2="616"/>
+    <line x1="860" y1="368" x2="860" y2="616"/><line x1="960" y1="368" x2="960" y2="616"/>
+  </g>
+  <text x="772" y="378" font-size="10" fill="#5A7280" text-anchor="middle" letter-spacing="0.9">CONFINEMENT BUILDING — FUNCTIONAL CONTAINMENT (SECY-18-0096)</text>
+
+  <!-- ===== RCCS exhaust stack ===== -->
+  <g>
+    <rect x="428" y="326" width="62" height="32" fill="#E4E2DC" stroke="#12242E" stroke-width="1.8"/>
+    <rect x="431" y="329" width="56" height="26" fill="url(#pLouvre)"/>
+    <rect x="424" y="320" width="70" height="8" fill="#5A7280" stroke="#12242E" stroke-width="1"/>
+  </g>
+
+  <!-- ===== maintenance crane ===== -->
+  <g>
+    <line x1="432" y1="386" x2="988" y2="386" stroke="#8FA3B0" stroke-width="3"/>
+    <line x1="432" y1="390" x2="988" y2="390" stroke="#CDD6DC" stroke-width="1.2"/>
+    <!-- bridge girder -->
+    <rect x="496" y="382" width="124" height="12" fill="url(#gSteelV)" stroke="#5A7280" stroke-width="1.2"/>
+    <rect x="492" y="378" width="10" height="20" fill="#8FA3B0" stroke="#5A7280" stroke-width="1"/>
+    <rect x="614" y="378" width="10" height="20" fill="#8FA3B0" stroke="#5A7280" stroke-width="1"/>
+    <!-- trolley + hoist -->
+    <rect x="545" y="374" width="26" height="14" fill="#67757F" stroke="#1E6D5B" stroke-width="1.1"/>
+    <line x1="558" y1="388" x2="558" y2="462" stroke="#5A7280" stroke-width="1.5"/>
+    <rect x="547" y="462" width="22" height="16" rx="2" fill="#8FA3B0" stroke="#12242E" stroke-width="1.2"/>
+    <path d="M558,478 v8 a7,7 0 1 0 6,-3" fill="none" stroke="#12242E" stroke-width="1.8"/>
+  </g>
+
+  <!-- refuelling path (dashed, from crane through hatch into vessel head) -->
+  <g>
+    <path d="M558,494 V618" stroke="#12242E" stroke-width="1.4" stroke-dasharray="6,4" fill="none" marker-end="url(#mArrow)"/>
+    <path d="M558,644 V700" stroke="#12242E" stroke-width="1.4" stroke-dasharray="6,4" fill="none" opacity="0.85"/>
+    <rect x="482" y="586" width="118" height="16" rx="2" fill="#FFFFFF" stroke="#12242E" stroke-width="0.9"/>
+    <text x="488" y="598" font-size="10" fill="#12242E" font-weight="700">REFUELLING · 12 mo</text>
+  </g>
+
+  <!-- ===== maintenance hatch / shield plug through grade slab ===== -->
+  <g>
+    <rect x="504" y="614" width="108" height="30" fill="#C6C0B4" stroke="#53504A" stroke-width="1.6"/>
+    <rect x="504" y="614" width="108" height="30" fill="url(#pConcrete)"/>
+    <line x1="504" y1="620" x2="612" y2="620" stroke="#858076" stroke-width="0.8"/>
+    <line x1="504" y1="638" x2="612" y2="638" stroke="#858076" stroke-width="0.8"/>
+    <circle cx="524" cy="629" r="3.5" fill="none" stroke="#53504A" stroke-width="1.2"/>
+    <circle cx="592" cy="629" r="3.5" fill="none" stroke="#53504A" stroke-width="1.2"/>
+  </g>
+
+  <!-- ===== helium inventory cylinders ===== -->
+  <g>
+    <rect x="672" y="498" width="66" height="108" fill="#F2F6F8" stroke="#8FA3B0" stroke-width="1.2"/>
+    <g fill="url(#gSteelV)" stroke="#5A7280" stroke-width="1">
+      <rect x="678" y="512" width="11" height="86" rx="5.5"/>
+      <rect x="692" y="512" width="11" height="86" rx="5.5"/>
+      <rect x="706" y="512" width="11" height="86" rx="5.5"/>
+      <rect x="720" y="512" width="11" height="86" rx="5.5"/>
+    </g>
+    <g fill="#12417F">
+      <rect x="681" y="508" width="5" height="6"/><rect x="695" y="508" width="5" height="6"/>
+      <rect x="709" y="508" width="5" height="6"/><rect x="723" y="508" width="5" height="6"/>
+    </g>
+    <line x1="678" y1="505" x2="733" y2="505" stroke="#12417F" stroke-width="1.6"/>
+    <text x="705" y="565" font-size="10" fill="#12242E" text-anchor="middle" transform="rotate(-90,705,565)" letter-spacing="0.9">He INVENTORY</text>
+  </g>
+
+  <!-- ===== autonomous control cabinet ===== -->
+  <g>
+    <rect x="672" y="424" width="66" height="62" fill="#F2F6F8" stroke="#8FA3B0" stroke-width="1.2"/>
+    <rect x="678" y="430" width="54" height="30" fill="#292E32" stroke="#5A7280" stroke-width="0.8"/>
+    <g stroke="#2FA88C" stroke-width="1.1" fill="none" opacity="0.9">
+      <path d="M682,452 l6,-9 l6,5 l7,-13 l6,10 l5,-6 l6,8"/>
+    </g>
+    <g fill="#8FA3B0"><rect x="678" y="466" width="54" height="4"/><rect x="678" y="474" width="34" height="4"/></g>
+    <text x="705" y="483" font-size="10" fill="#12242E" text-anchor="middle">CONTROL CABINET</text>
+  </g>
+
+  <!-- ===== switchgear ===== -->
+  <g>
+    <rect x="866" y="396" width="122" height="60" fill="#F2F6F8" stroke="#8FA3B0" stroke-width="1.2"/>
+    <g fill="url(#gSteelV)" stroke="#5A7280" stroke-width="0.9">
+      <rect x="872" y="404" width="26" height="44"/><rect x="902" y="404" width="26" height="44"/>
+      <rect x="932" y="404" width="26" height="44"/><rect x="962" y="404" width="20" height="44"/>
+    </g>
+    <g stroke="#5B4EA8" stroke-width="1.6" fill="none">
+      <path d="M879,414 h12 M909,414 h12 M939,414 h12"/>
+    </g>
+    <text x="927" y="466" font-size="10" fill="#12242E" text-anchor="middle" letter-spacing="0.8">HV SWITCHGEAR</text>
+  </g>
+
+  <!-- ===== spent fuel dry store ===== -->
+  <g>
+    <rect x="866" y="478" width="122" height="128" fill="#F2F6F8" stroke="#8FA3B0" stroke-width="1.4"/>
+    <!-- shielded dry casks, 2 years' discharge -->
+    <g>
+      <g fill="url(#gConcH)" stroke="#53504A" stroke-width="1.1">
+        <rect x="874" y="506" width="26" height="70" rx="3"/>
+        <rect x="906" y="506" width="26" height="70" rx="3"/>
+        <rect x="938" y="506" width="26" height="70" rx="3"/>
+        <rect x="966" y="506" width="16" height="70" rx="3"/>
+      </g>
+      <g fill="url(#pConcrete)">
+        <rect x="874" y="506" width="26" height="70" rx="3"/><rect x="906" y="506" width="26" height="70" rx="3"/>
+        <rect x="938" y="506" width="26" height="70" rx="3"/><rect x="966" y="506" width="16" height="70" rx="3"/>
+      </g>
+      <g fill="#858076" opacity="0.8">
+        <rect x="881" y="522" width="12" height="40" rx="2"/><rect x="913" y="522" width="12" height="40" rx="2"/>
+        <rect x="945" y="522" width="12" height="40" rx="2"/>
+      </g>
+      <g fill="#53504A"><rect x="872" y="500" width="30" height="7"/><rect x="904" y="500" width="30" height="7"/><rect x="936" y="500" width="30" height="7"/><rect x="964" y="500" width="20" height="7"/></g>
+    </g>
+    <!-- passive air cooling of the dry store -->
+    <g stroke="#2FA88C" stroke-width="2" fill="none" marker-end="url(#mArrowAir)" opacity="0.9">
+      <path d="M872,603 h18"/><path d="M904,603 h18"/><path d="M936,603 h18"/>
+    </g>
+    <g stroke="#2FA88C" stroke-width="2" fill="none" marker-end="url(#mArrowAirH)" opacity="0.9">
+      <path d="M886,494 v-9"/><path d="M918,494 v-9"/><path d="M950,494 v-9"/>
+    </g>
+    <text x="934" y="586" font-size="10" fill="#12242E" text-anchor="middle" letter-spacing="0.4">DRY STORE · 2 yr</text>
+    <text x="934" y="598" font-size="10" fill="#12242E" text-anchor="middle" letter-spacing="0.4">NO POOL</text>
+  </g>
+
+  <!-- ===== generator busbar to switchgear and grid ===== -->
+  <g>
+    <path d="M800,500 V430 H1000" fill="none" stroke="#5B4EA8" stroke-width="1.6"/>
+    <circle cx="800" cy="430" r="3.2" fill="#5B4EA8"/>
+    <!-- step-up transformer -->
+    <g>
+      <rect x="1000" y="408" width="46" height="44" rx="3" fill="url(#gSteelV)" stroke="#5A7280" stroke-width="1.4"/>
+      <g fill="none" stroke="#12242E" stroke-width="1.1">
+        <circle cx="1015" cy="430" r="8"/><circle cx="1031" cy="430" r="8"/>
+      </g>
+      <g fill="#8FA3B0"><rect x="998" y="416" width="4" height="5"/><rect x="998" y="426" width="4" height="5"/><rect x="998" y="436" width="4" height="5"/></g>
+    </g>
+    <path d="M1046,430 H1062 V346" fill="none" stroke="#5B4EA8" stroke-width="1.6" marker-end="url(#mArrow)"/>
+    <text x="1062" y="336" font-size="10" fill="#5B4EA8" text-anchor="middle" font-weight="700">TO GRID</text>
+    <text x="1023" y="470" font-size="10" fill="#12242E" text-anchor="middle">STEP-UP TX</text>
+  </g>
+</g>
+<!-- ==================== REACTOR VESSEL &amp; CORE ==================== -->
+<g id="reactor">
+  <!-- thermal glow into the cavity -->
+  <ellipse cx="555" cy="826" rx="168" ry="152" fill="url(#gCoreGlow)" filter="url(#fSoft)"/>
+
+  <!-- vessel pressure boundary -->
+  <path d="M456,700 A99,40 0 0 1 654,700 V966 A99,40 0 0 1 456,966 Z" fill="url(#gSteel)" stroke="#12242E" stroke-width="2.4"/>
+  <!-- vessel interior -->
+  <path d="M464,700 A91,34 0 0 1 646,700 V966 A91,34 0 0 1 464,966 Z" fill="#292E32" stroke="#5A7280" stroke-width="1.2"/>
+  <!-- cold riser annulus (580 °C inlet climbing to top plenum) -->
+  <g>
+    <rect x="464" y="700" width="5" height="266" fill="url(#gWarmDuct)" opacity="0.92"/>
+    <rect x="641" y="700" width="5" height="266" fill="url(#gWarmDuct)" opacity="0.92"/>
+    <g stroke="#8B6212" stroke-width="1.6" fill="none" marker-end="url(#mArrow)" opacity="0.95">
+      <path d="M466.5,940 V906"/><path d="M466.5,860 V826"/><path d="M466.5,780 V746"/>
+      <path d="M643.5,940 V906"/><path d="M643.5,860 V826"/><path d="M643.5,780 V746"/>
+    </g>
+  </g>
+  <!-- core barrel -->
+  <rect x="469" y="700" width="3" height="266" fill="#8FA3B0"/>
+  <rect x="638" y="700" width="3" height="266" fill="#8FA3B0"/>
+
+  <!-- ===== top closure head, flange, CRD penetrations ===== -->
+  <g>
+    <path d="M456,700 A99,40 0 0 1 654,700 Z" fill="url(#gSteelV)" stroke="#12242E" stroke-width="2.2"/>
+    <rect x="448" y="694" width="214" height="12" rx="2" fill="url(#gSteel)" stroke="#12242E" stroke-width="1.6"/>
+    <g fill="#12242E">
+      <rect x="456" y="691" width="5" height="18" rx="1.5"/><rect x="478" y="691" width="5" height="18" rx="1.5"/>
+      <rect x="500" y="691" width="5" height="18" rx="1.5"/><rect x="522" y="691" width="5" height="18" rx="1.5"/>
+      <rect x="583" y="691" width="5" height="18" rx="1.5"/><rect x="605" y="691" width="5" height="18" rx="1.5"/>
+      <rect x="627" y="691" width="5" height="18" rx="1.5"/><rect x="649" y="691" width="5" height="18" rx="1.5"/>
+    </g>
+    <!-- CRD housings rising through the grade slab into the hatch -->
+    <g fill="url(#gSteelV)" stroke="#12242E" stroke-width="1.3">
+      <rect x="531" y="616" width="11" height="52" rx="2"/>
+      <rect x="549" y="612" width="11" height="56" rx="2"/>
+      <rect x="567" y="616" width="11" height="52" rx="2"/>
+    </g>
+    <g fill="#5B4EA8"><rect x="530" y="610" width="13" height="8" rx="2"/><rect x="548" y="606" width="13" height="8" rx="2"/><rect x="566" y="610" width="13" height="8" rx="2"/></g>
+  </g>
+
+  <!-- ===== upper plenum (cool 580 °C helium turning down into the core) ===== -->
+  <g>
+    <path d="M472,706 H638 V740 H472 Z" fill="#292E32" opacity="0.0"/>
+    <g stroke="#E8A31E" stroke-width="1.7" fill="none" marker-end="url(#mArrow)" opacity="0.95">
+      <path d="M480,716 H502"/><path d="M630,716 H608"/>
+      <path d="M508,712 V734"/><path d="M602,712 V734"/>
+    </g>
+    <text x="555" y="722" font-size="10" fill="#F2B23A" text-anchor="middle" font-weight="700" letter-spacing="0.6">UPPER PLENUM · 580 °C IN</text>
+  </g>
+
+  <!-- ===== top reflector ===== -->
+  <g>
+    <rect x="472" y="736" width="166" height="26" fill="url(#gGraphiteL)" stroke="#292E32" stroke-width="1"/>
+    <rect x="472" y="736" width="166" height="26" fill="url(#pGraphite)"/>
+    <text x="555" y="754" font-size="10" fill="#E8EFF7" text-anchor="middle" letter-spacing="0.9">TOP REFLECTOR</text>
+  </g>
+
+  <!-- ===== ACTIVE CORE — annular prismatic ===== -->
+  <g>
+    <!-- outer reflector, both flanks -->
+    <g>
+      <rect x="472" y="762" width="18" height="166" fill="url(#gGraphite)" stroke="#292E32" stroke-width="0.9"/>
+      <rect x="620" y="762" width="18" height="166" fill="url(#gGraphite)" stroke="#292E32" stroke-width="0.9"/>
+      <rect x="472" y="762" width="18" height="166" fill="url(#pGraphite)"/>
+      <rect x="620" y="762" width="18" height="166" fill="url(#pGraphite)"/>
+      <!-- reserve shutdown channels (B4C spheres, gravity fed) -->
+      <g>
+        <rect x="478" y="762" width="6" height="166" fill="#171A1C" stroke="#0B0C0D" stroke-width="0.5"/>
+        <rect x="626" y="762" width="6" height="166" fill="#171A1C" stroke="#0B0C0D" stroke-width="0.5"/>
+        <g fill="#8E82D8" opacity="0.9">
+          <circle cx="481" cy="770" r="2.3"/><circle cx="481" cy="777" r="2.3"/><circle cx="481" cy="784" r="2.3"/>
+          <circle cx="629" cy="770" r="2.3"/><circle cx="629" cy="777" r="2.3"/><circle cx="629" cy="784" r="2.3"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- fuel annulus, both flanks -->
+    <g>
+      <rect x="490" y="762" width="36" height="166" fill="url(#gFuel)" stroke="#77280E" stroke-width="1"/>
+      <rect x="584" y="762" width="36" height="166" fill="url(#gFuel)" stroke="#77280E" stroke-width="1"/>
+      <rect x="490" y="762" width="36" height="166" fill="url(#pFuelSpeck)"/>
+      <rect x="584" y="762" width="36" height="166" fill="url(#pFuelSpeck)"/>
+      <!-- hexagonal block course joints — 793 mm lifts -->
+      <g stroke="#77280E" stroke-width="0.9" opacity="0.85">
+        <line x1="490" y1="790" x2="526" y2="790"/><line x1="584" y1="790" x2="620" y2="790"/>
+        <line x1="490" y1="818" x2="526" y2="818"/><line x1="584" y1="818" x2="620" y2="818"/>
+        <line x1="490" y1="845" x2="526" y2="845"/><line x1="584" y1="845" x2="620" y2="845"/>
+        <line x1="490" y1="873" x2="526" y2="873"/><line x1="584" y1="873" x2="620" y2="873"/>
+        <line x1="490" y1="901" x2="526" y2="901"/><line x1="584" y1="901" x2="620" y2="901"/>
+      </g>
+      <!-- column separations -->
+      <g stroke="#77280E" stroke-width="0.7" opacity="0.55">
+        <line x1="502" y1="762" x2="502" y2="928"/><line x1="514" y1="762" x2="514" y2="928"/>
+        <line x1="596" y1="762" x2="596" y2="928"/><line x1="608" y1="762" x2="608" y2="928"/>
+      </g>
+      <!-- downward helium, warming 580 → 950 °C -->
+      <g stroke-width="2.1" fill="none" marker-end="url(#mArrow)">
+        <path d="M496,768 V800" stroke="#E8A31E"/><path d="M496,812 V846" stroke="#E9781E"/><path d="M496,858 V892" stroke="#E1601C"/><path d="M496,904 V934" stroke="#D9481A"/>
+        <path d="M614,768 V800" stroke="#E8A31E"/><path d="M614,812 V846" stroke="#E9781E"/><path d="M614,858 V892" stroke="#E1601C"/><path d="M614,904 V934" stroke="#D9481A"/>
+      </g>
+    </g>
+
+    <!-- inner reflector + control rods -->
+    <g>
+      <rect x="526" y="762" width="58" height="166" fill="url(#gGraphite)" stroke="#292E32" stroke-width="1"/>
+      <rect x="526" y="762" width="58" height="166" fill="url(#pGraphite)"/>
+      <g>
+        <rect x="533" y="762" width="7" height="166" fill="#171A1C"/>
+        <rect x="551" y="762" width="7" height="166" fill="#171A1C"/>
+        <rect x="569" y="762" width="7" height="166" fill="#171A1C"/>
+        <!-- B4C absorber sections, partially inserted -->
+        <g fill="#5B4EA8" stroke="#3E3479" stroke-width="0.6">
+          <rect x="533" y="762" width="7" height="58" rx="2"/>
+          <rect x="551" y="762" width="7" height="74" rx="2"/>
+          <rect x="569" y="762" width="7" height="58" rx="2"/>
+        </g>
+      </g>
+      <text x="555" y="911" font-size="9.5" fill="#E8EFF7" text-anchor="middle" letter-spacing="0.7">INNER REFL.</text>
+      <text x="555" y="923" font-size="9.5" fill="#E8EFF7" text-anchor="middle" letter-spacing="0.7">r = 0.8 m</text>
+    </g>
+  </g>
+
+  <!-- ===== bottom reflector ===== -->
+  <g>
+    <rect x="472" y="928" width="166" height="24" fill="url(#gGraphiteL)" stroke="#292E32" stroke-width="1"/>
+    <rect x="472" y="928" width="166" height="24" fill="url(#pGraphite)"/>
+    <g fill="#D9481A" opacity="0.85">
+      <rect x="486" y="932" width="8" height="16" rx="2"/><rect x="508" y="932" width="8" height="16" rx="2"/>
+      <rect x="530" y="932" width="8" height="16" rx="2"/><rect x="552" y="932" width="8" height="16" rx="2"/>
+      <rect x="574" y="932" width="8" height="16" rx="2"/><rect x="596" y="932" width="8" height="16" rx="2"/>
+      <rect x="618" y="932" width="8" height="16" rx="2"/>
+    </g>
+  </g>
+
+  <!-- ===== hot plenum 950 °C ===== -->
+  <g>
+    <path d="M464,952 H646 V966 A91,34 0 0 1 464,966 Z" fill="url(#gHotDuct)" opacity="0.95"/>
+    <g stroke="#F2582A" stroke-width="1.9" fill="none" marker-end="url(#mArrow)" opacity="0.95">
+      <path d="M486,972 H524"/><path d="M624,972 H586"/><path d="M556,986 V962"/>
+    </g>
+    <text x="555" y="963" font-size="10" fill="#E8EFF7" text-anchor="middle" font-weight="700" letter-spacing="0.8">HOT PLENUM  950 °C</text>
+  </g>
+
+  <!-- support skirt to base slab -->
+  <g fill="url(#gSteelV)" stroke="#12242E" stroke-width="1.3">
+    <path d="M494,996 L486,1008 H624 L616,996 Z"/>
+  </g>
+  <g stroke="#5A7280" stroke-width="1" opacity="0.7"><path d="M506,996 V1008 M540,998 V1008 M574,998 V1008 M606,996 V1008"/></g>
+
+  <!-- 5.5 m OD dimension over the head -->
+  <g stroke="#12242E" stroke-width="1" fill="none">
+    <path d="M456,668 V684 M654,668 V684"/><path d="M456,678 H654"/>
+  </g>
+  <polygon points="461,678 470,675 470,681" fill="#12242E"/><polygon points="649,678 640,675 640,681" fill="#12242E"/>
+  <rect x="502" y="670" width="106" height="15" fill="#F2F6F8"/>
+  <text x="555" y="682" font-size="10" fill="#12242E" text-anchor="middle" font-weight="700" letter-spacing="0.5">5.5 m OD</text>
+</g>
+<!-- ==================== CROSS-VESSEL &amp; HOT RISER ==================== -->
+<g id="crossvessel">
+  <!-- coaxial cross-vessel: outer = 580 °C cold return (left), inner = 950 °C hot (right) -->
+  <g>
+    <rect x="650" y="938" width="112" height="46" rx="5" fill="url(#gSteel)" stroke="#12242E" stroke-width="2"/>
+    <rect x="654" y="942" width="104" height="38" rx="3" fill="url(#gWarmDuct)" opacity="0.95"/>
+    <rect x="654" y="953" width="104" height="18" rx="3" fill="url(#gHotDuct)" stroke="#77280E" stroke-width="0.8"/>
+    <g stroke="#8B6212" stroke-width="1.7" fill="none" marker-end="url(#mArrow)">
+      <path d="M726,947 H676"/><path d="M726,976 H676"/>
+    </g>
+    <path d="M672,962 H716" stroke="#F2582A" stroke-width="2" fill="none" marker-end="url(#mArrow)"/>
+  </g>
+  <!-- vertical coaxial trunk (rising from cross-vessel elbow) -->
+  <g>
+    <rect x="734" y="786" width="28" height="198" rx="5" fill="url(#gSteel)" stroke="#12242E" stroke-width="2"/>
+    <rect x="738" y="790" width="20" height="190" fill="url(#gWarmDuct)" opacity="0.95"/>
+    <rect x="740" y="790" width="14" height="190" fill="url(#gHotDuct)"/>
+    <path d="M747,960 V876" stroke="#F2582A" stroke-width="2" fill="none" marker-end="url(#mArrow)"/>
+  </g>
+  <!-- hot inner pipe continuing to the turbine inlet -->
+  <g>
+    <rect x="738" y="522" width="18" height="270" rx="4" fill="url(#gSteel)" stroke="#12242E" stroke-width="1.6"/>
+    <rect x="741" y="522" width="12" height="268" fill="url(#gHotDuct)"/>
+    <rect x="741" y="524" width="48" height="24" rx="3" fill="url(#gHotDuct)" stroke="#77280E" stroke-width="1"/>
+    <rect x="738" y="520" width="52" height="4" fill="#8FA3B0"/>
+    <rect x="738" y="548" width="52" height="4" fill="#8FA3B0"/>
+    <path d="M747,700 V612" stroke="#F2582A" stroke-width="2" fill="none" marker-end="url(#mArrow)"/>
+    <path d="M752,536 H782" stroke="#F2582A" stroke-width="2" fill="none" marker-end="url(#mArrow)"/>
+    <!-- insulation ticks -->
+    <g stroke="#90A4AE" stroke-width="0.9" opacity="0.75">
+      <path d="M736,570 h22 M736,600 h22 M736,630 h22 M736,660 h22 M736,690 h22 M736,720 h22 M736,750 h22"/>
+    </g>
+  </g>
+  <!-- cold branch stub: recuperator cold outlet 580 °C into trunk annulus -->
+  <g>
+    <rect x="758" y="782" width="26" height="20" fill="url(#gWarmDuct)" stroke="#12242E" stroke-width="1.4"/>
+    <path d="M780,792 H764" stroke="#8B6212" stroke-width="1.8" fill="none" marker-end="url(#mArrow)"/>
+  </g>
+</g>
+
+<!-- ==================== TURBOMACHINE ==================== -->
+<g id="turbomachine">
+  <!-- turbomachine vessel -->
+  <rect x="786" y="500" width="90" height="216" rx="12" fill="url(#gSteel)" stroke="#12242E" stroke-width="2.4"/>
+  <rect x="792" y="506" width="78" height="204" rx="8" fill="#292E32"/>
+  <!-- turbine exhaust annulus (600 °C) running down the casing -->
+  <g fill="url(#gWarmDuct)" opacity="0.9">
+    <rect x="792" y="566" width="9" height="144"/>
+    <rect x="861" y="566" width="9" height="144"/>
+  </g>
+  <g stroke="#8B6212" stroke-width="1.5" fill="none" marker-end="url(#mArrow)">
+    <path d="M796.5,620 V664"/><path d="M865.5,620 V664"/>
+  </g>
+
+  <!-- shaft -->
+  <rect x="827" y="502" width="8" height="212" fill="url(#gSteelV)" stroke="#12242E" stroke-width="0.8"/>
+
+  <!-- magnetic bearings -->
+  <g>
+    <rect x="812" y="502" width="38" height="10" rx="2" fill="#5B4EA8" stroke="#3E3479" stroke-width="1"/>
+    <rect x="812" y="704" width="38" height="10" rx="2" fill="#5B4EA8" stroke="#3E3479" stroke-width="1"/>
+    <g stroke="#A59ECF" stroke-width="0.9"><path d="M818,507 h6 M830,507 h6 M842,507 h6 M818,709 h6 M830,709 h6 M842,709 h6"/></g>
+  </g>
+
+  <!-- TURBINE (hot, top) -->
+  <g>
+    <rect x="800" y="514" width="62" height="50" rx="3" fill="#8D2F11" stroke="#62200C" stroke-width="1.2"/>
+    <g fill="#F2582A">
+      <path d="M810,520 l14,5 l-14,5 z"/><path d="M810,534 l14,5 l-14,5 z"/><path d="M810,548 l14,5 l-14,5 z"/>
+      <path d="M852,520 l-14,5 l14,5 z"/><path d="M852,534 l-14,5 l14,5 z"/><path d="M852,548 l-14,5 l14,5 z"/>
+    </g>
+    <text x="831" y="576" font-size="10" fill="#E8EFF7" text-anchor="middle" font-weight="700" letter-spacing="0.6">TURBINE</text>
+  </g>
+  <!-- GENERATOR -->
+  <g>
+    <rect x="800" y="592" width="62" height="52" rx="3" fill="#403776" stroke="#2E2757" stroke-width="1.2"/>
+    <g stroke="#A59ECF" stroke-width="1.1" fill="none" opacity="0.9">
+      <path d="M806,600 h50 M806,610 h50 M806,620 h50 M806,630 h50 M806,638 h50"/>
+    </g>
+    <rect x="820" y="592" width="22" height="52" fill="#5B4EA8" opacity="0.85"/>
+    <text x="831" y="656" font-size="9.5" fill="#E8EFF7" text-anchor="middle" font-weight="700" letter-spacing="0">GENERATOR</text>
+  </g>
+  <!-- COMPRESSOR (cold, bottom) -->
+  <g>
+    <rect x="800" y="666" width="62" height="38" rx="3" fill="#12417F" stroke="#0D2E59" stroke-width="1.2"/>
+    <g fill="#3D8FD4">
+      <path d="M810,672 l12,4 l-12,4 z"/><path d="M810,684 l12,4 l-12,4 z"/><path d="M810,694 l12,4 l-12,4 z"/>
+      <path d="M852,672 l-12,4 l12,4 z"/><path d="M852,684 l-12,4 l12,4 z"/><path d="M852,694 l-12,4 l12,4 z"/>
+    </g>
+    <text x="831" y="689" font-size="9" fill="#E8EFF7" text-anchor="middle" font-weight="700" letter-spacing="0">COMPRESSOR</text>
+  </g>
+  <!-- compressor inlet from precooler -->
+  <rect x="776" y="670" width="26" height="18" fill="url(#gColdDuct)" stroke="#12242E" stroke-width="1.3"/>
+  <path d="M780,679 H798" stroke="#3D8FD4" stroke-width="1.8" fill="none" marker-end="url(#mArrow)"/>
+
+  <!-- coaxial spool: 600 °C exhaust (outer) + 195 °C compressor discharge (inner) down to recuperator -->
+  <g>
+    <rect x="806" y="716" width="50" height="22" fill="url(#gSteel)" stroke="#12242E" stroke-width="1.6"/>
+    <rect x="810" y="718" width="42" height="18" fill="url(#gWarmDuct)"/>
+    <rect x="820" y="718" width="22" height="18" fill="#1D76B8" stroke="#145381" stroke-width="0.8"/>
+    <path d="M831,720 V736" stroke="#3D8FD4" stroke-width="1.6" fill="none" marker-end="url(#mArrow)"/>
+    <path d="M814,720 V736" stroke="#8B6212" stroke-width="1.5" fill="none" marker-end="url(#mArrow)"/>
+    <path d="M848,720 V736" stroke="#8B6212" stroke-width="1.5" fill="none" marker-end="url(#mArrow)"/>
+  </g>
+  <!-- 2.5 m OD dimension tick under the machine -->
+  <g stroke="#12242E" stroke-width="1" fill="none">
+    <path d="M786,478 V494 M876,478 V494"/><path d="M786,486 H876"/>
+  </g>
+  <polygon points="791,486 799,483 799,489" fill="#12242E"/><polygon points="871,486 863,483 863,489" fill="#12242E"/>
+  <text x="831" y="474" font-size="10" fill="#12242E" text-anchor="middle" font-weight="700" letter-spacing="0.5">2.5 m OD</text>
+</g>
+<!-- ==================== RECUPERATOR / PRECOOLER / COLD RISER ==================== -->
+<g id="bop">
+
+  <!-- 35 °C helium riser: precooler outlet up to compressor inlet -->
+  <g>
+    <rect x="770" y="662" width="16" height="308" fill="url(#gColdDuct)" stroke="#0D2E59" stroke-width="1.3"/>
+    <rect x="770" y="954" width="146" height="16" fill="url(#gColdDuct)" stroke="#0D2E59" stroke-width="1.3"/>
+    <g stroke="#3D8FD4" stroke-width="1.8" fill="none" marker-end="url(#mArrow)">
+      <path d="M778,930 V872"/><path d="M778,820 V762"/><path d="M778,712 V674"/>
+      <path d="M880,962 H812"/>
+    </g>
+  </g>
+
+  <!-- ===== RECUPERATOR (PCHE) ===== -->
+  <g>
+    <rect x="796" y="736" width="98" height="154" rx="4" fill="#F2F6F8" stroke="#12242E" stroke-width="2"/>
+    <rect x="800" y="740" width="90" height="146" fill="url(#pPCHE)"/>
+    <!-- plate stack edges -->
+    <g stroke="#90A4AE" stroke-width="0.7" opacity="0.65">
+      <path d="M800,760 h90 M800,784 h90 M800,808 h90 M800,832 h90 M800,856 h90"/>
+    </g>
+    <!-- counter-flow indication -->
+    <g stroke="#EF8B1F" stroke-width="2" fill="none" marker-end="url(#mArrow)" opacity="0.95">
+      <path d="M812,748 V876"/>
+    </g>
+    <g stroke="#1D76B8" stroke-width="2" fill="none" marker-end="url(#mArrow)" opacity="0.95">
+      <path d="M876,878 V750"/>
+    </g>
+    <text x="845" y="806" font-size="10" fill="#12242E" text-anchor="middle" font-weight="700" letter-spacing="0.6">RECUPERATOR</text>
+    <text x="845" y="820" font-size="10" fill="#5A7280" text-anchor="middle">PCHE · ε = 0.95</text>
+    <text x="845" y="834" font-size="10" fill="#5A7280" text-anchor="middle">Alloy 617</text>
+  </g>
+
+  <!-- 215 °C duct: recuperator hot outlet down to precooler -->
+  <g>
+    <rect x="850" y="886" width="22" height="26" fill="#2E8FB4" stroke="#1E5D75" stroke-width="1.3"/>
+    <rect x="850" y="906" width="62" height="24" fill="#2E8FB4" stroke="#1E5D75" stroke-width="1.3"/>
+    <path d="M861,892 V902" stroke="#5CB6D8" stroke-width="1.6" fill="none" marker-end="url(#mArrow)"/>
+    <path d="M868,918 H902" stroke="#5CB6D8" stroke-width="1.6" fill="none" marker-end="url(#mArrow)"/>
+  </g>
+
+  <!-- ===== AIR-COOLED PRECOOLER ===== -->
+  <g>
+    <rect x="908" y="838" width="90" height="148" rx="3" fill="#E3E8EB" stroke="#12242E" stroke-width="2"/>
+    <rect x="912" y="842" width="82" height="140" fill="url(#pFins)"/>
+    <!-- helium tube passes -->
+    <g stroke="#2E8FB4" stroke-width="2.2" fill="none" opacity="0.85">
+      <path d="M914,864 H992 M914,892 H992 M914,920 H992 M914,948 H992"/>
+    </g>
+    <rect x="903" y="896" width="100" height="30" rx="2" fill="#FFFFFF" stroke="#90A4AE" stroke-width="0.9"/>
+    <text x="953" y="908" font-size="10" fill="#12242E" text-anchor="middle" font-weight="700" letter-spacing="0.4">PRECOOLER</text>
+    <text x="953" y="921" font-size="9.5" fill="#5A7280" text-anchor="middle">air-cooled · → 35 °C</text>
+    <!-- air rising through the fin stack -->
+    <g stroke="#2FA88C" stroke-width="2" fill="none" marker-end="url(#mArrowAir)" opacity="0.85">
+      <path d="M924,978 V944"/><path d="M953,978 V944"/><path d="M982,978 V944"/>
+    </g>
+    <g stroke="#2FA88C" stroke-width="2" fill="none" marker-end="url(#mArrowAirH)" opacity="0.85">
+      <path d="M924,876 V844"/><path d="M953,876 V844"/><path d="M982,876 V844"/>
+    </g>
+  </g>
+
+  <!-- ===== PRECOOLER AIR CIRCUIT (independent of RCCS) ===== -->
+  <g>
+    <!-- warm air hood -->
+    <path d="M908,838 H998 L1018,812 H1002 Z" fill="#D6EBE4" stroke="#2FA88C" stroke-width="1.3"/>
+    <!-- rising (warm) lane -->
+    <rect x="1002" y="645" width="16" height="170" fill="#D6EBE4" stroke="#2FA88C" stroke-width="1.2"/>
+    <!-- descending (cool) lane -->
+    <rect x="1018" y="645" width="16" height="341" fill="#E3F0EA" stroke="#2FA88C" stroke-width="1.2"/>
+    <!-- floor plenum -->
+    <rect x="908" y="986" width="126" height="20" fill="#E3F0EA" stroke="#2FA88C" stroke-width="1.2"/>
+    <g stroke="#2FA88C" stroke-width="2" fill="none" marker-end="url(#mArrowAir)">
+      <path d="M1026,700 V748"/><path d="M1026,860 V908"/><path d="M1022,996 H960"/>
+    </g>
+    <g stroke="#2FA88C" stroke-width="2" fill="none" marker-end="url(#mArrowAirH)">
+      <path d="M1010,790 V742"/><path d="M1010,700 V660"/>
+    </g>
+    <!-- through-slab penetrations and grade cowl -->
+    <rect x="1002" y="618" width="32" height="27" fill="#D2CDC4" stroke="#53504A" stroke-width="1.2"/>
+    <rect x="996" y="548" width="48" height="70" rx="3" fill="#E4E2DC" stroke="#12242E" stroke-width="1.8"/>
+    <rect x="999" y="552" width="18" height="62" fill="url(#pLouvre)"/>
+    <rect x="1021" y="552" width="20" height="62" fill="url(#pLouvre)"/>
+    <line x1="1019" y1="548" x2="1019" y2="618" stroke="#12242E" stroke-width="1.4"/>
+    <g stroke="#2FA88C" stroke-width="2" fill="none" marker-end="url(#mArrowAirH)"><path d="M1008,556 V538"/></g>
+    <g stroke="#2FA88C" stroke-width="2" fill="none" marker-end="url(#mArrowAir)"><path d="M1031,534 V554"/></g>
+    <text x="1002" y="534" font-size="10" fill="#12242E" text-anchor="middle" font-weight="700">PRECOOLER AIR</text>
+  </g>
+
+  <!-- redraw cold-outlet stub on top so the 35 °C riser reads as passing behind -->
+  <g>
+    <rect x="756" y="780" width="42" height="24" fill="url(#gWarmDuct)" stroke="#12242E" stroke-width="1.4"/>
+    <path d="M792,792 H764" stroke="#8B6212" stroke-width="1.8" fill="none" marker-end="url(#mArrow)"/>
+  </g>
+</g>
+<!-- ==================== PASSIVE AIR-COOLED RCCS ==================== -->
+<g id="rccs">
+  <!-- grade-level louvred intake kerbs (distributed around the cavity perimeter) -->
+  <g>
+    <rect x="354" y="574" width="66" height="44" rx="2" fill="#E4E2DC" stroke="#12242E" stroke-width="1.7"/>
+    <rect x="358" y="578" width="58" height="36" fill="url(#pLouvre)"/>
+    <g stroke="#2FA88C" stroke-width="2" fill="none" marker-end="url(#mArrowAir)">
+      <path d="M338,566 L364,586"/><path d="M410,562 L410,584"/>
+    </g>
+    <text x="387" y="566" font-size="10" fill="#1E6D5B" text-anchor="middle" font-weight="700">AMBIENT AIR IN</text>
+  </g>
+
+  <!-- descending cold legs, hugging the cavity liner -->
+  <g>
+    <rect x="387" y="645" width="24" height="345" fill="#E3F0EA" stroke="#2FA88C" stroke-width="1"/>
+    <rect x="700" y="645" width="24" height="345" fill="#E3F0EA" stroke="#2FA88C" stroke-width="1"/>
+    <g stroke="#2FA88C" stroke-width="2" fill="none" marker-end="url(#mArrowAir)">
+      <path d="M399,660 V706"/><path d="M399,752 V798"/><path d="M399,844 V890"/><path d="M399,930 V972"/>
+      <path d="M712,660 V706"/><path d="M712,752 V798"/><path d="M712,844 V890"/><path d="M712,896 V932"/>
+    </g>
+    <!-- floor turn -->
+    <rect x="387" y="972" width="70" height="18" fill="#E3F0EA" stroke="#2FA88C" stroke-width="1"/>
+    <rect x="654" y="972" width="70" height="18" fill="#E3F0EA" stroke="#2FA88C" stroke-width="1"/>
+    <g stroke="#2FA88C" stroke-width="2" fill="none" marker-end="url(#mArrowAir)">
+      <path d="M406,981 H446"/><path d="M706,981 H666"/>
+    </g>
+  </g>
+
+  <!-- rising annular gap between vessel and cavity liner -->
+  <g>
+    <rect x="413" y="645" width="43" height="327" fill="#D6EBE4"/>
+    <rect x="654" y="645" width="44" height="327" fill="#D6EBE4"/>
+    <g stroke="#2FA88C" stroke-width="2" fill="none" marker-end="url(#mArrowAir)"><path d="M434,968 V920"/><path d="M676,968 V920"/></g>
+    <g stroke="#2FA88C" stroke-width="2" fill="none" marker-end="url(#mArrowAirH)"><path d="M434,900 V852"/><path d="M676,900 V852"/></g>
+    <g stroke="#2FA88C" stroke-width="2" fill="none" marker-end="url(#mArrowAirH)"><path d="M434,832 V784"/><path d="M676,832 V784"/></g>
+    <g stroke="#2FA88C" stroke-width="2" fill="none" marker-end="url(#mArrowAirH)"><path d="M434,764 V716"/><path d="M676,764 V716"/></g>
+    <g stroke="#2FA88C" stroke-width="2" fill="none" marker-end="url(#mArrowAirH)"><path d="M434,700 V668"/><path d="M676,700 V668"/></g>
+    <!-- radiation across the gap: vessel wall to high-emissivity liner -->
+    <g stroke="#5A7280" stroke-width="0.9" opacity="0.6" fill="none">
+      <path d="M418,760 q6,-5 12,0 q6,5 12,0 q6,-5 12,0"/>
+      <path d="M418,808 q6,-5 12,0 q6,5 12,0 q6,-5 12,0"/>
+      <path d="M418,876 q6,-5 12,0 q6,5 12,0 q6,-5 12,0"/>
+      <path d="M656,760 q6,-5 12,0 q6,5 12,0 q6,-5 12,0"/>
+      <path d="M656,808 q6,-5 12,0 q6,5 12,0 q6,-5 12,0"/>
+      <path d="M656,876 q6,-5 12,0 q6,5 12,0 q6,-5 12,0"/>
+    </g>
+  </g>
+
+  <!-- top collector plenum, feeding the riser -->
+  <g>
+    <rect x="413" y="646" width="311" height="16" fill="#D6EBE4" stroke="#2FA88C" stroke-width="1"/>
+    <g stroke="#2FA88C" stroke-width="2" fill="none" marker-end="url(#mArrowAirH)">
+      <path d="M700,654 H660"/><path d="M624,654 H584"/><path d="M520,654 H480"/>
+    </g>
+  </g>
+  <!-- CRD housings redrawn over the plenum -->
+  <g fill="url(#gSteelV)" stroke="#12242E" stroke-width="1.3">
+    <rect x="531" y="616" width="11" height="52" rx="2"/>
+    <rect x="549" y="612" width="11" height="56" rx="2"/>
+    <rect x="567" y="616" width="11" height="52" rx="2"/>
+  </g>
+
+  <!-- riser duct through the grade slab and up the building wall -->
+  <g>
+    <rect x="428" y="618" width="46" height="28" fill="#D6EBE4" stroke="#2FA88C" stroke-width="1.2"/>
+    <rect x="428" y="366" width="46" height="252" fill="#D6EBE4" stroke="#2FA88C" stroke-width="1.4"/>
+    <g stroke="#2FA88C" stroke-width="2" fill="none" marker-end="url(#mArrowAirH)">
+      <path d="M451,610 V566"/><path d="M451,540 V496"/><path d="M451,470 V426"/><path d="M451,400 V362"/>
+    </g>
+    <text x="451" y="500" font-size="10" fill="#1E6D5B" text-anchor="middle" font-weight="700" letter-spacing="1.1" transform="rotate(-90,451,500)">RCCS RISER — NO FANS, NO VALVES</text>
+  </g>
+  <!-- exhaust at the stack -->
+  <g stroke="#2FA88C" stroke-width="2" fill="none" marker-end="url(#mArrowAirH)">
+    <path d="M438,326 V314"/><path d="M459,326 V310"/><path d="M479,330 V318"/>
+  </g>
+  <text x="504" y="332" font-size="10" fill="#1E6D5B" font-weight="700" letter-spacing="0.4">RCCS EXHAUST</text>
+  <!-- coaxial cross-vessel redrawn over the RCCS bay: helium passes in front of the air duct -->
+  <g>
+    <rect x="650" y="938" width="112" height="46" rx="5" fill="url(#gSteel)" stroke="#12242E" stroke-width="2"/>
+    <rect x="654" y="942" width="104" height="38" rx="3" fill="url(#gWarmDuct)" opacity="0.95"/>
+    <rect x="654" y="953" width="104" height="18" rx="3" fill="url(#gHotDuct)" stroke="#77280E" stroke-width="0.8"/>
+    <g stroke="#8B6212" stroke-width="1.7" fill="none" marker-end="url(#mArrow)">
+      <path d="M726,947 H676"/><path d="M726,976 H676"/>
+    </g>
+    <path d="M672,962 H716" stroke="#F2582A" stroke-width="2" fill="none" marker-end="url(#mArrow)"/>
+  </g>
+</g>
+<!-- ==================== DATUM LADDER &amp; DIMENSIONS ==================== -->
+<g id="datums">
+  <line x1="292" y1="316" x2="292" y2="1062" stroke="#5A7280" stroke-width="1.1"/>
+  <g stroke="#5A7280" stroke-width="1.1">
+    <path d="M284,330 h16 M284,402 h16 M284,474 h16 M284,546 h16 M282,618 h20 M284,690 h16 M284,762 h16 M284,834 h16 M284,906 h16 M284,978 h16 M284,1050 h16"/>
+  </g>
+  <g stroke="#5A7280" stroke-width="0.5" stroke-dasharray="3,4" opacity="0.55">
+    <path d="M300,330 H352 M300,402 H352 M300,474 H352 M300,546 H352 M300,690 H352 M300,762 H352 M300,834 H352 M300,906 H352 M300,978 H352 M300,1050 H352"/>
+  </g>
+  <g font-size="9" fill="#5A7280">
+    <rect x="304" y="322" width="34" height="14" fill="#FBFAF7" opacity="0.85"/><text x="307" y="333">+8.0</text>
+    <rect x="304" y="394" width="34" height="14" fill="#FBFAF7" opacity="0.85"/><text x="307" y="405">+6.0</text>
+    <rect x="304" y="466" width="34" height="14" fill="#FBFAF7" opacity="0.85"/><text x="307" y="477">+4.0</text>
+    <rect x="304" y="538" width="34" height="14" fill="#FBFAF7" opacity="0.85"/><text x="307" y="549">+2.0</text>
+    <rect x="304" y="682" width="34" height="14" fill="#EFEEEA" opacity="0.9"/><text x="307" y="693">−2.0</text>
+    <rect x="304" y="754" width="34" height="14" fill="#EFEEEA" opacity="0.9"/><text x="307" y="765">−4.0</text>
+    <rect x="304" y="826" width="34" height="14" fill="#EFEEEA" opacity="0.9"/><text x="307" y="837">−6.0</text>
+    <rect x="304" y="898" width="34" height="14" fill="#EFEEEA" opacity="0.9"/><text x="307" y="909">−8.0</text>
+    <rect x="304" y="970" width="36" height="14" fill="#EFEEEA" opacity="0.9"/><text x="307" y="981">−10.0</text>
+    <rect x="304" y="1042" width="36" height="14" fill="#EFEEEA" opacity="0.9"/><text x="307" y="1053">−12.0</text>
+  </g>
+  <g>
+    <rect x="302" y="608" width="46" height="16" fill="#6D4C41"/>
+    <text x="306" y="620" font-size="9" fill="#FBFAF7" font-weight="700">0.0 GL</text>
+  </g>
+  <text x="300" y="322" font-size="9" fill="#5A7280" text-anchor="end" letter-spacing="0.8">EL. (m)</text>
+
+  <!-- envelope dimension strings, over the backfill on the right -->
+  <g stroke="#12242E" stroke-width="1" fill="none">
+    <path d="M1076,330 V618"/><path d="M1068,330 h16 M1068,618 h16"/>
+    <path d="M1076,618 V1050"/><path d="M1068,1050 h16"/>
+    <path d="M1108,314 V1050"/><path d="M1100,314 h16 M1100,1050 h16"/>
+  </g>
+  <g fill="#12242E">
+    <polygon points="1076,336 1073,346 1079,346"/><polygon points="1076,612 1073,602 1079,602"/>
+    <polygon points="1076,624 1073,634 1079,634"/><polygon points="1076,1044 1073,1034 1079,1034"/>
+    <polygon points="1108,320 1105,330 1111,330"/><polygon points="1108,1044 1105,1034 1111,1034"/>
+  </g>
+  <g font-size="9" fill="#12242E" font-weight="700">
+    <text x="1064" y="474" text-anchor="middle" transform="rotate(-90,1064,474)">+8 m ABOVE GRADE</text>
+    <text x="1064" y="834" text-anchor="middle" transform="rotate(-90,1064,834)">−12 m BELOW GRADE</text>
+  </g>
+  <text x="1096" y="675" font-size="10" fill="#12242E" font-weight="700" text-anchor="middle" transform="rotate(-90,1096,675)">20 m TOTAL ENVELOPE = RCCS EFFECTIVE CHIMNEY HEIGHT</text>
+
+  <!-- 20 m footprint -->
+  <g stroke="#12242E" stroke-width="1" fill="none">
+    <path d="M350,1066 H1070"/><path d="M350,1058 v16 M1070,1058 v16"/>
+  </g>
+  <polygon points="356,1066 366,1063 366,1069" fill="#12242E"/><polygon points="1064,1066 1054,1063 1054,1069" fill="#12242E"/>
+  <rect x="640" y="1058" width="140" height="16" fill="#FBFAF7"/>
+  <text x="710" y="1070" font-size="10" fill="#12242E" text-anchor="middle" font-weight="700">20 m FOOTPRINT</text>
+</g>
+
+<!-- ==================== CYCLE STATE POINTS ON THE MACHINE ==================== -->
+<g id="statepoints" font-size="10" font-weight="700">
+  <g>
+    <rect x="692" y="954" width="17" height="17" transform="rotate(45,700.5,962.5)" fill="#D9481A" stroke="#FBFAF7" stroke-width="1.6"/>
+    <text x="700.5" y="966" fill="#FFFFFF" text-anchor="middle">1</text>
+  </g>
+  <g>
+    <rect x="857" y="628" width="17" height="17" transform="rotate(45,865.5,636.5)" fill="#EF8B1F" stroke="#FBFAF7" stroke-width="1.6"/>
+    <text x="865.5" y="640" fill="#12242E" text-anchor="middle">2</text>
+  </g>
+  <g>
+    <rect x="876" y="910" width="17" height="17" transform="rotate(45,884.5,918.5)" fill="#2E8FB4" stroke="#FBFAF7" stroke-width="1.6"/>
+    <text x="884.5" y="922" fill="#FFFFFF" text-anchor="middle">3</text>
+  </g>
+  <g>
+    <rect x="835" y="954" width="17" height="17" transform="rotate(45,843.5,962.5)" fill="#12417F" stroke="#FBFAF7" stroke-width="1.6"/>
+    <text x="843.5" y="966" fill="#FFFFFF" text-anchor="middle">4</text>
+  </g>
+  <g>
+    <rect x="823" y="719" width="17" height="17" transform="rotate(45,831.5,727.5)" fill="#1D76B8" stroke="#FBFAF7" stroke-width="1.6"/>
+    <text x="831.5" y="731" fill="#FFFFFF" text-anchor="middle">5</text>
+  </g>
+  <g>
+    <rect x="458" y="822" width="17" height="17" transform="rotate(45,466.5,830.5)" fill="#E8A31E" stroke="#FBFAF7" stroke-width="1.6"/>
+    <text x="466.5" y="834" fill="#12242E" text-anchor="middle">6</text>
+  </g>
+</g>
+
+<!-- ==================== TEMPERATURE TAGS ==================== -->
+<g id="ttags" font-size="11.5" font-weight="700">
+  <text x="765" y="540" font-size="11.5" fill="#D9481A" text-anchor="middle" stroke="#FBFAF7" stroke-width="3" paint-order="stroke" stroke-linejoin="round">950 °C</text>
+  <g><rect x="880" y="646" width="60" height="17" rx="2.5" fill="#EF8B1F"/><text x="910" y="659" fill="#12242E" text-anchor="middle">600 °C</text>
+     <path d="M880,655 H870" stroke="#EF8B1F" stroke-width="1.2" fill="none" marker-end="url(#mDotSm)"/></g>
+  <g><rect x="880" y="714" width="60" height="17" rx="2.5" fill="#1D76B8"/><text x="910" y="727" fill="#FFFFFF" text-anchor="middle">195 °C</text>
+     <path d="M880,724 H846" stroke="#1D76B8" stroke-width="1.2" fill="none" marker-end="url(#mDotSm)"/></g>
+  <g><rect x="806" y="886" width="60" height="17" rx="2.5" fill="#2E8FB4"/><text x="836" y="899" fill="#FFFFFF" text-anchor="middle">215 °C</text>
+     <path d="M836,903 V914" stroke="#2E8FB4" stroke-width="1.2" fill="none" marker-end="url(#mDotSm)"/></g>
+  <g><rect x="784" y="928" width="60" height="17" rx="2.5" fill="#12417F"/><text x="814" y="941" fill="#FFFFFF" text-anchor="middle">35 °C</text>
+     <path d="M814,945 V956" stroke="#12417F" stroke-width="1.2" fill="none" marker-end="url(#mDotSm)"/></g>
+</g>
+<!-- ==================== LEFT CALLOUTS ==================== -->
+<g id="calloutsL">
+  <!-- leader halos -->
+  <g fill="none" stroke="#FBFAF7" stroke-width="3.4" stroke-linecap="round" opacity="0.92">
+    <path d="M245,344 H352 L430,338"/>
+    <path d="M245,412 H352 L541,382"/>
+    <path d="M245,488 H400 L426,478"/>
+    <path d="M245,564 H330 L358,590"/>
+    <path d="M245,648 H318 L360,706"/>
+    <path d="M245,724 H316 L416,748"/>
+    <path d="M245,800 H300 L458,776"/>
+    <path d="M245,876 H300 L490,858"/>
+    <path d="M245,952 H300 L479,896"/>
+    <path d="M245,1024 H330 L396,1032"/>
+  </g>
+  <g fill="none" stroke="#5A7280" stroke-width="0.8" stroke-linecap="round">
+    <path d="M245,344 H352 L430,338" marker-end="url(#mDot)"/>
+    <path d="M245,412 H352 L541,382" marker-end="url(#mDot)"/>
+    <path d="M245,488 H400 L426,478" marker-end="url(#mDot)"/>
+    <path d="M245,564 H330 L358,590" marker-end="url(#mDot)"/>
+    <path d="M245,648 H318 L360,706" marker-end="url(#mDot)"/>
+    <path d="M245,724 H316 L416,748" marker-end="url(#mDot)"/>
+    <path d="M245,800 H300 L458,776" marker-end="url(#mDot)"/>
+    <path d="M245,876 H300 L490,858" marker-end="url(#mDot)"/>
+    <path d="M245,952 H300 L479,896" marker-end="url(#mDot)"/>
+    <path d="M245,1024 H330 L396,1032" marker-end="url(#mDot)"/>
+  </g>
+
+  <!-- number discs -->
+  <g>
+    <circle cx="232" cy="344" r="11.5" fill="#12242E"/><text x="232" y="348" font-size="11" font-weight="700" fill="#FBFAF7" text-anchor="middle">1</text>
+    <circle cx="232" cy="412" r="11.5" fill="#12242E"/><text x="232" y="416" font-size="11" font-weight="700" fill="#FBFAF7" text-anchor="middle">2</text>
+    <circle cx="232" cy="488" r="11.5" fill="#12242E"/><text x="232" y="492" font-size="11" font-weight="700" fill="#FBFAF7" text-anchor="middle">3</text>
+    <circle cx="232" cy="564" r="11.5" fill="#12242E"/><text x="232" y="568" font-size="11" font-weight="700" fill="#FBFAF7" text-anchor="middle">4</text>
+    <circle cx="232" cy="648" r="11.5" fill="#12242E"/><text x="232" y="652" font-size="11" font-weight="700" fill="#FBFAF7" text-anchor="middle">5</text>
+    <circle cx="232" cy="724" r="11.5" fill="#12242E"/><text x="232" y="728" font-size="11" font-weight="700" fill="#FBFAF7" text-anchor="middle">6</text>
+    <circle cx="232" cy="800" r="11.5" fill="#12242E"/><text x="232" y="804" font-size="11" font-weight="700" fill="#FBFAF7" text-anchor="middle">7</text>
+    <circle cx="232" cy="876" r="11.5" fill="#12242E"/><text x="232" y="880" font-size="11" font-weight="700" fill="#FBFAF7" text-anchor="middle">8</text>
+    <circle cx="232" cy="952" r="11.5" fill="#12242E"/><text x="232" y="956" font-size="11" font-weight="700" fill="#FBFAF7" text-anchor="middle">9</text>
+    <circle cx="232" cy="1024" r="11.5" fill="#12242E"/><text x="232" y="1028" font-size="11" font-weight="700" fill="#FBFAF7" text-anchor="middle">10</text>
+  </g>
+
+  <!-- text blocks, right-aligned to x = 210 -->
+  <g text-anchor="end" fill="#5A7280">
+    <g><text x="210" y="332" font-size="11" font-weight="700" fill="#12242E" letter-spacing="0.2">RCCS EXHAUST</text>
+       <text x="210" y="345" font-size="9.5">Reactor Cavity Cooling System.</text>
+       <text x="210" y="357" font-size="9.5">Louvred discharge at EL. +8.0 m,</text>
+       <text x="210" y="369" font-size="9.5">open to atmosphere. No damper.</text></g>
+
+    <g><text x="210" y="393" font-size="11" font-weight="700" fill="#12242E" letter-spacing="0.2">HATCH &amp; SERVICE CRANE</text>
+       <text x="210" y="406" font-size="9.5">Shield plug over the vessel head;</text>
+       <text x="210" y="418" font-size="9.5">fuel-handling machine integral to</text>
+       <text x="210" y="430" font-size="9.5">the closure — not shipped to site.</text></g>
+
+    <g><text x="210" y="475" font-size="11" font-weight="700" fill="#12242E" letter-spacing="0.2">CONFINEMENT BUILDING</text>
+       <text x="210" y="488" font-size="9.5">Low-leakage, not pressure-rated.</text>
+       <text x="210" y="500" font-size="9.5">Fifth of five fission-product barriers.</text></g>
+
+    <g><text x="210" y="551" font-size="11" font-weight="700" fill="#12242E" letter-spacing="0.2">AIR INLETS AT GRADE</text>
+       <text x="210" y="564" font-size="9.5">Louvred, screened, distributed round</text>
+       <text x="210" y="576" font-size="9.5">the cavity perimeter. Cannot be shut.</text></g>
+
+    <g><text x="210" y="629" font-size="11" font-weight="700" fill="#12242E" letter-spacing="0.2">PRE-CAST CAVITY</text>
+       <text x="210" y="642" font-size="9.5">Factory ring segments — bolted,</text>
+       <text x="210" y="654" font-size="9.5">grouted, keyed; steel liner welded</text>
+       <text x="210" y="666" font-size="9.5">in situ. Cavity built in 2–3 weeks.</text></g>
+
+    <g><text x="210" y="705" font-size="11" font-weight="700" fill="#12242E" letter-spacing="0.2">RCCS ANNULAR GAP</text>
+       <text x="210" y="718" font-size="9.5">Radiation + convection to the</text>
+       <text x="210" y="730" font-size="9.5">liner, ε &gt; 0.85 both faces.</text>
+       <text x="210" y="742" font-size="9.5">Takes 6.5 MW decay heat at t = 0.</text></g>
+
+    <g><text x="210" y="781" font-size="11" font-weight="700" fill="#12242E" letter-spacing="0.2">REACTOR VESSEL</text>
+       <text x="210" y="794" font-size="9.5">5.5 m OD × ~11 m, 4 MPa helium.</text>
+       <text x="210" y="806" font-size="9.5">Thinner wall and lower stored energy</text>
+       <text x="210" y="818" font-size="9.5">than a 7 MPa circuit.</text></g>
+
+    <g><text x="210" y="851" font-size="11" font-weight="700" fill="#12242E" letter-spacing="0.2">ANNULAR PRISMATIC CORE</text>
+       <text x="210" y="864" font-size="9.5">Inner reflector r = 0.8 m, fuel</text>
+       <text x="210" y="876" font-size="9.5">annulus 1.0 m, outer reflector</text>
+       <text x="210" y="888" font-size="9.5">0.5 m → core OR 2.3 m. Active</text>
+       <text x="210" y="900" font-size="9.5">height 3.0–4.6 m. Helium flows</text>
+       <text x="210" y="912" font-size="9.5">top-down, 580 → 950 °C.</text></g>
+
+    <g><text x="210" y="939" font-size="11" font-weight="700" fill="#12242E" letter-spacing="0.2">TWO PASSIVE SHUTDOWNS</text>
+       <text x="210" y="952" font-size="9.5">B₄C rods drop by gravity into the</text>
+       <text x="210" y="964" font-size="9.5">inner reflector; reserve B₄C spheres</text>
+       <text x="210" y="976" font-size="9.5">gravity-feed the outer reflector.</text></g>
+
+    <g><text x="210" y="1011" font-size="11" font-weight="700" fill="#12242E" letter-spacing="0.2">CAVITY BASE SLAB</text>
+       <text x="210" y="1024" font-size="9.5">EL. −12.0 m. Embedded services and</text>
+       <text x="210" y="1036" font-size="9.5">drainage; vessel skirt bears here.</text></g>
+  </g>
+</g>
+<!-- ==================== RIGHT CALLOUTS ==================== -->
+<g id="calloutsR">
+  <g fill="none" stroke="#FBFAF7" stroke-width="3.4" stroke-linecap="round" opacity="0.92">
+    <path d="M1156,344 H1120 L1064,372"/>
+    <path d="M1156,420 H1050 L990,426"/>
+    <path d="M1156,496 H1060 L990,518"/>
+    <path d="M1156,572 H1100 L1046,580"/>
+    <path d="M1156,656 H1090 L1036,698"/>
+    <path d="M1156,732 H1060 L880,700"/>
+    <path d="M1156,808 H1060 L898,800"/>
+    <path d="M1156,884 H1060 L1000,878"/>
+    <path d="M1156,956 H1060 L918,962"/>
+    <path d="M1156,1024 H1080 L1036,998"/>
+  </g>
+  <g fill="none" stroke="#5A7280" stroke-width="0.8" stroke-linecap="round">
+    <path d="M1156,344 H1120 L1064,372" marker-end="url(#mDot)"/>
+    <path d="M1156,420 H1050 L990,426" marker-end="url(#mDot)"/>
+    <path d="M1156,496 H1060 L990,518" marker-end="url(#mDot)"/>
+    <path d="M1156,572 H1100 L1046,580" marker-end="url(#mDot)"/>
+    <path d="M1156,656 H1090 L1036,698" marker-end="url(#mDot)"/>
+    <path d="M1156,732 H1060 L880,700" marker-end="url(#mDot)"/>
+    <path d="M1156,808 H1060 L898,800" marker-end="url(#mDot)"/>
+    <path d="M1156,884 H1060 L1000,878" marker-end="url(#mDot)"/>
+    <path d="M1156,956 H1060 L918,962" marker-end="url(#mDot)"/>
+    <path d="M1156,1024 H1080 L1036,998" marker-end="url(#mDot)"/>
+  </g>
+
+  <g>
+    <circle cx="1168" cy="344" r="11.5" fill="#12242E"/><text x="1168" y="348" font-size="11" font-weight="700" fill="#FBFAF7" text-anchor="middle">11</text>
+    <circle cx="1168" cy="420" r="11.5" fill="#12242E"/><text x="1168" y="424" font-size="11" font-weight="700" fill="#FBFAF7" text-anchor="middle">12</text>
+    <circle cx="1168" cy="496" r="11.5" fill="#12242E"/><text x="1168" y="500" font-size="11" font-weight="700" fill="#FBFAF7" text-anchor="middle">13</text>
+    <circle cx="1168" cy="572" r="11.5" fill="#12242E"/><text x="1168" y="576" font-size="11" font-weight="700" fill="#FBFAF7" text-anchor="middle">14</text>
+    <circle cx="1168" cy="656" r="11.5" fill="#12242E"/><text x="1168" y="660" font-size="11" font-weight="700" fill="#FBFAF7" text-anchor="middle">15</text>
+    <circle cx="1168" cy="732" r="11.5" fill="#12242E"/><text x="1168" y="736" font-size="11" font-weight="700" fill="#FBFAF7" text-anchor="middle">16</text>
+    <circle cx="1168" cy="808" r="11.5" fill="#12242E"/><text x="1168" y="812" font-size="11" font-weight="700" fill="#FBFAF7" text-anchor="middle">17</text>
+    <circle cx="1168" cy="884" r="11.5" fill="#12242E"/><text x="1168" y="888" font-size="11" font-weight="700" fill="#FBFAF7" text-anchor="middle">18</text>
+    <circle cx="1168" cy="956" r="11.5" fill="#12242E"/><text x="1168" y="960" font-size="11" font-weight="700" fill="#FBFAF7" text-anchor="middle">19</text>
+    <circle cx="1168" cy="1024" r="11.5" fill="#12242E"/><text x="1168" y="1028" font-size="11" font-weight="700" fill="#FBFAF7" text-anchor="middle">20</text>
+  </g>
+
+  <g fill="#5A7280">
+    <g><text x="1186" y="326" font-size="11" font-weight="700" fill="#12242E" letter-spacing="0.2">GRID CONNECTION</text>
+       <text x="1186" y="339" font-size="9.5">43–70 MW(e) net to the grid.</text>
+       <text x="1186" y="351" font-size="9.5">A frequency converter decouples</text>
+       <text x="1186" y="363" font-size="9.5">shaft speed from 50/60 Hz — no</text>
+       <text x="1186" y="375" font-size="9.5">gearbox anywhere in the train.</text></g>
+
+    <g><text x="1186" y="402" font-size="11" font-weight="700" fill="#12242E" letter-spacing="0.2">SWITCHGEAR &amp; CONTROL</text>
+       <text x="1186" y="415" font-size="9.5">HV switchgear plus autonomous</text>
+       <text x="1186" y="427" font-size="9.5">control cabinet. A full control</text>
+       <text x="1186" y="439" font-size="9.5">room is optional.</text></g>
+
+    <g><text x="1186" y="478" font-size="11" font-weight="700" fill="#12242E" letter-spacing="0.2">SPENT FUEL DRY STORE</text>
+       <text x="1186" y="491" font-size="9.5">Two years' discharge in shielded,</text>
+       <text x="1186" y="503" font-size="9.5">air-cooled casks. No water pool</text>
+       <text x="1186" y="515" font-size="9.5">and no pool cooling to fail.</text></g>
+
+    <g><text x="1186" y="554" font-size="11" font-weight="700" fill="#12242E" letter-spacing="0.2">PRECOOLER AIR COWL</text>
+       <text x="1186" y="567" font-size="9.5">Louvred intake and discharge at</text>
+       <text x="1186" y="579" font-size="9.5">grade, separate from the RCCS.</text></g>
+
+    <g><text x="1186" y="638" font-size="11" font-weight="700" fill="#12242E" letter-spacing="0.2">PRECOOLER AIR SHAFT</text>
+       <text x="1186" y="651" font-size="9.5">Cool lane down to the floor</text>
+       <text x="1186" y="663" font-size="9.5">plenum; warm lane back up to</text>
+       <text x="1186" y="675" font-size="9.5">the cowl. Pure natural draft.</text></g>
+
+    <g><text x="1186" y="714" font-size="11" font-weight="700" fill="#12242E" letter-spacing="0.2">TURBOMACHINE</text>
+       <text x="1186" y="727" font-size="9.5">One vertical shaft: turbine (hot,</text>
+       <text x="1186" y="739" font-size="9.5">top), generator, then compressor</text>
+       <text x="1186" y="751" font-size="9.5">(cold, bottom). Magnetic bearings</text>
+       <text x="1186" y="763" font-size="9.5">— no oil. 3,000–6,000 rpm.</text></g>
+
+    <g><text x="1186" y="790" font-size="11" font-weight="700" fill="#12242E" letter-spacing="0.2">RECUPERATOR</text>
+       <text x="1186" y="803" font-size="9.5">PCHE, ε = 0.95, Alloy 617. Puts</text>
+       <text x="1186" y="815" font-size="9.5">turbine exhaust heat back into</text>
+       <text x="1186" y="827" font-size="9.5">the core feed — the reason 47%</text>
+       <text x="1186" y="839" font-size="9.5">is reachable at PR 2.5.</text></g>
+
+    <g><text x="1186" y="866" font-size="11" font-weight="700" fill="#12242E" letter-spacing="0.2">PRECOOLER</text>
+       <text x="1186" y="879" font-size="9.5">Air-cooled to a 35 °C compressor</text>
+       <text x="1186" y="891" font-size="9.5">inlet. No site water of any kind.</text>
+       <text x="1186" y="903" font-size="9.5">Hot-climate bolt-on adds face</text>
+       <text x="1186" y="915" font-size="9.5">area outside the envelope.</text></g>
+
+    <g><text x="1186" y="938" font-size="11" font-weight="700" fill="#12242E" letter-spacing="0.2">COLD RETURN</text>
+       <text x="1186" y="951" font-size="9.5">35 °C back to the compressor. The</text>
+       <text x="1186" y="963" font-size="9.5">coaxial cross-vessel carries</text>
+       <text x="1186" y="975" font-size="9.5">950 °C inside, 580 °C outside.</text></g>
+
+    <g><text x="1186" y="1006" font-size="11" font-weight="700" fill="#12242E" letter-spacing="0.2">BALANCE-OF-PLANT BAY</text>
+       <text x="1186" y="1019" font-size="9.5">Shielded from the reactor cavity.</text>
+       <text x="1186" y="1031" font-size="9.5">RCCS and precooler air are two</text>
+       <text x="1186" y="1043" font-size="9.5">independent circuits — no valve,</text>
+       <text x="1186" y="1055" font-size="9.5">no fan, no pump in either.</text></g>
+  </g>
+</g>
+<!-- ==================== DETAIL MARKS ==================== -->
+<g id="detailmarks">
+  <circle cx="511" cy="800" r="12.5" fill="#FBFAF7"/><circle cx="511" cy="800" r="11" fill="#12242E"/>
+  <text x="511" y="804" font-size="12" font-weight="700" fill="#FBFAF7" text-anchor="middle">A</text>
+  <circle cx="599" cy="800" r="12.5" fill="#FBFAF7"/><circle cx="599" cy="800" r="11" fill="#12242E"/>
+  <text x="599" y="804" font-size="12" font-weight="700" fill="#FBFAF7" text-anchor="middle">B</text>
+</g>
+</g>
+
+<!-- ============ DETAIL A — TPMS GYROID FUEL BLOCK ============ -->
+<g id="detailA">
+  <rect x="1384" y="100" width="510" height="224" rx="3" fill="#FFFFFF" stroke="#CCD8DE" stroke-width="1.4"/>
+  <path d="M1387,100 H1891 A3,3 0 0 1 1894,103 V122 H1384 V103 A3,3 0 0 1 1387,100 Z" fill="#F2F6F8"/>
+  <line x1="1384" y1="122" x2="1894" y2="122" stroke="#CCD8DE" stroke-width="1.4"/>
+  <text x="1396" y="115" font-size="12" font-weight="700" fill="#12242E" letter-spacing="1.1">DETAIL A — TPMS GYROID FUEL BLOCK</text>
+  <circle cx="1872" cy="111" r="10.5" fill="#12242E"/><text x="1872" y="115" font-size="11" font-weight="700" fill="#FBFAF7" text-anchor="middle">A</text>
+
+  <circle cx="1494" cy="226" r="96" fill="url(#gBubble)" stroke="#12242E" stroke-width="2.4"/>
+  <circle cx="1494" cy="226" r="90" fill="none" stroke="#CCD8DE" stroke-width="0.9"/>
+  <g clip-path="url(#clipDA)">
+    <g transform="translate(1494,226) scale(0.9) translate(-392,-1248)">
+      <polygon points="392,1173 457,1210.5 457,1285.5 392,1323 327,1285.5 327,1210.5" fill="url(#pGyroid)" stroke="#292E32" stroke-width="2.4"/>
+      <g fill="none" opacity="0.55" stroke="#E3E9EC" stroke-width="1.35">
+        <path d="M330,1224 C346,1210 362,1238 378,1224 C394,1210 410,1238 426,1224 C442,1210 452,1232 456,1226"/>
+        <path d="M330,1264 C346,1250 362,1278 378,1264 C394,1250 410,1278 426,1264 C442,1250 452,1272 456,1266"/>
+        <path d="M334,1296 C350,1282 366,1310 382,1296 C398,1282 414,1310 430,1296"/>
+      </g>
+      <g fill="#40474E" stroke="#292E32" stroke-width="1.3">
+        <circle cx="360" cy="1202" r="9"/><circle cx="424" cy="1202" r="9"/>
+        <circle cx="392" cy="1248" r="9"/>
+        <circle cx="344" cy="1248" r="9"/><circle cx="440" cy="1248" r="9"/>
+        <circle cx="360" cy="1294" r="9"/><circle cx="424" cy="1294" r="9"/>
+      </g>
+      <g fill="url(#pTriso)">
+        <circle cx="360" cy="1202" r="9"/><circle cx="424" cy="1202" r="9"/>
+        <circle cx="392" cy="1248" r="9"/>
+        <circle cx="344" cy="1248" r="9"/><circle cx="440" cy="1248" r="9"/>
+        <circle cx="360" cy="1294" r="9"/><circle cx="424" cy="1294" r="9"/>
+      </g>
+    </g>
+    <!-- across-flats dimension, drawn unscaled so the note stays legible -->
+    <g stroke="#12242E" stroke-width="1" fill="none">
+      <path d="M1435.5,300 H1552.5"/><path d="M1435.5,292 v16 M1552.5,292 v16"/>
+    </g>
+    <polygon points="1440.5,300 1449.5,297 1449.5,303" fill="#12242E"/>
+    <polygon points="1547.5,300 1538.5,297 1538.5,303" fill="#12242E"/>
+    <rect x="1456" y="292.5" width="76" height="15" fill="#F2F6F8"/>
+    <text x="1494" y="304" font-size="9.5" fill="#12242E" text-anchor="middle" font-weight="700">360 mm A/F</text>
+  </g>
+
+  <!-- leaders onto the two features they name -->
+  <g fill="none" stroke="#5A7280" stroke-width="0.8">
+    <path d="M1610,162 L1570,178 L1530.8,183.5" marker-end="url(#mDotSm)"/>
+    <path d="M1610,182 L1566,204 L1538,228" marker-end="url(#mDotSm)"/>
+  </g>
+
+  <g fill="#5A7280" font-size="9.5">
+    <text x="1614" y="146" fill="#5A7280">unit cell 15–20 mm · ~793 mm tall</text>
+    <text x="1614" y="166" font-weight="700" fill="#12242E">compact ⌀ 12.5 mm</text>
+    <text x="1614" y="186" font-weight="700" fill="#12242E">helium channel · D_h 6–8 mm</text>
+    <text x="1614" y="206">360 mm across flats · ~50 % void</text>
+    <text x="1614" y="219">Re 30,000–80,000 · Nu +20–40 % versus</text>
+    <text x="1614" y="232">drilled circular channels</text>
+  </g>
+  <g fill="#5A7280" font-size="9.5">
+    <text x="1614" y="252" font-size="11" font-weight="700" fill="#12242E" letter-spacing="0.2">WHY THE CHANNELS ARE NOT DRILLED</text>
+    <text x="1614" y="268">A gyroid partitions the block into two</text>
+    <text x="1614" y="281">interpenetrating domains — helium and</text>
+    <text x="1614" y="294">graphite. It cannot be machined, only</text>
+    <text x="1614" y="307">additively built, and it is what recovers the</text>
+    <text x="1614" y="320">pressure-drop penalty of running at 4 MPa.</text>
+  </g>
+</g>
+
+<!-- ============ DETAIL B — TRISO PARTICLE ============ -->
+<g id="detailB">
+  <rect x="1384" y="350" width="510" height="282" rx="3" fill="#FFFFFF" stroke="#CCD8DE" stroke-width="1.4"/>
+  <path d="M1387,350 H1891 A3,3 0 0 1 1894,353 V372 H1384 V353 A3,3 0 0 1 1387,350 Z" fill="#F2F6F8"/>
+  <line x1="1384" y1="372" x2="1894" y2="372" stroke="#CCD8DE" stroke-width="1.4"/>
+  <text x="1396" y="365" font-size="12" font-weight="700" fill="#12242E" letter-spacing="1.1">DETAIL B — TRISO PARTICLE, 930 µm OD</text>
+  <circle cx="1872" cy="361" r="10.5" fill="#12242E"/><text x="1872" y="365" font-size="11" font-weight="700" fill="#FBFAF7" text-anchor="middle">B</text>
+
+  <circle cx="1494" cy="466" r="92" fill="url(#gBubble)" stroke="#12242E" stroke-width="2.4"/>
+  <circle cx="1494" cy="466" r="86" fill="none" stroke="#CCD8DE" stroke-width="0.9"/>
+  <g clip-path="url(#clipDB)">
+    <g transform="translate(1494,466) scale(0.8817) translate(-1008,-1256)">
+      <circle cx="1008" cy="1256" r="93" fill="#56707C" stroke="#33454E" stroke-width="1.6"/>
+      <circle cx="1008" cy="1256" r="85" fill="#0F8074" stroke="#08514A" stroke-width="2.2"/>
+      <circle cx="1008" cy="1256" r="78" fill="#7D939C" stroke="#63767E" stroke-width="1"/>
+      <circle cx="1008" cy="1256" r="70" fill="#E3E9EC" stroke="#A9B7BD" stroke-width="1.3" stroke-dasharray="4 3"/>
+      <circle cx="1008" cy="1256" r="50" fill="url(#gKernel)" stroke="#7D2205" stroke-width="1.3"/>
+      <g fill="#B3C0C6" opacity="0.7">
+        <circle cx="1030" cy="1206" r="3.4"/><circle cx="1060" cy="1240" r="3"/><circle cx="1050" cy="1298" r="3.6"/>
+        <circle cx="1000" cy="1194" r="3.2"/><circle cx="966" cy="1204" r="3"/><circle cx="950" cy="1246" r="3.4"/>
+        <circle cx="962" cy="1292" r="3"/><circle cx="1004" cy="1314" r="3.4"/><circle cx="1038" cy="1200" r="2.6"/>
+        <circle cx="1020" cy="1318" r="2.8"/><circle cx="978" cy="1310" r="2.4"/><circle cx="948" cy="1272" r="2.6"/>
+      </g>
+      <g fill="#DC501B" opacity="0.3">
+        <circle cx="994" cy="1240" r="7"/><circle cx="1020" cy="1266" r="5"/><circle cx="1000" cy="1278" r="4"/>
+      </g>
+    </g>
+    <text x="1494" y="471" font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">UO₂</text>
+  </g>
+
+  <!-- one leader per coating boundary, each starting on its own circle -->
+  <g fill="none" stroke="#FBFAF7" stroke-width="3">
+    <path d="M1548.9,405.1 L1580,394 H1606"/>
+    <path d="M1562.5,435.5 L1584,430 H1606"/>
+    <path d="M1563.0,463.6 L1584,466 H1606"/>
+    <path d="M1552.3,487.2 L1582,502 H1606"/>
+    <path d="M1526.7,495.4 L1576,538 H1606"/>
+  </g>
+  <g fill="none" stroke="#5A7280" stroke-width="0.8">
+    <path d="M1548.9,405.1 L1580,394 H1606" marker-start="url(#mDotSm)"/>
+    <path d="M1562.5,435.5 L1584,430 H1606" marker-start="url(#mDotSm)"/>
+    <path d="M1563.0,463.6 L1584,466 H1606" marker-start="url(#mDotSm)"/>
+    <path d="M1552.3,487.2 L1582,502 H1606" marker-start="url(#mDotSm)"/>
+    <path d="M1526.7,495.4 L1576,538 H1606" marker-start="url(#mDotSm)"/>
+  </g>
+  <g font-size="9.5" fill="#5A7280">
+    <text x="1612" y="391" font-weight="700" fill="#12242E">OPyC 40 µm</text><text x="1612" y="404">dense PyC → 930 µm OD</text>
+    <text x="1612" y="427" font-weight="700" fill="#08514A">SiC 35 µm ★</text><text x="1612" y="440">β-SiC, CVD → 850 µm — primary fission-product barrier</text>
+    <text x="1612" y="463" font-weight="700" fill="#12242E">IPyC 40 µm</text><text x="1612" y="476">dense PyC → 780 µm</text>
+    <text x="1612" y="499" font-weight="700" fill="#12242E">Buffer PyC 100 µm</text><text x="1612" y="512">porous — takes fission gas → 700 µm</text>
+    <text x="1612" y="535" font-weight="700" fill="#12242E">UO₂ kernel 500 µm</text><text x="1612" y="548">4.8 % ²³⁵U · ~5,000 per compact</text>
+  </g>
+
+  <!-- overall diameter -->
+  <g stroke="#12242E" stroke-width="1" fill="none">
+    <path d="M1412,572 H1576"/><path d="M1412,564 v16 M1576,564 v16"/>
+  </g>
+  <polygon points="1417,572 1426,569 1426,575" fill="#12242E"/>
+  <polygon points="1571,572 1562,569 1562,575" fill="#12242E"/>
+  <text x="1584" y="576" font-size="9.5" fill="#12242E" font-weight="700">930 µm OD</text>
+  <text x="1656" y="576" font-size="9.5" fill="#5A7280">· five layers, drawn to relative scale</text>
+
+  <text x="1394" y="594" font-size="11" font-weight="700" fill="#12242E" letter-spacing="0.2">THE FIRST THREE BARRIERS</text>
+  <text x="1566" y="594" font-size="11" font-weight="700" fill="#5E0B07" letter-spacing="0.2">SiC intact to 1,600 °C — peak fuel ~1,240 °C</text>
+  <g font-size="9.5" fill="#5A7280">
+    <text x="1394" y="610">Kernel, coatings and graphite matrix retain &gt; 99.99 % of fission products. The SiC layer</text>
+    <text x="1394" y="624">is the true fission-product boundary; the reactor vessel only holds the coolant. 80–100 GWd/tHM.</text>
+  </g>
+</g>
+
+<!-- ============ A → B : the particle count that links the two details ============ -->
+<g id="bridge">
+  <g fill="none" stroke="#FBFAF7" stroke-width="3.4">
+    <path d="M1457.9,271 L1390,304 L1390,452 L1412,466"/>
+  </g>
+  <g fill="none" stroke="#5A7280" stroke-width="0.8" stroke-dasharray="6,4">
+    <path d="M1457.9,271 L1390,304 L1390,452 L1412,466" marker-start="url(#mDotSm)" marker-end="url(#mDotSm)"/>
+  </g>
+  <text x="1404" y="341" font-size="9.5" font-weight="700" fill="#5A7280">~5,000 particles per compact</text>
+</g>
+
+<!-- ============ PRIMARY CIRCUIT — STATE CHAIN ============ -->
+<g id="cycle">
+  <rect x="1384" y="640" width="510" height="228" rx="3" fill="#FFFFFF" stroke="#CCD8DE" stroke-width="1.4"/>
+  <path d="M1387,640 H1891 A3,3 0 0 1 1894,643 V662 H1384 V643 A3,3 0 0 1 1387,640 Z" fill="#F2F6F8"/>
+  <line x1="1384" y1="662" x2="1894" y2="662" stroke="#CCD8DE" stroke-width="1.4"/>
+  <text x="1639" y="655" font-size="12" font-weight="700" fill="#12242E" text-anchor="middle" letter-spacing="1.1">PRIMARY CIRCUIT — ONE HELIUM LOOP</text>
+  <text x="1639" y="681" font-size="9.5" fill="#5A7280" text-anchor="middle">4 MPa · PR 2.5 · 52–78 kg/s · γ = 1.667 · Cp 5.19 kJ/kg·K</text>
+  <g stroke="#90A4AE" stroke-width="1" fill="none" marker-end="url(#mArrow)">
+    <path d="M1408,716 V724"/>
+    <path d="M1408,743 V751"/>
+    <path d="M1408,770 V778"/>
+    <path d="M1408,797 V805"/>
+    <path d="M1408,824 V832"/>
+  </g>
+  <g>
+    <rect x="1400" y="696" width="16" height="16" transform="rotate(45,1408,704)" fill="#12417F" stroke="#FFFFFF" stroke-width="1.4"/>
+    <text x="1408" y="707.6" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+    <text x="1430" y="701" font-size="10" font-weight="700" fill="#12242E">COMPRESSOR INLET</text>
+    <text x="1438" y="713" font-size="9.5" fill="#90A4AE">compressor · η_is 0.88</text>
+    <rect x="1770" y="695" width="62" height="18" rx="2.5" fill="#12417F"/>
+    <text x="1801" y="708" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">35 °C</text>
+  </g>
+  <g>
+    <rect x="1400" y="723" width="16" height="16" transform="rotate(45,1408,731)" fill="#1D76B8" stroke="#FFFFFF" stroke-width="1.4"/>
+    <text x="1408" y="734.6" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">5</text>
+    <text x="1430" y="728" font-size="10" font-weight="700" fill="#12242E">COMPRESSOR OUTLET</text>
+    <text x="1438" y="740" font-size="9.5" fill="#90A4AE">recuperator, cold side</text>
+    <rect x="1770" y="722" width="62" height="18" rx="2.5" fill="#1D76B8"/>
+    <text x="1801" y="735" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">195 °C</text>
+  </g>
+  <g>
+    <rect x="1400" y="750" width="16" height="16" transform="rotate(45,1408,758)" fill="#E8A31E" stroke="#FFFFFF" stroke-width="1.4"/>
+    <text x="1408" y="761.6" font-size="10" font-weight="700" fill="#12242E" text-anchor="middle">6</text>
+    <text x="1430" y="755" font-size="10" font-weight="700" fill="#12242E">CORE INLET</text>
+    <text x="1438" y="767" font-size="9.5" fill="#90A4AE">core · ΔT = 370 °C · 100–150 MW(th)</text>
+    <rect x="1770" y="749" width="62" height="18" rx="2.5" fill="#E8A31E"/>
+    <text x="1801" y="762" font-size="11.5" font-weight="700" fill="#12242E" text-anchor="middle">580 °C</text>
+  </g>
+  <g>
+    <rect x="1400" y="777" width="16" height="16" transform="rotate(45,1408,785)" fill="#D9481A" stroke="#FFFFFF" stroke-width="1.4"/>
+    <text x="1408" y="788.6" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+    <text x="1430" y="782" font-size="10" font-weight="700" fill="#12242E">CORE OUT · TURBINE IN</text>
+    <text x="1438" y="794" font-size="9.5" fill="#90A4AE">turbine · η_is 0.90 · SiC/SiC CMC blisk</text>
+    <rect x="1770" y="776" width="62" height="18" rx="2.5" fill="#D9481A"/>
+    <text x="1801" y="789" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">950 °C</text>
+  </g>
+  <g>
+    <rect x="1400" y="804" width="16" height="16" transform="rotate(45,1408,812)" fill="#EF8B1F" stroke="#FFFFFF" stroke-width="1.4"/>
+    <text x="1408" y="815.6" font-size="10" font-weight="700" fill="#12242E" text-anchor="middle">2</text>
+    <text x="1430" y="809" font-size="10" font-weight="700" fill="#12242E">TURBINE OUTLET</text>
+    <text x="1438" y="821" font-size="9.5" fill="#90A4AE">recuperator, hot side · ε = 0.95</text>
+    <rect x="1770" y="803" width="62" height="18" rx="2.5" fill="#EF8B1F"/>
+    <text x="1801" y="816" font-size="11.5" font-weight="700" fill="#12242E" text-anchor="middle">600 °C</text>
+  </g>
+  <g>
+    <rect x="1400" y="831" width="16" height="16" transform="rotate(45,1408,839)" fill="#2E8FB4" stroke="#FFFFFF" stroke-width="1.4"/>
+    <text x="1408" y="842.6" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+    <text x="1430" y="836" font-size="10" font-weight="700" fill="#12242E">PRECOOLER INLET</text>
+    <text x="1438" y="848" font-size="9.5" fill="#90A4AE">precooler, ambient air</text>
+    <rect x="1770" y="830" width="62" height="18" rx="2.5" fill="#2E8FB4"/>
+    <text x="1801" y="843" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">215 °C</text>
+  </g>
+  <g fill="none" stroke="#5A7280" stroke-width="1">
+    <path d="M1834,839 H1850 V704 H1836" marker-end="url(#mArrow)"/>
+  </g>
+  <text x="1866" y="771" font-size="9" fill="#5A7280" text-anchor="middle" transform="rotate(-90,1866,771)">CLOSED LOOP</text>
+  <text x="1639" y="861" font-size="9.5" fill="#5A7280" text-anchor="middle">No intermediate heat exchanger. No secondary loop. No water.</text>
+</g>
+
+<!-- ==================== KEY NUMBERS STRIP ==================== -->
+<line x1="40" y1="872" x2="1880" y2="872" stroke="#DBE4E9" stroke-width="1"/>
+<g id="keynumbers">
+  <g>
+    <rect x="40" y="882" width="221" height="58" rx="3" fill="#FFFFFF" stroke="#CCD8DE" stroke-width="1.4"/>
+    <rect x="40" y="882" width="221" height="4" fill="#D9481A"/>
+    <text x="150.5" y="909" font-size="20" font-weight="700" fill="#12242E" text-anchor="middle">100–150</text>
+    <text x="150.5" y="922" font-size="8.5" fill="#90A4AE" text-anchor="middle" letter-spacing="0.6">MW(th) THERMAL POWER</text>
+    <text x="150.5" y="934" font-size="8.5" fill="#90A4AE" text-anchor="middle">~4 MW/m³ in the fuel annulus</text>
+  </g>
+  <g>
+    <rect x="271" y="882" width="221" height="58" rx="3" fill="#FFFFFF" stroke="#CCD8DE" stroke-width="1.4"/>
+    <rect x="271" y="882" width="221" height="4" fill="#5B4EA8"/>
+    <text x="381.5" y="909" font-size="20" font-weight="700" fill="#12242E" text-anchor="middle">43–70</text>
+    <text x="381.5" y="922" font-size="8.5" fill="#90A4AE" text-anchor="middle" letter-spacing="0.6">MW(e) NET TO GRID</text>
+    <text x="381.5" y="934" font-size="8.5" fill="#90A4AE" text-anchor="middle">or ~38,000 kg/day H₂ via SOEC</text>
+  </g>
+  <g>
+    <rect x="502" y="882" width="221" height="58" rx="3" fill="#FFFFFF" stroke="#CCD8DE" stroke-width="1.4"/>
+    <rect x="502" y="882" width="221" height="4" fill="#EF8B1F"/>
+    <text x="612.5" y="909" font-size="20" font-weight="700" fill="#12242E" text-anchor="middle">~47 %</text>
+    <text x="612.5" y="922" font-size="8.5" fill="#90A4AE" text-anchor="middle" letter-spacing="0.6">BRAYTON CYCLE EFFICIENCY</text>
+    <text x="612.5" y="934" font-size="8.5" fill="#90A4AE" text-anchor="middle">against ~33 % for an LWR Rankine</text>
+  </g>
+  <g>
+    <rect x="733" y="882" width="221" height="58" rx="3" fill="#FFFFFF" stroke="#CCD8DE" stroke-width="1.4"/>
+    <rect x="733" y="882" width="221" height="4" fill="#D9481A"/>
+    <text x="843.5" y="909" font-size="20" font-weight="700" fill="#12242E" text-anchor="middle">950 °C</text>
+    <text x="843.5" y="922" font-size="8.5" fill="#90A4AE" text-anchor="middle" letter-spacing="0.6">CORE OUTLET AT 4 MPa</text>
+    <text x="843.5" y="934" font-size="8.5" fill="#90A4AE" text-anchor="middle">core ΔT 370 °C, inlet 580 °C</text>
+  </g>
+  <g>
+    <rect x="964" y="882" width="221" height="58" rx="3" fill="#FFFFFF" stroke="#CCD8DE" stroke-width="1.4"/>
+    <rect x="964" y="882" width="221" height="4" fill="#5C6670"/>
+    <text x="1074.5" y="909" font-size="20" font-weight="700" fill="#12242E" text-anchor="middle">4.8 % ²³⁵U</text>
+    <text x="1074.5" y="922" font-size="8.5" fill="#90A4AE" text-anchor="middle" letter-spacing="0.6">LEU ENRICHMENT</text>
+    <text x="1074.5" y="934" font-size="8.5" fill="#90A4AE" text-anchor="middle">below the 5 % proliferation line</text>
+  </g>
+  <g>
+    <rect x="1195" y="882" width="221" height="58" rx="3" fill="#FFFFFF" stroke="#CCD8DE" stroke-width="1.4"/>
+    <rect x="1195" y="882" width="221" height="4" fill="#5C6670"/>
+    <text x="1305.5" y="909" font-size="20" font-weight="700" fill="#12242E" text-anchor="middle">80–100</text>
+    <text x="1305.5" y="922" font-size="8.5" fill="#90A4AE" text-anchor="middle" letter-spacing="0.6">GWd/tHM DISCHARGE BURNUP</text>
+    <text x="1305.5" y="934" font-size="8.5" fill="#90A4AE" text-anchor="middle">6–10 batches, 12-month cycle</text>
+  </g>
+  <g>
+    <rect x="1426" y="882" width="221" height="58" rx="3" fill="#FFFFFF" stroke="#CCD8DE" stroke-width="1.4"/>
+    <rect x="1426" y="882" width="221" height="4" fill="#B9B2A4"/>
+    <text x="1536.5" y="909" font-size="20" font-weight="700" fill="#12242E" text-anchor="middle">20 × 20 × 20 m</text>
+    <text x="1536.5" y="922" font-size="8.5" fill="#90A4AE" text-anchor="middle" letter-spacing="0.6">ENVELOPE, 12 m BELOW GRADE</text>
+    <text x="1536.5" y="934" font-size="8.5" fill="#90A4AE" text-anchor="middle">the full 20 m height is the RCCS chimney</text>
+  </g>
+  <g>
+    <rect x="1657" y="882" width="221" height="58" rx="3" fill="#FFFFFF" stroke="#CCD8DE" stroke-width="1.4"/>
+    <rect x="1657" y="882" width="110" height="4" fill="#A81D0E"/><rect x="1767" y="882" width="111" height="4" fill="#5E0B07"/>
+    <text x="1767.5" y="909" font-size="20" font-weight="700" fill="#12242E" text-anchor="middle">1,240 / 1,600 °C</text>
+    <text x="1767.5" y="922" font-size="8.5" fill="#90A4AE" text-anchor="middle" letter-spacing="0.6">PEAK FUEL vs TRISO LIMIT</text>
+    <text x="1767.5" y="934" font-size="8.5" fill="#90A4AE" text-anchor="middle">360 °C margin, no operator action</text>
+  </g>
+</g>
+
+<!-- ==================== LEGENDS · PLAN KEY · SITE · SCALE ==================== -->
+<g id="legend">
+  <g stroke="#DBE4E9" stroke-width="1">
+    <path d="M452,952 V1036 M944,952 V1036 M1172,952 V1036 M1576,952 V1036"/>
+  </g>
+
+  <!-- helium temperature ramp: canonical anchors, working-fluid domain 0-1,000 C -->
+  <text x="40" y="962" font-size="12" font-weight="700" fill="#12242E" letter-spacing="1.1">HELIUM TEMPERATURE · 0–1,000 °C</text>
+  <rect x="40" y="968" width="380" height="15" fill="url(#gRamp)" stroke="#90A4AE" stroke-width="0.8"/>
+  <g stroke="#5A7280" stroke-width="1">
+    <path d="M53.3,983 v6 M114.1,983 v6 M121.7,983 v4 M260.4,983 v6 M268.0,983 v4 M401.0,983 v6"/>
+  </g>
+  <g font-size="9" fill="#5A7280" text-anchor="middle">
+    <text x="53.3" y="1000">35</text><text x="114.1" y="1000">195</text>
+    <text x="260.4" y="1000">580</text><text x="401.0" y="1000">950</text>
+  </g>
+  <g font-size="9.5" fill="#5A7280">
+    <rect x="40" y="1008" width="20" height="11" fill="#E3F0EA" stroke="#2FA88C" stroke-width="1.2"/>
+    <rect x="40" y="1008" width="5" height="11" fill="#2FA88C"/>
+    <text x="66" y="1017">RCCS air, drawn in at grade</text>
+    <rect x="212" y="1008" width="20" height="11" fill="#D6EBE4" stroke="#2FA88C" stroke-width="1.2"/>
+    <rect x="212" y="1008" width="5" height="11" fill="#2FA88C"/>
+    <text x="238" y="1017">RCCS air heated by the vessel, rising</text>
+    <path d="M41,1030 H59" stroke="#12242E" stroke-width="1.4" stroke-dasharray="6,4" fill="none"/>
+    <text x="66" y="1033">refuelling route</text>
+    <path d="M213,1030 H231" stroke="#5B4EA8" stroke-width="1.6" fill="none"/>
+    <text x="238" y="1033">electrical, generator to grid</text>
+  </g>
+
+  <!-- materials -->
+  <text x="466" y="962" font-size="12" font-weight="700" fill="#12242E" letter-spacing="1.1">MATERIALS</text>
+  <g font-size="9.5" fill="#5A7280">
+    <g><rect x="466" y="967" width="22" height="13" fill="url(#gConcH)" stroke="#66625A" stroke-width="0.8"/><rect x="466" y="967" width="22" height="13" fill="url(#pConcrete)"/><text x="496" y="977">pre-cast concrete, cut face</text></g>
+    <g><rect x="466" y="986" width="22" height="13" fill="url(#gEarth)" stroke="#A08D6E" stroke-width="0.8"/><rect x="466" y="986" width="22" height="13" fill="url(#pEarth)"/><text x="496" y="996">compacted backfill</text></g>
+    <g><rect x="466" y="1005" width="22" height="13" fill="url(#gSteel)" stroke="#12242E" stroke-width="0.8"/><text x="496" y="1015">pressure-boundary steel</text></g>
+    <g><rect x="466" y="1024" width="22" height="13" fill="url(#gGraphite)" stroke="#292E32" stroke-width="0.8"/><rect x="466" y="1024" width="22" height="13" fill="url(#pGraphite)"/><text x="496" y="1034">IG-110 nuclear graphite</text></g>
+    <g><rect x="700" y="967" width="22" height="13" fill="url(#gFuel)" stroke="#77280E" stroke-width="0.8"/><rect x="700" y="967" width="22" height="13" fill="url(#pFuelSpeck)"/><text x="730" y="977">fuel annulus, TRISO particles in graphite</text></g>
+    <g><rect x="700" y="986" width="22" height="13" fill="#F2F6F8" stroke="#12242E" stroke-width="0.8"/><rect x="700" y="986" width="22" height="13" fill="url(#pPCHE)"/><text x="730" y="996">PCHE recuperator core</text></g>
+    <g><rect x="700" y="1005" width="22" height="13" fill="#E3E8EB" stroke="#12242E" stroke-width="0.8"/><rect x="700" y="1005" width="22" height="13" fill="url(#pFins)"/><text x="730" y="1015">finned air heat exchanger</text></g>
+    <g><rect x="700" y="1024" width="22" height="13" fill="#E4E2DC" stroke="#12242E" stroke-width="0.8"/><rect x="700" y="1024" width="22" height="13" fill="url(#pLouvre)"/><text x="730" y="1034">louvred air aperture</text></g>
+  </g>
+
+  <!-- plan key -->
+  <text x="958" y="962" font-size="12" font-weight="700" fill="#12242E" letter-spacing="1.1">PLAN KEY</text>
+  <g transform="translate(968,969) scale(0.7) translate(-640,-166)">
+    <rect x="640" y="166" width="110" height="104" fill="#FFFFFF" stroke="#66625A" stroke-width="2.2"/>
+    <rect x="651" y="180" width="88" height="76" fill="none" stroke="#5A7280" stroke-width="1.4" stroke-dasharray="5,4"/>
+    <circle cx="671" cy="218" r="15" fill="#CDD6DC" stroke="#12242E" stroke-width="2"/>
+    <circle cx="671" cy="218" r="9" fill="url(#gFuel)" stroke="#77280E" stroke-width="1.1"/>
+    <circle cx="671" cy="218" r="4" fill="#4E575F"/>
+    <rect x="700" y="200" width="8" height="36" fill="#D2CDC4" stroke="#66625A" stroke-width="1.3"/>
+    <circle cx="714" cy="218" r="7" fill="#CDD6DC" stroke="#12242E" stroke-width="1.6"/>
+    <rect x="723" y="207" width="10" height="22" fill="#F2F6F8" stroke="#12242E" stroke-width="1.3"/>
+    <rect x="735" y="207" width="9" height="22" fill="#E3E8EB" stroke="#12242E" stroke-width="1.3"/>
+    <line x1="626" y1="218" x2="764" y2="218" stroke="#12242E" stroke-width="2" stroke-dasharray="12,4,3,4"/>
+    <polygon points="632,218 641,213 641,223" fill="#12242E"/><polygon points="758,218 749,213 749,223" fill="#12242E"/>
+  </g>
+  <text x="954" y="1009" font-size="10" font-weight="700" fill="#12242E" text-anchor="end">A</text>
+  <text x="1058" y="1009" font-size="10" font-weight="700" fill="#12242E">A</text>
+  <g font-size="9.5" fill="#5A7280">
+    <text x="1072" y="1000">20 × 20 m footprint,</text>
+    <text x="1072" y="1013">cut on A–A</text>
+  </g>
+
+  <!-- site requirements -->
+  <text x="1192" y="962" font-size="12" font-weight="700" fill="#12242E" letter-spacing="1.1">SITE REQUIREMENTS</text>
+  <g stroke="#DBE4E9" stroke-width="1">
+    <path d="M1192,980.8 H1560 M1192,992.4 H1560 M1192,1004 H1560 M1192,1015.6 H1560 M1192,1027.2 H1560"/>
+  </g>
+  <g font-size="10">
+    <text x="1192" y="975" fill="#90A4AE" letter-spacing="0.5">PLOT AREA, PER UNIT</text><text x="1336" y="975" fill="#12242E" font-weight="700">~30 × 30 m, including the exclusion zone</text>
+    <text x="1192" y="986.6" fill="#90A4AE" letter-spacing="0.5">EXCAVATION</text><text x="1336" y="986.6" fill="#12242E" font-weight="700">~12–14 m into rock or firm soil</text>
+    <text x="1192" y="998.2" fill="#90A4AE" letter-spacing="0.5">WATER SUPPLY</text><text x="1336" y="998.2" fill="#2FA88C" font-weight="700">none — air-cooled throughout</text>
+    <text x="1192" y="1009.8" fill="#90A4AE" letter-spacing="0.5">GRID CONNECTION</text><text x="1336" y="1009.8" fill="#12242E" font-weight="700">HV cable or overhead line</text>
+    <text x="1192" y="1021.4" fill="#90A4AE" letter-spacing="0.5">SERVICE INTERVAL</text><text x="1336" y="1021.4" fill="#12242E" font-weight="700">one visit a year; 6–10 fuel batches</text>
+    <text x="1192" y="1033" fill="#90A4AE" letter-spacing="0.5">SPENT FUEL ON SITE</text><text x="1336" y="1033" fill="#12242E" font-weight="700">two years' discharge, dry, air-cooled</text>
+  </g>
+
+  <!-- graphic scale -->
+  <text x="1592" y="962" font-size="12" font-weight="700" fill="#12242E" letter-spacing="1.1">GRAPHIC SCALE — SECTION</text>
+  <rect x="1592" y="968" width="288" height="14" fill="#FBFAF7" stroke="#12242E" stroke-width="1"/>
+  <g fill="#12242E">
+    <rect x="1592" y="968" width="36" height="14"/><rect x="1664" y="968" width="36" height="14"/>
+    <rect x="1736" y="968" width="36" height="14"/><rect x="1808" y="968" width="36" height="14"/>
+  </g>
+  <g stroke="#12242E" stroke-width="1"><path d="M1592,982 v6 M1664,982 v6 M1736,982 v6 M1808,982 v6 M1880,982 v6"/></g>
+  <g font-size="9" fill="#5A7280" text-anchor="middle">
+    <text x="1592" y="1000">0</text><text x="1664" y="1000">2</text><text x="1736" y="1000">4</text>
+    <text x="1808" y="1000">6</text><text x="1874" y="1000">8 m</text>
+  </g>
+  <g font-size="9.5" fill="#5A7280">
+    <text x="1592" y="1013">True 1:1 aspect ratio — 36 px = 1 m in both axes.</text>
+    <text x="1592" y="1024">Details A and B are magnified, not to section scale.</text>
+    <text x="1592" y="1035">Callouts 1–20; cycle state points are diamonds 1–6.</text>
+  </g>
+</g>
+
+<!-- ==================== FOOTER ==================== -->
+<g id="footer">
+  <line x1="40" y1="1044" x2="1880" y2="1044" stroke="#DBE4E9" stroke-width="1"/>
+  <text x="40" y="1055" font-size="8.5" fill="#5A7280" letter-spacing="0.4">GENERAL ARRANGEMENT · SECTION A–A · DIMENSIONS IN METRES UNLESS NOTED · NO WATER SUPPLY REQUIRED AT ANY POINT IN THE PLANT</text>
+  <text x="740" y="1055" font-size="8.5" fill="#90A4AE">FOAK VARIANT — 850 °C core outlet with a nickel superalloy turbine: ~43 % cycle, ~43–65 MW(e), peak fuel ~1,140 °C, 460 °C margin. The nuclear island is identical; only the turbomachine and recuperator alloy change.</text>
+  <text x="40" y="1065" font-size="8.5" fill="#90A4AE">Preliminary design — every value is an estimate awaiting calculation. All values traced to design/00-summary.md and the linked sections.</text>
+</g>
+</g>
+</svg>

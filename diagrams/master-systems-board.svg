@@ -1,0 +1,938 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" font-family="Helvetica Neue, Helvetica, Arial, Liberation Sans, sans-serif">
+<defs>
+  <!-- =====================================================================
+       Temperature colour language.  Every stop below is a canonical anchor
+       placed at its true linear position across the bar's own domain; no
+       intermediate colours are invented.  Anchors:
+         35 #12417F  195 #1D76B8  215 #2E8FB4  580 #E8A31E
+        600 #EF8B1F  950 #D9481A 1240 #A81D0E 1600 #5E0B07
+       ramp / rampVert  span 0-1600 C   (fuel temperature)
+       ramp1000         spans 0-1000 C  (working fluid)
+       Below 35 C there is no anchor, so the first stop's colour is held.
+       ===================================================================== -->
+  <linearGradient id="ramp" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0.0218750" stop-color="#12417F"/>
+    <stop offset="0.1218750" stop-color="#1D76B8"/>
+    <stop offset="0.1343750" stop-color="#2E8FB4"/>
+    <stop offset="0.3625000" stop-color="#E8A31E"/>
+    <stop offset="0.3750000" stop-color="#EF8B1F"/>
+    <stop offset="0.5937500" stop-color="#D9481A"/>
+    <stop offset="0.7750000" stop-color="#A81D0E"/>
+    <stop offset="1.0000000" stop-color="#5E0B07"/>
+  </linearGradient>
+  <!-- vertical: offset 0 sits at the bottom of the filled box = 0 C -->
+  <linearGradient id="rampVert" x1="0" y1="1" x2="0" y2="0">
+    <stop offset="0.0218750" stop-color="#12417F"/>
+    <stop offset="0.1218750" stop-color="#1D76B8"/>
+    <stop offset="0.1343750" stop-color="#2E8FB4"/>
+    <stop offset="0.3625000" stop-color="#E8A31E"/>
+    <stop offset="0.3750000" stop-color="#EF8B1F"/>
+    <stop offset="0.5937500" stop-color="#D9481A"/>
+    <stop offset="0.7750000" stop-color="#A81D0E"/>
+    <stop offset="1.0000000" stop-color="#5E0B07"/>
+  </linearGradient>
+  <!-- 0-1000 C: the 1000 C end is interpolated 950 -> 1240 at 50/290 -->
+  <linearGradient id="ramp1000" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0.0350000" stop-color="#12417F"/>
+    <stop offset="0.1950000" stop-color="#1D76B8"/>
+    <stop offset="0.2150000" stop-color="#2E8FB4"/>
+    <stop offset="0.5800000" stop-color="#E8A31E"/>
+    <stop offset="0.6000000" stop-color="#EF8B1F"/>
+    <stop offset="0.9500000" stop-color="#D9481A"/>
+    <stop offset="1.0000000" stop-color="#D14118"/>
+  </linearGradient>
+
+  <!-- core: cold top to hot bottom (top-down flow) -->
+  <linearGradient id="coreGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#E8A31E"/>
+    <stop offset="0.45" stop-color="#EF8B1F"/>
+    <stop offset="1" stop-color="#D9481A"/>
+  </linearGradient>
+  <linearGradient id="hotBand" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#EF8B1F"/>
+    <stop offset="1" stop-color="#2E8FB4"/>
+  </linearGradient>
+  <linearGradient id="coldBand" x1="0" y1="1" x2="0" y2="0">
+    <stop offset="0" stop-color="#1D76B8"/>
+    <stop offset="1" stop-color="#E8A31E"/>
+  </linearGradient>
+  <linearGradient id="precoolGrad" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#2E8FB4"/>
+    <stop offset="1" stop-color="#12417F"/>
+  </linearGradient>
+  <!-- pressure-boundary steel #8FA3B0, shaded only with white and black -->
+  <linearGradient id="vesselSkin" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#8FA3B0"/>
+    <stop offset="0.35" stop-color="#D2DADF"/>
+    <stop offset="1" stop-color="#7A8B96"/>
+  </linearGradient>
+  <linearGradient id="soilGrad" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#D8D2C4"/>
+    <stop offset="1" stop-color="#C2BAA8"/>
+  </linearGradient>
+  <linearGradient id="titleRule" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#12417F"/>
+    <stop offset="0.45" stop-color="#2E8FB4"/>
+    <stop offset="0.75" stop-color="#E8A31E"/>
+    <stop offset="1" stop-color="#D9481A"/>
+  </linearGradient>
+  <!-- ===== markers ===== -->
+  <marker id="ah950" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#D9481A"/></marker>
+  <marker id="ah600" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#EF8B1F"/></marker>
+  <marker id="ah215" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2E8FB4"/></marker>
+  <marker id="ah035" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#12417F"/></marker>
+  <marker id="ah195" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1D76B8"/></marker>
+  <marker id="ah580" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#E8A31E"/></marker>
+  <marker id="ahGrey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#12242E"/></marker>
+  <marker id="ahHeat" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A81D0E"/></marker>
+  <marker id="ahPurple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5B4EA8"/></marker>
+  <marker id="ahTeal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2FA88C"/></marker>
+  <marker id="ahDim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#90A4AE"/></marker>
+
+  <!-- ===== patterns ===== -->
+  <pattern id="tpms" width="9" height="9" patternUnits="userSpaceOnUse">
+    <path d="M0,4.5 Q2.25,0 4.5,4.5 T9,4.5" fill="none" stroke="#ffffff" stroke-width="0.9" opacity="0.5"/>
+  </pattern>
+  <pattern id="hatchRec" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="6" stroke="#2FA88C" stroke-width="1.1" opacity="0.35"/>
+  </pattern>
+  <pattern id="hatchGraph" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+    <line x1="0" y1="0" x2="0" y2="6" stroke="#5C6670" stroke-width="1.2" opacity="0.45"/>
+  </pattern>
+  <pattern id="soilHatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="8" stroke="#6D4C41" stroke-width="0.8" opacity="0.55"/>
+  </pattern>
+  <pattern id="concrete" width="7" height="7" patternUnits="userSpaceOnUse">
+    <rect width="7" height="7" fill="#B9B2A4"/>
+    <circle cx="2" cy="2" r="0.7" fill="#9C9587"/><circle cx="5.5" cy="4.8" r="0.9" fill="#9C9587"/>
+  </pattern>
+
+  <clipPath id="clipTs"><rect x="1324" y="160" width="250" height="180"/></clipPath>
+  <clipPath id="clipDk"><rect x="1314" y="505" width="256" height="135"/></clipPath>
+</defs>
+
+<!-- ================= SHEET  1920 x 1080  12-column grid, col 142, gutter 16 ================= -->
+<rect width="1920" height="1080" fill="#FBFAF7"/>
+<rect x="8" y="8" width="1904" height="1064" fill="none" stroke="#DBE4E9" stroke-width="1"/>
+
+<!-- ================= TITLE BLOCK  (full width) ================= -->
+<rect x="20" y="18" width="1880" height="72" rx="3" fill="#ffffff"/>
+<path d="M23,18 H1897 A3,3 0 0 1 1900,21 V22 H20 V21 A3,3 0 0 1 23,18 Z" fill="url(#titleRule)"/>
+<rect x="20" y="18" width="1880" height="72" rx="3" fill="none" stroke="#CCD8DE" stroke-width="1.4"/>
+<text x="40" y="52" font-size="30" font-weight="bold" letter-spacing="-0.2" fill="#12242E">Direct Helium Brayton VHTR</text>
+<text x="40" y="72" font-size="12.5" letter-spacing="0.3" fill="#5A7280">Whole-design plate &#183; 950 &#176;C, 100 MW(th) reference case; 850 &#176;C FOAK ghosted</text>
+<text x="1892" y="34" text-anchor="end" font-size="9.5" font-weight="bold" letter-spacing="1.1" fill="#5A7280">VHTR DESIGN PROJECT &#183; MASTER SET &#183; SHEET 3 OF 4</text>
+<line x1="560" y1="28" x2="560" y2="82" stroke="#DBE4E9" stroke-width="1"/>
+
+<!-- headline statistic strip: eight cells, x0 580, pitch 164 -->
+<g font-size="18" font-weight="bold" fill="#12242E">
+  <text x="580" y="64">100&#8211;150</text><text x="744" y="64">43&#8211;70</text><text x="908" y="64">~47 %</text><text x="1072" y="64">950 &#176;C</text>
+  <text x="1236" y="64">4.8 % &#178;&#179;&#8309;U</text><text x="1400" y="64">80&#8211;100</text><text x="1564" y="64">20 &#215; 20 &#215; 20 m</text><text x="1728" y="64">1,240 / 1,600 &#176;C</text>
+</g>
+<g font-size="8.5" fill="#90A4AE" letter-spacing="0.6">
+  <text x="580" y="79">MW(th) THERMAL POWER</text><text x="744" y="79">MW(e) NET TO GRID</text><text x="908" y="79">BRAYTON CYCLE EFFICIENCY</text><text x="1072" y="79">CORE OUTLET AT 4 MPa</text>
+  <text x="1236" y="79">LEU ENRICHMENT</text><text x="1400" y="79">GWd/tHM DISCHARGE BURNUP</text><text x="1564" y="79">ENVELOPE, 12 m BELOW GRADE</text><text x="1728" y="79">PEAK FUEL vs TRISO LIMIT</text>
+</g>
+<g stroke="#DBE4E9" stroke-width="1">
+  <line x1="732" y1="44" x2="732" y2="84"/><line x1="896" y1="44" x2="896" y2="84"/><line x1="1060" y1="44" x2="1060" y2="84"/><line x1="1224" y1="44" x2="1224" y2="84"/>
+  <line x1="1388" y1="44" x2="1388" y2="84"/><line x1="1552" y1="44" x2="1552" y2="84"/><line x1="1716" y1="44" x2="1716" y2="84"/>
+</g>
+
+<!-- ============================================================================ -->
+<!--  PANEL 01 : PRIMARY CIRCUIT   cols 0-7   x 20..1268   y 98..746              -->
+<!-- ============================================================================ -->
+<rect x="20" y="98" width="1248" height="648" rx="3" fill="#ffffff"/>
+<path d="M23,98 H1265 A3,3 0 0 1 1268,101 V120 H20 V101 A3,3 0 0 1 23,98 Z" fill="#F2F6F8"/>
+<path d="M23,98 H24 V120 H20 V101 A3,3 0 0 1 23,98 Z" fill="#D9481A"/>
+<line x1="20" y1="120" x2="1268" y2="120" stroke="#CCD8DE" stroke-width="1"/>
+<rect x="20" y="98" width="1248" height="648" rx="3" fill="none" stroke="#CCD8DE" stroke-width="1.4"/>
+<text x="36" y="113" font-size="12" font-weight="bold" letter-spacing="1.1" fill="#12242E">01&#8195;PRIMARY CIRCUIT &#8212; DIRECT HELIUM BRAYTON</text>
+<text x="500" y="113" font-size="9.5" fill="#5A7280">One fluid, one loop. No intermediate heat exchanger &#183; no secondary working fluid &#183; no water anywhere in the cycle.</text>
+<text x="1258" y="113" text-anchor="end" font-size="9.5" fill="#5A7280">100 MW(th) &#183; 52 kg/s He</text>
+
+<!-- = REACTOR VESSEL + ANNULAR PRISMATIC CORE  (vessel 5.5 m = 240 px, 43.7 px/m) = -->
+<rect x="56" y="178" width="240" height="250" rx="17" fill="url(#vesselSkin)" stroke="#5A7280" stroke-width="3"/>
+<rect x="60" y="182" width="232" height="242" rx="14" fill="#F4F6F7" stroke="#90A4AE" stroke-width="1"/>
+<rect x="60" y="194" width="232" height="218" fill="#F4F6F7" opacity="0.7"/>
+<!-- top (cold) plenum -->
+<rect x="66" y="194" width="220" height="28" fill="#FCF1DD" stroke="#E8A31E" stroke-width="0.8"/>
+<text x="176" y="212" text-anchor="middle" font-size="9.5" fill="#12242E">TOP (COLD) PLENUM &#183; 580 &#176;C</text>
+<!-- reflectors + active core : core 4.6 m = 201 px, active height 3.0 m = 131 px -->
+<rect x="75.5" y="222" width="201" height="18" fill="#5C6670" stroke="#12242E" stroke-width="0.7"/>
+<text x="176" y="235" text-anchor="middle" font-size="9.5" fill="#DBE4E9">TOP REFLECTOR</text>
+<rect x="75.5" y="240" width="201" height="131" fill="#ffffff" stroke="#12242E" stroke-width="0.7"/>
+<rect x="75.5" y="240" width="21.85" height="131" fill="#5C6670"/>
+<rect x="254.65" y="240" width="21.85" height="131" fill="#5C6670"/>
+<rect x="141.05" y="240" width="69.9" height="131" fill="#5C6670"/>
+<rect x="97.35" y="240" width="43.7" height="131" fill="url(#coreGrad)"/>
+<rect x="210.95" y="240" width="43.7" height="131" fill="url(#coreGrad)"/>
+<rect x="97.35" y="240" width="43.7" height="131" fill="url(#tpms)"/>
+<rect x="210.95" y="240" width="43.7" height="131" fill="url(#tpms)"/>
+<text x="176" y="295" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#FFFFFF">INNER</text>
+<text x="176" y="307" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#FFFFFF">REFLECTOR</text>
+<text x="176" y="319" text-anchor="middle" font-size="9.5" fill="#DBE4E9">&#8960; 1.6 m</text>
+<text x="119.2" y="291" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#ffffff" transform="rotate(-90,119.2,291)">FUEL ANNULUS 1.0 m</text>
+<text x="232.8" y="291" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#ffffff" transform="rotate(-90,232.8,291)">TPMS GYROID</text>
+<rect x="75.5" y="371" width="201" height="18" fill="#5C6670" stroke="#12242E" stroke-width="0.7"/>
+<text x="176" y="384" text-anchor="middle" font-size="9.5" fill="#DBE4E9">BOTTOM REFLECTOR</text>
+<!-- bottom (hot) plenum -->
+<rect x="66" y="389" width="220" height="23" fill="#F9E4DD" stroke="#D9481A" stroke-width="0.8"/>
+<text x="176" y="405" text-anchor="middle" font-size="9.5" fill="#A81D0E">BOTTOM (HOT) PLENUM &#183; 950 &#176;C</text>
+<!-- downward flow arrows through the fuel annuli -->
+<g stroke="#ffffff" stroke-width="1.6" opacity="0.85" marker-end="url(#ahDim)">
+  <line x1="119.2" y1="248" x2="119.2" y2="278"/><line x1="119.2" y1="296" x2="119.2" y2="326"/><line x1="119.2" y1="334" x2="119.2" y2="364"/>
+  <line x1="232.8" y1="248" x2="232.8" y2="278"/><line x1="232.8" y1="296" x2="232.8" y2="326"/><line x1="232.8" y1="334" x2="232.8" y2="364"/>
+</g>
+<!-- control rod drives on the cool head -->
+<g stroke="#5A7280" stroke-width="2">
+  <line x1="110" y1="160" x2="110" y2="194"/><line x1="146" y1="160" x2="146" y2="194"/>
+  <line x1="206" y1="160" x2="206" y2="194"/><line x1="242" y1="160" x2="242" y2="194"/>
+</g>
+<g fill="#5A7280"><rect x="105" y="153" width="10" height="8"/><rect x="141" y="153" width="10" height="8"/><rect x="201" y="153" width="10" height="8"/><rect x="237" y="153" width="10" height="8"/></g>
+<text x="306" y="168" font-size="9.5" fill="#5A7280">control rod drives &#8212; on the</text>
+<text x="306" y="180" font-size="9.5" fill="#5A7280">cool head (top-down flow)</text>
+<text x="52" y="446" font-size="11" font-weight="bold" letter-spacing="0.2" fill="#12242E">REACTOR &#8212; ANNULAR PRISMATIC CORE</text>
+<text x="52" y="461" font-size="9.5" fill="#5A7280">Reactor vessel &#8960; 5.5 m &#183; core &#8960; 4.6 m &#183; active height 3.0 m</text>
+<text x="52" y="474" font-size="9.5" fill="#5A7280">~200 t IG-110 nuclear graphite &#183; TRISO 4.8% LEU &#183; 4 MW(th)/m&#179; &#183; core &#916;T = 370 &#176;C</text>
+
+<!-- = RECUPERATOR  (true counter-flow) = -->
+<rect x="452" y="350" width="340" height="220" rx="4" fill="#EEF8F6" stroke="#2FA88C" stroke-width="2"/>
+<rect x="452" y="350" width="340" height="20" fill="#2FA88C"/>
+<text x="462" y="364" font-size="11" font-weight="bold" letter-spacing="0.2" fill="#12242E">RECUPERATOR</text>
+<text x="784" y="364" text-anchor="end" font-size="9.5" fill="#12242E">PCHE &#183; true counter-flow &#183; &#949; = 0.95</text>
+<rect x="490" y="370" width="96" height="200" fill="url(#coldBand)" stroke="#12242E" stroke-width="0.8"/>
+<rect x="658" y="370" width="96" height="200" fill="url(#hotBand)" stroke="#12242E" stroke-width="0.8"/>
+<g stroke="#ffffff" stroke-width="0.6" opacity="0.35">
+  <line x1="503" y1="370" x2="503" y2="570"/><line x1="522" y1="370" x2="522" y2="570"/><line x1="541" y1="370" x2="541" y2="570"/><line x1="560" y1="370" x2="560" y2="570"/>
+  <line x1="671" y1="370" x2="671" y2="570"/><line x1="690" y1="370" x2="690" y2="570"/><line x1="709" y1="370" x2="709" y2="570"/><line x1="728" y1="370" x2="728" y2="570"/>
+</g>
+<g stroke="#ffffff" stroke-width="2.2" opacity="0.9" marker-end="url(#ahDim)">
+  <line x1="538" y1="560" x2="538" y2="524"/><line x1="538" y1="474" x2="538" y2="438"/><line x1="538" y1="422" x2="538" y2="382"/>
+  <line x1="706" y1="382" x2="706" y2="422"/><line x1="706" y1="474" x2="706" y2="510"/><line x1="706" y1="526" x2="706" y2="560"/>
+</g>
+<text x="538" y="500" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#ffffff" transform="rotate(-90,538,500)">COLD 195 &#8594; 580 &#176;C</text>
+<text x="706" y="452" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#ffffff" transform="rotate(-90,706,452)">HOT 600 &#8594; 215 &#176;C</text>
+<g stroke="#A81D0E" stroke-width="1.4" marker-end="url(#ahHeat)">
+  <line x1="654" y1="396" x2="594" y2="396"/><line x1="654" y1="436" x2="594" y2="436"/>
+  <line x1="654" y1="476" x2="594" y2="476"/><line x1="654" y1="516" x2="594" y2="516"/>
+</g>
+<text x="624" y="388" text-anchor="middle" font-size="9" fill="#A81D0E">q</text>
+<text x="556" y="586" font-size="9.5" fill="#12242E">Each stream changes by</text>
+<text x="556" y="597" font-size="9.5" fill="#12242E">exactly <tspan font-weight="bold">385 K</tspan> &#8212; this is</text>
+<text x="556" y="608" font-size="9.5" fill="#12242E">what makes 47% possible.</text>
+
+<!-- = PRECOOLER = -->
+<rect x="780" y="648" width="260" height="70" rx="4" fill="url(#precoolGrad)" stroke="#12417F" stroke-width="2"/>
+<g stroke="#ffffff" stroke-width="0.7" opacity="0.35">
+  <line x1="802" y1="652" x2="802" y2="714"/><line x1="831" y1="652" x2="831" y2="714"/><line x1="860" y1="652" x2="860" y2="714"/><line x1="889" y1="652" x2="889" y2="714"/>
+  <line x1="918" y1="652" x2="918" y2="714"/><line x1="947" y1="652" x2="947" y2="714"/><line x1="976" y1="652" x2="976" y2="714"/><line x1="1005" y1="652" x2="1005" y2="714"/>
+</g>
+<text x="910" y="676" text-anchor="middle" font-size="11" font-weight="bold" letter-spacing="0.2" fill="#ffffff">PRECOOLER</text>
+<text x="910" y="694" text-anchor="middle" font-size="9.5" fill="#DDEAF4">air-cooled &#183; 215 &#8594; 35 &#176;C &#183; no water, no cooling tower</text>
+<g stroke="#90a4ae" stroke-width="1.3" marker-end="url(#ahDim)">
+  <line x1="812" y1="732" x2="812" y2="722"/><line x1="870" y1="732" x2="870" y2="722"/><line x1="948" y1="732" x2="948" y2="722"/><line x1="1006" y1="732" x2="1006" y2="722"/>
+  <line x1="812" y1="644" x2="812" y2="633"/><line x1="870" y1="644" x2="870" y2="633"/><line x1="948" y1="644" x2="948" y2="633"/><line x1="1006" y1="644" x2="1006" y2="633"/>
+</g>
+<text x="1176" y="702" font-size="9.5" fill="#90A4AE">ambient air</text>
+<text x="1176" y="714" font-size="9.5" fill="#90A4AE">~15 &#176;C ISO</text>
+
+<!-- = TURBOMACHINE VESSEL  (single vertical shaft) = -->
+<rect x="880" y="160" width="210" height="460" rx="28" fill="#F4F6F7" stroke="#5A7280" stroke-width="2.5"/>
+<rect x="884" y="164" width="202" height="452" rx="25" fill="none" stroke="#90A4AE" stroke-width="1"/>
+<line x1="985" y1="166" x2="985" y2="614" stroke="#12242E" stroke-width="7" stroke-linecap="round"/>
+<line x1="985" y1="166" x2="985" y2="614" stroke="#90A4AE" stroke-width="2"/>
+<g fill="#12242E">
+  <rect x="973" y="300" width="24" height="9" rx="2"/><rect x="973" y="436" width="24" height="9" rx="2"/>
+</g>
+<!-- turbine -->
+<polygon points="909.5,186 1060.5,186 1079.5,262 890.5,262" fill="#D9481A" stroke="#A81D0E" stroke-width="1.5"/>
+<g stroke="#ffffff" stroke-width="0.9" opacity="0.5">
+  <line x1="926" y1="188" x2="918" y2="260"/><line x1="955" y1="188" x2="949" y2="260"/><line x1="1015" y1="188" x2="1021" y2="260"/><line x1="1044" y1="188" x2="1052" y2="260"/>
+</g>
+<text x="985" y="214" text-anchor="middle" font-size="11" font-weight="bold" letter-spacing="0.2" fill="#ffffff">TURBINE</text>
+<text x="985" y="230" text-anchor="middle" font-size="9.5" fill="#F9E4DD">&#951; = 0.90 &#183; 4&#8211;6 stages</text>
+<text x="985" y="243" text-anchor="middle" font-size="9.5" fill="#F9E4DD">SiC/SiC CMC blisk (Ni at 850 &#176;C)</text>
+<!-- generator -->
+<rect x="901" y="330" width="168" height="84" rx="3" fill="#5B4EA8" stroke="#3F3675" stroke-width="1.5"/>
+<g stroke="#ffffff" stroke-width="0.8" opacity="0.3">
+  <line x1="901" y1="338" x2="1069" y2="338"/><line x1="901" y1="348" x2="1069" y2="348"/><line x1="901" y1="396" x2="1069" y2="396"/><line x1="901" y1="406" x2="1069" y2="406"/>
+</g>
+<text x="985" y="366" text-anchor="middle" font-size="11" font-weight="bold" letter-spacing="0.2" fill="#ffffff">GENERATOR</text>
+<text x="985" y="383" text-anchor="middle" font-size="9.5" fill="#DEDCEE">3,000&#8211;6,000 rpm &#183; freq. converter</text>
+<!-- compressor -->
+<polygon points="890.5,470 1079.5,470 1060.5,546 909.5,546" fill="#1D76B8" stroke="#12417F" stroke-width="1.5"/>
+<g stroke="#ffffff" stroke-width="0.9" opacity="0.5">
+  <line x1="918" y1="472" x2="926" y2="544"/><line x1="947" y1="472" x2="953" y2="544"/><line x1="1023" y1="472" x2="1017" y2="544"/><line x1="1052" y1="472" x2="1044" y2="544"/>
+</g>
+<text x="985" y="498" text-anchor="middle" font-size="11" font-weight="bold" letter-spacing="0.2" fill="#ffffff">COMPRESSOR</text>
+<text x="985" y="514" text-anchor="middle" font-size="9.5" fill="#DDEAF4">&#951; = 0.88 &#183; pressure ratio 2.5</text>
+<text x="985" y="527" text-anchor="middle" font-size="9.5" fill="#DDEAF4">4&#8211;6 stages</text>
+<line x1="1100" y1="248" x2="1084" y2="280" stroke="#5A7280" stroke-width="0.8"/>
+<text x="1104" y="190" font-size="11" font-weight="bold" letter-spacing="0.2" fill="#12242E">TURBOMACHINE VESSEL</text>
+<g font-size="9.5" fill="#5A7280">
+  <text x="1104" y="204">&#8960; 2.5 m &#183; single vertical shaft</text>
+  <text x="1104" y="216">turbine / generator / compressor</text>
+  <text x="1104" y="228">no gearbox &#183; no oil in the helium</text>
+  <text x="1104" y="240">magnetic bearings</text>
+</g>
+<text x="1104" y="452" font-size="9.5" fill="#5A7280">total circuit &#916;P ~0.30 MPa</text>
+<text x="1104" y="464" font-size="9.5" fill="#5A7280">= 7.5% of 4 MPa; core &lt; 0.15</text>
+
+<!-- = PIPES : stroke width proportional to sqrt(volumetric flow) = -->
+<g fill="none" stroke-linejoin="round" stroke-linecap="butt">
+  <path d="M 296 400 L 360 400 L 360 208 L 903 208" stroke="#D9481A" stroke-width="8.5"/>
+  <path d="M 1030 262 L 1030 300 L 706 300 L 706 350" stroke="#EF8B1F" stroke-width="11"/>
+  <path d="M 706 570 L 706 683 L 780 683" stroke="#2E8FB4" stroke-width="8"/>
+  <path d="M 1040 683 L 1152 683 L 1152 510 L 1069 510" stroke="#12417F" stroke-width="6.5"/>
+  <path d="M 1030 546 L 1030 618 L 720 618 A 14 14 0 0 0 692 618 L 538 618 L 538 570" stroke="#1D76B8" stroke-width="5"/>
+  <path d="M 538 350 L 538 220 A 12 12 0 0 1 538 196 L 538 146 L 176 146 L 176 178" stroke="#E8A31E" stroke-width="7"/>
+</g>
+<!-- flow direction arrows -->
+<g fill="none" stroke-width="3">
+  <g stroke="#D9481A" marker-end="url(#ah950)"><line x1="360" y1="330" x2="360" y2="296"/><line x1="700" y1="208" x2="748" y2="208"/></g>
+  <g stroke="#EF8B1F" marker-end="url(#ah600)"><line x1="920" y1="300" x2="874" y2="300"/><line x1="706" y1="318" x2="706" y2="342"/></g>
+  <g stroke="#2E8FB4" marker-end="url(#ah215)"><line x1="706" y1="600" x2="706" y2="628"/><line x1="730" y1="683" x2="762" y2="683"/></g>
+  <g stroke="#12417F" marker-end="url(#ah035)"><line x1="1058" y1="683" x2="1090" y2="683"/><line x1="1152" y1="600" x2="1152" y2="560"/></g>
+  <g stroke="#1D76B8" marker-end="url(#ah195)"><line x1="900" y1="618" x2="858" y2="618"/><line x1="538" y1="604" x2="538" y2="582"/></g>
+  <g stroke="#E8A31E" marker-end="url(#ah580)"><line x1="538" y1="336" x2="538" y2="306"/><line x1="326" y1="146" x2="284" y2="146"/></g>
+</g>
+
+<!-- = STATE POINT TAGS  (T, P at the six cycle corners) = -->
+<g>
+  <rect x="376" y="220" width="112" height="34" rx="3" fill="#ffffff" stroke="#D9481A" stroke-width="1"/>
+  <text x="432" y="236" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#D9481A">950 &#176;C</text>
+  <text x="432" y="249" text-anchor="middle" font-size="9.5" fill="#5A7280">4.00 MPa &#183; core out</text>
+  <circle cx="432" cy="208" r="11" fill="#ffffff" stroke="#D9481A" stroke-width="2"/>
+  <text x="432" y="212" text-anchor="middle" font-size="11" font-weight="bold" fill="#D9481A">1</text>
+</g>
+<g>
+  <rect x="704" y="256" width="112" height="34" rx="3" fill="#ffffff" stroke="#EF8B1F" stroke-width="1"/>
+  <text x="760" y="272" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#EF8B1F">600 &#176;C</text>
+  <text x="760" y="285" text-anchor="middle" font-size="9.5" fill="#5A7280">1.60 MPa &#183; turbine out</text>
+  <circle cx="760" cy="300" r="11" fill="#ffffff" stroke="#EF8B1F" stroke-width="2"/>
+  <text x="760" y="304" text-anchor="middle" font-size="11" font-weight="bold" fill="#EF8B1F">2</text>
+</g>
+<g>
+  <rect x="578" y="638" width="118" height="34" rx="3" fill="#ffffff" stroke="#2E8FB4" stroke-width="1"/>
+  <text x="637" y="654" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#2E8FB4">215 &#176;C</text>
+  <text x="637" y="667" text-anchor="middle" font-size="9.5" fill="#5A7280">1.60 MPa &#183; recup. hot out</text>
+  <circle cx="706" cy="655" r="11" fill="#ffffff" stroke="#2E8FB4" stroke-width="2"/>
+  <text x="706" y="659" text-anchor="middle" font-size="11" font-weight="bold" fill="#2E8FB4">3</text>
+</g>
+<g>
+  <rect x="1052" y="698" width="116" height="34" rx="3" fill="#ffffff" stroke="#12417F" stroke-width="1"/>
+  <text x="1110" y="714" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#12417F">35 &#176;C</text>
+  <text x="1110" y="727" text-anchor="middle" font-size="9.5" fill="#5A7280">1.60 MPa &#183; compressor in</text>
+  <circle cx="1110" cy="683" r="11" fill="#ffffff" stroke="#12417F" stroke-width="2"/>
+  <text x="1110" y="687" text-anchor="middle" font-size="11" font-weight="bold" fill="#12417F">4</text>
+</g>
+<g>
+  <rect x="736" y="574" width="120" height="34" rx="3" fill="#ffffff" stroke="#1D76B8" stroke-width="1"/>
+  <text x="796" y="590" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1D76B8">195 &#176;C</text>
+  <text x="796" y="603" text-anchor="middle" font-size="9.5" fill="#5A7280">4.00 MPa &#183; compressor out</text>
+  <circle cx="796" cy="618" r="11" fill="#ffffff" stroke="#1D76B8" stroke-width="2"/>
+  <text x="796" y="622" text-anchor="middle" font-size="11" font-weight="bold" fill="#1D76B8">5</text>
+</g>
+<g>
+  <rect x="410" y="272" width="116" height="34" rx="3" fill="#ffffff" stroke="#E8A31E" stroke-width="1"/>
+  <text x="468" y="288" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#E8A31E">580 &#176;C</text>
+  <text x="468" y="301" text-anchor="middle" font-size="9.5" fill="#5A7280">4.00 MPa &#183; core in</text>
+  <circle cx="538" cy="289" r="11" fill="#ffffff" stroke="#E8A31E" stroke-width="2"/>
+  <text x="538" y="293" text-anchor="middle" font-size="11" font-weight="bold" fill="#E8A31E">6</text>
+</g>
+
+<!-- = ELECTRICAL TAKE-OFF = -->
+<line x1="1069" y1="372" x2="1128" y2="372" stroke="#5B4EA8" stroke-width="1.6"/>
+<circle cx="1128" cy="372" r="3.5" fill="#5B4EA8"/>
+<line x1="1128" y1="372" x2="1128" y2="340" stroke="#5B4EA8" stroke-width="1.6" marker-end="url(#ahPurple)"/>
+<line x1="1128" y1="372" x2="1128" y2="406" stroke="#5B4EA8" stroke-width="1.6" stroke-dasharray="5,3" marker-end="url(#ahPurple)"/>
+<text x="1140" y="336" font-size="11" font-weight="bold" letter-spacing="0.2" fill="#5B4EA8">AC GRID</text>
+<text x="1140" y="348" font-size="9.5" fill="#5B4EA8">47 MW(e) primary</text>
+<text x="1140" y="402" font-size="11" font-weight="bold" letter-spacing="0.2" fill="#5B4EA8">SOEC H&#8322;</text>
+<text x="1140" y="414" font-size="9.5" fill="#5B4EA8">electrical branch</text>
+
+<!-- = CALLOUT: WHAT IS NOT HERE = -->
+<rect x="40" y="486" width="390" height="116" rx="3" fill="#FBEDE8" stroke="#F0B6A3" stroke-width="1"/>
+<rect x="40" y="486" width="4" height="116" fill="#A81D0E"/>
+<text x="54" y="503" font-size="11" font-weight="bold" letter-spacing="0.2" fill="#A81D0E">WHAT THIS CIRCUIT DOES NOT CONTAIN</text>
+<g font-size="9.5" fill="#5A7280">
+  <text x="54" y="521">&#10007;&#8194;intermediate heat exchanger</text><text x="248" y="521">&#10007;&#8194;cooling water supply</text>
+  <text x="54" y="535">&#10007;&#8194;secondary working fluid loop</text><text x="248" y="535">&#10007;&#8194;feedwater / condenser</text>
+  <text x="54" y="549">&#10007;&#8194;steam generators</text><text x="248" y="549">&#10007;&#8194;emergency core cooling</text>
+  <text x="54" y="563">&#10007;&#8194;secondary circulators</text><text x="248" y="563">&#10007;&#8194;emergency diesel generators</text>
+</g>
+<text x="54" y="581" font-size="9.5" fill="#5A7280">A PWR&#8217;s secondary side and safety systems are 30&#8211;40% of plant cost. Here they</text>
+<text x="54" y="593" font-size="9.5" fill="#5A7280">do not exist in any form. That is both the cost argument and the safety argument.</text>
+
+<!-- = LEGEND = -->
+<rect x="40" y="610" width="390" height="130" rx="3" fill="#F2F6F8" stroke="#DBE4E9" stroke-width="1"/>
+<text x="52" y="624" font-size="11" font-weight="bold" letter-spacing="0.2" fill="#12242E">LEGEND &#8212; TEMPERATURE RAMP &amp; LINE CONVENTIONS</text>
+<g fill="#12242E">
+  <polygon points="64.3,640 61.3,634 67.3,634"/><polygon points="120.6,640 117.6,634 123.6,634"/><polygon points="127.7,640 124.7,634 130.7,634"/>
+  <polygon points="256.2,640 253.2,634 259.2,634"/><polygon points="263.2,640 260.2,634 266.2,634"/>
+  <polygon points="386.4,640 383.4,634 389.4,634"/>
+</g>
+<rect x="52" y="641" width="352" height="11" fill="url(#ramp1000)" stroke="#90A4AE" stroke-width="0.5"/>
+<g stroke="#90A4AE" stroke-width="0.8">
+  <line x1="52" y1="652" x2="52" y2="656"/><line x1="122.4" y1="652" x2="122.4" y2="656"/><line x1="192.8" y1="652" x2="192.8" y2="656"/>
+  <line x1="263.2" y1="652" x2="263.2" y2="656"/><line x1="333.6" y1="652" x2="333.6" y2="656"/><line x1="404" y1="652" x2="404" y2="656"/>
+</g>
+<g font-size="9" fill="#5A7280" text-anchor="middle">
+  <text x="52" y="665">0</text><text x="122.4" y="665">200</text><text x="192.8" y="665">400</text><text x="263.2" y="665">600</text><text x="333.6" y="665">800</text><text x="404" y="665" text-anchor="end">1000 &#176;C</text>
+</g>
+<g>
+  <line x1="52" y1="679" x2="90" y2="679" stroke="#EF8B1F" stroke-width="11"/>
+  <text x="98" y="682" font-size="9.5" fill="#5A7280">11 px &#8801; 59 m&#179;/s &#8212; turbine exhaust, 600 &#176;C at 1.6 MPa</text>
+  <line x1="52" y1="693" x2="90" y2="693" stroke="#E8A31E" stroke-width="7"/>
+  <text x="98" y="696" font-size="9.5" fill="#5A7280">7 px &#8801; 23 m&#179;/s &#8212; core inlet, 580 &#176;C at 4 MPa</text>
+  <line x1="52" y1="707" x2="90" y2="707" stroke="#1D76B8" stroke-width="5"/>
+  <text x="98" y="710" font-size="9.5" fill="#5A7280">5 px &#8801; 12.6 m&#179;/s &#8212; compressor discharge, 195 &#176;C at 4 MPa</text>
+</g>
+<path d="M 52 723 L 62 723 A 6 6 0 0 1 74 723 L 84 723" fill="none" stroke="#5A7280" stroke-width="2"/>
+<line x1="68" y1="715" x2="68" y2="729" stroke="#5A7280" stroke-width="2"/>
+<text x="98" y="726" font-size="9.5" fill="#5A7280">crossing, no connection &#183; <tspan font-weight="bold">&#9312;</tspan> state point (T, P) &#183; &#7745; = 52 kg/s everywhere</text>
+
+<!-- ============================================================================ -->
+<!--  PANEL 02 : T-s DIAGRAM   cols 8-9   x 1284..1584   y 98..438                -->
+<!-- ============================================================================ -->
+<rect x="1284" y="98" width="300" height="340" rx="3" fill="#ffffff"/>
+<path d="M1287,98 H1581 A3,3 0 0 1 1584,101 V120 H1284 V101 A3,3 0 0 1 1287,98 Z" fill="#F2F6F8"/>
+<path d="M1287,98 H1288 V120 H1284 V101 A3,3 0 0 1 1287,98 Z" fill="#2FA88C"/>
+<line x1="1284" y1="120" x2="1584" y2="120" stroke="#CCD8DE" stroke-width="1"/>
+<rect x="1284" y="98" width="300" height="340" rx="3" fill="none" stroke="#CCD8DE" stroke-width="1.4"/>
+<text x="1300" y="113" font-size="12" font-weight="bold" letter-spacing="1.1" fill="#12242E">02&#8195;T&#8211;s DIAGRAM</text>
+<text x="1574" y="113" text-anchor="end" font-size="9.5" fill="#5A7280">recuperated He Brayton</text>
+<text x="1292" y="138" font-size="9.5" fill="#5A7280">s from s = c<tspan font-size="8.5" dy="2">p</tspan><tspan dy="-2"> ln(T/T</tspan><tspan font-size="8.5" dy="2">4</tspan><tspan dy="-2">) &#8722; R ln(P/P</tspan><tspan font-size="8.5" dy="2">4</tspan><tspan dy="-2">), with</tspan></text>
+<text x="1292" y="149" font-size="9.5" fill="#5A7280">c<tspan font-size="8.5" dy="2">p</tspan><tspan dy="-2"> = 5,193 J/kg&#183;K and R = 2,077 J/kg&#183;K</tspan></text>
+
+<g stroke="#DBE4E9" stroke-width="1">
+  <line x1="1324" y1="304" x2="1574" y2="304"/><line x1="1324" y1="268" x2="1574" y2="268"/>
+  <line x1="1324" y1="232" x2="1574" y2="232"/><line x1="1324" y1="196" x2="1574" y2="196"/>
+  <line x1="1368.6" y1="160" x2="1368.6" y2="340"/><line x1="1413.3" y1="160" x2="1413.3" y2="340"/><line x1="1457.9" y1="160" x2="1457.9" y2="340"/>
+  <line x1="1502.6" y1="160" x2="1502.6" y2="340"/><line x1="1547.2" y1="160" x2="1547.2" y2="340"/>
+</g>
+<g clip-path="url(#clipTs)">
+  <!-- recuperated heat: the cold stream gains exactly the 385 K the hot stream gives up -->
+  <path d="M1336.0,304.9 L1347.6,300.6 L1358.7,296.2 L1369.2,291.9 L1379.3,287.6 L1389.0,283.2 L1398.3,278.9 L1407.2,274.6 L1415.8,270.2 L1424.1,265.9 L1432.1,261.6 L1439.9,257.3 L1447.4,252.9 L1454.6,248.6 L1461.7,244.3 L1468.5,239.9 L1475.1,235.6 L1565.5,232.0 L1559.0,236.3 L1552.3,240.7 L1545.5,245.0 L1538.4,249.3 L1531.1,253.7 L1523.6,258.0 L1515.8,262.3 L1507.7,266.6 L1499.4,271.0 L1490.7,275.3 L1481.7,279.6 L1472.4,284.0 L1462.6,288.3 L1452.4,292.6 L1441.8,297.0 L1430.7,301.3 Z" fill="url(#hatchRec)" stroke="#2FA88C" stroke-width="0.7" stroke-dasharray="3,2"/>
+  <!-- FOAK 850 C ghost loop -->
+  <path d="M1324.0,333.7 L1333.5,305.8 L1343.6,302.1 L1353.3,298.4 L1362.6,294.7 L1371.5,290.9 L1380.1,287.2 L1388.4,283.5 L1396.4,279.8 L1404.1,276.1 L1411.6,272.4 L1418.9,268.7 L1425.9,265.0 L1432.8,261.2 L1439.4,257.5 L1445.8,253.8 L1452.1,250.1 L1458.2,246.4 L1464.2,242.7 L1470.0,239.0 L1475.6,235.3 L1481.2,231.6 L1486.6,227.8 L1491.8,224.1 L1497.0,220.4 L1502.0,216.7 L1507.0,213.0 L1511.8,209.3 L1516.5,205.6 L1521.2,201.8 L1525.7,198.1 L1530.2,194.4 L1534.6,190.7 L1538.9,187.0 L1549.0,242.8 L1543.0,246.5 L1536.9,250.2 L1530.6,253.9 L1524.2,257.6 L1517.5,261.4 L1510.7,265.1 L1503.6,268.8 L1496.4,272.5 L1488.9,276.2 L1481.1,279.9 L1473.1,283.6 L1464.8,287.4 L1456.2,291.1 L1447.3,294.8 L1438.0,298.5 L1428.3,302.2 L1423.0,304.2 L1417.5,306.1 L1412.0,308.1 L1406.3,310.1 L1400.4,312.0 L1394.4,314.0 L1388.3,316.0 L1381.9,317.9 L1375.4,319.9 L1368.8,321.9 L1361.9,323.9 L1354.8,325.8 L1347.5,327.8 L1339.9,329.8 L1332.1,331.7 L1324.0,333.7" fill="none" stroke="#90a4ae" stroke-width="1.6" stroke-dasharray="4,3"/>
+  <!-- target 950 C loop -->
+  <path d="M1324.0,333.7 L1336.0,304.9 L1347.6,300.6 L1358.7,296.2 L1369.2,291.9 L1379.3,287.6 L1389.0,283.2 L1398.3,278.9 L1407.2,274.6 L1415.8,270.2 L1424.1,265.9 L1432.1,261.6 L1439.9,257.3 L1447.4,252.9 L1454.6,248.6 L1461.7,244.3 L1468.5,239.9 L1475.1,235.6 L1481.3,231.4 L1487.4,227.3 L1493.2,223.1 L1499.0,218.9 L1504.6,214.8 L1510.1,210.6 L1515.4,206.5 L1520.6,202.3 L1525.7,198.1 L1530.7,194.0 L1535.6,189.8 L1540.4,185.7 L1545.1,181.5 L1549.7,177.3 L1554.2,173.2 L1558.6,169.0 L1565.5,232.0 L1559.0,236.3 L1552.3,240.7 L1545.5,245.0 L1538.4,249.3 L1531.1,253.7 L1523.6,258.0 L1515.8,262.3 L1507.7,266.6 L1499.4,271.0 L1490.7,275.3 L1481.7,279.6 L1472.4,284.0 L1462.6,288.3 L1452.4,292.6 L1441.8,297.0 L1430.7,301.3 L1425.2,303.3 L1419.7,305.4 L1414.0,307.4 L1408.2,309.4 L1402.3,311.4 L1396.1,313.4 L1389.9,315.5 L1383.4,317.5 L1376.8,319.5 L1369.9,321.6 L1362.9,323.6 L1355.6,325.6 L1348.1,327.6 L1340.3,329.6 L1332.3,331.7 L1324.0,333.7" fill="none" stroke="#D9481A" stroke-width="2.4" stroke-linejoin="round"/>
+</g>
+<line x1="1324" y1="340" x2="1574" y2="340" stroke="#5A7280" stroke-width="1.2"/>
+<line x1="1324" y1="160" x2="1324" y2="340" stroke="#5A7280" stroke-width="1.2"/>
+<g font-size="9" fill="#5A7280" text-anchor="end">
+  <text x="1318" y="343">0</text><text x="1318" y="307">200</text><text x="1318" y="271">400</text><text x="1318" y="235">600</text><text x="1318" y="199">800</text><text x="1318" y="163">1000</text>
+</g>
+<g font-size="9" fill="#5A7280" text-anchor="middle">
+  <text x="1324" y="352">0</text><text x="1368.6" y="352">1000</text><text x="1413.3" y="352">2000</text><text x="1457.9" y="352">3000</text><text x="1502.6" y="352">4000</text><text x="1547.2" y="352">5000</text>
+</g>
+<text x="1449" y="365" text-anchor="middle" font-size="9.5" fill="#5A7280">s &#8722; s&#8324; &#160;(J/kg&#183;K)</text>
+<text x="1292" y="250" text-anchor="middle" font-size="9.5" fill="#5A7280" transform="rotate(-90,1292,250)">T &#160;(&#176;C)</text>
+<g>
+  <circle cx="1558.6" cy="169.0" r="7" fill="#ffffff" stroke="#D9481A" stroke-width="1.6"/><text x="1558.6" y="172.5" text-anchor="middle" font-size="9" font-weight="bold" fill="#D9481A">1</text>
+  <circle cx="1565.5" cy="232.0" r="7" fill="#ffffff" stroke="#EF8B1F" stroke-width="1.6"/><text x="1565.5" y="235.5" text-anchor="middle" font-size="9" font-weight="bold" fill="#EF8B1F">2</text>
+  <circle cx="1430.7" cy="301.3" r="7" fill="#ffffff" stroke="#2E8FB4" stroke-width="1.6"/><text x="1430.7" y="304.8" text-anchor="middle" font-size="9" font-weight="bold" fill="#2E8FB4">3</text>
+  <circle cx="1324.0" cy="333.7" r="7" fill="#ffffff" stroke="#12417F" stroke-width="1.6"/><text x="1324.0" y="337.2" text-anchor="middle" font-size="9" font-weight="bold" fill="#12417F">4</text>
+  <circle cx="1336.0" cy="304.9" r="7" fill="#ffffff" stroke="#1D76B8" stroke-width="1.6"/><text x="1336.0" y="308.4" text-anchor="middle" font-size="9" font-weight="bold" fill="#1D76B8">5</text>
+  <circle cx="1475.1" cy="235.6" r="7" fill="#ffffff" stroke="#E8A31E" stroke-width="1.6"/><text x="1475.1" y="239.1" text-anchor="middle" font-size="9" font-weight="bold" fill="#E8A31E">6</text>
+</g>
+<!-- in-plot key, placed in the empty low-s / high-T corner -->
+<g>
+  <line x1="1332" y1="170" x2="1358" y2="170" stroke="#D9481A" stroke-width="2.4"/>
+  <text x="1364" y="173" font-size="9.5" fill="#5A7280">950 &#176;C target &#183; &#951; = 47%</text>
+  <line x1="1332" y1="184" x2="1358" y2="184" stroke="#90a4ae" stroke-width="1.6" stroke-dasharray="4,3"/>
+  <text x="1364" y="187" font-size="9.5" fill="#5A7280">850 &#176;C FOAK &#183; &#951; = 43%</text>
+  <rect x="1332" y="193" width="26" height="9" fill="url(#hatchRec)" stroke="#2FA88C" stroke-width="0.7" stroke-dasharray="3,2"/>
+  <text x="1364" y="201" font-size="9.5" fill="#5A7280">recuperated heat, &#949; = 0.95</text>
+  <text x="1332" y="215" font-size="9.5" fill="#12242E">cold stream +385 K &#8801;</text>
+  <text x="1332" y="226" font-size="9.5" fill="#12242E">hot stream &#8722;385 K</text>
+</g>
+<text x="1292" y="381" font-size="9.5" fill="#90A4AE">Compression 4&#8594;5 and expansion 1&#8594;2 are drawn</text>
+<text x="1292" y="392" font-size="9.5" fill="#90A4AE">between real endpoints, so the rightward tilt of</text>
+<text x="1292" y="403" font-size="9.5" fill="#90A4AE">each is the actual irreversibility</text>
+<text x="1292" y="414" font-size="9.5" fill="#90A4AE">(&#951;<tspan font-size="8.5" dy="2">c</tspan><tspan dy="-2"> = 0.88, &#951;</tspan><tspan font-size="8.5" dy="2">t</tspan><tspan dy="-2"> = 0.90).</tspan></text>
+
+<!-- ============================================================================ -->
+<!--  PANEL 03 : TEMPERATURE MARGIN   cols 10-11   x 1600..1900   y 98..438       -->
+<!-- ============================================================================ -->
+<rect x="1600" y="98" width="300" height="340" rx="3" fill="#ffffff"/>
+<path d="M1603,98 H1897 A3,3 0 0 1 1900,101 V120 H1600 V101 A3,3 0 0 1 1603,98 Z" fill="#F2F6F8"/>
+<path d="M1603,98 H1604 V120 H1600 V101 A3,3 0 0 1 1603,98 Z" fill="#D9481A"/>
+<line x1="1600" y1="120" x2="1900" y2="120" stroke="#CCD8DE" stroke-width="1"/>
+<rect x="1600" y="98" width="300" height="340" rx="3" fill="none" stroke="#CCD8DE" stroke-width="1.4"/>
+<text x="1616" y="113" font-size="12" font-weight="bold" letter-spacing="1.1" fill="#12242E">03&#8195;TEMPERATURE MARGIN</text>
+<text x="1608" y="134" font-size="9.5" fill="#5A7280">To the TRISO limit. Peak fuel T is a first-principles</text>
+<text x="1608" y="145" font-size="9.5" fill="#5A7280">resistance sum (&#167;05); design target is &lt; 1,200 &#176;C.</text>
+<text x="1608" y="156" font-size="9.5" fill="#90A4AE">Column is linear in fuel temperature, 0 &#8211; 1,600 &#176;C.</text>
+
+<line x1="1630" y1="176" x2="1892" y2="176" stroke="#5E0B07" stroke-width="2" stroke-dasharray="7,3"/>
+<text x="1892" y="171" text-anchor="end" font-size="9.5" font-weight="bold" fill="#5E0B07">TRISO COATING FAILURE LIMIT &#8212; 1,600 &#176;C</text>
+
+<!-- linear scale column : 0 C at y376, 1600 C at y176, 0.125 px per C -->
+<rect x="1630" y="176" width="22" height="200" fill="url(#rampVert)" stroke="#90A4AE" stroke-width="0.8"/>
+<g stroke="#90A4AE" stroke-width="0.8">
+  <line x1="1624" y1="376" x2="1630" y2="376"/><line x1="1624" y1="351" x2="1630" y2="351"/><line x1="1624" y1="326" x2="1630" y2="326"/>
+  <line x1="1624" y1="301" x2="1630" y2="301"/><line x1="1624" y1="276" x2="1630" y2="276"/><line x1="1624" y1="251" x2="1630" y2="251"/>
+  <line x1="1624" y1="226" x2="1630" y2="226"/><line x1="1624" y1="201" x2="1630" y2="201"/><line x1="1624" y1="176" x2="1630" y2="176"/>
+</g>
+<g font-size="9" fill="#5A7280" text-anchor="end">
+  <text x="1620" y="379">0</text><text x="1620" y="354">200</text><text x="1620" y="329">400</text><text x="1620" y="304">600</text><text x="1620" y="279">800</text>
+  <text x="1620" y="254">1000</text><text x="1620" y="229">1200</text><text x="1620" y="204">1400</text><text x="1620" y="179">1600</text>
+</g>
+
+<!-- target 950 C stack : 0 -> 1,240 C = y376 -> y221 -->
+<rect x="1666" y="221" width="52" height="155" fill="#A81D0E"/>
+<rect x="1666" y="176" width="52" height="45" fill="#FBEDE8" stroke="#D9481A" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="1692" y="194" text-anchor="middle" font-size="11" font-weight="bold" fill="#5E0B07">360 &#176;C</text>
+<text x="1692" y="206" text-anchor="middle" font-size="9.5" fill="#5A7280">margin</text>
+<text x="1692" y="237" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">1,240 &#176;C</text>
+<text x="1692" y="249" text-anchor="middle" font-size="9.5" fill="#F9E4DD">peak fuel</text>
+<line x1="1666" y1="257.25" x2="1718" y2="257.25" stroke="#ffffff" stroke-width="1.6" stroke-dasharray="4,2"/>
+<text x="1692" y="392" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#12242E">950 &#176;C</text>
+<text x="1692" y="403" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#12242E">target</text>
+<text x="1692" y="414" text-anchor="middle" font-size="9" fill="#5A7280">SiC/SiC CMC</text>
+<text x="1692" y="425" text-anchor="middle" font-size="9" fill="#5A7280">blisk</text>
+
+<!-- FOAK 850 C ghost stack : 0 -> 1,140 C = y376 -> y233.5 -->
+<rect x="1726" y="233.5" width="52" height="142.5" fill="#90A4AE" opacity="0.55"/>
+<rect x="1726" y="176" width="52" height="57.5" fill="#F2F6F8" stroke="#90A4AE" stroke-width="1" stroke-dasharray="3,2"/>
+<text x="1752" y="196" text-anchor="middle" font-size="11" font-weight="bold" fill="#5A7280">460 &#176;C</text>
+<text x="1752" y="208" text-anchor="middle" font-size="9.5" fill="#90A4AE">margin</text>
+<text x="1752" y="250" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">1,140 &#176;C</text>
+<text x="1752" y="262" text-anchor="middle" font-size="9.5" fill="#ffffff">peak fuel</text>
+<line x1="1726" y1="269.75" x2="1778" y2="269.75" stroke="#ffffff" stroke-width="1.6" stroke-dasharray="4,2"/>
+<text x="1752" y="392" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#5A7280">850 &#176;C</text>
+<text x="1752" y="403" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#5A7280">FOAK</text>
+<text x="1752" y="414" text-anchor="middle" font-size="9" fill="#90A4AE">Ni superalloy</text>
+
+<!-- reference levels + reading -->
+<line x1="1718" y1="257.25" x2="1726" y2="257.25" stroke="#90A4AE" stroke-width="0.8"/>
+<line x1="1778" y1="257.25" x2="1786" y2="257.25" stroke="#90A4AE" stroke-width="0.8"/>
+<line x1="1778" y1="269.75" x2="1786" y2="269.75" stroke="#90A4AE" stroke-width="0.8"/>
+<text x="1790" y="260.25" font-size="9.5" fill="#5A7280">core outlet 950 &#176;C</text>
+<text x="1790" y="272.75" font-size="9.5" fill="#90A4AE">core outlet 850 &#176;C</text>
+<line x1="1652" y1="303.5" x2="1786" y2="303.5" stroke="#90A4AE" stroke-width="0.8" opacity="0.7"/>
+<text x="1790" y="306.5" font-size="9.5" fill="#90A4AE">core inlet 580 &#176;C</text>
+<line x1="1652" y1="371.625" x2="1786" y2="371.625" stroke="#90A4AE" stroke-width="0.8" opacity="0.7"/>
+<text x="1790" y="374.6" font-size="9.5" fill="#90A4AE">compressor inlet 35 &#176;C</text>
+<g font-size="9.5" fill="#5A7280">
+  <text x="1790" y="196">Trading 100 &#176;C of</text>
+  <text x="1790" y="207">core outlet buys</text>
+  <text x="1790" y="218">100 &#176;C of margin</text>
+  <text x="1790" y="229">and costs 4 points</text>
+  <text x="1790" y="240">of efficiency.</text>
+</g>
+
+<!-- ============================================================================ -->
+<!--  PANEL 04 : DECAY HEAT vs RCCS   cols 8-9   x 1284..1584   y 446..746        -->
+<!-- ============================================================================ -->
+<rect x="1284" y="446" width="300" height="300" rx="3" fill="#ffffff"/>
+<path d="M1287,446 H1581 A3,3 0 0 1 1584,449 V468 H1284 V449 A3,3 0 0 1 1287,446 Z" fill="#F2F6F8"/>
+<path d="M1287,446 H1288 V468 H1284 V449 A3,3 0 0 1 1287,446 Z" fill="#2FA88C"/>
+<line x1="1284" y1="468" x2="1584" y2="468" stroke="#CCD8DE" stroke-width="1"/>
+<rect x="1284" y="446" width="300" height="300" rx="3" fill="none" stroke="#CCD8DE" stroke-width="1.4"/>
+<text x="1300" y="461" font-size="12" font-weight="bold" letter-spacing="1.1" fill="#12242E">04&#8195;DECAY HEAT vs RCCS</text>
+<text x="1574" y="461" text-anchor="end" font-size="9.5" fill="#5A7280">DLOFC</text>
+<text x="1292" y="486" font-size="9.5" fill="#5A7280">RCCS = Reactor Cavity Cooling System. Fit P = 1.8 t<tspan font-size="8.5" dy="-3">&#8722;0.346</tspan></text>
+<text x="1292" y="497" font-size="9.5" fill="#5A7280">MW (t in hours) through &#167;05, clamped to 6.5 MW at shutdown.</text>
+
+<g stroke="#DBE4E9" stroke-width="1">
+  <line x1="1314" y1="620.7" x2="1570" y2="620.7"/><line x1="1314" y1="601.4" x2="1570" y2="601.4"/><line x1="1314" y1="582.1" x2="1570" y2="582.1"/>
+  <line x1="1314" y1="562.9" x2="1570" y2="562.9"/><line x1="1314" y1="543.6" x2="1570" y2="543.6"/><line x1="1314" y1="524.3" x2="1570" y2="524.3"/><line x1="1314" y1="505" x2="1570" y2="505"/>
+  <line x1="1373.5" y1="505" x2="1373.5" y2="640"/><line x1="1433.1" y1="505" x2="1433.1" y2="640"/><line x1="1492.6" y1="505" x2="1492.6" y2="640"/><line x1="1552.1" y1="505" x2="1552.1" y2="640"/>
+</g>
+<g clip-path="url(#clipDk)">
+  <path d="M1314.0,514.6 L1316.0,514.6 L1318.0,514.6 L1320.0,514.6 L1321.9,514.6 L1323.9,514.6 L1325.9,514.6 L1327.9,514.6 L1329.9,514.6 L1331.9,514.6 L1333.8,514.6 L1335.8,514.6 L1337.8,515.9 L1339.8,519.2 L1341.8,522.4 L1343.8,525.4 L1345.8,528.4 L1347.7,531.4 L1349.7,534.2 L1351.7,537.0 L1353.7,539.7 L1355.7,542.3 L1357.7,544.9 L1359.6,547.3 L1361.6,549.8 L1363.6,552.1 L1365.6,554.4 L1367.6,556.7 L1369.6,558.9 L1371.6,561.0 L1373.5,563.1 L1375.5,565.1 L1377.5,567.0 L1379.5,568.9 L1381.5,570.8 L1383.5,572.6 L1385.4,574.4 L1387.4,576.1 L1389.4,577.8 L1391.4,579.4 L1393.4,581.0 L1395.4,582.5 L1397.3,584.0 L1399.3,585.5 L1401.3,586.9 L1403.3,588.3 L1405.3,589.7 L1407.3,591.0 L1409.3,592.3 L1411.2,593.5 L1411.6,593.7 L1314.0,593.7 Z" fill="#5C6670" opacity="0.3"/>
+  <path d="M1314.0,514.6 L1316.0,514.6 L1318.0,514.6 L1320.0,514.6 L1321.9,514.6 L1323.9,514.6 L1325.9,514.6 L1327.9,514.6 L1329.9,514.6 L1331.9,514.6 L1333.8,514.6 L1335.8,514.6 L1337.8,515.9 L1339.8,519.2 L1341.8,522.4 L1343.8,525.4 L1345.8,528.4 L1347.7,531.4 L1349.7,534.2 L1351.7,537.0 L1353.7,539.7 L1355.7,542.3 L1357.7,544.9 L1359.6,547.3 L1361.6,549.8 L1363.6,552.1 L1365.6,554.4 L1367.6,556.7 L1369.6,558.9 L1371.6,561.0 L1373.5,563.1 L1375.5,565.1 L1377.5,567.0 L1379.5,568.9 L1381.5,570.8 L1383.5,572.6 L1385.4,574.4 L1387.4,576.1 L1389.4,577.8 L1391.4,579.4 L1393.4,581.0 L1395.4,582.5 L1397.3,584.0 L1399.3,585.5 L1401.3,586.9 L1403.3,588.3 L1405.3,589.7 L1407.3,591.0 L1409.3,592.3 L1411.2,593.5 L1413.2,594.7 L1415.2,595.9 L1417.2,597.1 L1419.2,598.2 L1421.2,599.3 L1423.1,600.4 L1425.1,601.4 L1427.1,602.4 L1429.1,603.4 L1431.1,604.4 L1433.1,605.3 L1435.1,606.2 L1437.0,607.1 L1439.0,607.9 L1441.0,608.8 L1443.0,609.6 L1445.0,610.4 L1447.0,611.2 L1448.9,611.9 L1450.9,612.7 L1452.9,613.4 L1454.9,614.1 L1456.9,614.8 L1458.9,615.4 L1460.9,616.1 L1462.8,616.7 L1464.8,617.3 L1466.8,617.9 L1468.8,618.5 L1470.8,619.0 L1472.8,619.6 L1474.7,620.1 L1476.7,620.6 L1478.7,621.1 L1480.7,621.6 L1482.7,622.1 L1484.7,622.6 L1486.7,623.0 L1488.6,623.5 L1490.6,623.9 L1492.6,624.3 L1494.6,624.7 L1496.6,625.1 L1498.6,625.5 L1500.5,625.9 L1502.5,626.3 L1504.5,626.6 L1506.5,627.0 L1508.5,627.3 L1510.5,627.7 L1512.4,628.0 L1514.4,628.3 L1516.4,628.6 L1518.4,628.9 L1520.4,629.2 L1522.4,629.5 L1524.4,629.8 L1526.3,630.0 L1528.3,630.3 L1530.3,630.5 L1532.3,630.8 L1534.3,631.0 L1536.3,631.3 L1538.2,631.5 L1540.2,631.7 L1542.2,631.9 L1544.2,632.1 L1546.2,632.3 L1548.2,632.5 L1550.2,632.7 L1552.1,632.9 L1554.1,633.1 L1556.1,633.3 L1558.1,633.5 L1560.1,633.6 L1562.1,633.8 L1564.0,634.0 L1566.0,634.1 L1568.0,634.3 L1570.0,634.4" fill="none" stroke="#D9481A" stroke-width="2.2"/>
+  <line x1="1314" y1="593.7" x2="1570" y2="593.7" stroke="#2FA88C" stroke-width="2" stroke-dasharray="6,3"/>
+  <line x1="1443.6" y1="505" x2="1443.6" y2="640" stroke="#5C6670" stroke-width="1" stroke-dasharray="2,3"/>
+</g>
+<g fill="#D9481A">
+  <circle cx="1433.1" cy="605.3" r="3.2"/><circle cx="1486.8" cy="622.6" r="3.2"/><circle cx="1515.2" cy="628.4" r="3.2"/><circle cx="1565.6" cy="635.2" r="3.2"/>
+</g>
+<g font-size="9" fill="#A81D0E">
+  <text x="1430" y="615" text-anchor="end">1.8</text><text x="1490" y="619">0.9</text><text x="1519" y="625">0.6</text><text x="1568" y="632" text-anchor="end">0.25</text>
+</g>
+<text x="1320" y="512" font-size="9.5" font-weight="bold" fill="#D9481A">6.5 MW at shutdown (6.5%)</text>
+<text x="1322" y="578" font-size="9.5" font-weight="bold" fill="#5C6670">energy buffered</text>
+<text x="1322" y="589" font-size="9.5" font-weight="bold" fill="#5C6670">by the graphite</text>
+<text x="1568" y="589" text-anchor="end" font-size="9.5" font-weight="bold" fill="#12242E">RCCS passive removal &#8776; 2.4 MW</text>
+<text x="1448" y="522" font-size="9.5" fill="#5C6670">1.5 h &#8212; 200 t</text>
+<text x="1448" y="533" font-size="9.5" fill="#5C6670">graphite +100 &#176;C at</text>
+<text x="1448" y="544" font-size="9.5" fill="#5C6670">the initial 6.5 MW</text>
+<line x1="1314" y1="640" x2="1570" y2="640" stroke="#5A7280" stroke-width="1.2"/>
+<line x1="1314" y1="505" x2="1314" y2="640" stroke="#5A7280" stroke-width="1.2"/>
+<g stroke="#90a4ae" stroke-width="0.7">
+  <line x1="1331.9" y1="640" x2="1331.9" y2="636"/><line x1="1342.4" y1="640" x2="1342.4" y2="636"/><line x1="1349.8" y1="640" x2="1349.8" y2="636"/><line x1="1355.6" y1="640" x2="1355.6" y2="636"/><line x1="1360.3" y1="640" x2="1360.3" y2="636"/><line x1="1364.3" y1="640" x2="1364.3" y2="636"/><line x1="1367.8" y1="640" x2="1367.8" y2="636"/><line x1="1370.8" y1="640" x2="1370.8" y2="636"/>
+  <line x1="1391.5" y1="640" x2="1391.5" y2="636"/><line x1="1401.9" y1="640" x2="1401.9" y2="636"/><line x1="1409.4" y1="640" x2="1409.4" y2="636"/><line x1="1415.1" y1="640" x2="1415.1" y2="636"/><line x1="1419.9" y1="640" x2="1419.9" y2="636"/><line x1="1423.8" y1="640" x2="1423.8" y2="636"/><line x1="1427.3" y1="640" x2="1427.3" y2="636"/><line x1="1430.3" y1="640" x2="1430.3" y2="636"/>
+  <line x1="1451.0" y1="640" x2="1451.0" y2="636"/><line x1="1461.5" y1="640" x2="1461.5" y2="636"/><line x1="1468.9" y1="640" x2="1468.9" y2="636"/><line x1="1474.7" y1="640" x2="1474.7" y2="636"/><line x1="1479.4" y1="640" x2="1479.4" y2="636"/><line x1="1483.4" y1="640" x2="1483.4" y2="636"/><line x1="1486.8" y1="640" x2="1486.8" y2="636"/><line x1="1489.9" y1="640" x2="1489.9" y2="636"/>
+  <line x1="1510.5" y1="640" x2="1510.5" y2="636"/><line x1="1521.0" y1="640" x2="1521.0" y2="636"/><line x1="1528.4" y1="640" x2="1528.4" y2="636"/><line x1="1534.2" y1="640" x2="1534.2" y2="636"/><line x1="1538.9" y1="640" x2="1538.9" y2="636"/><line x1="1542.9" y1="640" x2="1542.9" y2="636"/><line x1="1546.4" y1="640" x2="1546.4" y2="636"/><line x1="1549.4" y1="640" x2="1549.4" y2="636"/>
+</g>
+<g stroke="#5A7280" stroke-width="1.1">
+  <line x1="1314" y1="640" x2="1314" y2="634"/><line x1="1373.5" y1="640" x2="1373.5" y2="634"/><line x1="1433.1" y1="640" x2="1433.1" y2="634"/><line x1="1492.6" y1="640" x2="1492.6" y2="634"/><line x1="1552.1" y1="640" x2="1552.1" y2="634"/>
+</g>
+<g font-size="9" fill="#5A7280" text-anchor="middle">
+  <text x="1314" y="652">0.01</text><text x="1373.5" y="652">0.1</text><text x="1433.1" y="652">1</text><text x="1492.6" y="652">10</text><text x="1552.1" y="652">100</text>
+</g>
+<g font-size="9" fill="#5A7280" text-anchor="end">
+  <text x="1308" y="643">0</text><text x="1308" y="604">2</text><text x="1308" y="566">4</text><text x="1308" y="527">6</text>
+</g>
+<text x="1442" y="666" text-anchor="middle" font-size="9.5" fill="#5A7280">time after shutdown &#8212; hours, log scale</text>
+<text x="1442" y="677" text-anchor="middle" font-size="9.5" fill="#90A4AE">(0.01 h = 36 s; 168 h = 1 week)</text>
+<text x="1294" y="572" text-anchor="middle" font-size="9.5" fill="#5A7280" transform="rotate(-90,1294,572)">decay heat, MW(th)</text>
+<text x="1292" y="695" font-size="9.5" fill="#90A4AE">By the time decay heat falls below what the RCCS</text>
+<text x="1292" y="706" font-size="9.5" fill="#90A4AE">removes unaided, the graphite has absorbed the</text>
+<text x="1292" y="717" font-size="9.5" fill="#90A4AE">difference &#8212; and nothing at all was asked of an operator.</text>
+
+<!-- ============================================================================ -->
+<!--  PANEL 06 : COST TRAJECTORY   cols 10-11   x 1600..1900   y 446..746         -->
+<!-- ============================================================================ -->
+<rect x="1600" y="446" width="300" height="300" rx="3" fill="#ffffff"/>
+<path d="M1603,446 H1897 A3,3 0 0 1 1900,449 V468 H1600 V449 A3,3 0 0 1 1603,446 Z" fill="#F2F6F8"/>
+<path d="M1603,446 H1604 V468 H1600 V449 A3,3 0 0 1 1603,446 Z" fill="#a9702f"/>
+<line x1="1600" y1="468" x2="1900" y2="468" stroke="#CCD8DE" stroke-width="1"/>
+<rect x="1600" y="446" width="300" height="300" rx="3" fill="none" stroke="#CCD8DE" stroke-width="1.4"/>
+<text x="1616" y="461" font-size="12" font-weight="bold" letter-spacing="1.1" fill="#12242E">06&#8195;COST TRAJECTORY</text>
+<text x="1608" y="486" font-size="9.5" fill="#5A7280">8% WACC &#183; 40 yr &#183; 92% CF. Bars: specific capital,</text>
+<text x="1608" y="497" font-size="9.5" fill="#5A7280">$/kW(e), left scale. Line: LCOE, $/MWh, right scale 0&#8211;100.</text>
+
+<g stroke="#DBE4E9" stroke-width="1">
+  <line x1="1636" y1="597.8" x2="1864" y2="597.8"/><line x1="1636" y1="559.7" x2="1864" y2="559.7"/><line x1="1636" y1="521.5" x2="1864" y2="521.5"/>
+</g>
+<g>
+  <rect x="1645.5" y="523.4" width="38" height="112.6" fill="#a9702f"/>
+  <rect x="1702.5" y="525.4" width="38" height="110.6" fill="#a9702f"/>
+  <rect x="1759.5" y="567.3" width="38" height="68.7" fill="#c8964b"/>
+  <rect x="1816.5" y="578.8" width="38" height="57.2" fill="#d9b378"/>
+</g>
+<g font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle">
+  <text x="1664.5" y="540.4">5,900</text><text x="1721.5" y="542.4">5,800</text><text x="1778.5" y="584.3">3,600</text><text x="1835.5" y="595.8" fill="#12242E">3,000</text>
+</g>
+<g font-size="9" fill="#ffffff" text-anchor="middle" opacity="0.95">
+  <text x="1664.5" y="553.4">$326M</text><text x="1721.5" y="555.4">$349M</text><text x="1778.5" y="597.3">$218M</text><text x="1835.5" y="608.8" fill="#12242E">$180M</text>
+</g>
+<polyline points="1664.5,526.9 1721.5,530.6 1778.5,566.6 1835.5,583.9" fill="none" stroke="#2FA88C" stroke-width="2.4"/>
+<g fill="#ffffff" stroke="#2FA88C" stroke-width="2.2">
+  <circle cx="1664.5" cy="526.9" r="4.5"/><circle cx="1721.5" cy="530.6" r="4.5"/><circle cx="1778.5" cy="566.6" r="4.5"/><circle cx="1835.5" cy="583.9" r="4.5"/>
+</g>
+<g font-size="9" font-weight="bold" fill="#12242E" text-anchor="middle">
+  <text x="1664.5" y="518.9">$88</text><text x="1721.5" y="522.6">$85</text><text x="1778.5" y="558.6">$56</text><text x="1835.5" y="575.9">$42</text>
+</g>
+<line x1="1636" y1="636" x2="1864" y2="636" stroke="#5A7280" stroke-width="1.2"/>
+<line x1="1636" y1="512" x2="1636" y2="636" stroke="#5A7280" stroke-width="1.2"/>
+<line x1="1864" y1="512" x2="1864" y2="636" stroke="#2FA88C" stroke-width="1"/>
+<g stroke="#2FA88C" stroke-width="1"><line x1="1864" y1="636" x2="1869" y2="636"/><line x1="1864" y1="574" x2="1869" y2="574"/><line x1="1864" y1="512" x2="1869" y2="512"/></g>
+<g font-size="9" fill="#5A7280"><text x="1873" y="639">0</text><text x="1873" y="577">50</text><text x="1873" y="515">100</text></g>
+<g font-size="9" fill="#5A7280" text-anchor="end">
+  <text x="1630" y="639">0</text><text x="1630" y="601">2,000</text><text x="1630" y="563">4,000</text><text x="1630" y="525">6,000</text>
+</g>
+<g font-size="9.5" font-weight="bold" fill="#12242E" text-anchor="middle">
+  <text x="1664.5" y="650">FOAK</text><text x="1721.5" y="650">FOAK</text><text x="1778.5" y="650">NOAK</text><text x="1835.5" y="650">MATURE</text>
+</g>
+<g font-size="9" fill="#90A4AE" text-anchor="middle">
+  <text x="1664.5" y="661">850 &#176;C, Ni</text><text x="1721.5" y="661">950 &#176;C, CMC</text><text x="1778.5" y="661">10th&#8211;20th</text><text x="1835.5" y="661">50th+ unit</text>
+  <text x="1778.5" y="672">unit</text>
+</g>
+<text x="1608" y="694" font-size="9.5" fill="#90A4AE">Context: Vogtle AP1000 ~$13,000/kW(e); Hinkley C</text>
+<text x="1608" y="705" font-size="9.5" fill="#90A4AE">~$12,000; APR1400 (UAE) ~$4,500. The 850 &#176;C FOAK</text>
+<text x="1608" y="716" font-size="9.5" fill="#90A4AE">costs $23M less than the 950 &#176;C FOAK and carries no</text>
+<text x="1608" y="727" font-size="9.5" fill="#90A4AE">blisk risk.</text>
+
+<!-- ============================================================================ -->
+<!--  PANEL 05 : PASSIVE SAFETY   cols 0-2   x 20..478   y 754..1010              -->
+<!-- ============================================================================ -->
+<rect x="20" y="754" width="458" height="256" rx="3" fill="#ffffff"/>
+<path d="M23,754 H475 A3,3 0 0 1 478,757 V776 H20 V757 A3,3 0 0 1 23,754 Z" fill="#F2F6F8"/>
+<path d="M23,754 H24 V776 H20 V757 A3,3 0 0 1 23,754 Z" fill="#5B4EA8"/>
+<line x1="20" y1="776" x2="478" y2="776" stroke="#CCD8DE" stroke-width="1"/>
+<rect x="20" y="754" width="458" height="256" rx="3" fill="none" stroke="#CCD8DE" stroke-width="1.4"/>
+<text x="36" y="769" font-size="12" font-weight="bold" letter-spacing="1.1" fill="#12242E">05&#8195;PASSIVE SAFETY</text>
+<text x="468" y="769" text-anchor="end" font-size="9.5" fill="#5A7280">three mechanisms &#183; log time, 0.1 s &#8594; 1 year</text>
+
+<g stroke="#DBE4E9" stroke-width="1">
+  <line x1="183.2" y1="786" x2="183.2" y2="932"/><line x1="249.3" y1="786" x2="249.3" y2="932"/><line x1="315.4" y1="786" x2="315.4" y2="932"/>
+  <line x1="366.7" y1="786" x2="366.7" y2="932"/><line x1="398.1" y1="786" x2="398.1" y2="932"/><line x1="421.8" y1="786" x2="421.8" y2="932"/><line x1="462" y1="786" x2="462" y2="932"/>
+</g>
+
+<rect x="146" y="786" width="74.4" height="24" rx="2" fill="#D9481A"/>
+<text x="30" y="796" font-size="11" font-weight="bold" letter-spacing="0.2" fill="#D9481A">1 &#183; DOPPLER</text>
+<text x="30" y="808" font-size="9.5" fill="#90A4AE">nuclear physics</text>
+<text x="226" y="802" font-size="9.5" font-weight="bold" fill="#D9481A">instant, unstoppable</text>
+<text x="146" y="824" font-size="9.5" fill="#5A7280">&#8722;2 to &#8722;5 &#215; 10&#8315;&#8309; &#916;k/k per &#176;C &#8212; a material response, not a system</text>
+
+<rect x="220.4" y="832" width="158.1" height="24" rx="2" fill="#a9702f"/>
+<text x="30" y="842" font-size="11" font-weight="bold" letter-spacing="0.2" fill="#5C6670">2 &#183; GRAPHITE</text>
+<text x="30" y="854" font-size="9.5" fill="#90A4AE">thermal capacitance</text>
+<text x="226" y="848" font-size="9.5" font-weight="bold" fill="#ffffff">hours of buffering</text>
+<text x="146" y="870" font-size="9.5" fill="#5A7280">3.6 &#215; 10&#8312; J/&#176;C over 150&#8211;250 t of graphite = 36 GJ per 100 &#176;C;</text>
+<text x="146" y="881" font-size="9.5" fill="#5A7280">the core cannot heat quickly even with zero cooling</text>
+
+<rect x="315.4" y="888" width="146.6" height="24" rx="2" fill="#2FA88C"/>
+<polygon points="462,888 476,900 462,912" fill="#2FA88C"/>
+<text x="30" y="898" font-size="11" font-weight="bold" letter-spacing="0.2" fill="#2FA88C">3 &#183; AIR RCCS</text>
+<text x="30" y="910" font-size="9.5" fill="#90A4AE">buoyancy</text>
+<text x="321" y="904" font-size="9.5" font-weight="bold" fill="#12242E">indefinite &#8212; natural draft</text>
+<text x="146" y="924" font-size="9.5" fill="#5A7280">20 m chimney; no pumps, no valves, no power &#8212; air is always available</text>
+
+<line x1="321.9" y1="786" x2="321.9" y2="932" stroke="#5C6670" stroke-width="1" stroke-dasharray="2,3"/>
+<text x="328" y="798" font-size="9.5" fill="#5C6670">1.5 h</text>
+
+<line x1="146" y1="932" x2="470" y2="932" stroke="#5A7280" stroke-width="1.2"/>
+<g stroke="#5A7280" stroke-width="1.1">
+  <line x1="183.2" y1="932" x2="183.2" y2="937"/><line x1="249.3" y1="932" x2="249.3" y2="937"/><line x1="315.4" y1="932" x2="315.4" y2="937"/>
+  <line x1="366.7" y1="932" x2="366.7" y2="937"/><line x1="398.1" y1="932" x2="398.1" y2="937"/><line x1="421.8" y1="932" x2="421.8" y2="937"/><line x1="462" y1="932" x2="462" y2="937"/>
+</g>
+<g stroke="#90A4AE" stroke-width="0.7">
+  <line x1="249.3" y1="937" x2="249.3" y2="951"/><line x1="366.7" y1="937" x2="366.7" y2="951"/><line x1="421.8" y1="937" x2="421.8" y2="951"/>
+</g>
+<g font-size="9" fill="#5A7280" text-anchor="middle">
+  <text x="183.2" y="948">1 s</text><text x="315.4" y="948">1 hour</text><text x="398.1" y="948">1 week</text><text x="470" y="948" text-anchor="end">1 year</text>
+  <text x="249.3" y="961">1 min</text><text x="366.7" y="961">1 day</text><text x="421.8" y="961">1 month</text>
+</g>
+<text x="30" y="948" font-size="9.5" fill="#90A4AE">time after event &#8594;</text>
+<text x="30" y="978" font-size="9.5"><tspan font-weight="bold" fill="#A81D0E">No operator action.</tspan>&#8195;<tspan font-weight="bold" fill="#A81D0E">No AC power.</tspan>&#8195;<tspan font-weight="bold" fill="#A81D0E">No water.</tspan>&#8195;<tspan font-weight="bold" fill="#A81D0E">No valves.</tspan></text>
+<text x="30" y="992" font-size="9.5" fill="#5A7280">The three mechanisms overlap in time and none of them can be switched off</text>
+<text x="30" y="1004" font-size="9.5" fill="#5A7280">&#8212; each is a material property or a geometry, not a system.</text>
+
+<!-- ============================================================================ -->
+<!--  PANEL 07 : ENVELOPE   cols 3-4   x 494..794   y 754..1010                   -->
+<!-- ============================================================================ -->
+<rect x="494" y="754" width="300" height="256" rx="3" fill="#ffffff"/>
+<path d="M497,754 H791 A3,3 0 0 1 794,757 V776 H494 V757 A3,3 0 0 1 497,754 Z" fill="#F2F6F8"/>
+<path d="M497,754 H498 V776 H494 V757 A3,3 0 0 1 497,754 Z" fill="#5A7280"/>
+<line x1="494" y1="776" x2="794" y2="776" stroke="#CCD8DE" stroke-width="1"/>
+<rect x="494" y="754" width="300" height="256" rx="3" fill="none" stroke="#CCD8DE" stroke-width="1.4"/>
+<text x="510" y="769" font-size="12" font-weight="bold" letter-spacing="1.1" fill="#12242E">07&#8195;ENVELOPE</text>
+<text x="784" y="769" text-anchor="end" font-size="9.5" fill="#5A7280">elevation, 6.2 px/m</text>
+<text x="504" y="794" font-size="9.5" fill="#5A7280">20 &#215; 20 &#215; 20 m envelope, 12 m below grade.</text>
+
+<!-- soil -->
+<rect x="500" y="902" width="14" height="74.4" fill="url(#soilHatch)"/>
+<rect x="638" y="902" width="18" height="74.4" fill="url(#soilHatch)"/>
+<!-- pre-cast cavity, -12 m -->
+<rect x="514" y="902" width="124" height="74.4" fill="url(#concrete)" stroke="#90A4AE" stroke-width="1"/>
+<rect x="522" y="908" width="108" height="62" fill="#F4F6F7" stroke="#90A4AE" stroke-width="0.8"/>
+<!-- confinement building, +8 m -->
+<rect x="514" y="852.4" width="124" height="49.6" fill="#F4F6F7" stroke="#90A4AE" stroke-width="1"/>
+<line x1="514" y1="852.4" x2="638" y2="852.4" stroke="#5A7280" stroke-width="1.6"/>
+<!-- 20 x 20 m envelope -->
+<rect x="514" y="852.4" width="124" height="124" fill="none" stroke="#12242E" stroke-width="1.6" stroke-dasharray="5,3"/>
+<!-- grade -->
+<line x1="500" y1="902" x2="660" y2="902" stroke="#6D4C41" stroke-width="2.5" stroke-dasharray="12,4,3,4"/>
+<!-- reactor vessel, 5.5 m -->
+<rect x="540" y="908" width="34.1" height="62" rx="9" fill="url(#vesselSkin)" stroke="#5A7280" stroke-width="1.4"/>
+<rect x="543.5" y="920" width="27" height="34" fill="url(#coreGrad)" opacity="0.85"/>
+<!-- turbomachine, 2.5 m -->
+<rect x="596" y="908" width="15.5" height="49.6" rx="4" fill="url(#vesselSkin)" stroke="#5A7280" stroke-width="1.2"/>
+<rect x="598.5" y="912" width="10.5" height="11" fill="#D9481A"/>
+<rect x="598.5" y="928" width="10.5" height="10" fill="#5B4EA8"/>
+<rect x="598.5" y="943" width="10.5" height="10" fill="#1D76B8"/>
+<!-- RCCS chimney draft, full envelope height -->
+<g stroke="#2FA88C" stroke-width="2" marker-end="url(#ahTeal)">
+  <line x1="528" y1="968" x2="528" y2="858"/><line x1="625" y1="968" x2="625" y2="858"/>
+</g>
+<text x="576" y="848" text-anchor="middle" font-size="9.5" fill="#12242E">RCCS exhaust</text>
+<!-- human, 1.8 m -->
+<circle cx="645" cy="892.6" r="1.8" fill="#12242E"/>
+<line x1="645" y1="894.4" x2="645" y2="898" stroke="#12242E" stroke-width="1.3"/>
+<line x1="642.4" y1="902" x2="645" y2="898" stroke="#12242E" stroke-width="1"/>
+<line x1="647.6" y1="902" x2="645" y2="898" stroke="#12242E" stroke-width="1"/>
+<line x1="641.6" y1="895.6" x2="648.4" y2="895.6" stroke="#12242E" stroke-width="1"/>
+<!-- dimensions -->
+<line x1="507" y1="852.4" x2="507" y2="976.4" stroke="#12242E" stroke-width="1" marker-start="url(#ahGrey)" marker-end="url(#ahGrey)"/>
+<text x="501" y="914" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#12242E" transform="rotate(-90,501,914)">20 m</text>
+<line x1="514" y1="988" x2="638" y2="988" stroke="#12242E" stroke-width="1" marker-start="url(#ahGrey)" marker-end="url(#ahGrey)"/>
+<text x="576" y="985" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#12242E">20 m</text>
+<!-- annotations -->
+<g font-size="9.5" fill="#5A7280">
+  <text x="664" y="806" font-weight="bold">CONFINEMENT BUILDING</text>
+  <text x="664" y="817">+8 m; low-leakage, not</text>
+  <text x="664" y="828">pressure-rated</text>
+  <text x="664" y="846"><tspan font-weight="bold" fill="#6D4C41">GRADE</tspan> &#8212; figure is 1.8 m</text>
+  <text x="664" y="864" font-weight="bold">PRE-CAST CAVITY, &#8722;12 m</text>
+  <text x="664" y="875">factory segments; seismic</text>
+  <text x="664" y="886">isolation, shielding mass</text>
+  <text x="664" y="897">and security for free</text>
+  <text x="664" y="915"><tspan font-weight="bold">REACTOR VESSEL</tspan> &#8960; 5.5 m</text>
+  <text x="664" y="926" font-weight="bold">TURBOMACHINE VESSEL</text>
+  <text x="664" y="937">&#8960; 2.5 m</text>
+  <text x="664" y="955" fill="#12242E" font-weight="bold">RCCS chimney &#8776; 20 m</text>
+  <text x="664" y="966">&#8212; the full envelope span, at</text>
+  <text x="664" y="977">no extra cost</text>
+</g>
+<g stroke="#5A7280" stroke-width="0.8">
+  <line x1="638" y1="866" x2="660" y2="814"/>
+  <line x1="656" y1="902" x2="660" y2="850"/>
+  <line x1="574" y1="944" x2="660" y2="911"/>
+  <line x1="611.5" y1="938" x2="660" y2="922"/>
+</g>
+
+<!-- ============================================================================ -->
+<!--  PANEL 08 : FUEL CYCLE   cols 5-8   x 810..1426   y 754..1010                -->
+<!-- ============================================================================ -->
+<rect x="810" y="754" width="616" height="256" rx="3" fill="#ffffff"/>
+<path d="M813,754 H1423 A3,3 0 0 1 1426,757 V776 H810 V757 A3,3 0 0 1 813,754 Z" fill="#F2F6F8"/>
+<path d="M813,754 H814 V776 H810 V757 A3,3 0 0 1 813,754 Z" fill="#5B4EA8"/>
+<line x1="810" y1="776" x2="1426" y2="776" stroke="#CCD8DE" stroke-width="1"/>
+<rect x="810" y="754" width="616" height="256" rx="3" fill="none" stroke="#CCD8DE" stroke-width="1.4"/>
+<text x="826" y="769" font-size="12" font-weight="bold" letter-spacing="1.1" fill="#12242E">08&#8195;FUEL CYCLE</text>
+<text x="1416" y="769" text-anchor="end" font-size="9.5" fill="#5A7280">one visit a year, in and out</text>
+
+<g>
+  <rect x="822" y="796" width="110" height="60" rx="3" fill="#EBEAF5" stroke="#5B4EA8" stroke-width="1.2"/>
+  <text x="877" y="815" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#3F3675">4.8% LEU</text>
+  <text x="877" y="829" text-anchor="middle" font-size="9.5" fill="#5B4EA8">TRISO, &#8960; 930 &#956;m</text>
+  <text x="877" y="843" text-anchor="middle" font-size="9.5" fill="#5B4EA8">&#8776;5,000 per compact</text>
+
+  <rect x="946" y="796" width="130" height="60" rx="3" fill="#FDF6E9" stroke="#a9702f" stroke-width="1.2"/>
+  <text x="1011" y="815" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#5A7280">6&#8211;10 BATCHES IN CORE</text>
+  <text x="1011" y="829" text-anchor="middle" font-size="9.5" fill="#5A7280">12-month refuel interval</text>
+  <text x="1011" y="843" text-anchor="middle" font-size="9.5" fill="#5A7280">6&#8211;10 years resident</text>
+
+  <rect x="1090" y="796" width="110" height="60" rx="3" fill="#FBEDE8" stroke="#D9481A" stroke-width="1.2"/>
+  <text x="1145" y="815" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#A81D0E">DISCHARGE</text>
+  <text x="1145" y="829" text-anchor="middle" font-size="9.5" fill="#A81D0E">80&#8211;100 GWd/tHM</text>
+  <text x="1145" y="843" text-anchor="middle" font-size="9.5" fill="#A81D0E">~0.41 t HM per year</text>
+
+  <rect x="1214" y="796" width="90" height="60" rx="3" fill="#E0F2EE" stroke="#2FA88C" stroke-width="1.2"/>
+  <text x="1259" y="815" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#12242E">DRY BAY</text>
+  <text x="1259" y="829" text-anchor="middle" font-size="9.5" fill="#12242E">2 years&#8217; buffer</text>
+  <text x="1259" y="843" text-anchor="middle" font-size="9.5" fill="#12242E">no water pool</text>
+
+  <rect x="1318" y="796" width="96" height="60" rx="3" fill="#DBE4E9" stroke="#5A7280" stroke-width="1.2"/>
+  <text x="1366" y="815" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#5A7280">REPOSITORY</text>
+  <text x="1366" y="829" text-anchor="middle" font-size="9.5" fill="#5A7280">TRISO is its own</text>
+  <text x="1366" y="843" text-anchor="middle" font-size="9.5" fill="#5A7280">waste form</text>
+</g>
+<g stroke="#90a4ae" stroke-width="2" marker-end="url(#ahDim)">
+  <line x1="934" y1="826" x2="944" y2="826"/><line x1="1078" y1="826" x2="1088" y2="826"/>
+  <line x1="1202" y1="826" x2="1212" y2="826"/><line x1="1306" y1="826" x2="1316" y2="826"/>
+</g>
+
+<text x="822" y="886" font-size="11" font-weight="bold" letter-spacing="0.2" fill="#12242E">Discharge burnup, GWd/tHM &#8212; sweating the fuel</text>
+<g stroke="#DBE4E9" stroke-width="1">
+  <line x1="977.8" y1="892" x2="977.8" y2="954"/><line x1="1055.6" y1="892" x2="1055.6" y2="954"/><line x1="1133.3" y1="892" x2="1133.3" y2="954"/>
+</g>
+<g>
+  <line x1="900" y1="900" x2="970" y2="900" stroke="#DBE4E9" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="970" y="893" width="15.6" height="14" fill="#90A4AE"/>
+  <text x="894" y="904" text-anchor="end" font-size="9.5" fill="#5A7280">LWR UO&#8322;</text>
+  <text x="992" y="904" font-size="9.5" fill="#5A7280">45&#8211;55</text>
+
+  <line x1="900" y1="925" x2="1024.4" y2="925" stroke="#DBE4E9" stroke-width="1" stroke-dasharray="2,2"/>
+  <rect x="1024.4" y="918" width="31.2" height="14" fill="#D9481A"/>
+  <text x="894" y="929" text-anchor="end" font-size="9.5" font-weight="bold" fill="#12242E">this design</text>
+  <text x="1062" y="929" font-size="9.5" font-weight="bold" fill="#A81D0E">80&#8211;100 &#8212; about 2&#215; an LWR</text>
+
+  <line x1="900" y1="950" x2="1164.4" y2="950" stroke="#DBE4E9" stroke-width="1" stroke-dasharray="2,2"/>
+  <polygon points="1164.4,943 1171.4,950 1164.4,957 1157.4,950" fill="#2FA88C"/>
+  <text x="894" y="954" text-anchor="end" font-size="9.5" fill="#5A7280">TRISO tested</text>
+  <text x="1178" y="954" font-size="9.5" fill="#12242E">170 (BWXT)</text>
+</g>
+<line x1="900" y1="962" x2="1190" y2="962" stroke="#5A7280" stroke-width="1"/>
+<g stroke="#5A7280" stroke-width="1"><line x1="900" y1="962" x2="900" y2="967"/><line x1="977.8" y1="962" x2="977.8" y2="967"/><line x1="1055.6" y1="962" x2="1055.6" y2="967"/><line x1="1133.3" y1="962" x2="1133.3" y2="967"/></g>
+<g font-size="9" fill="#5A7280" text-anchor="middle"><text x="900" y="978">0</text><text x="977.8" y="978">50</text><text x="1055.6" y="978">100</text><text x="1133.3" y="978">150</text></g>
+<text x="1210" y="978" font-size="9.5" fill="#90A4AE">GWd/tHM</text>
+<text x="1242" y="886" font-size="11" font-weight="bold" letter-spacing="0.2" fill="#3F3675">PROLIFERATION</text>
+<g font-size="9.5" fill="#5B4EA8">
+  <text x="1242" y="900">Discharge Pu is 30&#8211;35% Pu-240</text>
+  <text x="1242" y="912">&#8212; reactor grade, not weapons</text>
+  <text x="1242" y="924">grade.</text>
+  <text x="1242" y="940">Recovering it means breaching</text>
+  <text x="1242" y="952">SiC on millions of sub-mm</text>
+  <text x="1242" y="964">particles.</text>
+</g>
+<text x="822" y="992" font-size="9.5" fill="#90A4AE">Twice an LWR&#8217;s burnup on less than half its enrichment headroom: a 12-month</text>
+<text x="822" y="1003" font-size="9.5" fill="#90A4AE">cycle, ~0.41 t of heavy metal a year, and no wet handling anywhere in the chain.</text>
+
+<!-- ============================================================================ -->
+<!--  PANEL 09 : OUTPUT   cols 9-11   x 1442..1900   y 754..1010                  -->
+<!-- ============================================================================ -->
+<rect x="1442" y="754" width="458" height="256" rx="3" fill="#ffffff"/>
+<path d="M1445,754 H1897 A3,3 0 0 1 1900,757 V776 H1442 V757 A3,3 0 0 1 1445,754 Z" fill="#F2F6F8"/>
+<path d="M1445,754 H1446 V776 H1442 V757 A3,3 0 0 1 1445,754 Z" fill="#5B4EA8"/>
+<line x1="1442" y1="776" x2="1900" y2="776" stroke="#CCD8DE" stroke-width="1"/>
+<rect x="1442" y="754" width="458" height="256" rx="3" fill="none" stroke="#CCD8DE" stroke-width="1.4"/>
+<text x="1458" y="769" font-size="12" font-weight="bold" letter-spacing="1.1" fill="#12242E">09&#8195;OUTPUT</text>
+<text x="1890" y="769" text-anchor="end" font-size="9.5" fill="#5A7280">electricity is the mission; H&#8322; is a load</text>
+
+<text x="1454" y="794" font-size="9.5" fill="#5A7280">100 MW(th) core, drawn to scale &#8212; the whole panel is one bar wide</text>
+<rect x="1454" y="800" width="202.1" height="30" fill="#5B4EA8"/>
+<rect x="1656.1" y="800" width="227.9" height="30" fill="#8FA3B0"/>
+<text x="1555" y="820" text-anchor="middle" font-size="11" font-weight="bold" letter-spacing="0.2" fill="#ffffff">47 MW(e) &#183; 47%</text>
+<text x="1770" y="814" text-anchor="middle" font-size="9.5" fill="#ffffff">53 MW rejected to air</text>
+<text x="1770" y="826" text-anchor="middle" font-size="9.5" fill="#12242E">precooler, 215 &#8594; 35 &#176;C, no water</text>
+<g stroke="#5A7280" stroke-width="1"><line x1="1454" y1="830" x2="1454" y2="836"/><line x1="1561.5" y1="830" x2="1561.5" y2="836"/><line x1="1669" y1="830" x2="1669" y2="836"/><line x1="1776.5" y1="830" x2="1776.5" y2="836"/><line x1="1884" y1="830" x2="1884" y2="836"/></g>
+<g font-size="9" fill="#5A7280" text-anchor="middle"><text x="1454" y="847">0</text><text x="1561.5" y="847">25</text><text x="1669" y="847">50</text><text x="1776.5" y="847">75</text><text x="1884" y="847">100</text></g>
+<text x="1890" y="859" text-anchor="end" font-size="9.5" fill="#90A4AE">MW(th)</text>
+
+<line x1="1600" y1="836" x2="1600" y2="852" stroke="#5B4EA8" stroke-width="1.6"/>
+<line x1="1559" y1="852" x2="1779" y2="852" stroke="#5B4EA8" stroke-width="1.6"/>
+<g stroke="#5B4EA8" stroke-width="1.6" marker-end="url(#ahPurple)">
+  <line x1="1559" y1="852" x2="1559" y2="864"/><line x1="1779" y1="852" x2="1779" y2="864"/>
+</g>
+
+<rect x="1454" y="868" width="210" height="46" rx="3" fill="#EBEAF5" stroke="#5B4EA8" stroke-width="1.2"/>
+<text x="1559" y="884" text-anchor="middle" font-size="11" font-weight="bold" letter-spacing="0.2" fill="#12242E">ELECTRICITY MODE</text>
+<text x="1559" y="896" text-anchor="middle" font-size="9.5" fill="#5A7280">100% of output to the grid</text>
+<text x="1559" y="908" text-anchor="middle" font-size="9.5" fill="#5A7280">43&#8211;70 MW(e); 43&#8211;65 at the 850 &#176;C FOAK</text>
+
+<rect x="1674" y="868" width="210" height="46" rx="3" fill="#E0F2EE" stroke="#2FA88C" stroke-width="1.2"/>
+<text x="1779" y="884" text-anchor="middle" font-size="11" font-weight="bold" letter-spacing="0.2" fill="#12242E">HYDROGEN MODE</text>
+<text x="1779" y="896" text-anchor="middle" font-size="9.5" fill="#5A7280">generator output &#8594; SOEC stacks</text>
+<text x="1779" y="908" text-anchor="middle" font-size="9.5" fill="#5A7280">an electrical take-off, not a thermal one</text>
+
+<line x1="1454" y1="922" x2="1884" y2="922" stroke="#DBE4E9" stroke-width="1"/>
+<text x="1454" y="936" font-size="11" font-weight="bold" letter-spacing="0.2" fill="#12242E">FULL HYDROGEN MODE</text>
+<text x="1454" y="962" font-size="18" font-weight="bold" fill="#12242E">~38,000</text>
+<text x="1534" y="962" font-size="9.5" fill="#12242E">kg H&#8322; per day</text>
+<text x="1534" y="951" font-size="9.5" fill="#12242E">(950 &#176;C)</text>
+<g font-size="9.5" fill="#5A7280">
+  <text x="1650" y="932">60,000 kW &#215; 24 h &#247; 38 kWh/kg = 37,900 kg/day</text>
+  <text x="1650" y="944">~35,000 kg/day at 850 &#176;C FOAK</text>
+  <text x="1650" y="956">SOEC 35&#8211;40 kWh/kg vs ~50 for PEM; precooler</text>
+  <text x="1650" y="968">heat can preheat feedwater.</text>
+</g>
+<text x="1454" y="984" font-size="9.5" fill="#90A4AE">S&#8211;I thermochemical was rejected: it needs ~850 &#176;C process heat through an</text>
+<text x="1454" y="995" font-size="9.5" fill="#90A4AE">intermediate heat exchanger &#8212; the one component this design exists to delete.</text>
+<text x="1454" y="1006" font-size="9.5" fill="#90A4AE">The nuclear island is identical in both modes; only the load changes.</text>
+
+<!-- ============================================================================ -->
+<!--  KEY DECISIONS SPINE  (full width)                                           -->
+<!-- ============================================================================ -->
+<rect x="20" y="1018" width="1880" height="36" fill="#12242E"/>
+<text x="34" y="1033" font-size="9.5" font-weight="bold" letter-spacing="1.6" fill="#90A4AE">KEY</text>
+<text x="34" y="1046" font-size="9.5" font-weight="bold" letter-spacing="1.6" fill="#90A4AE">DECISIONS</text>
+<g>
+  <rect x="130" y="1023" width="236" height="28" rx="2" fill="#12242E"/>
+  <text x="140" y="1034" font-size="9.5" font-weight="bold" letter-spacing="1" fill="#90A4AE">COOLANT</text>
+  <text x="140" y="1047" font-size="10" font-weight="bold" fill="#DBE4E9">helium, direct Brayton &#8212; no IHX</text>
+
+  <rect x="384" y="1023" width="236" height="28" rx="2" fill="#12242E"/>
+  <text x="394" y="1034" font-size="9.5" font-weight="bold" letter-spacing="1" fill="#90A4AE">CORE</text>
+  <text x="394" y="1047" font-size="10" font-weight="bold" fill="#DBE4E9">annular prismatic core, &#8960; 4.6 m</text>
+
+  <rect x="638" y="1023" width="236" height="28" rx="2" fill="#12242E"/>
+  <text x="648" y="1034" font-size="9.5" font-weight="bold" letter-spacing="1" fill="#90A4AE">CHANNELS</text>
+  <text x="648" y="1047" font-size="10" font-weight="bold" fill="#DBE4E9">gyroid, 15&#8211;20 mm cell</text>
+
+  <rect x="892" y="1023" width="236" height="28" rx="2" fill="#12242E"/>
+  <text x="902" y="1034" font-size="9.5" font-weight="bold" letter-spacing="1" fill="#90A4AE">FUEL</text>
+  <text x="902" y="1047" font-size="10" font-weight="bold" fill="#DBE4E9">TRISO, 4.8% LEU (&lt; 5%)</text>
+
+  <rect x="1146" y="1023" width="236" height="28" rx="2" fill="#12242E"/>
+  <text x="1156" y="1034" font-size="9.5" font-weight="bold" letter-spacing="1" fill="#90A4AE">TURBINE</text>
+  <text x="1156" y="1047" font-size="10" font-weight="bold" fill="#DBE4E9">phased Ni 850 &#8594; SiC/SiC CMC blisk</text>
+
+  <rect x="1400" y="1023" width="236" height="28" rx="2" fill="#12242E"/>
+  <text x="1410" y="1034" font-size="9.5" font-weight="bold" letter-spacing="1" fill="#90A4AE">HEAT SINK</text>
+  <text x="1410" y="1047" font-size="10" font-weight="bold" fill="#DBE4E9">air precooler + air RCCS</text>
+
+  <rect x="1654" y="1023" width="236" height="28" rx="2" fill="#12242E"/>
+  <text x="1664" y="1034" font-size="9.5" font-weight="bold" letter-spacing="1" fill="#90A4AE">CIVIL</text>
+  <text x="1664" y="1047" font-size="10" font-weight="bold" fill="#DBE4E9">below-grade pre-cast cavity</text>
+</g>
+<line x1="20" y1="1059" x2="1900" y2="1059" stroke="#DBE4E9" stroke-width="1"/>
+<text x="20" y="1069" font-size="8.5" fill="#90A4AE">Preliminary design &#8212; every value is an estimate awaiting calculation. All values traced to design/00-summary.md and the linked sections. (&#167;03 core, &#167;04 neutronics, &#167;05 thermal-hydraulics, &#167;07 safety, &#167;08 power conversion, &#167;09 hydrogen, &#167;10 fuel cycle, &#167;11 siting, &#167;12 economics.)</text>
+</svg>

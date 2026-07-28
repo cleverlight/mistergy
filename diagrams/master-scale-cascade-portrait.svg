@@ -1,0 +1,1037 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1180" role="img" aria-label="VHTR scale cascade: site to TRISO coating layer">
+<title>VHTR — The Scale Cascade</title>
+
+<defs>
+  <style>
+    text { font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif; }
+    .ink   { fill: #12242e; }
+    .mut   { fill: #5a7280; }
+    .fai   { fill: #90a4ae; }
+    .b     { font-weight: 700; }
+    .sc    { letter-spacing: 1.1px; }
+    .pfr   { fill: #ffffff; stroke: #ccd8de; stroke-width: 1.4; }
+    .phd   { fill: #f2f6f8; }
+    .div   { stroke: #dbe4e9; stroke-width: 1; }
+    .dim   { stroke: #12242e; stroke-width: 1; }
+    .lead  { stroke: #9db1bb; stroke-width: 0.8; fill: none; }
+    .fz    { fill: none; stroke: #d98a2b; stroke-width: 1; stroke-dasharray: 5 4; opacity: .75; }
+    .loupe { fill: none; stroke: #d98a2b; stroke-width: 2; }
+    .gyw   { fill-rule: evenodd; stroke: #33454e; stroke-width: 0.4; }
+    .gy8{fill:#2b3941}.gy7{fill:#354550}.gy6{fill:#40525c}.gy5{fill:#4c5f69}
+    .gy4{fill:#596d77}.gy3{fill:#677b85}.gy2{fill:#788b94}.gy1{fill:#8a9ba2}.gy0{fill:#a4b2b8}
+    .fb0 { fill: #f6c250; stroke: #b8862a; stroke-width: 0.55; }
+    .fb1 { fill: #ef9d3f; stroke: #b8722a; stroke-width: 0.55; }
+    .fb2 { fill: #e2762f; stroke: #a8501e; stroke-width: 0.55; }
+  </style>
+
+  <!-- temperature ramp: 35 -> 1600 degC, linear in temperature -->
+  <linearGradient id="ramp" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0.000" stop-color="#12417f"/>
+    <stop offset="0.102" stop-color="#1d76b8"/>
+    <stop offset="0.115" stop-color="#1f8fae"/>
+    <stop offset="0.240" stop-color="#8fae62"/>
+    <stop offset="0.348" stop-color="#eaa81b"/>
+    <stop offset="0.361" stop-color="#ef8b1f"/>
+    <stop offset="0.584" stop-color="#d94a1a"/>
+    <stop offset="0.769" stop-color="#a81d0e"/>
+    <stop offset="1.000" stop-color="#5e0b07"/>
+  </linearGradient>
+  <!-- 580 -> 950 degC, the core leg -->
+  <linearGradient id="rampCore" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#eaa81b"/><stop offset="0.55" stop-color="#ef7a1c"/><stop offset="1" stop-color="#d94a1a"/>
+  </linearGradient>
+  <linearGradient id="rampCoreV" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#eaa81b"/><stop offset="0.55" stop-color="#ef7a1c"/><stop offset="1" stop-color="#d94a1a"/>
+  </linearGradient>
+  <linearGradient id="rampFull" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#12417f"/><stop offset="0.22" stop-color="#1f8fae"/>
+    <stop offset="0.55" stop-color="#eaa81b"/><stop offset="1" stop-color="#d94a1a"/>
+  </linearGradient>
+  <linearGradient id="rampHot" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#d94a1a"/><stop offset="0.6" stop-color="#a81d0e"/><stop offset="1" stop-color="#5e0b07"/>
+  </linearGradient>
+  <linearGradient id="rampCool" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#1f8fae"/><stop offset="1" stop-color="#8fae62"/>
+  </linearGradient>
+
+  <linearGradient id="hdrBg" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#eef3f5"/><stop offset="0.6" stop-color="#f6f9fa"/><stop offset="1" stop-color="#eaf0f3"/>
+  </linearGradient>
+  <linearGradient id="pageBg" x1="0" y1="0" x2="0.35" y2="1">
+    <stop offset="0" stop-color="#f9fbfc"/><stop offset="1" stop-color="#eef3f6"/>
+  </linearGradient>
+  <linearGradient id="vessel" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#7d919c"/><stop offset="0.28" stop-color="#c3d0d6"/>
+    <stop offset="0.62" stop-color="#9dadb6"/><stop offset="1" stop-color="#71858f"/>
+  </linearGradient>
+  <linearGradient id="steel" x1="0" y1="0" x2="1" y2="0.3">
+    <stop offset="0" stop-color="#8fa3ad"/><stop offset="0.5" stop-color="#cfdae0"/><stop offset="1" stop-color="#84979f"/>
+  </linearGradient>
+  <linearGradient id="bldg" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#e8eef1"/><stop offset="1" stop-color="#ccd8de"/>
+  </linearGradient>
+  <radialGradient id="sphere3d" cx="0.34" cy="0.30" r="0.78">
+    <stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/>
+    <stop offset="0.55" stop-color="#ffffff" stop-opacity="0.05"/>
+    <stop offset="1" stop-color="#001018" stop-opacity="0.34"/>
+  </radialGradient>
+  <radialGradient id="kernelG" cx="0.36" cy="0.30" r="0.80">
+    <stop offset="0" stop-color="#e35b28"/><stop offset="0.6" stop-color="#bf360c"/><stop offset="1" stop-color="#7d2205"/>
+  </radialGradient>
+  <linearGradient id="frust" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#e8a13c" stop-opacity="0.30"/>
+    <stop offset="1" stop-color="#e8a13c" stop-opacity="0.07"/>
+  </linearGradient>
+  <linearGradient id="frustV" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#e8a13c" stop-opacity="0.30"/>
+    <stop offset="1" stop-color="#e8a13c" stop-opacity="0.07"/>
+  </linearGradient>
+  <linearGradient id="frustL" x1="1" y1="0" x2="0" y2="0">
+    <stop offset="0" stop-color="#e8a13c" stop-opacity="0.30"/>
+    <stop offset="1" stop-color="#e8a13c" stop-opacity="0.07"/>
+  </linearGradient>
+  <linearGradient id="compactG" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#4a5a63"/><stop offset="0.3" stop-color="#8b9aa2"/>
+    <stop offset="0.6" stop-color="#6e7e87"/><stop offset="1" stop-color="#3d4b53"/>
+  </linearGradient>
+
+  <!-- material patterns -->
+  <pattern id="earth" width="18" height="18" patternUnits="userSpaceOnUse">
+    <rect width="18" height="18" fill="#efe9e4"/>
+    <circle cx="4" cy="5" r="1.05" fill="#cbbdb2"/><circle cx="13" cy="10" r="0.95" fill="#cbbdb2"/>
+    <circle cx="8" cy="15" r="0.8" fill="#d8ccc3"/><circle cx="16" cy="2" r="0.7" fill="#d8ccc3"/>
+  </pattern>
+  <pattern id="concrete" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <rect width="7" height="7" fill="#c7ced1"/>
+    <line x1="0" y1="0" x2="0" y2="7" stroke="#a5b0b5" stroke-width="1"/>
+  </pattern>
+  <pattern id="graphite" width="9" height="9" patternUnits="userSpaceOnUse">
+    <rect width="9" height="9" fill="#b9c4c9"/>
+    <circle cx="2" cy="2.5" r="0.85" fill="#9dabb2"/><circle cx="6.5" cy="6" r="0.75" fill="#9dabb2"/>
+    <circle cx="7" cy="1.5" r="0.5" fill="#cbd4d8"/>
+  </pattern>
+  <pattern id="ground" width="14" height="14" patternUnits="userSpaceOnUse">
+    <rect width="14" height="14" fill="#f0f1e9"/>
+    <line x1="0" y1="14" x2="14" y2="0" stroke="#dfe2d6" stroke-width="0.8"/>
+  </pattern>
+  <!-- gyroid unit cell, tiled: one z-slice of sin x cos y + sin y cos z + sin z cos x -->
+  <pattern id="gyfine" width="8.6" height="8.6" patternUnits="userSpaceOnUse">
+    <rect width="8.6" height="8.6" fill="#dfe7ea"/>
+    <g fill="#71848d" fill-rule="evenodd" stroke="none"><path d="M-1.58,-1.61 -1.58,1.89 -1.08,1.36 -0.73,0.83 0.02,-1.25 0.27,-1.58ZM1.09,-1.58 0.86,-1.58 1.89,-1.05 2.40,-0.51 2.70,0.14 2.74,0.83 2.37,1.63 1.29,2.70 0.83,3.31 0.48,4.03 0.02,5.44 -0.24,5.87 -0.51,5.95 -0.78,5.91 -1.58,5.56 -1.59,10.18 -1.27,10.18 -0.85,9.65 -0.47,8.84 0.02,7.34 0.29,7.00 0.56,6.95 1.09,7.10 1.63,7.37 2.16,7.80 2.53,8.31 2.72,8.84 2.74,9.38 2.41,10.18 7.34,10.18 7.90,9.38 8.58,7.46 8.84,7.03 9.38,6.99 10.18,7.35 10.18,2.41 9.66,2.96 9.31,3.50 8.58,5.55 8.31,5.90 7.77,5.90 6.71,5.34 6.17,4.76 5.87,4.03 5.86,3.50 6.04,2.96 7.72,1.09 8.11,0.29 8.58,-1.14 8.88,-1.58ZM9.65,-1.58 9.45,-1.58 10.18,-1.26 10.18,-1.59ZM3.23,-1.58 3.04,-1.58 3.60,-0.78 4.30,1.20 4.57,1.58 5.10,1.60 5.90,1.24 6.44,0.82 6.83,0.29 7.02,-0.24 7.04,-0.78 6.71,-1.58ZM3.77,2.65 2.96,2.91 2.14,3.50 1.64,4.30 1.56,5.10 1.91,5.90 2.99,6.97 3.50,7.65 4.36,9.91 4.57,10.18 5.16,10.18 6.17,9.66 6.70,9.11 6.97,8.55 7.04,7.77 6.67,6.97 5.59,5.90 5.17,5.37 4.78,4.57 4.30,3.10 4.03,2.72Z"/></g>
+  </pattern>
+
+  <clipPath id="cpP1"><rect x="24" y="82" width="420" height="388" rx="9"/></clipPath>
+  <clipPath id="cpP2"><rect x="510" y="82" width="420" height="388" rx="9"/></clipPath>
+  <clipPath id="cpP3"><rect x="996" y="82" width="420" height="388" rx="9"/></clipPath>
+  <clipPath id="cpP4"><rect x="856" y="540" width="560" height="560" rx="9"/></clipPath>
+  <clipPath id="cpP5"><rect x="450" y="540" width="360" height="560" rx="9"/></clipPath>
+  <clipPath id="cpP6"><rect x="24" y="540" width="380" height="560" rx="9"/></clipPath>
+  <clipPath id="gut1"><rect x="444" y="82" width="66" height="388"/></clipPath>
+  <clipPath id="gut2"><rect x="930" y="82" width="66" height="388"/></clipPath>
+  <clipPath id="gut3"><rect x="856" y="470" width="560" height="70"/></clipPath>
+  <clipPath id="gut4"><rect x="810" y="540" width="46" height="560"/></clipPath>
+  <clipPath id="gut5"><rect x="404" y="540" width="46" height="560"/></clipPath>
+  <clipPath id="cpGyro"><rect x="1148" y="604" width="234" height="234"/></clipPath>
+  <clipPath id="cpAnn">
+    <path d="M1126,258 m-65.5,0 a65.5,65.5 0 1,0 131,0 a65.5,65.5 0 1,0 -131,0 M1126,258 m-29.1,0 a29.1,29.1 0 1,1 58.2,0 a29.1,29.1 0 1,1 -58.2,0" clip-rule="evenodd"/>
+  </clipPath>
+  <clipPath id="cpHexBlkP">
+    <path d="M891.85,672 L925.93,613 L994.07,613 L1028.15,672 L994.07,731 L925.93,731 Z"/>
+  </clipPath>
+  <clipPath id="cpPrism"><rect x="891.85" y="762" width="136.3" height="260"/></clipPath>
+  <clipPath id="cpCompact"><path d="M490,636 A45,15 0 0,1 580,636 L580,989 A45,15 0 0,1 490,989 Z"/></clipPath>
+
+  <marker id="ahW" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0,1 L9,5 L0,9 Z" fill="#ffffff"/></marker>
+  <marker id="ahA" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0,1 L9,5 L0,9 Z" fill="#eaa81b"/></marker>
+</defs>
+
+<rect width="1440" height="1180" fill="url(#pageBg)"/>
+
+<!-- ============================== HEADER ============================== -->
+<rect x="0" y="0" width="1440" height="66" fill="url(#hdrBg)"/>
+<rect x="0" y="64" width="1440" height="2" fill="#12242e" opacity="0.14"/>
+<rect x="24" y="14" width="4" height="38" fill="#d94a1a"/>
+<text x="40" y="32" class="ink b" font-size="22">THE SCALE CASCADE</text>
+<text x="336" y="32" class="mut" font-size="13">— a 950 °C VHTR resolved across six decades</text>
+<text x="40" y="52" class="mut" font-size="11.5">Every stage is the highlighted region of the one before it. Follow the amber wedges: 30 m of plot down to a 35 µm silicon-carbide shell — and the path the heat takes through all of it.</text>
+
+<g id="ramplegend">
+  <text x="1128" y="18" class="mut b sc" font-size="10" text-anchor="end">TEMPERATURE KEY · °C</text>
+  <rect x="1136" y="9" width="278" height="11" rx="2" fill="url(#ramp)" stroke="#b9c7ce" stroke-width="0.6"/>
+  <g class="fai" font-size="10" stroke="#b0bec5" stroke-width="0.7">
+    <line x1="1136" y1="20" x2="1136" y2="25"/><line x1="1164.4" y1="20" x2="1164.4" y2="25"/>
+    <line x1="1232.7" y1="20" x2="1232.7" y2="25"/><line x1="1298.3" y1="20" x2="1298.3" y2="25"/>
+    <line x1="1350" y1="20" x2="1350" y2="25"/><line x1="1414" y1="20" x2="1414" y2="25"/>
+  </g>
+  <g class="mut" font-size="10" text-anchor="middle">
+    <text x="1136" y="34">35</text><text x="1164.4" y="34">195</text><text x="1232.7" y="34">580</text>
+    <text x="1298.3" y="34">950</text><text x="1350" y="34">1240</text><text x="1408" y="34">1600</text>
+  </g>
+  <g font-size="10" text-anchor="middle">
+    <text x="1136" y="45" fill="#12417f">compressor in</text>
+    <text x="1232.7" y="45" fill="#c07d10">core in</text>
+    <text x="1298.3" y="45" fill="#d94a1a">core out</text>
+    <text x="1379" y="45" fill="#8e1a0c">peak fuel · limit</text>
+  </g>
+</g>
+
+<!-- ============================== FRUSTUMS (drawn under panels' edges) ===== -->
+<g id="frustums">
+  <!-- F1 : P1 cavity  ->  P2 frame -->
+  <g clip-path="url(#gut1)"><polygon points="193,195 510,82 510,470 193,369" fill="url(#frust)"/></g>
+  <line class="fz" x1="367" y1="195" x2="510" y2="82"/>
+  <line class="fz" x1="367" y1="369" x2="510" y2="470"/>
+  <!-- F2 : P2 reactor vessel  ->  P3 frame -->
+  <g clip-path="url(#gut2)"><polygon points="568,240 996,82 996,470 568,378" fill="url(#frust)"/></g>
+  <line class="fz" x1="646" y1="240" x2="996" y2="82"/>
+  <line class="fz" x1="646" y1="378" x2="996" y2="470"/>
+  <!-- F3 : P3 one fuel block  ->  P4 frame (vertical drop) -->
+  <g clip-path="url(#gut3)"><polygon points="1114,315.4 1138,315.4 1416,540 856,540" fill="url(#frustV)"/></g>
+  <line class="fz" x1="1114" y1="315.4" x2="856" y2="540"/>
+  <line class="fz" x1="1138" y1="315.4" x2="1416" y2="540"/>
+  <!-- F4 : P4 compact seat  ->  P5 frame (leftward) -->
+  <g clip-path="url(#gut4)"><polygon points="923,820 810,540 810,1100 923,840" fill="url(#frustL)"/></g>
+  <line class="fz" x1="923" y1="820" x2="810" y2="540"/>
+  <line class="fz" x1="923" y1="840" x2="810" y2="1100"/>
+  <!-- F5 : P5 one TRISO particle  ->  P6 frame (leftward) -->
+  <g clip-path="url(#gut5)"><polygon points="496,753 404,540 404,1100 496,771" fill="url(#frustL)"/></g>
+  <line class="fz" x1="496" y1="753" x2="404" y2="540"/>
+  <line class="fz" x1="496" y1="771" x2="404" y2="1100"/>
+  <!-- magnification tags in the gutters -->
+  <g class="b" font-size="10.5" fill="#b06d18" text-anchor="middle">
+    <text x="477" y="280">×1.5</text><text x="963" y="280">×3.3</text>
+    <text x="1136" y="512">×14</text><text x="833" y="822">×7.6</text><text x="427" y="822">×55</text>
+  </g>
+</g>
+
+<!-- ============================== PANEL FRAMES ============================== -->
+<g id="frames">
+  <rect class="pfr" x="24"  y="82"  width="420" height="388" rx="9"/>
+  <rect class="pfr" x="510" y="82"  width="420" height="388" rx="9"/>
+  <rect class="pfr" x="996" y="82"  width="420" height="388" rx="9"/>
+  <rect class="pfr" x="856" y="540" width="560" height="560" rx="9"/>
+  <rect class="pfr" x="450" y="540" width="360" height="560" rx="9"/>
+  <rect class="pfr" x="24"  y="540" width="380" height="560" rx="9"/>
+</g>
+
+<!-- ============================== FOOTER ============================== -->
+<rect x="0" y="1108" width="1440" height="72" fill="#10242f"/>
+<rect x="0" y="1108" width="1440" height="3" fill="url(#rampFull)"/>
+<g text-anchor="middle">
+  <g class="b" font-size="15" fill="#f4f8fa">
+    <text x="111" y="1146">100–150</text><text x="285" y="1146">43–70</text>
+    <text x="459" y="1146">~47 %</text><text x="633" y="1146">4.8 %</text>
+    <text x="807" y="1146">80–100</text><text x="981" y="1146">12</text>
+    <text x="1155" y="1146">0</text><text x="1329" y="1146">1,600 °C</text>
+  </g>
+  <g font-size="10" fill="#8fb0bd">
+    <text x="111" y="1163">MW thermal</text><text x="285" y="1163">MW electric, net</text>
+    <text x="459" y="1163">Brayton cycle efficiency</text><text x="633" y="1163">²³⁵U — LEU, no HALEU</text>
+    <text x="807" y="1163">GWd/tHM discharge burnup</text><text x="981" y="1163">months between refuellings</text>
+    <text x="1155" y="1163">litres of cooling water</text><text x="1329" y="1163">TRISO limit — walk-away safe</text>
+  </g>
+  <g stroke="#2c4653" stroke-width="1">
+    <line x1="198" y1="1126" x2="198" y2="1168"/><line x1="372" y1="1126" x2="372" y2="1168"/>
+    <line x1="546" y1="1126" x2="546" y2="1168"/><line x1="720" y1="1126" x2="720" y2="1168"/>
+    <line x1="894" y1="1126" x2="894" y2="1168"/><line x1="1068" y1="1126" x2="1068" y2="1168"/>
+    <line x1="1242" y1="1126" x2="1242" y2="1168"/>
+  </g>
+</g>
+<!-- ==================================================================== -->
+<!-- STAGE 1 — SITE                                                       -->
+<!-- ==================================================================== -->
+<g id="P1" clip-path="url(#cpP1)">
+  <rect x="24" y="82" width="420" height="52" class="phd" rx="9"/>
+  <rect x="24" y="120" width="420" height="14" class="phd"/>
+  <circle cx="50" cy="109" r="13" fill="#12242e"/>
+  <text x="50" y="113.5" text-anchor="middle" fill="#ffffff" font-size="13" class="b">1</text>
+  <text x="72" y="104" class="ink b sc" font-size="14.5">SITE</text>
+  <text x="72" y="119" class="mut" font-size="10.5">An unremarkable industrial plot</text>
+  <rect x="340" y="96" width="90" height="7" rx="2" fill="url(#rampCool)"/>
+  <text x="430" y="115" text-anchor="end" class="mut" font-size="10">exhaust air ≈ 80 °C</text>
+  <text x="430" y="128" text-anchor="end" class="ink b" font-size="10">FIELD 30 m · ×1 base scale</text>
+  <line class="div" x1="38" y1="134" x2="430" y2="134"/>
+
+  <!-- ghost neighbour unit -->
+  <g opacity="0.42">
+    <rect x="-110" y="152" width="260" height="260" fill="url(#ground)" stroke="#b6bfa8" stroke-width="1.2" stroke-dasharray="7 5"/>
+    <rect x="-45" y="230" width="130" height="104" fill="url(#bldg)" stroke="#8d9ba3" stroke-width="1.4"/>
+    <rect x="-66.7" y="195.3" width="173.4" height="173.4" fill="none" stroke="#8b9ea8" stroke-width="1.1" stroke-dasharray="6 4"/>
+  </g>
+  <text x="52" y="404" class="fai" font-size="10">unit 2</text>
+  <text x="60" y="180" class="fai b" font-size="13">· · ·</text>
+
+  <!-- main plot -->
+  <rect x="150" y="152" width="260" height="260" fill="url(#ground)" stroke="#9fae8c" stroke-width="1.4" stroke-dasharray="7 5"/>
+  <text x="280" y="168" text-anchor="middle" class="mut b sc" font-size="10">SITE BOUNDARY · 30 × 30 m</text>
+
+  <!-- below-grade cavity, hidden-line convention -->
+  <rect x="193.3" y="195.3" width="173.4" height="173.4" fill="#e7edf0" stroke="#66808d" stroke-width="1.3" stroke-dasharray="7 4"/>
+  <text x="280" y="211" text-anchor="middle" fill="#66808d" font-size="10">CAVITY 20 × 20 m · 12 m deep</text>
+  <text x="280" y="225" text-anchor="middle" fill="#c07d10" font-size="10">warm air out — no plume, no steam</text>
+
+  <!-- RCCS air inlet louvres around the cavity perimeter -->
+  <g stroke="#1d76b8" stroke-width="2.4" opacity="0.85">
+    <line x1="205" y1="192" x2="205" y2="199"/><line x1="228" y1="192" x2="228" y2="199"/>
+    <line x1="251" y1="192" x2="251" y2="199"/><line x1="309" y1="192" x2="309" y2="199"/>
+    <line x1="332" y1="192" x2="332" y2="199"/><line x1="355" y1="192" x2="355" y2="199"/>
+    <line x1="205" y1="365" x2="205" y2="372"/><line x1="228" y1="365" x2="228" y2="372"/>
+    <line x1="251" y1="365" x2="251" y2="372"/><line x1="309" y1="365" x2="309" y2="372"/>
+    <line x1="332" y1="365" x2="332" y2="372"/><line x1="355" y1="365" x2="355" y2="372"/>
+    <line x1="190" y1="215" x2="197" y2="215"/><line x1="190" y1="240" x2="197" y2="240"/>
+    <line x1="190" y1="330" x2="197" y2="330"/><line x1="190" y1="350" x2="197" y2="350"/>
+    <line x1="363" y1="215" x2="370" y2="215"/><line x1="363" y1="240" x2="370" y2="240"/>
+    <line x1="363" y1="330" x2="370" y2="330"/><line x1="363" y1="350" x2="370" y2="350"/>
+  </g>
+  <text x="176" y="290" text-anchor="middle" fill="#1d76b8" font-size="10" transform="rotate(-90,176,290)">RCCS AIR INLETS</text>
+
+  <!-- service building -->
+  <rect x="215" y="230" width="130" height="104" fill="url(#bldg)" stroke="#5f7681" stroke-width="1.8"/>
+  <line x1="215" y1="230" x2="345" y2="230" stroke="#3d525c" stroke-width="2.4"/>
+  <rect x="296" y="238" width="44" height="17" rx="2" fill="#fbe9d6" stroke="#d98a2b" stroke-width="1.2"/>
+  <text x="318" y="250.5" text-anchor="middle" fill="#b06d18" font-size="10" class="b">RCCS</text>
+  <g fill="#e8853a"><polygon points="302,236 305.5,228 309,236"/><polygon points="314,236 317.5,228 321,236"/><polygon points="326,236 329.5,228 333,236"/></g>
+
+  <!-- vessels below, hidden -->
+  <circle cx="253" cy="278" r="23.8" fill="#dfe7eb" stroke="#5f7681" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <circle cx="253" cy="278" r="10" fill="#f6c250" opacity="0.6"/>
+  <circle cx="312" cy="278" r="10.8" fill="#dfe7eb" stroke="#5f7681" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <text x="280" y="320" text-anchor="middle" class="ink b" font-size="10">SERVICE BUILDING</text>
+  <text x="280" y="331" text-anchor="middle" class="mut" font-size="10">15 × 12 m · 8 m tall</text>
+
+  <!-- grid connection -->
+  <path d="M215,300 L178,300 L164,352" fill="none" stroke="#4a5a63" stroke-width="1.4"/>
+  <g stroke="#4a5a63" stroke-width="1.3" fill="none">
+    <path d="M158,376 L164,352 L170,376 M159.5,370 L168.5,370 M161,364 L167,364"/>
+  </g>
+  <text x="176" y="382" class="mut" font-size="10">HV grid</text>
+
+  <!-- scale bar -->
+  <g>
+    <line class="dim" x1="150" y1="428" x2="236.7" y2="428"/>
+    <line class="dim" x1="150" y1="423" x2="150" y2="433"/><line class="dim" x1="193.3" y1="424" x2="193.3" y2="432"/>
+    <line class="dim" x1="236.7" y1="423" x2="236.7" y2="433"/>
+    <rect x="150" y="425" width="43.3" height="6" fill="#12242e"/>
+    <text x="150" y="445" class="ink" font-size="10">0</text>
+    <text x="236.7" y="445" text-anchor="middle" class="ink b" font-size="10">10 m</text>
+  </g>
+  <text x="262" y="430" class="mut" font-size="10">No cooling towers · zero water</text>
+  <text x="262" y="444" class="mut" font-size="10">Scale by replication, not by size</text>
+
+  <rect x="193.3" y="195.3" width="173.4" height="173.4" class="loupe"/>
+</g>
+
+<!-- ==================================================================== -->
+<!-- STAGE 2 — UNIT                                                       -->
+<!-- ==================================================================== -->
+<g id="P2" clip-path="url(#cpP2)">
+  <rect x="510" y="82" width="420" height="52" class="phd" rx="9"/>
+  <rect x="510" y="120" width="420" height="14" class="phd"/>
+  <circle cx="536" cy="109" r="13" fill="#12242e"/>
+  <text x="536" y="113.5" text-anchor="middle" fill="#ffffff" font-size="13" class="b">2</text>
+  <text x="558" y="104" class="ink b sc" font-size="14.5">UNIT</text>
+  <text x="558" y="119" class="mut" font-size="10.5">One helium loop, six states, no water</text>
+  <rect x="826" y="96" width="90" height="7" rx="2" fill="url(#rampFull)"/>
+  <text x="916" y="115" text-anchor="end" class="mut" font-size="10">35 → 950 °C direct Brayton</text>
+  <text x="916" y="128" text-anchor="end" class="ink b" font-size="10">FIELD 20 m · ×1.5</text>
+  <line class="div" x1="524" y1="134" x2="916" y2="134"/>
+
+  <!-- earth -->
+  <rect x="528" y="250" width="284" height="158" fill="url(#earth)"/>
+  <!-- grade -->
+  <line x1="526" y1="250" x2="812" y2="250" stroke="#6d4c41" stroke-width="2.2" stroke-dasharray="12 4 3 4"/>
+  <polygon points="532,250 539,240 546,250" fill="#6d4c41"/>
+
+  <!-- pre-cast cavity -->
+  <rect x="556" y="250" width="9" height="144" fill="url(#concrete)" stroke="#7f8b90" stroke-width="1"/>
+  <rect x="787" y="250" width="9" height="144" fill="url(#concrete)" stroke="#7f8b90" stroke-width="1"/>
+  <rect x="556" y="385" width="240" height="9" fill="url(#concrete)" stroke="#7f8b90" stroke-width="1"/>
+  <rect x="565" y="250" width="222" height="135" fill="#fbfcfd"/>
+  <g stroke="#7f8b90" stroke-width="0.7" stroke-dasharray="2 2">
+    <line x1="556" y1="286" x2="565" y2="286"/><line x1="556" y1="322" x2="565" y2="322"/><line x1="556" y1="358" x2="565" y2="358"/>
+    <line x1="787" y1="286" x2="796" y2="286"/><line x1="787" y1="322" x2="796" y2="322"/><line x1="787" y1="358" x2="796" y2="358"/>
+  </g>
+  <text x="551" y="330" text-anchor="middle" fill="#7f8b90" font-size="10" transform="rotate(-90,551,330)">PRE-CAST RINGS</text>
+
+  <!-- above-grade building -->
+  <rect x="556" y="154" width="240" height="96" fill="url(#bldg)" stroke="#5f7681" stroke-width="1.8"/>
+  <line x1="556" y1="154" x2="796" y2="154" stroke="#3d525c" stroke-width="2.6"/>
+  <rect x="570" y="154" width="34" height="10" fill="#fbe9d6" stroke="#d98a2b" stroke-width="1"/>
+  <g fill="#e8853a"><polygon points="574,152 577.5,140 581,152"/><polygon points="586,152 589.5,140 593,152"/><polygon points="598,152 601.5,140 605,152"/></g>
+  <text x="614" y="150" fill="#b06d18" font-size="10">RCCS exhaust</text>
+  <text x="676" y="180" text-anchor="middle" class="mut" font-size="10">MAINTENANCE HALL · CRANE</text>
+  <text x="676" y="194" text-anchor="middle" class="mut" font-size="10">switchgear · He store · spent-fuel bay</text>
+  <text x="676" y="212" text-anchor="middle" class="fai" font-size="10">(no control room required)</text>
+
+  <!-- RCCS annular gap -->
+  <rect x="565" y="250" width="9" height="135" fill="#dceaf6"/>
+  <rect x="640" y="250" width="8" height="86" fill="#fbe2d6"/>
+  <g fill="#1d76b8"><polygon points="566.5,262 569.5,254 572.5,262"/><polygon points="566.5,292 569.5,284 572.5,292"/>
+    <polygon points="566.5,322 569.5,314 572.5,322"/><polygon points="566.5,352 569.5,344 572.5,352"/></g>
+  <g fill="#d94a1a"><polygon points="641.5,268 644,260 646.5,268"/><polygon points="641.5,296 644,288 646.5,296"/>
+    <polygon points="641.5,324 644,316 646.5,324"/></g>
+  <path d="M569,250 L569,214 L588,214 L588,164" fill="none" stroke="#d94a1a" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.65"/>
+
+  <!-- reactor vessel -->
+  <rect x="574" y="240" width="66" height="136" rx="9" fill="url(#vessel)" stroke="#2f4048" stroke-width="2.4"/>
+  <rect x="584" y="248" width="46" height="12" fill="#eaa81b" opacity="0.85"/>
+  <rect x="584" y="262" width="46" height="78" fill="url(#rampCoreV)" opacity="0.92"/>
+  <rect x="598" y="262" width="18" height="78" fill="#c3ced4" stroke="#93a3ab" stroke-width="0.8"/>
+  <rect x="584" y="344" width="46" height="14" fill="#d94a1a"/>
+  <g stroke="#12417f" stroke-width="1.5" fill="#12417f">
+    <rect x="601" y="228" width="3.5" height="34"/><rect x="606" y="228" width="3.5" height="34"/><rect x="611" y="228" width="3.5" height="34"/>
+  </g>
+  <g fill="#ffffff" opacity="0.9"><polygon points="588,300 591,308 594,300"/><polygon points="620,300 623,308 626,300"/></g>
+  <text x="607" y="304" text-anchor="middle" fill="#ffffff" font-size="10" class="b">CORE</text>
+  <text x="607" y="354" text-anchor="middle" fill="#ffffff" font-size="10">hot plenum</text>
+  <text x="607" y="371" text-anchor="middle" class="ink b" font-size="10">⌀5.5 m</text>
+  <path d="M636,352 L636,254" fill="none" stroke="#eaa81b" stroke-width="2.2" marker-end="url(#ahA)"/>
+
+  <!-- coaxial cross-vessel -->
+  <rect x="640" y="336" width="36" height="24" fill="#9dadb6" stroke="#4a5a63" stroke-width="1.4"/>
+  <rect x="642" y="344" width="32" height="8" fill="#d94a1a"/>
+  <path d="M646,348 L670,348" stroke="#ffffff" stroke-width="1.4" marker-end="url(#ahW)" opacity="0.9"/>
+  <path d="M670,340 L648,340" stroke="#eaa81b" stroke-width="1.8" marker-end="url(#ahA)"/>
+  <path d="M670,356 L648,356" stroke="#eaa81b" stroke-width="1.8" marker-end="url(#ahA)"/>
+  <text x="672" y="384" text-anchor="middle" class="mut" font-size="10">cross-vessel</text>
+
+  <!-- turbomachine -->
+  <rect x="676" y="288" width="30" height="72" rx="5" fill="url(#steel)" stroke="#2f4048" stroke-width="2"/>
+  <rect x="679" y="291" width="24" height="15" fill="#12417f"/>
+  <rect x="679" y="310" width="24" height="22" fill="#3f2a80"/>
+  <rect x="679" y="336" width="24" height="21" fill="#c33f16"/>
+  <text x="691" y="302" text-anchor="middle" fill="#ffffff" font-size="10" class="b">COMP</text>
+  <text x="691" y="325" text-anchor="middle" fill="#ffffff" font-size="10" class="b">GEN</text>
+  <text x="691" y="351" text-anchor="middle" fill="#ffffff" font-size="10" class="b">TURB</text>
+
+  <!-- recuperator and precooler -->
+  <rect x="710" y="310" width="56" height="30" rx="3" fill="#0c6b60" stroke="#064a42" stroke-width="1.4"/>
+  <g stroke="#5fbfb2" stroke-width="0.9" opacity="0.75">
+    <line x1="710" y1="316" x2="766" y2="316"/><line x1="710" y1="334" x2="766" y2="334"/>
+  </g>
+  <text x="738" y="325" text-anchor="middle" fill="#ffffff" font-size="10" class="b">RECUP</text>
+  <rect x="710" y="352" width="56" height="28" rx="3" fill="#1d76b8" stroke="#12417f" stroke-width="1.4"/>
+  <text x="738" y="365" text-anchor="middle" fill="#ffffff" font-size="10" class="b">PRECOOL</text>
+  <text x="738" y="376" text-anchor="middle" fill="#cfe6f6" font-size="10">air-cooled</text>
+
+  <!-- circuit legs; two schematic hops mark crossings, not junctions -->
+  <g fill="none" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M706,350 L736,350 A8,8 0 0,0 752,350 L778,350 L778,320 L766,320" stroke="#ef8b1f"/>
+    <path d="M706,300 L772,300 L772,330 L766,330" stroke="#1d76b8"/>
+    <path d="M766,366 L786,366 L786,290 L706,290" stroke="#12417f"/>
+    <path d="M744,340 L744,352" stroke="#1f8fae"/>
+    <path d="M744,310 L744,306 A11,11 0 0,1 744,284 L744,272 L652,272 L652,336" stroke="#eaa81b"/>
+  </g>
+  <!-- node markers -->
+  <g>
+    <circle cx="786" cy="352" r="7.5" fill="#12417f" stroke="#fff" stroke-width="1.2"/>
+    <text x="786" y="355.5" text-anchor="middle" fill="#fff" font-size="10" class="b">1</text>
+    <circle cx="772" cy="313" r="7.5" fill="#1d76b8" stroke="#fff" stroke-width="1.2"/>
+    <text x="772" y="316.5" text-anchor="middle" fill="#fff" font-size="10" class="b">2</text>
+    <circle cx="652" cy="300" r="7.5" fill="#eaa81b" stroke="#fff" stroke-width="1.2"/>
+    <text x="652" y="303.5" text-anchor="middle" fill="#fff" font-size="10" class="b">3</text>
+    <circle cx="660" cy="348" r="7.5" fill="#d94a1a" stroke="#fff" stroke-width="1.2"/>
+    <text x="660" y="351.5" text-anchor="middle" fill="#fff" font-size="10" class="b">4</text>
+    <circle cx="778" cy="336" r="7.5" fill="#ef8b1f" stroke="#fff" stroke-width="1.2"/>
+    <text x="778" y="339.5" text-anchor="middle" fill="#fff" font-size="10" class="b">5</text>
+    <circle cx="744" cy="346" r="7.5" fill="#1f8fae" stroke="#fff" stroke-width="1.2"/>
+    <text x="744" y="349.5" text-anchor="middle" fill="#fff" font-size="10" class="b">6</text>
+  </g>
+
+  <!-- datums -->
+  <g stroke="#b0bec5" stroke-width="0.9">
+    <line x1="540" y1="154" x2="554" y2="154"/><line x1="540" y1="250" x2="554" y2="250"/><line x1="540" y1="394" x2="554" y2="394"/>
+  </g>
+  <g class="fai" font-size="10" text-anchor="end">
+    <text x="538" y="157.5">+8</text><text x="538" y="253.5">0</text><text x="538" y="397.5">−12</text>
+  </g>
+
+  <!-- scale + note -->
+  <line class="dim" x1="556" y1="412" x2="616" y2="412"/>
+  <line class="dim" x1="556" y1="407" x2="556" y2="417"/><line class="dim" x1="616" y1="407" x2="616" y2="417"/>
+  <rect x="556" y="409" width="30" height="6" fill="#12242e"/>
+  <text x="622" y="416" class="ink b" font-size="10">5 m</text>
+  <text x="556" y="436" class="mut" font-size="10">20 m of chimney height comes free with the</text>
+  <text x="556" y="449" class="mut" font-size="10">excavation — natural draught, no fan, no valve.</text>
+
+  <!-- legend column -->
+  <text x="816" y="162" class="ink b sc" font-size="10">BRAYTON LOOP</text>
+  <text x="816" y="175" class="mut" font-size="10">direct helium · 4 MPa</text>
+  <g>
+    <circle cx="823" cy="196" r="7.5" fill="#12417f"/><text x="823" y="199.5" text-anchor="middle" fill="#fff" font-size="10" class="b">1</text>
+    <text x="837" y="200" class="ink b" font-size="11">35 °C</text><text x="816" y="213" class="mut" font-size="10">compressor in</text>
+    <circle cx="823" cy="236" r="7.5" fill="#1d76b8"/><text x="823" y="239.5" text-anchor="middle" fill="#fff" font-size="10" class="b">2</text>
+    <text x="837" y="240" class="ink b" font-size="11">195 °C</text><text x="816" y="253" class="mut" font-size="10">recup. cold in</text>
+    <circle cx="823" cy="276" r="7.5" fill="#eaa81b"/><text x="823" y="279.5" text-anchor="middle" fill="#fff" font-size="10" class="b">3</text>
+    <text x="837" y="280" class="ink b" font-size="11">580 °C</text><text x="816" y="293" class="mut" font-size="10">core inlet</text>
+    <circle cx="823" cy="316" r="7.5" fill="#d94a1a"/><text x="823" y="319.5" text-anchor="middle" fill="#fff" font-size="10" class="b">4</text>
+    <text x="837" y="320" class="ink b" font-size="11">950 °C</text><text x="816" y="333" class="mut" font-size="10">turbine inlet</text>
+    <circle cx="823" cy="356" r="7.5" fill="#ef8b1f"/><text x="823" y="359.5" text-anchor="middle" fill="#fff" font-size="10" class="b">5</text>
+    <text x="837" y="360" class="ink b" font-size="11">600 °C</text><text x="816" y="373" class="mut" font-size="10">recup. hot in</text>
+    <circle cx="823" cy="396" r="7.5" fill="#1f8fae"/><text x="823" y="399.5" text-anchor="middle" fill="#fff" font-size="10" class="b">6</text>
+    <text x="837" y="400" class="ink b" font-size="11">215 °C</text><text x="816" y="413" class="mut" font-size="10">precooler in</text>
+  </g>
+  <line class="div" x1="816" y1="424" x2="912" y2="424"/>
+  <text x="816" y="439" class="ink b" font-size="10">core ΔT  370 °C</text>
+  <text x="816" y="452" class="ink b" font-size="10">ṁ  52–78 kg/s</text>
+
+  <rect x="568" y="238" width="78" height="140" rx="10" fill="none" stroke="#d98a2b" stroke-width="1.7"/>
+</g>
+<!-- ==================================================================== -->
+<!-- STAGE 3 — CORE                                                       -->
+<!-- ==================================================================== -->
+<g id="P3" clip-path="url(#cpP3)">
+  <rect x="996" y="82" width="420" height="52" class="phd" rx="9"/>
+  <rect x="996" y="120" width="420" height="14" class="phd"/>
+  <circle cx="1022" cy="109" r="13" fill="#12242e"/>
+  <text x="1022" y="113.5" text-anchor="middle" fill="#ffffff" font-size="13" class="b">3</text>
+  <text x="1044" y="104" class="ink b sc" font-size="14.5">CORE</text>
+  <text x="1044" y="119" class="mut" font-size="10.5">Annular prismatic · 102 fuel columns</text>
+  <rect x="1312" y="96" width="90" height="7" rx="2" fill="url(#rampCore)"/>
+  <text x="1402" y="115" text-anchor="end" class="mut" font-size="10">580 → 950 °C over 3.0–4.6 m</text>
+  <text x="1402" y="128" text-anchor="end" class="ink b" font-size="10">FIELD 6 m · ×3.3</text>
+  <line class="div" x1="1010" y1="134" x2="1402" y2="134"/>
+
+  <!-- ==== plan view, 36.36 px per metre, centre 1126,258 ==== -->
+  <circle cx="1126" cy="258" r="112" fill="#dceaf6"/>
+  <circle cx="1126" cy="258" r="100" fill="#6b7f89"/>
+  <circle cx="1126" cy="258" r="96" fill="#f3f6f8"/>
+  <circle cx="1126" cy="258" r="83.6" fill="url(#graphite)" stroke="#7e8f97" stroke-width="1"/>
+  <circle cx="1126" cy="258" r="65.5" fill="#fdf3e0" stroke="#b08a3c" stroke-width="1"/>
+  <!-- RCCS riser arrows in the annular gap -->
+  <g fill="#d94a1a" opacity="0.9">
+    <polygon points="1126,140 1122,150 1130,150"/><polygon points="1050,170 1048,181 1056,177"/>
+    <polygon points="1015,250 1025,246 1025,254"/><polygon points="1050,346 1048,335 1056,339"/>
+    <polygon points="1126,376 1122,366 1130,366"/><polygon points="1202,346 1204,335 1196,339"/>
+    <polygon points="1237,250 1227,246 1227,254"/><polygon points="1202,170 1204,181 1196,177"/>
+  </g>
+  <!-- fuel block lattice, clipped to the annulus -->
+  <g clip-path="url(#cpAnn)"><g transform="translate(0,6)">
+<path class="fb2" d="M1119.5,187.8 1112.9,191.5 1106.4,187.8 1106.4,180.2 1112.9,176.4 1119.5,180.2Z"/>
+<path class="fb2" d="M1132.5,187.8 1126.0,191.5 1119.5,187.8 1119.5,180.2 1126.0,176.4 1132.5,180.2Z"/>
+<path class="fb2" d="M1145.6,187.8 1139.1,191.5 1132.5,187.8 1132.5,180.2 1139.1,176.4 1145.6,180.2Z"/>
+<path class="fb2" d="M1099.8,199.1 1093.3,202.9 1086.7,199.1 1086.7,191.5 1093.3,187.8 1099.8,191.5Z"/>
+<path class="fb2" d="M1112.9,199.1 1106.4,202.9 1099.8,199.1 1099.8,191.5 1106.4,187.8 1112.9,191.5Z"/>
+<path class="fb2" d="M1126.0,199.1 1119.5,202.9 1112.9,199.1 1112.9,191.5 1119.5,187.8 1126.0,191.5Z"/>
+<path class="fb2" d="M1139.1,199.1 1132.5,202.9 1126.0,199.1 1126.0,191.5 1132.5,187.8 1139.1,191.5Z"/>
+<path class="fb2" d="M1152.2,199.1 1145.6,202.9 1139.1,199.1 1139.1,191.5 1145.6,187.8 1152.2,191.5Z"/>
+<path class="fb2" d="M1165.3,199.1 1158.7,202.9 1152.2,199.1 1152.2,191.5 1158.7,187.8 1165.3,191.5Z"/>
+<path class="fb2" d="M1080.2,210.4 1073.6,214.2 1067.1,210.4 1067.1,202.9 1073.6,199.1 1080.2,202.9Z"/>
+<path class="fb2" d="M1093.3,210.4 1086.7,214.2 1080.2,210.4 1080.2,202.9 1086.7,199.1 1093.3,202.9Z"/>
+<path class="fb1" d="M1106.4,210.4 1099.8,214.2 1093.3,210.4 1093.3,202.9 1099.8,199.1 1106.4,202.9Z"/>
+<path class="fb1" d="M1119.5,210.4 1112.9,214.2 1106.4,210.4 1106.4,202.9 1112.9,199.1 1119.5,202.9Z"/>
+<path class="fb1" d="M1132.5,210.4 1126.0,214.2 1119.5,210.4 1119.5,202.9 1126.0,199.1 1132.5,202.9Z"/>
+<path class="fb1" d="M1145.6,210.4 1139.1,214.2 1132.5,210.4 1132.5,202.9 1139.1,199.1 1145.6,202.9Z"/>
+<path class="fb1" d="M1158.7,210.4 1152.2,214.2 1145.6,210.4 1145.6,202.9 1152.2,199.1 1158.7,202.9Z"/>
+<path class="fb2" d="M1171.8,210.4 1165.3,214.2 1158.7,210.4 1158.7,202.9 1165.3,199.1 1171.8,202.9Z"/>
+<path class="fb2" d="M1184.9,210.4 1178.4,214.2 1171.8,210.4 1171.8,202.9 1178.4,199.1 1184.9,202.9Z"/>
+<path class="fb2" d="M1073.6,221.8 1067.1,225.5 1060.6,221.8 1060.6,214.2 1067.1,210.4 1073.6,214.2Z"/>
+<path class="fb2" d="M1086.7,221.8 1080.2,225.5 1073.6,221.8 1073.6,214.2 1080.2,210.4 1086.7,214.2Z"/>
+<path class="fb1" d="M1099.8,221.8 1093.3,225.5 1086.7,221.8 1086.7,214.2 1093.3,210.4 1099.8,214.2Z"/>
+<path class="fb0" d="M1112.9,221.8 1106.4,225.5 1099.8,221.8 1099.8,214.2 1106.4,210.4 1112.9,214.2Z"/>
+<path class="fb0" d="M1126.0,221.8 1119.5,225.5 1112.9,221.8 1112.9,214.2 1119.5,210.4 1126.0,214.2Z"/>
+<path class="fb0" d="M1139.1,221.8 1132.5,225.5 1126.0,221.8 1126.0,214.2 1132.5,210.4 1139.1,214.2Z"/>
+<path class="fb0" d="M1152.2,221.8 1145.6,225.5 1139.1,221.8 1139.1,214.2 1145.6,210.4 1152.2,214.2Z"/>
+<path class="fb1" d="M1165.3,221.8 1158.7,225.5 1152.2,221.8 1152.2,214.2 1158.7,210.4 1165.3,214.2Z"/>
+<path class="fb2" d="M1178.4,221.8 1171.8,225.5 1165.3,221.8 1165.3,214.2 1171.8,210.4 1178.4,214.2Z"/>
+<path class="fb2" d="M1191.4,221.8 1184.9,225.5 1178.4,221.8 1178.4,214.2 1184.9,210.4 1191.4,214.2Z"/>
+<path class="fb2" d="M1067.1,233.1 1060.6,236.9 1054.0,233.1 1054.0,225.5 1060.6,221.8 1067.1,225.5Z"/>
+<path class="fb2" d="M1080.2,233.1 1073.6,236.9 1067.1,233.1 1067.1,225.5 1073.6,221.8 1080.2,225.5Z"/>
+<path class="fb1" d="M1093.3,233.1 1086.7,236.9 1080.2,233.1 1080.2,225.5 1086.7,221.8 1093.3,225.5Z"/>
+<path class="fb0" d="M1106.4,233.1 1099.8,236.9 1093.3,233.1 1093.3,225.5 1099.8,221.8 1106.4,225.5Z"/>
+<path class="fb0" d="M1119.5,233.1 1112.9,236.9 1106.4,233.1 1106.4,225.5 1112.9,221.8 1119.5,225.5Z"/>
+<path class="fb0" d="M1132.5,233.1 1126.0,236.9 1119.5,233.1 1119.5,225.5 1126.0,221.8 1132.5,225.5Z"/>
+<path class="fb0" d="M1145.6,233.1 1139.1,236.9 1132.5,233.1 1132.5,225.5 1139.1,221.8 1145.6,225.5Z"/>
+<path class="fb0" d="M1158.7,233.1 1152.2,236.9 1145.6,233.1 1145.6,225.5 1152.2,221.8 1158.7,225.5Z"/>
+<path class="fb1" d="M1171.8,233.1 1165.3,236.9 1158.7,233.1 1158.7,225.5 1165.3,221.8 1171.8,225.5Z"/>
+<path class="fb2" d="M1184.9,233.1 1178.4,236.9 1171.8,233.1 1171.8,225.5 1178.4,221.8 1184.9,225.5Z"/>
+<path class="fb2" d="M1198.0,233.1 1191.4,236.9 1184.9,233.1 1184.9,225.5 1191.4,221.8 1198.0,225.5Z"/>
+<path class="fb2" d="M1073.6,244.4 1067.1,248.2 1060.6,244.4 1060.6,236.9 1067.1,233.1 1073.6,236.9Z"/>
+<path class="fb1" d="M1086.7,244.4 1080.2,248.2 1073.6,244.4 1073.6,236.9 1080.2,233.1 1086.7,236.9Z"/>
+<path class="fb0" d="M1099.8,244.4 1093.3,248.2 1086.7,244.4 1086.7,236.9 1093.3,233.1 1099.8,236.9Z"/>
+<path class="fb0" d="M1112.9,244.4 1106.4,248.2 1099.8,244.4 1099.8,236.9 1106.4,233.1 1112.9,236.9Z"/>
+<path class="fb0" d="M1152.2,244.4 1145.6,248.2 1139.1,244.4 1139.1,236.9 1145.6,233.1 1152.2,236.9Z"/>
+<path class="fb0" d="M1165.3,244.4 1158.7,248.2 1152.2,244.4 1152.2,236.9 1158.7,233.1 1165.3,236.9Z"/>
+<path class="fb1" d="M1178.4,244.4 1171.8,248.2 1165.3,244.4 1165.3,236.9 1171.8,233.1 1178.4,236.9Z"/>
+<path class="fb2" d="M1191.4,244.4 1184.9,248.2 1178.4,244.4 1178.4,236.9 1184.9,233.1 1191.4,236.9Z"/>
+<path class="fb2" d="M1067.1,255.8 1060.6,259.6 1054.0,255.8 1054.0,248.2 1060.6,244.4 1067.1,248.2Z"/>
+<path class="fb1" d="M1080.2,255.8 1073.6,259.6 1067.1,255.8 1067.1,248.2 1073.6,244.4 1080.2,248.2Z"/>
+<path class="fb0" d="M1093.3,255.8 1086.7,259.6 1080.2,255.8 1080.2,248.2 1086.7,244.4 1093.3,248.2Z"/>
+<path class="fb0" d="M1106.4,255.8 1099.8,259.6 1093.3,255.8 1093.3,248.2 1099.8,244.4 1106.4,248.2Z"/>
+<path class="fb0" d="M1158.7,255.8 1152.2,259.6 1145.6,255.8 1145.6,248.2 1152.2,244.4 1158.7,248.2Z"/>
+<path class="fb0" d="M1171.8,255.8 1165.3,259.6 1158.7,255.8 1158.7,248.2 1165.3,244.4 1171.8,248.2Z"/>
+<path class="fb1" d="M1184.9,255.8 1178.4,259.6 1171.8,255.8 1171.8,248.2 1178.4,244.4 1184.9,248.2Z"/>
+<path class="fb2" d="M1198.0,255.8 1191.4,259.6 1184.9,255.8 1184.9,248.2 1191.4,244.4 1198.0,248.2Z"/>
+<path class="fb2" d="M1073.6,267.1 1067.1,270.9 1060.6,267.1 1060.6,259.6 1067.1,255.8 1073.6,259.6Z"/>
+<path class="fb1" d="M1086.7,267.1 1080.2,270.9 1073.6,267.1 1073.6,259.6 1080.2,255.8 1086.7,259.6Z"/>
+<path class="fb0" d="M1099.8,267.1 1093.3,270.9 1086.7,267.1 1086.7,259.6 1093.3,255.8 1099.8,259.6Z"/>
+<path class="fb0" d="M1112.9,267.1 1106.4,270.9 1099.8,267.1 1099.8,259.6 1106.4,255.8 1112.9,259.6Z"/>
+<path class="fb0" d="M1152.2,267.1 1145.6,270.9 1139.1,267.1 1139.1,259.6 1145.6,255.8 1152.2,259.6Z"/>
+<path class="fb0" d="M1165.3,267.1 1158.7,270.9 1152.2,267.1 1152.2,259.6 1158.7,255.8 1165.3,259.6Z"/>
+<path class="fb1" d="M1178.4,267.1 1171.8,270.9 1165.3,267.1 1165.3,259.6 1171.8,255.8 1178.4,259.6Z"/>
+<path class="fb2" d="M1191.4,267.1 1184.9,270.9 1178.4,267.1 1178.4,259.6 1184.9,255.8 1191.4,259.6Z"/>
+<path class="fb2" d="M1067.1,278.5 1060.6,282.2 1054.0,278.5 1054.0,270.9 1060.6,267.1 1067.1,270.9Z"/>
+<path class="fb2" d="M1080.2,278.5 1073.6,282.2 1067.1,278.5 1067.1,270.9 1073.6,267.1 1080.2,270.9Z"/>
+<path class="fb1" d="M1093.3,278.5 1086.7,282.2 1080.2,278.5 1080.2,270.9 1086.7,267.1 1093.3,270.9Z"/>
+<path class="fb0" d="M1106.4,278.5 1099.8,282.2 1093.3,278.5 1093.3,270.9 1099.8,267.1 1106.4,270.9Z"/>
+<path class="fb0" d="M1119.5,278.5 1112.9,282.2 1106.4,278.5 1106.4,270.9 1112.9,267.1 1119.5,270.9Z"/>
+<path class="fb0" d="M1132.5,278.5 1126.0,282.2 1119.5,278.5 1119.5,270.9 1126.0,267.1 1132.5,270.9Z"/>
+<path class="fb0" d="M1145.6,278.5 1139.1,282.2 1132.5,278.5 1132.5,270.9 1139.1,267.1 1145.6,270.9Z"/>
+<path class="fb0" d="M1158.7,278.5 1152.2,282.2 1145.6,278.5 1145.6,270.9 1152.2,267.1 1158.7,270.9Z"/>
+<path class="fb1" d="M1171.8,278.5 1165.3,282.2 1158.7,278.5 1158.7,270.9 1165.3,267.1 1171.8,270.9Z"/>
+<path class="fb2" d="M1184.9,278.5 1178.4,282.2 1171.8,278.5 1171.8,270.9 1178.4,267.1 1184.9,270.9Z"/>
+<path class="fb2" d="M1198.0,278.5 1191.4,282.2 1184.9,278.5 1184.9,270.9 1191.4,267.1 1198.0,270.9Z"/>
+<path class="fb2" d="M1073.6,289.8 1067.1,293.6 1060.6,289.8 1060.6,282.2 1067.1,278.5 1073.6,282.2Z"/>
+<path class="fb2" d="M1086.7,289.8 1080.2,293.6 1073.6,289.8 1073.6,282.2 1080.2,278.5 1086.7,282.2Z"/>
+<path class="fb1" d="M1099.8,289.8 1093.3,293.6 1086.7,289.8 1086.7,282.2 1093.3,278.5 1099.8,282.2Z"/>
+<path class="fb0" d="M1112.9,289.8 1106.4,293.6 1099.8,289.8 1099.8,282.2 1106.4,278.5 1112.9,282.2Z"/>
+<path class="fb0" d="M1126.0,289.8 1119.5,293.6 1112.9,289.8 1112.9,282.2 1119.5,278.5 1126.0,282.2Z"/>
+<path class="fb0" d="M1139.1,289.8 1132.5,293.6 1126.0,289.8 1126.0,282.2 1132.5,278.5 1139.1,282.2Z"/>
+<path class="fb0" d="M1152.2,289.8 1145.6,293.6 1139.1,289.8 1139.1,282.2 1145.6,278.5 1152.2,282.2Z"/>
+<path class="fb1" d="M1165.3,289.8 1158.7,293.6 1152.2,289.8 1152.2,282.2 1158.7,278.5 1165.3,282.2Z"/>
+<path class="fb2" d="M1178.4,289.8 1171.8,293.6 1165.3,289.8 1165.3,282.2 1171.8,278.5 1178.4,282.2Z"/>
+<path class="fb2" d="M1191.4,289.8 1184.9,293.6 1178.4,289.8 1178.4,282.2 1184.9,278.5 1191.4,282.2Z"/>
+<path class="fb2" d="M1080.2,301.1 1073.6,304.9 1067.1,301.1 1067.1,293.6 1073.6,289.8 1080.2,293.6Z"/>
+<path class="fb2" d="M1093.3,301.1 1086.7,304.9 1080.2,301.1 1080.2,293.6 1086.7,289.8 1093.3,293.6Z"/>
+<path class="fb1" d="M1106.4,301.1 1099.8,304.9 1093.3,301.1 1093.3,293.6 1099.8,289.8 1106.4,293.6Z"/>
+<path class="fb1" d="M1119.5,301.1 1112.9,304.9 1106.4,301.1 1106.4,293.6 1112.9,289.8 1119.5,293.6Z"/>
+<path class="fb1" d="M1132.5,301.1 1126.0,304.9 1119.5,301.1 1119.5,293.6 1126.0,289.8 1132.5,293.6Z"/>
+<path class="fb1" d="M1145.6,301.1 1139.1,304.9 1132.5,301.1 1132.5,293.6 1139.1,289.8 1145.6,293.6Z"/>
+<path class="fb1" d="M1158.7,301.1 1152.2,304.9 1145.6,301.1 1145.6,293.6 1152.2,289.8 1158.7,293.6Z"/>
+<path class="fb2" d="M1171.8,301.1 1165.3,304.9 1158.7,301.1 1158.7,293.6 1165.3,289.8 1171.8,293.6Z"/>
+<path class="fb2" d="M1184.9,301.1 1178.4,304.9 1171.8,301.1 1171.8,293.6 1178.4,289.8 1184.9,293.6Z"/>
+<path class="fb2" d="M1099.8,312.5 1093.3,316.2 1086.7,312.5 1086.7,304.9 1093.3,301.1 1099.8,304.9Z"/>
+<path class="fb2" d="M1112.9,312.5 1106.4,316.2 1099.8,312.5 1099.8,304.9 1106.4,301.1 1112.9,304.9Z"/>
+<path class="fb2" d="M1126.0,312.5 1119.5,316.2 1112.9,312.5 1112.9,304.9 1119.5,301.1 1126.0,304.9Z"/>
+<path class="fb2" d="M1139.1,312.5 1132.5,316.2 1126.0,312.5 1126.0,304.9 1132.5,301.1 1139.1,304.9Z"/>
+<path class="fb2" d="M1152.2,312.5 1145.6,316.2 1139.1,312.5 1139.1,304.9 1145.6,301.1 1152.2,304.9Z"/>
+<path class="fb2" d="M1165.3,312.5 1158.7,316.2 1152.2,312.5 1152.2,304.9 1158.7,301.1 1165.3,304.9Z"/>
+<path class="fb2" d="M1119.5,323.8 1112.9,327.6 1106.4,323.8 1106.4,316.2 1112.9,312.5 1119.5,316.2Z"/>
+<path class="fb2" d="M1132.5,323.8 1126.0,327.6 1119.5,323.8 1119.5,316.2 1126.0,312.5 1132.5,316.2Z"/>
+<path class="fb2" d="M1145.6,323.8 1139.1,327.6 1132.5,323.8 1132.5,316.2 1139.1,312.5 1145.6,316.2Z"/>
+  </g></g>
+  <!-- reflector detail -->
+  <g fill="#f3f6f8" stroke="#7e8f97" stroke-width="0.9">
+    <circle cx="1126" cy="239" r="3.6"/><circle cx="1142.5" cy="248.5" r="3.6"/><circle cx="1142.5" cy="267.5" r="3.6"/>
+    <circle cx="1126" cy="277" r="3.6"/><circle cx="1109.5" cy="267.5" r="3.6"/><circle cx="1109.5" cy="248.5" r="3.6"/>
+  </g>
+  <g fill="#2f4048" opacity="0.55">
+    <circle cx="1126" cy="184" r="2.6"/><circle cx="1163" cy="194" r="2.6"/><circle cx="1190" cy="221" r="2.6"/>
+    <circle cx="1200" cy="258" r="2.6"/><circle cx="1190" cy="295" r="2.6"/><circle cx="1163" cy="322" r="2.6"/>
+    <circle cx="1126" cy="332" r="2.6"/><circle cx="1089" cy="322" r="2.6"/><circle cx="1062" cy="295" r="2.6"/>
+    <circle cx="1052" cy="258" r="2.6"/><circle cx="1062" cy="221" r="2.6"/><circle cx="1089" cy="194" r="2.6"/>
+  </g>
+  <circle cx="1126" cy="258" r="100" fill="none" stroke="#2f4048" stroke-width="2.6"/>
+  <circle cx="1126" cy="258" r="112" fill="none" stroke="#8fb3cc" stroke-width="1.2" stroke-dasharray="4 3"/>
+
+  <path class="lead" d="M1085,156 L1105,200 L1114,241"/>
+  <circle cx="1114" cy="241" r="2.2" fill="#9db1bb"/>
+  <text x="1014" y="152" class="ink b" font-size="10">CTRL RODS ×6</text>
+  <text x="1245" y="300" fill="#1d76b8" font-size="10" transform="rotate(-90,1245,300)">RCCS AIR GAP</text>
+
+  <!-- ==== radial profile bar, 82 px per metre ==== -->
+  <text x="1014" y="381" class="mut b sc" font-size="10">RADIUS →</text>
+  <rect x="1014" y="386" width="65.6" height="16" fill="url(#graphite)" stroke="#7e8f97" stroke-width="0.9"/>
+  <rect x="1079.6" y="386" width="82" height="16" fill="url(#rampCore)" stroke="#a8501e" stroke-width="0.9"/>
+  <rect x="1161.6" y="386" width="41" height="16" fill="url(#graphite)" stroke="#7e8f97" stroke-width="0.9"/>
+  <rect x="1202.6" y="386" width="36.9" height="16" fill="#8fa3ad" stroke="#4a5a63" stroke-width="0.9"/>
+  <g class="ink" font-size="10" text-anchor="middle">
+    <text x="1046" y="397.5">inner refl.</text>
+    <text x="1120" y="397.5" fill="#ffffff" class="b">FUEL 8.2 m²</text>
+    <text x="1182" y="397.5">outer</text>
+    <text x="1221" y="397.5" fill="#ffffff">vessel</text>
+  </g>
+  <g stroke="#12242e" stroke-width="0.9">
+    <line x1="1079.6" y1="402" x2="1079.6" y2="407"/><line x1="1161.6" y1="402" x2="1161.6" y2="407"/>
+    <line x1="1202.6" y1="402" x2="1202.6" y2="407"/><line x1="1239.5" y1="402" x2="1239.5" y2="407"/>
+  </g>
+  <g class="mut" font-size="10" text-anchor="middle">
+    <text x="1079.6" y="417">0.8</text><text x="1161.6" y="417">1.8</text>
+    <text x="1202.6" y="417">2.3</text><text x="1239.5" y="417">2.75 m</text>
+  </g>
+  <text x="1014" y="437" class="mut" font-size="10">Graphite thermal flywheel: 150–250 t, 3.6 × 10⁸ J/°C —</text>
+  <text x="1014" y="450" class="mut" font-size="10">6.5 MW of decay heat raises it just 100 °C in 1.5 hours.</text>
+
+  <!-- ==== elevation, 20 px per metre ==== -->
+  <text x="1331" y="150" text-anchor="middle" class="mut b sc" font-size="10">ELEVATION</text>
+  <rect x="1276" y="155" width="110" height="220" rx="10" fill="url(#vessel)" stroke="#2f4048" stroke-width="2.2"/>
+  <rect x="1286" y="176" width="90" height="16" fill="#eaa81b"/>
+  <rect x="1286" y="192" width="90" height="18" fill="url(#graphite)"/>
+  <rect x="1286" y="210" width="90" height="80" fill="url(#rampCoreV)"/>
+  <rect x="1286" y="290" width="90" height="18" fill="url(#graphite)"/>
+  <rect x="1286" y="308" width="90" height="18" fill="#d94a1a"/>
+  <rect x="1286" y="326" width="90" height="40" fill="#c3ced4" opacity="0.6"/>
+  <g stroke="#ffffff" stroke-width="1.8" opacity="0.85" marker-end="url(#ahW)" fill="none">
+    <path d="M1300,216 L1300,282"/><path d="M1331,216 L1331,282"/><path d="M1362,216 L1362,282"/>
+  </g>
+  <g text-anchor="middle" font-size="10">
+    <text x="1331" y="188" fill="#5c3f04">top plenum · 580 °C</text>
+    <text x="1331" y="205" class="mut">top reflector</text>
+    <text x="1331" y="255" fill="#ffffff" class="b">ACTIVE CORE</text>
+    <text x="1331" y="303" class="mut">bottom reflector</text>
+    <text x="1331" y="321" fill="#ffffff">hot plenum · 950 °C</text>
+    <text x="1331" y="345" class="mut">core support · outlet</text>
+  </g>
+  <g class="dim">
+    <line x1="1266" y1="210" x2="1266" y2="290"/>
+    <line x1="1261" y1="210" x2="1271" y2="210"/><line x1="1261" y1="290" x2="1271" y2="290"/>
+  </g>
+  <text x="1258" y="250" text-anchor="middle" class="ink b" font-size="10" transform="rotate(-90,1258,250)">3.0–4.6 m</text>
+  <text x="1331" y="389" text-anchor="middle" class="mut" font-size="10">top-down flow · cool head</text>
+
+  <!-- loupe on one fuel block -->
+  <rect x="1114" y="291.4" width="24" height="24" class="loupe"/>
+  <path d="M1132.55,307.18 1126,310.96 1119.45,307.18 1119.45,299.62 1126,295.84 1132.55,299.62Z" fill="none" stroke="#ffffff" stroke-width="1.6"/>
+</g>
+<!-- ==================================================================== -->
+<!-- STAGE 4 — FUEL BLOCK / TPMS GYROID                                   -->
+<!-- ==================================================================== -->
+<g id="P4" clip-path="url(#cpP4)">
+  <rect x="856" y="540" width="560" height="52" class="phd" rx="9"/>
+  <rect x="856" y="578" width="560" height="14" class="phd"/>
+  <circle cx="882" cy="567" r="13" fill="#12242e"/>
+  <text x="882" y="571.5" text-anchor="middle" fill="#ffffff" font-size="13" class="b">4</text>
+  <text x="904" y="562" class="ink b sc" font-size="14.5">FUEL BLOCK</text>
+  <text x="904" y="577" class="mut" font-size="10.5">The manufacturing bet: a printed gyroid, not a drilled hole</text>
+  <rect x="1312" y="554" width="90" height="7" rx="2" fill="url(#rampCore)"/>
+  <text x="1402" y="573" text-anchor="end" class="mut" font-size="10">580 → 950 °C · wall ΔT ≈ 60 °C</text>
+  <text x="1402" y="586" text-anchor="end" class="ink b" font-size="10">FIELD 0.42 m · ×14</text>
+  <line class="div" x1="870" y1="592" x2="1402" y2="592"/>
+
+  <!-- ==== plan section of the hexagonal block, 3.05 mm per px ==== -->
+  <text x="960" y="608" text-anchor="middle" class="mut b sc" font-size="10">PLAN SECTION</text>
+  <g clip-path="url(#cpHexBlkP)">
+    <rect x="890" y="611" width="140" height="122" fill="url(#gyfine)"/>
+  </g>
+  <path d="M891.85,672 L925.93,613 L994.07,613 L1028.15,672 L994.07,731 L925.93,731 Z"
+        fill="none" stroke="#33454e" stroke-width="2"/>
+  <g class="dim">
+    <line x1="880" y1="613" x2="880" y2="731"/>
+    <line x1="875" y1="613" x2="885" y2="613"/><line x1="875" y1="731" x2="885" y2="731"/>
+  </g>
+  <text x="871" y="672" text-anchor="middle" class="ink b" font-size="10" transform="rotate(-90,871,672)">360 mm A/F</text>
+  <text x="960" y="744" text-anchor="middle" class="mut" font-size="10">≈ 20 gyroid unit cells across the block</text>
+
+  <!-- ==== elevation of the prism ==== -->
+  <text x="960" y="761" text-anchor="middle" class="mut b sc" font-size="10">ELEVATION</text>
+  <g clip-path="url(#cpPrism)">
+    <rect x="891.85" y="762" width="136.3" height="260" fill="url(#gyfine)"/>
+    <rect x="891.85" y="762" width="136.3" height="260" fill="url(#rampCoreV)" opacity="0.42"/>
+    <g fill="#2b3941" opacity="0.85">
+      <rect x="903" y="800" width="4.2" height="14"/><rect x="903" y="816" width="4.2" height="14"/>
+      <rect x="903" y="832" width="4.2" height="14"/><rect x="903" y="848" width="4.2" height="14"/>
+      <rect x="903" y="864" width="4.2" height="14"/><rect x="903" y="880" width="4.2" height="14"/>
+      <rect x="903" y="896" width="4.2" height="14"/><rect x="903" y="912" width="4.2" height="14"/>
+      <rect x="903" y="928" width="4.2" height="14"/><rect x="903" y="944" width="4.2" height="14"/>
+      <rect x="903" y="960" width="4.2" height="14"/><rect x="903" y="976" width="4.2" height="14"/>
+      <rect x="933" y="800" width="4.2" height="14"/><rect x="933" y="816" width="4.2" height="14"/>
+      <rect x="933" y="832" width="4.2" height="14"/><rect x="933" y="848" width="4.2" height="14"/>
+      <rect x="933" y="864" width="4.2" height="14"/><rect x="933" y="880" width="4.2" height="14"/>
+      <rect x="933" y="896" width="4.2" height="14"/><rect x="933" y="912" width="4.2" height="14"/>
+      <rect x="933" y="928" width="4.2" height="14"/><rect x="933" y="944" width="4.2" height="14"/>
+      <rect x="933" y="960" width="4.2" height="14"/><rect x="933" y="976" width="4.2" height="14"/>
+      <rect x="985" y="800" width="4.2" height="14"/><rect x="985" y="816" width="4.2" height="14"/>
+      <rect x="985" y="832" width="4.2" height="14"/><rect x="985" y="848" width="4.2" height="14"/>
+      <rect x="985" y="864" width="4.2" height="14"/><rect x="985" y="880" width="4.2" height="14"/>
+      <rect x="985" y="896" width="4.2" height="14"/><rect x="985" y="912" width="4.2" height="14"/>
+      <rect x="985" y="928" width="4.2" height="14"/><rect x="985" y="944" width="4.2" height="14"/>
+      <rect x="985" y="960" width="4.2" height="14"/><rect x="985" y="976" width="4.2" height="14"/>
+      <rect x="1015" y="800" width="4.2" height="14"/><rect x="1015" y="816" width="4.2" height="14"/>
+      <rect x="1015" y="832" width="4.2" height="14"/><rect x="1015" y="848" width="4.2" height="14"/>
+      <rect x="1015" y="864" width="4.2" height="14"/><rect x="1015" y="880" width="4.2" height="14"/>
+      <rect x="1015" y="896" width="4.2" height="14"/><rect x="1015" y="912" width="4.2" height="14"/>
+      <rect x="1015" y="928" width="4.2" height="14"/><rect x="1015" y="944" width="4.2" height="14"/>
+      <rect x="1015" y="960" width="4.2" height="14"/><rect x="1015" y="976" width="4.2" height="14"/>
+    </g>
+    <rect x="891.85" y="762" width="136.3" height="22" fill="#eaa81b"/>
+    <rect x="891.85" y="1000" width="136.3" height="22" fill="#d94a1a"/>
+    <g stroke="#ffffff" stroke-width="2" opacity="0.9" fill="none" marker-end="url(#ahW)">
+      <path d="M918,792 L918,992"/><path d="M960,792 L960,992"/><path d="M1002,792 L1002,992"/>
+    </g>
+  </g>
+  <rect x="891.85" y="762" width="136.3" height="260" fill="none" stroke="#33454e" stroke-width="2"/>
+  <g stroke="#33454e" stroke-width="0.9" opacity="0.55">
+    <line x1="925.93" y1="762" x2="925.93" y2="1022"/><line x1="994.07" y1="762" x2="994.07" y2="1022"/>
+  </g>
+  <text x="960" y="777.5" text-anchor="middle" fill="#4a3402" font-size="10" class="b">HELIUM IN · 580 °C</text>
+  <text x="960" y="1015.5" text-anchor="middle" fill="#ffffff" font-size="10" class="b">HELIUM OUT · 950 °C</text>
+  <g class="dim">
+    <line x1="1040" y1="762" x2="1040" y2="1022"/>
+    <line x1="1035" y1="762" x2="1045" y2="762"/><line x1="1035" y1="1022" x2="1045" y2="1022"/>
+  </g>
+  <text x="1051" y="892" text-anchor="middle" class="ink b" font-size="10" transform="rotate(-90,1051,892)">793 mm</text>
+  <text x="1080" y="892" text-anchor="middle" class="mut" font-size="10" transform="rotate(-90,1080,892)">fuel compact columns (Gen 1)</text>
+
+  <text x="872" y="1050" class="mut" font-size="10">793 × 360 mm hexagonal prism, IG-110 graphite.</text>
+  <text x="872" y="1063" class="mut" font-size="10">Binder-jet printed, then sintered — this</text>
+  <text x="872" y="1076" class="mut" font-size="10">network cannot be drilled. That is the point.</text>
+
+  <!-- ==== inset zoom leaders to the gyroid detail ==== -->
+  <g stroke="#7d8f98" stroke-width="0.9" stroke-dasharray="3 3" fill="none">
+    <path d="M987.5,645.5 L1148,604"/><path d="M987.5,664.5 L1148,838"/>
+  </g>
+  <rect x="968.5" y="645.5" width="19" height="19" fill="none" stroke="#7d8f98" stroke-width="1.6"/>
+  <rect x="1058" y="608" width="34" height="15" rx="3" fill="#ffffff" opacity="0.9"/>
+  <text x="1075" y="619.5" text-anchor="middle" fill="#5a7280" font-size="10" class="b">×12.5</text>
+
+  <!-- ==== gyroid detail: nine z=slices of sin x cos y + sin y cos z + sin z cos x ==== -->
+  <rect x="1148" y="604" width="234" height="234" fill="url(#rampCoreV)"/>
+  <g clip-path="url(#cpGyro)" class="gyw">
+<path class="gy8" d="M1147.0,838.5 1147.0,813.3 1157.3,800.9 1171.1,791.5 1173.5,789.5 1175.2,786.0 1175.3,782.5 1172.4,775.5 1169.3,772.0 1164.2,769.0 1157.3,768.2 1153.9,769.5 1147.0,776.9 1147.0,741.3 1157.3,728.8 1171.1,719.6 1174.3,716.3 1175.4,712.8 1174.5,707.8 1171.6,702.3 1167.6,698.7 1164.2,697.0 1157.3,696.2 1153.9,697.5 1147.0,704.9 1147.0,669.3 1157.3,656.9 1172.4,646.6 1174.9,643.1 1175.4,639.6 1173.1,632.7 1170.5,629.2 1165.7,625.7 1160.7,624.1 1157.3,624.2 1153.9,625.5 1147.0,632.9 1147.0,597.3 1157.3,584.9 1173.5,573.4 1205.8,573.4 1195.9,580.4 1194.3,583.9 1194.4,587.3 1197.3,594.3 1200.6,597.8 1205.5,600.6 1212.4,601.4 1215.8,600.1 1219.2,597.1 1229.6,584.6 1245.5,573.4 1277.8,573.4 1267.9,580.4 1266.3,583.9 1266.4,587.3 1269.4,594.3 1272.6,597.8 1277.7,600.7 1284.6,601.4 1288.1,599.9 1290.4,597.8 1301.8,584.4 1317.5,573.4 1349.8,573.4 1339.9,580.4 1338.3,583.9 1338.4,587.3 1339.4,590.8 1343.1,596.4 1346.5,599.2 1353.4,601.6 1356.9,601.3 1360.3,599.8 1374.1,584.2 1389.5,573.4 1421.8,573.4 1411.9,580.4 1410.3,583.9 1410.4,587.3 1413.4,594.3 1416.6,597.8 1422.2,600.9 1422.8,622.2 1422.2,645.2 1414.3,650.1 1411.1,653.6 1410.2,657.0 1411.9,664.0 1414.3,667.5 1418.2,671.0 1422.2,672.9 1422.8,695.4 1422.2,717.2 1412.9,723.3 1410.6,726.7 1410.2,730.2 1411.9,735.8 1415.3,740.7 1422.2,744.9 1422.8,768.6 1422.2,789.2 1411.9,796.4 1410.3,799.9 1410.4,803.4 1413.4,810.4 1416.7,813.9 1422.2,816.9 1422.8,838.3 1422.2,838.8ZM1208.9,817.5 1202.0,814.9 1197.4,810.4 1194.4,803.4 1194.3,799.9 1195.9,796.4 1212.4,784.7 1222.7,772.2 1226.1,769.3 1229.6,768.1 1233.0,768.1 1239.9,770.9 1243.3,774.1 1246.3,779.0 1247.2,786.0 1245.5,789.5 1229.6,800.6 1219.2,813.1 1215.8,816.1 1212.4,817.4ZM1281.2,817.5 1274.3,815.0 1269.4,810.4 1266.4,803.4 1266.3,799.9 1267.9,796.4 1284.6,784.5 1294.9,771.9 1298.4,769.2 1301.8,768.1 1305.3,768.2 1312.1,771.1 1315.6,774.4 1318.3,779.0 1319.2,786.0 1317.5,789.5 1301.8,800.4 1288.1,815.9 1284.6,817.4ZM1353.4,817.6 1346.5,815.2 1341.4,810.4 1338.4,803.4 1338.3,799.9 1339.9,796.4 1356.9,784.2 1367.2,771.6 1370.6,769.1 1374.1,768.1 1377.5,768.2 1384.4,771.3 1388.5,775.5 1391.3,782.5 1391.2,786.0 1389.5,789.5 1374.1,800.2 1360.3,815.8 1356.9,817.3ZM1205.5,744.7 1199.3,740.7 1194.9,733.7 1194.2,730.2 1194.6,726.7 1196.9,723.3 1212.4,712.7 1222.7,700.2 1226.1,697.3 1229.6,696.1 1233.0,696.1 1239.9,698.9 1243.6,702.3 1246.8,708.5 1247.4,712.8 1246.3,716.3 1242.9,719.8 1229.6,728.6 1219.2,741.1 1215.8,744.1 1212.4,745.4ZM1277.7,744.7 1271.3,740.7 1266.9,733.7 1266.2,730.2 1266.6,726.7 1268.9,723.3 1284.2,712.8 1294.9,699.9 1298.4,697.2 1301.8,696.1 1305.3,696.2 1312.1,699.1 1315.6,702.3 1319.1,709.3 1319.4,712.8 1318.3,716.3 1314.9,719.8 1301.8,728.4 1288.1,743.9 1284.6,745.4ZM1350.0,744.8 1343.3,740.7 1338.9,733.7 1338.2,730.2 1338.6,726.7 1340.9,723.3 1356.2,712.8 1367.2,699.7 1370.6,697.1 1374.1,696.1 1377.5,696.2 1384.4,699.3 1387.8,702.7 1391.1,709.3 1391.4,712.8 1390.3,716.3 1387.0,719.8 1374.1,728.2 1360.3,743.8 1356.9,745.3ZM1205.5,672.6 1198.6,667.9 1195.9,664.0 1194.2,657.0 1195.2,653.6 1198.3,650.1 1212.4,640.7 1222.7,628.2 1226.1,625.3 1229.6,624.1 1233.0,624.2 1239.9,627.0 1243.3,630.1 1246.7,636.1 1247.4,639.6 1246.9,643.1 1244.4,646.6 1229.6,656.6 1219.2,669.1 1215.8,672.1 1212.4,673.4ZM1274.3,671.1 1270.2,667.5 1266.6,660.5 1266.2,657.0 1267.1,653.6 1270.3,650.1 1284.6,640.5 1294.9,627.9 1298.4,625.2 1301.8,624.1 1305.3,624.2 1309.7,625.7 1314.5,629.2 1317.1,632.7 1319.4,639.6 1318.9,643.1 1316.4,646.6 1301.8,656.4 1288.1,671.9 1284.6,673.4 1281.2,673.5ZM1346.5,671.2 1342.3,667.5 1338.6,660.5 1338.2,657.0 1339.1,653.6 1342.3,650.1 1356.9,640.2 1367.2,627.6 1370.6,625.1 1374.1,624.1 1377.5,624.2 1381.7,625.7 1386.5,629.2 1389.1,632.7 1391.4,639.6 1390.9,643.1 1388.4,646.6 1373.1,657.0 1360.3,671.8 1356.9,673.3 1353.4,673.5ZM1178.0,838.3 1162.7,827.8 1159.3,824.3 1158.2,820.8 1159.8,813.9 1162.0,810.4 1165.9,806.9 1171.1,804.5 1178.0,804.6 1181.4,806.7 1193.4,820.8 1208.7,831.3 1211.0,834.8 1211.4,838.3ZM1250.2,838.3 1234.7,827.8 1231.3,824.3 1230.2,820.8 1231.8,813.9 1234.0,810.4 1237.9,806.9 1243.3,804.4 1250.2,804.7 1253.6,806.9 1264.0,819.5 1280.7,831.3 1283.0,834.8 1283.4,838.3ZM1322.5,838.3 1306.7,827.8 1303.3,824.3 1302.2,820.8 1302.5,817.3 1306.0,810.4 1309.8,806.9 1315.6,804.3 1322.5,804.8 1325.9,807.1 1336.2,819.7 1352.7,831.3 1355.0,834.8 1355.4,838.3ZM1394.7,838.3 1378.7,827.8 1375.3,824.3 1374.2,820.8 1374.5,817.3 1378.0,810.4 1381.8,806.9 1387.8,804.3 1391.3,804.0 1394.7,804.9 1397.5,806.9 1409.4,820.8 1422.2,829.5 1422.2,838.4ZM1191.7,781.0 1188.3,779.0 1176.5,765.1 1161.2,754.6 1158.7,751.1 1158.2,747.6 1160.4,740.7 1163.1,737.2 1167.6,733.7 1174.5,732.0 1179.9,733.7 1183.7,737.2 1192.2,747.6 1207.3,758.1 1210.5,761.6 1211.4,765.1 1211.0,768.6 1207.3,775.5 1203.3,779.0 1198.6,781.1ZM1260.5,779.2 1248.5,765.1 1233.2,754.6 1230.7,751.1 1230.2,747.6 1232.4,740.7 1235.1,737.2 1239.9,733.6 1246.8,732.0 1251.9,733.7 1255.7,737.2 1264.2,747.6 1279.3,758.1 1282.5,761.6 1283.4,765.1 1283.0,768.6 1281.7,772.0 1277.7,777.1 1274.3,779.7 1267.4,781.6 1264.0,781.1ZM1332.8,779.4 1320.5,765.1 1305.2,754.6 1302.7,751.1 1302.2,747.6 1304.4,740.7 1307.1,737.2 1312.1,733.5 1319.0,732.0 1323.9,733.7 1325.9,735.1 1336.2,747.7 1351.3,758.1 1354.5,761.6 1355.4,765.1 1355.0,768.6 1353.7,772.0 1350.0,776.9 1346.5,779.5 1339.7,781.6 1336.2,781.2ZM1405.0,779.6 1392.5,765.1 1377.2,754.6 1374.7,751.1 1374.2,747.6 1376.4,740.7 1379.1,737.2 1384.4,733.4 1391.3,732.1 1394.7,732.9 1398.2,735.4 1408.5,748.0 1422.2,757.4 1422.2,776.7 1418.8,779.4 1411.9,781.6 1408.5,781.2ZM1195.2,709.6 1191.7,709.0 1188.3,707.0 1175.2,691.9 1160.1,681.4 1158.4,678.0 1159.3,671.0 1164.2,664.1 1167.6,661.8 1174.5,660.0 1178.0,660.6 1181.4,662.7 1191.7,675.2 1209.7,688.4 1211.3,691.9 1211.2,695.4 1208.2,702.3 1202.0,707.8ZM1267.4,709.6 1264.0,709.1 1260.5,707.2 1247.2,691.9 1232.1,681.4 1230.4,678.0 1231.3,671.0 1236.3,664.0 1239.9,661.7 1246.8,660.0 1250.2,660.7 1253.6,662.9 1264.0,675.5 1281.7,688.4 1283.3,691.9 1283.2,695.4 1280.2,702.3 1274.3,707.6ZM1339.7,709.6 1336.2,709.2 1332.8,707.4 1319.2,691.9 1304.1,681.4 1302.4,678.0 1302.3,674.5 1305.1,667.5 1308.7,663.7 1315.6,660.3 1322.5,660.8 1325.9,663.1 1338.7,678.0 1353.7,688.4 1355.3,691.9 1355.2,695.4 1352.2,702.3 1346.5,707.5ZM1411.9,709.6 1408.5,709.2 1405.0,707.6 1391.3,692.0 1376.1,681.4 1374.4,678.0 1374.3,674.5 1377.2,667.5 1380.9,663.5 1387.8,660.3 1391.3,660.0 1394.7,660.9 1398.2,663.4 1408.5,676.0 1422.2,685.4 1422.2,704.7 1418.8,707.3ZM1191.7,637.0 1188.3,635.0 1174.5,619.4 1162.6,611.7 1159.3,608.3 1158.2,604.8 1159.8,597.8 1164.2,592.2 1167.6,589.8 1174.5,588.0 1178.0,588.6 1181.4,590.7 1193.3,604.8 1208.6,615.2 1211.0,618.7 1211.4,622.2 1210.6,625.7 1206.3,632.7 1202.0,635.8 1198.6,637.1ZM1264.0,637.1 1260.5,635.2 1246.8,619.6 1234.6,611.7 1231.3,608.3 1230.2,604.8 1231.8,597.8 1234.1,594.3 1239.9,589.7 1246.8,588.0 1250.2,588.7 1253.5,590.8 1264.0,603.5 1280.6,615.2 1283.0,618.7 1283.4,622.2 1282.6,625.7 1278.3,632.7 1270.8,637.1ZM1336.2,637.2 1332.8,635.4 1330.1,632.7 1319.0,619.8 1306.6,611.7 1303.3,608.3 1302.2,604.8 1303.8,597.8 1306.1,594.3 1312.1,589.5 1319.0,588.0 1322.5,588.8 1325.5,590.8 1336.2,603.7 1352.6,615.2 1355.0,618.7 1355.4,622.2 1354.6,625.7 1350.3,632.7 1343.1,637.0ZM1408.5,637.2 1405.0,635.6 1402.1,632.7 1391.3,620.0 1378.6,611.7 1375.3,608.3 1374.2,604.8 1375.8,597.8 1378.1,594.3 1384.4,589.4 1391.3,588.0 1394.7,588.9 1398.2,591.4 1409.4,604.8 1422.2,613.5 1422.2,632.8 1415.4,636.9Z"/>
+<path class="gy7" d="M1163.0,841.7 1162.1,841.7 1150.4,831.2 1148.3,827.7 1147.5,824.2 1147.5,817.3 1148.5,810.3 1151.1,803.3 1163.2,789.4 1165.0,785.9 1166.1,778.9 1163.0,770.9 1149.6,758.0 1147.9,754.5 1147.3,747.6 1148.1,740.6 1150.0,733.6 1154.4,726.7 1163.9,716.2 1165.5,712.7 1165.9,705.7 1163.0,698.8 1151.4,688.3 1148.9,684.8 1147.3,677.9 1148.3,667.4 1150.5,660.4 1155.5,653.5 1163.0,645.5 1165.8,639.5 1166.2,636.1 1165.7,632.6 1163.0,626.9 1150.3,615.1 1148.3,611.7 1147.3,604.7 1147.9,597.7 1151.1,587.3 1160.2,576.8 1206.8,576.8 1197.1,587.3 1195.3,590.7 1194.3,597.7 1197.4,605.6 1211.0,618.6 1213.0,625.6 1212.8,632.6 1211.5,639.5 1208.5,646.5 1197.4,658.9 1194.9,663.9 1194.2,667.4 1195.6,674.4 1197.6,677.9 1209.2,688.3 1211.7,691.8 1212.8,695.3 1213.0,702.3 1212.1,709.2 1209.8,716.2 1207.6,719.7 1197.4,730.8 1194.6,737.1 1194.2,740.6 1194.8,744.1 1197.4,749.6 1210.3,761.5 1212.2,765.0 1212.9,775.4 1211.8,782.4 1209.2,789.4 1197.0,803.3 1195.2,806.8 1194.3,813.8 1197.4,821.6 1211.0,834.7 1213.0,841.7 1187.1,842.3ZM1235.3,841.7 1234.1,841.7 1222.4,831.2 1220.3,827.7 1219.5,824.2 1219.5,817.3 1220.5,810.3 1223.1,803.3 1235.3,789.2 1238.0,782.4 1238.1,778.9 1235.3,771.2 1221.6,758.0 1219.9,754.5 1219.4,747.6 1220.1,740.6 1222.0,733.6 1226.4,726.7 1235.9,716.2 1237.5,712.7 1237.9,705.7 1235.0,698.8 1223.4,688.3 1220.8,684.8 1219.3,677.9 1220.3,667.4 1222.5,660.4 1225.0,656.5 1235.3,645.1 1237.8,639.5 1238.1,636.1 1237.7,632.6 1235.3,627.3 1231.8,623.3 1222.3,615.1 1220.3,611.7 1219.3,604.7 1219.9,597.7 1223.1,587.3 1232.2,576.8 1278.8,576.8 1269.1,587.3 1267.3,590.7 1266.3,597.7 1267.1,601.2 1269.7,605.9 1283.0,618.6 1285.0,625.6 1284.8,632.6 1283.5,639.5 1280.5,646.5 1268.4,660.4 1266.2,667.4 1266.5,670.9 1269.6,677.9 1281.2,688.3 1283.6,691.8 1284.8,695.3 1285.0,702.3 1284.0,709.2 1281.8,716.2 1279.6,719.7 1269.7,730.4 1266.5,737.1 1266.2,740.6 1266.8,744.1 1269.7,749.9 1282.3,761.5 1283.5,763.6 1284.9,768.5 1284.9,775.4 1283.8,782.4 1281.2,789.4 1269.1,803.3 1267.2,806.8 1266.3,813.8 1269.7,821.9 1283.0,834.7 1285.0,841.7 1259.4,842.3ZM1307.5,841.7 1306.1,841.7 1294.4,831.2 1292.3,827.7 1291.5,824.2 1291.5,817.3 1292.5,810.3 1295.1,803.3 1307.5,788.7 1310.0,782.4 1310.1,778.9 1307.5,771.6 1293.6,758.0 1291.9,754.5 1291.4,747.6 1292.1,740.6 1294.0,733.6 1298.4,726.7 1307.9,716.2 1309.5,712.7 1309.9,705.7 1307.0,698.8 1295.4,688.3 1292.8,684.8 1291.4,677.9 1292.3,667.4 1294.5,660.4 1297.2,656.1 1307.5,644.7 1309.8,639.5 1310.1,636.1 1309.7,632.6 1307.5,627.7 1304.1,623.5 1294.4,615.1 1292.3,611.7 1291.3,604.7 1291.9,597.7 1295.1,587.3 1304.2,576.8 1350.8,576.8 1341.1,587.3 1338.5,593.5 1338.3,597.7 1339.1,601.2 1341.9,606.3 1355.0,618.6 1357.0,625.6 1356.8,632.6 1354.3,643.0 1349.8,650.0 1340.4,660.4 1338.2,667.4 1338.5,671.0 1341.6,677.9 1353.2,688.3 1355.6,691.8 1356.8,695.3 1357.0,702.3 1356.0,709.2 1353.8,716.2 1351.6,719.7 1341.9,730.1 1338.5,737.1 1338.2,740.6 1338.8,744.1 1341.9,750.3 1354.3,761.5 1356.9,768.5 1356.9,775.4 1355.7,782.4 1353.1,789.4 1341.1,803.3 1338.5,809.5 1338.3,813.8 1339.1,817.3 1341.9,822.3 1355.1,834.7 1357.0,841.7 1331.6,842.3ZM1379.8,841.7 1378.1,841.7 1366.5,831.2 1364.3,827.7 1363.4,820.7 1364.5,810.3 1367.1,803.3 1379.8,788.3 1382.0,782.4 1382.1,778.9 1379.8,772.0 1377.1,768.5 1365.5,758.0 1363.9,754.5 1363.4,747.6 1364.1,740.6 1366.0,733.6 1370.4,726.7 1379.9,716.2 1381.5,712.7 1381.9,705.7 1379.0,698.8 1367.4,688.3 1364.8,684.8 1363.4,677.9 1364.3,667.4 1366.5,660.4 1369.5,655.8 1379.8,644.3 1381.8,639.5 1382.1,636.1 1380.4,629.1 1378.0,625.6 1366.4,615.1 1364.3,611.7 1363.4,604.7 1363.9,597.7 1367.1,587.3 1376.2,576.8 1417.6,576.6 1417.6,582.2 1413.1,587.3 1411.2,590.7 1410.3,597.7 1412.8,604.7 1417.6,610.1 1417.6,654.1 1412.4,660.4 1410.3,667.4 1411.6,674.4 1413.6,677.9 1417.6,682.1 1417.6,726.1 1411.7,733.6 1410.2,740.6 1412.2,747.6 1417.6,754.2 1417.8,792.9 1417.6,798.2 1413.1,803.3 1411.2,806.8 1410.3,813.8 1412.9,820.7 1417.6,826.1 1418.0,841.7 1403.9,842.3ZM1176.8,841.7 1174.4,841.7 1170.0,834.7 1163.0,827.6 1159.6,822.3 1158.3,817.3 1159.4,810.3 1161.4,806.8 1172.9,796.4 1175.6,792.9 1177.0,785.9 1176.1,775.4 1173.9,768.5 1171.9,765.0 1159.8,751.0 1158.3,744.1 1159.6,738.1 1162.3,733.6 1174.0,723.2 1176.1,719.7 1177.0,712.7 1175.9,702.3 1173.3,695.3 1161.3,681.4 1158.4,674.4 1159.0,667.4 1160.7,663.9 1163.3,660.4 1175.0,650.0 1176.4,646.5 1177.0,639.5 1176.3,632.6 1174.4,625.6 1169.9,618.6 1160.5,608.2 1158.9,604.7 1158.5,597.7 1159.6,594.0 1163.0,588.8 1172.9,580.3 1175.6,576.8 1191.4,576.8 1184.7,583.8 1183.4,590.7 1184.4,601.2 1186.6,608.2 1188.7,611.7 1197.4,620.9 1200.7,625.6 1202.1,632.6 1200.9,638.1 1197.9,643.0 1186.1,653.5 1184.3,657.0 1183.6,667.4 1184.6,674.4 1187.1,681.0 1189.6,684.8 1199.3,695.3 1201.2,698.8 1202.0,705.7 1200.9,710.2 1197.4,715.5 1185.3,726.7 1184.0,730.1 1183.4,737.1 1184.1,744.1 1186.1,751.0 1190.6,757.9 1200.0,768.5 1202.1,775.4 1200.9,782.3 1198.7,785.9 1187.3,796.4 1184.7,799.8 1183.5,810.3 1184.4,817.3 1186.7,824.2 1188.7,827.7 1197.4,836.9 1200.7,841.7ZM1249.0,841.7 1246.4,841.7 1242.2,834.9 1235.1,827.7 1231.8,822.9 1230.3,817.3 1231.4,810.3 1233.4,806.8 1244.9,796.4 1247.6,792.9 1248.6,789.4 1248.6,778.9 1245.9,768.5 1243.9,765.0 1231.8,751.1 1230.3,744.1 1231.8,737.4 1234.3,733.6 1246.0,723.2 1248.1,719.7 1249.0,712.7 1248.5,705.7 1246.9,698.8 1243.0,691.8 1233.3,681.4 1231.3,677.9 1230.3,670.9 1231.8,665.5 1235.3,660.5 1247.0,650.0 1248.9,643.0 1248.3,632.6 1244.6,622.1 1232.5,608.2 1230.3,601.2 1231.5,594.2 1233.5,590.7 1244.9,580.3 1247.6,576.8 1263.4,576.8 1256.7,583.8 1255.4,590.7 1256.4,601.2 1258.6,608.2 1260.7,611.7 1269.7,621.2 1272.7,625.6 1274.1,632.6 1273.1,637.5 1269.9,643.0 1258.1,653.5 1255.5,660.4 1255.5,667.4 1256.6,674.4 1259.3,681.4 1271.3,695.3 1273.2,698.8 1274.1,705.7 1273.1,709.6 1269.7,715.2 1257.3,726.7 1256.0,730.1 1255.4,737.1 1256.2,744.1 1258.1,751.0 1262.7,758.0 1272.0,768.5 1274.1,775.4 1273.1,781.5 1270.7,785.9 1259.3,796.4 1256.7,799.8 1255.7,803.3 1255.4,810.3 1256.4,817.3 1258.7,824.2 1260.7,827.7 1269.7,837.2 1272.7,841.7ZM1321.3,841.7 1318.4,841.7 1314.4,835.2 1307.1,827.7 1304.1,823.4 1302.3,817.3 1303.5,810.3 1305.4,806.8 1316.9,796.4 1319.6,792.9 1320.7,789.4 1320.7,778.9 1317.9,768.5 1315.9,765.0 1304.1,751.5 1302.3,744.1 1304.0,737.1 1306.3,733.6 1317.9,723.2 1320.1,719.7 1321.0,712.7 1319.9,702.3 1317.9,696.5 1315.0,691.8 1305.3,681.4 1303.3,677.9 1302.3,670.9 1304.1,665.0 1307.3,660.4 1318.9,650.0 1320.9,643.0 1320.3,632.6 1316.6,622.1 1304.5,608.2 1302.3,601.2 1303.5,594.2 1305.5,590.7 1317.0,580.3 1319.6,576.8 1335.5,576.8 1331.3,580.3 1328.7,583.8 1327.7,587.3 1327.4,594.2 1328.4,601.2 1330.6,608.2 1332.7,611.7 1341.9,621.5 1344.6,625.6 1346.1,632.6 1345.4,636.8 1341.9,643.0 1330.1,653.5 1327.5,660.4 1327.5,667.4 1328.6,674.4 1331.3,681.4 1343.3,695.3 1345.4,699.5 1346.1,705.7 1345.3,709.2 1341.9,714.9 1329.3,726.7 1328.0,730.1 1327.4,737.1 1328.2,744.1 1330.1,751.0 1334.7,758.0 1344.0,768.5 1346.1,775.4 1345.4,780.7 1342.8,785.9 1331.2,796.4 1328.7,799.8 1327.7,803.3 1327.4,810.3 1328.4,817.3 1330.6,824.2 1344.7,841.7ZM1393.6,841.8 1390.4,841.7 1386.0,834.7 1379.2,827.7 1376.3,823.9 1374.3,817.3 1375.5,810.3 1377.4,806.8 1388.9,796.4 1391.6,792.9 1392.7,789.4 1392.7,778.9 1389.9,768.5 1386.7,763.5 1376.3,751.9 1374.3,744.1 1376.0,737.1 1378.4,733.6 1389.9,723.2 1392.1,719.7 1393.0,712.7 1391.9,702.3 1390.1,697.1 1386.9,691.8 1376.3,679.8 1374.4,674.4 1374.3,670.9 1376.3,664.5 1379.3,660.4 1390.9,650.0 1393.0,643.0 1392.3,632.6 1388.6,622.1 1376.5,608.2 1374.3,601.2 1375.5,594.2 1377.5,590.7 1389.0,580.3 1391.6,576.8 1407.5,576.8 1403.3,580.3 1400.8,583.8 1399.3,590.7 1399.8,597.7 1401.3,604.7 1403.9,610.3 1414.2,621.8 1416.6,625.6 1417.6,628.3 1417.6,636.2 1413.9,643.0 1402.1,653.5 1399.5,660.4 1399.5,667.4 1400.6,674.4 1403.2,681.4 1414.2,693.9 1417.2,698.8 1417.6,707.8 1414.2,714.6 1401.3,726.7 1399.9,730.1 1399.4,737.1 1400.1,744.1 1402.1,751.0 1406.7,758.0 1414.2,765.8 1417.6,772.0 1417.6,779.9 1414.2,786.6 1403.2,796.4 1400.7,799.8 1399.7,803.3 1399.4,810.3 1400.4,817.3 1402.6,824.2 1416.7,841.7Z"/>
+<path class="gy6" d="M1165.3,845.2 1162.8,845.1 1161.4,841.6 1158.7,838.1 1147.8,827.6 1137.8,808.7 1137.8,783.5 1141.2,790.3 1144.7,792.6 1151.5,791.4 1155.0,789.6 1159.2,785.8 1161.9,781.3 1163.0,775.4 1162.5,771.9 1160.6,768.4 1146.9,754.4 1137.8,736.7 1137.8,711.5 1141.2,718.3 1144.7,720.6 1151.5,719.5 1156.8,716.1 1160.1,712.6 1162.0,709.1 1163.0,702.2 1162.0,698.7 1159.7,695.2 1151.5,687.7 1146.1,681.3 1137.8,664.7 1137.8,639.4 1141.5,646.4 1144.7,648.6 1148.1,648.5 1155.0,645.6 1158.4,642.7 1161.9,637.3 1163.0,632.5 1161.4,625.5 1148.1,612.1 1143.5,604.6 1137.8,592.7 1137.7,580.2 1179.1,579.5 1213.5,580.1 1413.0,579.8 1413.0,593.1 1409.6,595.7 1406.2,600.2 1404.5,604.6 1404.2,608.1 1404.8,611.6 1406.7,615.1 1413.0,621.1 1413.0,665.1 1407.0,670.8 1404.3,677.8 1405.3,684.8 1407.7,688.2 1413.0,693.1 1413.0,737.1 1409.6,739.7 1406.2,744.0 1404.2,751.0 1406.0,757.9 1413.0,765.2 1413.0,809.1 1409.6,811.7 1406.2,816.2 1404.5,820.7 1404.2,824.1 1404.9,827.6 1406.8,831.1 1413.0,837.1 1413.3,845.1 1378.8,845.1 1377.4,841.6 1374.7,838.1 1363.7,827.6 1359.5,820.7 1354.5,809.8 1351.1,806.8 1347.7,806.6 1340.8,809.3 1335.8,813.7 1333.6,817.2 1332.2,824.1 1332.9,827.6 1334.8,831.1 1348.6,845.1 1306.8,845.1 1302.9,838.4 1291.7,827.6 1287.5,820.7 1282.3,809.4 1278.9,806.7 1275.4,806.6 1268.5,809.4 1263.8,813.7 1261.6,817.2 1260.2,824.1 1260.8,827.6 1262.8,831.1 1276.6,845.1 1234.8,845.1 1233.4,841.6 1230.7,838.1 1219.7,827.6 1210.0,809.0 1206.6,806.6 1203.2,806.6 1196.3,809.6 1191.8,813.7 1189.4,817.7 1188.2,824.1 1188.8,827.6 1190.8,831.1 1204.6,845.1ZM1213.5,790.6 1203.7,771.9 1192.8,761.4 1190.0,757.9 1188.5,754.4 1188.7,747.5 1192.7,740.5 1196.3,737.6 1203.2,734.6 1206.6,734.6 1210.0,737.1 1218.9,754.4 1230.7,766.2 1234.5,771.9 1234.7,778.8 1230.7,786.4 1227.2,789.4 1220.4,792.5 1216.9,792.6ZM1285.7,790.9 1275.7,771.9 1264.8,761.4 1262.0,757.9 1260.5,754.4 1260.7,747.5 1264.8,740.5 1268.5,737.4 1275.4,734.6 1278.9,734.7 1282.3,737.4 1290.9,754.4 1302.9,766.5 1306.5,771.9 1306.7,778.8 1302.9,786.1 1299.5,789.3 1292.6,792.4 1289.2,792.7ZM1358.0,791.1 1347.7,771.9 1336.8,761.4 1334.0,757.9 1332.5,754.4 1332.7,747.5 1336.8,740.5 1340.8,737.2 1347.7,734.6 1351.1,734.8 1354.5,737.8 1362.9,754.4 1376.6,768.4 1378.6,772.7 1378.7,778.8 1377.4,782.3 1375.2,785.8 1371.7,789.1 1364.9,792.4 1361.4,792.7ZM1216.9,720.7 1213.5,718.6 1205.3,702.2 1199.7,695.6 1191.7,688.2 1189.3,684.8 1188.3,681.3 1189.1,674.3 1191.0,670.8 1196.3,665.6 1203.2,662.6 1206.6,662.6 1210.0,665.0 1218.1,681.3 1223.8,687.9 1231.7,695.2 1234.0,698.7 1235.0,702.2 1234.0,709.1 1230.7,714.3 1223.8,719.3ZM1289.2,720.7 1285.7,718.8 1277.3,702.2 1272.0,695.8 1263.7,688.2 1261.3,684.8 1260.3,681.3 1261.1,674.3 1263.0,670.8 1268.5,665.4 1275.4,662.6 1278.9,662.7 1282.3,665.4 1290.1,681.3 1292.7,684.8 1303.7,695.2 1306.0,698.7 1307.0,702.2 1306.0,709.1 1302.9,714.1 1296.1,719.2ZM1361.4,720.7 1358.0,719.1 1349.3,702.2 1344.2,696.0 1335.7,688.2 1333.3,684.8 1332.3,681.3 1333.1,674.3 1335.0,670.8 1340.8,665.3 1347.7,662.5 1351.1,662.8 1354.5,665.7 1362.1,681.3 1364.9,685.0 1375.7,695.2 1378.0,698.7 1379.0,702.2 1378.0,709.1 1375.2,713.8 1368.3,719.1ZM1213.5,646.5 1204.5,629.0 1190.7,615.1 1188.8,611.6 1188.2,608.1 1189.4,601.7 1191.8,597.6 1196.3,593.6 1203.2,590.6 1206.6,590.6 1210.0,593.0 1219.7,611.6 1230.7,622.1 1233.4,625.5 1234.8,629.0 1235.0,632.5 1234.1,636.7 1230.7,642.4 1227.2,645.4 1220.4,648.5 1216.9,648.7ZM1285.7,646.8 1276.5,629.0 1262.7,615.1 1260.8,611.6 1260.2,608.1 1261.6,601.1 1263.8,597.6 1268.5,593.4 1275.4,590.6 1278.9,590.7 1282.3,593.4 1291.7,611.6 1302.9,622.4 1306.8,629.0 1306.4,636.1 1302.9,642.1 1299.5,645.2 1292.6,648.4 1289.2,648.7ZM1358.0,647.1 1348.5,629.0 1334.7,615.1 1332.8,611.6 1332.2,608.1 1333.6,601.1 1335.9,597.6 1340.8,593.3 1347.7,590.6 1351.1,590.8 1354.5,593.8 1359.5,604.6 1363.7,611.6 1374.6,622.0 1377.4,625.5 1378.8,629.0 1378.4,636.0 1375.2,641.8 1371.7,645.0 1364.9,648.4 1361.4,648.7ZM1179.1,845.1 1177.4,845.1 1179.1,843.2 1182.5,842.5 1190.0,845.1ZM1251.3,845.1 1249.4,845.1 1251.3,843.1 1254.8,842.5 1262.1,845.1ZM1323.6,845.1 1321.4,845.1 1323.6,843.0 1327.0,842.5 1334.1,845.1ZM1395.8,845.1 1393.4,845.1 1395.8,842.9 1399.3,842.5 1406.1,845.1ZM1165.3,828.1 1158.4,824.3 1155.0,820.5 1152.3,813.7 1153.2,806.7 1155.5,803.2 1165.3,794.1 1168.8,789.8 1175.6,775.6 1178.4,771.9 1182.5,770.4 1186.0,771.1 1192.8,775.0 1196.3,778.8 1198.9,785.8 1197.9,792.8 1195.5,796.3 1186.0,805.0 1182.5,809.3 1175.6,823.5 1172.5,827.6 1168.8,828.8ZM1237.6,828.2 1230.7,824.5 1227.1,820.7 1224.3,813.7 1225.2,806.7 1227.5,803.2 1237.6,793.8 1241.0,789.4 1247.9,775.1 1250.5,771.9 1254.8,770.5 1258.2,771.2 1265.1,775.2 1268.5,779.2 1270.9,785.8 1269.9,792.8 1267.5,796.3 1254.8,808.9 1247.9,823.0 1244.5,827.6 1241.0,828.8ZM1309.8,828.2 1302.9,824.7 1299.1,820.7 1296.3,813.7 1297.2,806.7 1299.4,803.2 1309.8,793.5 1313.1,789.3 1320.1,774.6 1322.5,771.9 1323.6,771.0 1327.0,770.5 1330.5,771.3 1337.3,775.4 1340.8,779.7 1342.9,785.8 1341.9,792.8 1339.5,796.3 1327.0,808.6 1320.1,822.4 1316.7,827.5 1313.3,828.8ZM1382.1,828.3 1375.2,824.8 1371.1,820.7 1368.3,813.7 1369.2,806.7 1371.5,803.2 1382.1,793.3 1385.1,789.3 1392.4,774.2 1394.5,771.9 1395.8,770.9 1399.3,770.5 1402.7,771.4 1409.2,775.4 1413.0,780.2 1413.0,794.1 1399.3,808.2 1389.0,827.3 1385.5,828.8ZM1161.9,754.6 1157.1,751.0 1152.8,744.0 1152.4,737.0 1153.8,733.5 1167.5,719.6 1171.7,712.6 1175.6,703.6 1179.1,699.3 1182.5,698.5 1189.4,700.7 1195.4,705.7 1197.6,709.1 1199.0,716.1 1198.3,719.6 1196.3,723.3 1182.7,737.0 1175.6,751.5 1172.2,755.9 1168.8,756.8ZM1234.1,754.7 1229.1,751.0 1224.8,744.0 1224.4,737.0 1225.8,733.5 1239.5,719.6 1243.7,712.6 1247.9,703.1 1251.3,699.1 1254.8,698.5 1261.6,700.8 1267.4,705.7 1269.6,709.1 1271.0,716.1 1270.3,719.6 1268.5,723.1 1254.7,737.0 1247.9,750.9 1244.4,755.8 1241.0,756.8ZM1306.4,754.9 1301.1,751.0 1296.8,744.0 1296.4,737.0 1297.8,733.5 1311.5,719.6 1320.5,702.2 1323.6,699.0 1327.0,698.5 1330.5,699.3 1337.3,703.5 1340.8,707.7 1342.7,712.6 1342.3,719.6 1340.4,723.1 1326.7,737.0 1320.1,750.4 1316.7,755.6 1313.3,756.8ZM1378.6,755.0 1373.1,751.0 1368.8,744.0 1368.4,737.0 1369.8,733.5 1383.5,719.6 1387.7,712.6 1392.4,702.2 1395.8,698.9 1399.3,698.5 1402.7,699.4 1409.6,703.7 1413.0,708.1 1413.0,722.1 1398.7,737.0 1389.0,755.4 1385.5,756.7ZM1161.9,682.6 1156.0,677.8 1153.8,674.3 1152.2,667.3 1152.8,663.8 1155.0,659.9 1168.3,646.4 1175.6,631.6 1179.1,627.2 1182.5,626.5 1189.4,628.6 1194.3,632.5 1198.4,639.5 1198.7,646.4 1197.2,649.9 1183.5,663.8 1175.6,679.5 1172.2,683.9 1168.8,684.7ZM1234.1,682.7 1228.0,677.8 1225.8,674.3 1224.1,667.3 1224.8,663.8 1227.2,659.6 1240.3,646.4 1247.9,631.1 1251.3,627.1 1254.8,626.5 1261.6,628.8 1266.3,632.5 1270.4,639.5 1270.7,646.4 1269.3,649.9 1255.5,663.8 1247.9,679.0 1244.4,683.8 1241.0,684.7ZM1306.4,682.8 1300.0,677.8 1297.8,674.3 1296.1,667.3 1296.8,663.8 1299.5,659.3 1312.4,646.4 1320.1,630.6 1323.6,627.0 1327.0,626.5 1333.9,628.9 1338.3,632.5 1342.4,639.5 1342.7,646.4 1341.3,649.9 1327.5,663.8 1316.7,683.6 1313.3,684.7ZM1378.6,683.0 1372.0,677.8 1369.8,674.3 1368.1,667.3 1368.8,663.8 1371.7,659.0 1384.4,646.4 1393.4,629.0 1395.8,626.9 1399.3,626.5 1402.7,627.4 1409.6,631.7 1413.0,636.0 1413.0,650.2 1399.5,663.8 1389.0,683.4 1385.5,684.7ZM1165.3,612.1 1158.2,608.1 1155.0,604.6 1153.2,601.1 1152.2,594.1 1153.2,590.7 1155.5,587.2 1163.1,580.2 1195.5,580.2 1186.0,589.0 1182.5,593.3 1175.6,607.5 1172.5,611.6 1168.8,612.8ZM1237.6,612.2 1230.3,608.1 1227.1,604.6 1225.2,601.1 1224.2,594.1 1225.2,590.7 1227.5,587.2 1235.1,580.2 1267.5,580.2 1254.8,592.9 1247.9,607.0 1244.4,611.7 1241.0,612.8ZM1309.8,612.2 1302.3,608.1 1299.1,604.6 1297.2,601.1 1296.2,594.1 1297.2,590.7 1299.5,587.2 1307.1,580.2 1339.5,580.2 1327.0,592.6 1320.1,606.4 1316.7,611.5 1313.3,612.8ZM1382.1,612.3 1374.3,608.1 1369.2,601.1 1368.2,594.1 1369.2,590.7 1371.5,587.2 1379.1,580.2 1411.5,580.2 1399.3,592.2 1389.0,611.3 1385.5,612.8Z"/>
+<path class="gy5" d="M1167.6,848.5 1166.3,848.5 1169.1,841.5 1167.6,839.8 1146.9,833.7 1140.1,829.4 1133.2,822.6 1133.2,779.6 1139.3,785.7 1143.5,788.4 1146.9,789.4 1153.8,788.7 1159.1,785.7 1162.5,782.2 1166.8,775.3 1169.0,768.3 1146.9,761.6 1140.1,757.4 1133.2,750.6 1133.2,707.6 1140.1,714.4 1143.5,716.4 1146.9,717.4 1153.8,716.7 1160.5,712.5 1163.4,709.1 1168.8,698.6 1167.3,695.1 1150.4,691.0 1143.5,687.9 1133.2,678.6 1133.2,635.6 1140.1,642.4 1143.5,644.4 1146.9,645.4 1153.8,644.7 1157.6,642.9 1161.6,639.4 1166.3,632.4 1169.1,625.4 1167.6,623.8 1164.2,622.4 1150.4,619.0 1143.5,615.9 1133.2,606.6 1132.7,583.6 1177.9,582.9 1408.4,583.0 1409.0,583.6 1408.4,600.5 1401.6,602.5 1395.2,608.0 1391.0,615.0 1389.1,621.9 1408.4,627.3 1409.1,649.8 1408.4,672.5 1402.0,674.2 1397.3,677.7 1392.2,684.7 1389.1,691.6 1391.5,695.1 1408.4,699.3 1409.1,723.0 1408.4,744.5 1401.6,746.5 1396.2,750.9 1391.6,757.8 1388.9,764.8 1391.2,766.7 1394.7,767.8 1408.4,771.3 1409.1,792.7 1408.4,816.5 1401.6,818.5 1395.2,824.1 1389.5,834.5 1389.2,838.0 1408.4,843.3 1408.7,848.5 1382.3,848.5 1385.0,841.5 1384.4,840.5 1380.9,838.6 1367.1,835.2 1360.3,832.3 1354.0,827.5 1346.5,820.1 1340.9,817.1 1336.2,816.5 1329.3,818.6 1323.2,824.1 1317.5,834.5 1317.2,838.0 1336.2,843.2 1345.8,848.5 1310.3,848.5 1313.0,841.5 1312.1,840.2 1307.1,838.0 1294.9,835.1 1288.0,832.2 1274.3,819.9 1268.9,817.1 1263.9,816.5 1257.0,818.8 1251.2,824.1 1247.0,831.0 1245.5,834.5 1245.2,838.0 1263.9,843.1 1273.8,848.5 1238.3,848.5 1241.1,841.5 1239.8,840.0 1235.1,838.0 1219.2,833.8 1212.3,829.6 1202.0,819.7 1196.9,817.1 1191.7,816.5 1184.8,818.9 1179.2,824.1 1175.0,831.0 1173.5,834.5 1173.2,838.0 1191.7,843.0 1201.8,848.5ZM1219.2,789.4 1212.3,786.6 1198.6,774.1 1191.7,771.0 1177.9,767.6 1172.9,764.8 1175.6,757.8 1181.4,749.7 1188.2,745.3 1195.1,744.6 1198.6,745.6 1202.0,747.7 1215.8,760.0 1222.6,763.1 1241.0,768.3 1238.9,775.3 1233.0,784.0 1226.1,788.6ZM1291.5,789.5 1284.6,786.7 1270.8,774.3 1263.9,771.1 1250.2,767.7 1244.9,764.8 1247.6,757.8 1253.6,749.4 1260.5,745.2 1267.4,744.7 1270.8,745.7 1274.3,747.9 1288.0,760.2 1294.9,763.2 1312.9,768.3 1310.9,775.3 1305.2,783.7 1298.3,788.5ZM1363.7,789.5 1356.8,786.9 1346.5,777.0 1339.6,772.6 1322.4,767.7 1316.9,764.8 1321.6,754.4 1325.9,749.2 1332.7,745.2 1339.6,744.7 1346.5,748.1 1356.6,757.8 1360.3,760.3 1367.1,763.2 1384.9,768.3 1382.9,775.3 1377.5,783.4 1370.6,788.4ZM1215.8,716.5 1212.3,714.5 1198.4,702.1 1191.7,699.1 1174.5,694.4 1173.1,691.6 1174.5,688.2 1181.4,677.6 1188.2,673.3 1195.1,672.6 1198.6,673.6 1202.0,675.7 1211.2,684.7 1216.0,688.2 1222.6,691.0 1239.3,695.1 1240.8,698.6 1237.7,705.6 1232.5,712.5 1226.1,716.6 1219.2,717.4ZM1288.0,716.6 1282.0,712.5 1274.3,704.8 1267.4,700.5 1246.7,694.6 1245.1,691.6 1246.5,688.2 1250.4,681.2 1253.6,677.4 1260.5,673.2 1267.4,672.7 1270.8,673.7 1288.0,688.2 1294.9,691.1 1311.4,695.1 1312.8,698.6 1311.4,702.1 1307.4,709.1 1304.5,712.5 1298.3,716.5 1291.5,717.4ZM1360.3,716.7 1354.0,712.5 1346.5,705.1 1339.6,700.6 1319.0,694.8 1317.1,691.6 1318.5,688.2 1322.3,681.2 1325.9,677.1 1332.7,673.1 1339.6,672.7 1346.5,676.1 1355.2,684.7 1360.3,688.3 1367.1,691.2 1383.4,695.1 1384.7,698.6 1383.4,702.1 1379.4,709.1 1376.4,712.5 1371.4,716.0 1367.1,717.3ZM1215.8,644.5 1212.3,642.6 1198.6,630.1 1191.7,627.0 1173.1,621.9 1173.5,618.5 1176.9,611.5 1182.6,604.5 1188.2,601.3 1191.7,600.5 1198.6,601.6 1202.0,603.7 1215.8,616.0 1222.6,619.1 1236.4,622.4 1241.1,625.4 1236.3,635.9 1229.6,642.9 1222.6,645.4ZM1288.0,644.6 1284.6,642.8 1274.3,632.9 1268.2,628.9 1245.1,621.9 1245.5,618.5 1248.9,611.5 1254.6,604.5 1260.5,601.2 1263.9,600.5 1270.8,601.7 1274.3,603.9 1288.0,616.2 1294.9,619.1 1306.9,621.9 1312.1,624.2 1313.1,625.4 1310.3,632.4 1305.6,639.4 1301.8,642.8 1294.9,645.4ZM1356.8,642.9 1346.5,633.1 1340.2,628.9 1317.1,621.9 1317.5,618.5 1320.9,611.5 1326.6,604.5 1332.7,601.1 1336.2,600.5 1340.7,601.0 1346.5,604.1 1353.9,611.5 1360.3,616.3 1367.1,619.2 1380.9,622.6 1384.4,624.5 1385.0,625.4 1382.3,632.4 1377.6,639.4 1374.0,642.6 1370.6,644.4 1363.7,645.5ZM1153.8,825.1 1146.9,821.8 1142.6,817.1 1137.3,806.6 1138.4,803.2 1150.4,800.5 1160.7,796.9 1166.8,792.7 1174.5,785.0 1181.4,781.0 1188.2,780.9 1192.0,782.2 1196.7,785.7 1201.8,792.7 1204.8,799.7 1202.6,803.2 1191.7,805.5 1181.4,809.1 1174.9,813.6 1164.2,823.6 1160.7,825.0ZM1222.6,824.1 1217.6,820.6 1212.4,813.6 1209.3,806.6 1210.4,803.2 1226.1,799.4 1233.0,796.7 1238.8,792.7 1246.7,784.7 1253.6,780.9 1257.0,780.5 1263.9,782.2 1268.7,785.7 1271.7,789.2 1276.8,799.7 1274.4,803.2 1263.9,805.4 1253.6,809.0 1246.9,813.6 1239.8,820.8 1233.0,825.0 1229.5,825.5ZM1294.9,824.2 1289.6,820.6 1284.4,813.6 1281.3,806.6 1282.4,803.2 1298.3,799.4 1305.2,796.6 1310.8,792.7 1319.0,784.5 1325.9,780.8 1329.3,780.5 1336.2,782.3 1340.7,785.7 1343.7,789.2 1348.9,799.7 1346.5,803.1 1332.7,806.3 1325.9,808.8 1319.0,813.5 1308.7,823.2 1305.2,824.9 1301.8,825.5ZM1367.1,824.3 1361.6,820.6 1356.4,813.6 1353.3,806.6 1354.5,803.2 1370.6,799.3 1377.5,796.5 1394.7,782.0 1401.6,780.5 1408.4,782.4 1408.4,805.3 1401.6,807.3 1394.7,810.7 1384.0,820.6 1379.1,824.1 1374.0,825.5ZM1150.4,751.9 1144.4,747.4 1139.7,740.4 1137.0,733.5 1140.1,731.0 1153.8,727.5 1160.7,724.9 1167.6,719.9 1175.0,712.5 1181.4,708.9 1188.2,708.8 1191.7,710.1 1195.5,712.5 1198.8,716.0 1203.0,723.0 1204.5,726.5 1204.8,730.0 1181.4,737.1 1176.3,740.4 1165.2,750.9 1160.7,753.0 1157.3,753.5ZM1222.6,752.1 1216.4,747.4 1211.7,740.4 1209.0,733.5 1212.3,730.9 1226.1,727.5 1233.0,724.8 1239.8,719.7 1246.9,712.5 1253.6,708.9 1260.5,708.9 1263.9,710.2 1270.8,716.0 1275.0,723.0 1276.5,726.5 1276.8,730.0 1253.6,737.0 1246.7,741.7 1237.2,750.9 1233.0,752.9 1229.5,753.5ZM1294.9,752.2 1291.5,750.2 1285.8,743.9 1282.1,736.9 1281.1,733.3 1284.6,730.8 1298.3,727.4 1305.2,724.6 1312.0,719.5 1319.0,712.5 1325.9,708.8 1332.7,709.0 1336.2,710.4 1342.8,716.0 1347.0,723.0 1348.5,726.5 1348.8,730.0 1325.9,736.9 1319.0,741.5 1309.2,750.9 1305.2,752.9 1301.8,753.5ZM1367.1,752.3 1363.7,750.4 1357.8,743.9 1354.1,736.9 1353.4,732.9 1356.8,730.7 1370.6,727.3 1377.5,724.5 1394.7,710.0 1401.6,708.5 1408.4,710.5 1408.4,733.4 1401.6,735.3 1394.7,738.6 1381.2,750.9 1377.5,752.8 1374.0,753.5ZM1153.8,681.2 1146.9,677.8 1143.4,674.2 1139.1,667.2 1137.1,660.3 1160.7,652.9 1167.6,648.0 1176.5,639.4 1181.4,637.0 1184.8,636.5 1191.7,638.1 1197.8,642.9 1202.4,649.8 1205.0,656.8 1202.0,659.0 1188.2,662.4 1181.4,665.1 1174.5,670.0 1164.2,679.6 1160.7,681.1ZM1226.1,681.2 1219.2,678.0 1215.4,674.2 1211.1,667.2 1209.2,660.3 1233.0,652.7 1237.4,649.8 1248.5,639.4 1253.6,636.9 1260.5,636.9 1265.8,639.4 1269.8,642.9 1274.4,649.8 1277.0,656.8 1274.3,658.9 1260.5,662.4 1253.6,665.0 1246.7,669.7 1236.4,679.4 1233.0,681.0ZM1298.3,681.3 1291.5,678.2 1287.4,674.2 1283.1,667.2 1281.2,660.3 1298.3,655.4 1305.2,652.6 1312.1,647.5 1319.0,640.5 1325.9,636.8 1332.7,637.0 1337.8,639.4 1341.8,642.9 1346.4,649.8 1349.1,656.8 1346.5,658.8 1325.9,664.8 1319.0,669.5 1308.7,679.2 1305.2,680.9ZM1370.6,681.3 1363.7,678.4 1359.4,674.2 1355.1,667.2 1353.2,660.3 1370.6,655.3 1377.5,652.5 1394.7,638.0 1401.6,636.5 1408.4,638.5 1408.4,661.3 1401.6,663.3 1394.7,666.6 1380.9,679.1 1375.8,681.2ZM1150.4,608.0 1145.5,604.5 1140.3,597.5 1137.2,590.6 1138.5,587.1 1153.4,583.6 1204.8,583.6 1202.8,587.1 1188.2,590.5 1179.7,594.1 1163.3,608.0 1157.3,609.5ZM1222.6,608.1 1217.5,604.5 1212.3,597.5 1209.3,590.6 1210.5,587.1 1225.3,583.6 1276.8,583.6 1274.7,587.1 1260.5,590.4 1251.7,594.1 1235.2,608.0 1229.5,609.5ZM1294.9,608.2 1289.5,604.5 1284.3,597.5 1281.3,590.6 1282.6,587.1 1297.3,583.6 1348.8,583.6 1346.6,587.1 1332.7,590.3 1323.7,594.1 1307.2,608.0 1301.8,609.5ZM1367.1,608.3 1361.5,604.5 1356.3,597.5 1353.3,590.6 1354.6,587.1 1369.3,583.6 1408.6,583.6 1408.4,589.3 1401.6,591.3 1394.7,594.7 1380.9,607.1 1374.0,609.5Z"/>
+<path class="gy4" d="M1128.6,852.0 1127.9,660.2 1128.6,625.3 1128.0,587.0 1128.6,586.4 1403.8,586.4 1404.5,587.0 1403.8,605.9 1397.0,603.9 1390.1,605.4 1372.9,619.9 1366.0,622.7 1352.2,626.1 1348.4,628.8 1351.1,635.8 1355.8,642.8 1362.5,647.7 1369.4,648.9 1376.3,646.5 1390.1,634.0 1397.0,630.7 1403.8,628.8 1404.5,653.2 1403.8,677.8 1397.0,675.9 1390.1,677.4 1372.9,691.9 1366.0,694.7 1349.9,698.5 1348.7,702.0 1351.7,709.0 1357.0,715.9 1362.5,719.7 1369.4,720.9 1376.3,718.5 1391.0,705.5 1403.8,700.7 1404.5,726.4 1403.8,749.9 1397.0,747.9 1390.1,749.4 1372.9,763.9 1366.0,766.7 1348.6,771.7 1350.5,778.7 1355.7,786.6 1362.5,791.7 1369.4,792.9 1376.3,790.5 1390.1,778.0 1397.0,774.7 1403.8,772.7 1404.5,796.1 1403.8,821.9 1397.0,819.9 1390.1,821.4 1372.9,835.9 1366.0,838.7 1352.2,842.1 1348.4,844.9 1351.1,851.9 1315.6,851.9 1324.7,846.8 1344.2,841.4 1343.9,837.9 1342.4,834.4 1338.2,827.5 1331.6,821.8 1324.7,819.9 1317.8,821.5 1300.6,836.0 1293.7,838.8 1280.0,842.2 1276.5,844.9 1279.1,851.9 1255.9,852.1 1243.6,851.9 1252.4,846.9 1272.2,841.4 1271.9,837.9 1268.5,830.9 1262.8,823.8 1255.9,820.3 1249.0,820.3 1242.3,824.0 1235.2,831.1 1228.4,836.2 1221.5,838.9 1207.7,842.3 1204.5,844.9 1207.1,851.9 1183.6,852.1 1171.6,851.9 1180.2,847.0 1200.1,841.4 1199.9,837.9 1196.5,830.9 1190.9,824.0 1187.1,821.5 1180.2,819.9 1173.3,821.8 1163.0,831.3 1156.1,836.3 1149.2,838.9 1135.5,842.4 1132.4,844.9 1135.1,851.9ZM1390.1,851.9 1387.6,851.9 1393.5,848.1 1403.8,844.8 1403.8,852.2ZM1152.7,792.9 1145.8,791.3 1138.9,785.8 1134.5,778.7 1132.5,771.7 1156.1,764.3 1163.0,759.4 1171.9,750.8 1176.8,748.4 1180.2,747.9 1187.1,749.5 1193.2,754.3 1197.8,761.2 1200.4,768.2 1197.4,770.4 1183.6,773.8 1176.8,776.5 1169.9,781.4 1159.6,791.0ZM1221.5,792.6 1214.6,789.4 1210.8,785.6 1206.5,778.7 1204.6,771.7 1228.4,764.1 1232.8,761.2 1243.9,750.8 1249.0,748.3 1255.9,748.3 1261.3,750.8 1265.2,754.3 1269.8,761.2 1272.4,768.2 1269.7,770.3 1255.9,773.8 1249.0,776.4 1242.1,781.1 1231.8,790.8 1228.4,792.4ZM1293.7,792.7 1286.9,789.6 1282.8,785.6 1278.5,778.7 1276.6,771.7 1293.7,766.8 1300.6,764.0 1307.5,758.9 1314.4,751.9 1321.3,748.2 1328.1,748.4 1333.3,750.8 1337.2,754.3 1341.8,761.2 1344.5,768.2 1341.9,770.2 1321.3,776.2 1314.4,780.9 1304.1,790.6 1300.6,792.3ZM1149.2,720.5 1142.3,717.2 1137.9,712.5 1132.6,702.0 1133.9,698.5 1145.8,695.9 1156.1,692.3 1162.2,688.1 1169.9,680.4 1176.8,676.4 1183.6,676.3 1187.4,677.6 1192.1,681.1 1197.2,688.1 1200.2,695.0 1198.1,698.5 1187.1,700.9 1176.8,704.5 1170.3,709.0 1159.6,719.0 1156.1,720.4ZM1218.0,719.5 1213.0,715.9 1207.7,709.0 1204.7,702.0 1205.9,698.5 1218.0,695.8 1228.4,692.1 1234.2,688.1 1242.1,680.1 1249.0,676.3 1252.4,675.9 1259.3,677.6 1264.1,681.1 1267.0,684.6 1272.2,695.0 1270.0,698.5 1259.3,700.8 1249.0,704.4 1242.3,709.0 1235.2,716.2 1228.4,720.4 1224.9,720.9ZM1290.3,719.6 1285.0,715.9 1279.7,709.0 1276.7,702.0 1277.9,698.5 1293.7,694.8 1300.6,692.0 1306.2,688.1 1314.4,679.9 1321.3,676.2 1324.7,675.9 1331.6,677.7 1336.1,681.1 1339.0,684.6 1344.3,695.0 1341.9,698.5 1328.1,701.7 1321.3,704.2 1314.4,708.9 1304.1,718.7 1300.6,720.3 1297.2,720.9ZM1145.8,647.3 1139.8,642.8 1135.1,635.8 1132.4,628.8 1135.5,626.4 1149.2,622.9 1156.1,620.3 1163.0,615.3 1170.4,607.9 1176.8,604.3 1183.6,604.2 1187.1,605.5 1190.9,607.9 1194.2,611.4 1198.4,618.4 1199.9,621.9 1200.2,625.3 1176.8,632.5 1171.7,635.8 1160.6,646.3 1156.1,648.4 1152.7,648.9ZM1218.0,647.5 1211.8,642.8 1207.1,635.8 1204.4,628.8 1207.7,626.3 1221.5,622.9 1228.4,620.2 1235.2,615.1 1242.4,607.9 1249.0,604.3 1255.9,604.3 1259.3,605.6 1266.2,611.4 1270.4,618.4 1271.9,621.9 1272.2,625.3 1249.0,632.4 1242.1,637.1 1232.6,646.3 1228.4,648.3 1224.9,648.9ZM1290.3,647.6 1286.9,645.6 1281.1,639.3 1277.5,632.3 1276.5,628.7 1280.0,626.2 1293.7,622.8 1300.6,620.0 1307.5,614.9 1314.4,607.9 1321.3,604.2 1328.1,604.4 1331.6,605.8 1338.2,611.4 1342.4,618.4 1343.9,621.9 1344.2,625.3 1321.3,632.3 1314.4,636.9 1304.6,646.3 1300.6,648.3 1297.2,648.9ZM1138.9,827.8 1135.5,825.8 1128.6,819.0 1128.6,790.0 1138.9,799.3 1145.8,802.4 1162.7,806.6 1164.2,810.0 1158.8,820.5 1152.7,826.4 1145.8,828.8ZM1211.2,827.9 1207.7,825.9 1193.8,813.5 1187.1,810.5 1169.9,805.8 1168.5,803.1 1169.9,799.6 1173.7,792.6 1176.8,789.0 1183.6,784.7 1190.5,784.0 1194.0,785.0 1197.4,787.1 1206.6,796.1 1211.5,799.6 1218.0,802.4 1234.8,806.6 1236.2,810.0 1234.8,813.5 1230.8,820.5 1227.8,824.0 1221.5,828.0 1214.6,828.8ZM1283.4,828.0 1277.4,824.0 1269.7,816.2 1262.8,811.9 1242.1,806.0 1240.5,803.1 1241.9,799.6 1245.7,792.6 1249.0,788.8 1255.9,784.6 1262.8,784.1 1266.2,785.1 1283.4,799.6 1290.3,802.5 1306.9,806.6 1308.2,810.0 1306.8,813.5 1302.8,820.5 1299.8,824.0 1293.7,827.9 1286.9,828.8ZM1355.7,828.1 1349.4,824.0 1341.9,816.5 1335.0,812.0 1314.4,806.2 1312.5,803.1 1313.9,799.6 1317.7,792.6 1321.3,788.6 1328.1,784.5 1335.0,784.1 1341.9,787.5 1350.6,796.1 1355.7,799.7 1362.5,802.6 1378.9,806.6 1380.1,810.0 1378.8,813.5 1374.8,820.5 1371.8,824.0 1366.8,827.5 1362.5,828.7ZM1403.8,810.7 1386.9,806.6 1384.5,803.1 1387.6,796.1 1392.7,789.1 1397.4,785.6 1403.8,783.9ZM1138.9,755.8 1135.5,753.8 1128.6,747.0 1128.6,718.0 1138.9,727.3 1145.8,730.4 1159.6,733.8 1163.0,735.2 1164.5,736.9 1159.7,747.3 1153.0,754.3 1145.8,756.8ZM1211.2,755.9 1207.7,754.0 1194.0,741.5 1187.1,738.4 1168.5,733.4 1168.9,729.9 1172.3,722.9 1178.0,715.9 1183.6,712.7 1187.1,711.9 1194.0,713.0 1197.4,715.1 1211.2,727.4 1218.0,730.5 1231.8,733.8 1235.2,735.4 1236.5,736.9 1231.7,747.3 1225.0,754.3 1218.0,756.8ZM1283.4,756.0 1280.0,754.2 1269.7,744.3 1263.6,740.3 1240.5,733.4 1240.9,729.9 1244.3,722.9 1250.0,715.9 1255.9,712.6 1259.3,711.9 1266.2,713.1 1269.7,715.3 1283.4,727.6 1290.3,730.5 1302.4,733.4 1307.5,735.6 1308.4,736.9 1305.7,743.8 1301.0,750.8 1297.2,754.2 1290.3,756.8ZM1352.2,754.3 1341.9,744.5 1335.7,740.3 1312.5,733.4 1312.9,729.9 1316.3,722.9 1321.9,715.9 1328.1,712.5 1331.6,711.9 1336.2,712.5 1341.9,715.5 1349.4,722.9 1355.7,727.7 1362.5,730.6 1376.3,734.0 1379.8,735.9 1380.4,736.9 1377.7,743.8 1373.0,750.8 1369.4,754.0 1366.0,755.8 1359.1,756.9ZM1400.4,737.6 1384.5,733.4 1384.9,729.9 1388.3,722.9 1393.5,716.3 1400.3,712.5 1403.8,711.9 1403.8,738.7ZM1142.3,684.8 1135.5,681.8 1128.6,675.0 1128.6,646.0 1135.5,652.8 1142.3,657.0 1164.4,663.7 1162.3,670.6 1156.1,679.6 1149.2,684.1ZM1214.6,684.8 1207.7,682.0 1194.0,669.5 1187.1,666.4 1173.3,663.0 1168.3,660.2 1171.0,653.2 1176.8,645.1 1183.6,640.7 1190.5,640.0 1194.0,641.0 1197.4,643.1 1211.2,655.4 1218.0,658.5 1236.4,663.7 1234.3,670.6 1228.4,679.4 1221.5,684.0ZM1286.9,684.9 1280.0,682.1 1266.2,669.7 1259.3,666.5 1245.6,663.1 1240.3,660.2 1243.0,653.2 1249.0,644.8 1255.9,640.6 1262.8,640.1 1266.2,641.1 1269.7,643.3 1283.4,655.6 1290.3,658.6 1308.3,663.7 1306.3,670.6 1300.6,679.1 1293.7,683.9ZM1359.1,684.9 1352.2,682.3 1341.9,672.4 1335.0,668.0 1317.8,663.1 1314.4,661.9 1312.3,660.2 1317.0,649.7 1321.3,644.6 1328.1,640.6 1335.0,640.1 1341.9,643.5 1352.0,653.2 1355.7,655.7 1362.5,658.6 1380.3,663.7 1378.3,670.6 1372.9,678.8 1366.0,683.8ZM1393.5,664.0 1386.6,662.1 1384.3,660.2 1385.4,656.7 1389.0,649.7 1393.5,644.4 1397.0,641.9 1403.8,639.9 1403.8,666.7ZM1138.9,611.8 1135.5,609.8 1128.6,603.0 1128.6,586.8 1148.1,587.0 1163.0,590.9 1164.2,594.0 1162.8,597.5 1155.9,607.9 1149.2,612.1 1142.3,612.8ZM1211.2,611.9 1207.7,609.9 1194.0,597.6 1187.1,594.5 1170.6,590.5 1168.5,587.0 1220.1,587.0 1234.7,590.5 1236.2,594.0 1233.1,600.9 1227.9,607.9 1221.5,612.0 1214.6,612.8ZM1283.4,612.0 1280.0,610.1 1266.2,597.7 1259.3,594.5 1242.7,590.5 1240.5,587.0 1292.1,587.0 1306.7,590.5 1308.2,594.0 1306.8,597.5 1302.9,604.4 1299.9,607.9 1293.7,611.9 1286.9,612.8ZM1355.7,612.1 1349.3,607.9 1338.5,597.9 1331.6,594.6 1314.7,590.5 1312.5,587.0 1364.1,587.0 1378.8,590.5 1380.2,594.0 1378.8,597.5 1374.9,604.4 1371.9,607.9 1366.9,611.4 1362.5,612.7ZM1403.8,594.7 1386.8,590.5 1384.5,587.0 1403.8,586.8Z"/>
+<path class="gy3" d="M1124.0,855.7 1123.3,590.4 1124.0,589.7 1158.4,590.3 1399.2,589.8 1399.8,590.4 1399.2,610.3 1395.8,605.9 1392.4,603.3 1385.5,600.7 1382.0,601.1 1378.6,604.4 1373.9,614.8 1369.7,621.8 1356.0,635.7 1354.6,639.2 1354.3,642.7 1356.6,649.7 1361.4,655.0 1368.3,658.5 1371.7,658.9 1375.2,657.6 1384.9,639.2 1399.2,624.3 1399.9,653.1 1399.2,682.4 1395.8,677.9 1392.4,675.3 1385.5,672.7 1382.0,673.1 1378.6,676.4 1371.3,691.5 1368.3,695.5 1357.7,705.4 1355.4,708.9 1354.4,712.4 1355.4,719.3 1357.9,723.7 1364.8,729.2 1371.7,731.0 1375.2,729.5 1377.3,726.3 1382.2,715.9 1386.7,708.9 1399.2,696.3 1399.9,726.3 1399.2,754.2 1395.8,749.9 1392.4,747.3 1385.5,744.7 1382.0,745.1 1378.6,748.4 1370.5,764.6 1356.8,778.6 1354.9,782.1 1354.3,785.6 1354.7,789.0 1358.2,796.0 1364.8,801.2 1371.7,802.9 1375.2,801.6 1376.6,799.5 1385.7,782.1 1399.2,768.4 1399.9,796.0 1399.2,826.3 1395.8,821.9 1392.4,819.3 1385.5,816.7 1382.0,817.1 1378.6,820.4 1373.9,830.9 1369.7,837.8 1358.7,848.3 1356.0,851.8 1354.6,855.3 1312.9,855.3 1326.6,841.3 1328.5,837.8 1329.2,834.3 1327.8,827.4 1323.5,821.7 1316.7,817.5 1313.2,816.7 1309.8,817.2 1306.3,820.9 1301.9,830.9 1297.7,837.8 1286.7,848.3 1284.0,851.8 1282.6,855.3 1240.9,855.3 1254.6,841.3 1256.5,837.8 1257.2,834.3 1255.8,827.4 1253.6,823.9 1247.8,819.0 1241.0,816.7 1237.5,817.3 1234.7,820.4 1227.2,835.6 1222.5,841.3 1214.7,848.3 1212.0,851.8 1210.6,855.3 1168.9,855.3 1182.6,841.3 1184.5,837.8 1185.2,834.3 1183.8,827.4 1181.6,823.9 1175.6,818.9 1168.7,816.7 1165.3,817.5 1162.7,820.4 1155.0,836.0 1150.5,841.3 1142.7,848.3 1140.0,851.8 1138.6,855.3ZM1385.5,855.3 1387.6,851.8 1399.2,840.3 1399.7,855.3ZM1148.1,800.8 1142.2,796.0 1140.0,792.5 1138.3,785.6 1139.0,782.1 1141.2,778.1 1154.5,764.6 1161.8,749.8 1165.3,745.4 1168.7,744.7 1175.6,746.8 1180.6,750.7 1184.6,757.7 1184.9,764.6 1183.4,768.1 1169.7,782.1 1161.8,797.7 1158.4,802.1 1155.0,802.9ZM1220.3,800.9 1214.2,796.0 1212.0,792.5 1210.3,785.6 1211.0,782.1 1213.4,777.8 1226.5,764.6 1234.1,749.3 1237.5,745.3 1241.0,744.7 1247.8,747.0 1252.6,750.7 1256.6,757.7 1256.9,764.6 1255.4,768.1 1241.7,782.1 1234.1,797.2 1230.6,802.0 1227.2,802.9ZM1292.6,801.0 1286.2,796.0 1284.0,792.5 1282.3,785.6 1283.0,782.1 1285.7,777.5 1298.5,764.6 1306.3,748.8 1309.8,745.2 1313.2,744.7 1320.1,747.1 1324.6,750.7 1328.6,757.7 1328.9,764.6 1327.4,768.1 1313.7,782.1 1302.9,801.8 1299.5,802.9ZM1151.5,730.3 1144.6,726.5 1141.2,722.7 1138.5,715.9 1139.4,708.9 1141.7,705.4 1151.5,696.3 1155.0,692.0 1161.8,677.8 1164.7,674.0 1168.7,672.6 1172.2,673.3 1179.0,677.2 1182.5,681.0 1185.1,688.0 1184.1,695.0 1181.7,698.4 1172.2,707.2 1168.7,711.5 1161.8,725.7 1158.7,729.8 1155.0,731.0ZM1223.8,730.4 1216.9,726.7 1213.3,722.8 1210.5,715.9 1211.4,708.9 1213.7,705.4 1223.8,696.0 1227.2,691.6 1234.1,677.3 1236.7,674.0 1241.0,672.7 1244.4,673.4 1251.3,677.4 1254.7,681.4 1257.1,688.0 1256.1,695.0 1253.7,698.4 1241.0,711.1 1234.1,725.2 1230.8,729.8 1227.2,731.0ZM1296.0,730.4 1289.1,726.9 1285.3,722.8 1282.5,715.9 1283.4,708.9 1285.7,705.4 1296.0,695.7 1299.3,691.5 1306.3,676.8 1308.8,674.0 1313.2,672.7 1316.7,673.5 1323.4,677.5 1327.0,681.9 1329.1,688.0 1328.1,695.0 1325.7,698.4 1313.2,710.8 1306.3,724.6 1302.9,729.7 1299.5,731.0ZM1148.1,656.8 1143.3,653.1 1139.0,646.2 1138.6,639.2 1140.0,635.7 1153.7,621.8 1157.9,614.8 1161.8,605.8 1165.3,601.5 1168.7,600.7 1175.6,602.9 1181.6,607.8 1183.8,611.3 1185.2,618.3 1184.6,621.8 1182.5,625.5 1168.9,639.2 1161.8,653.7 1158.4,658.1 1155.0,659.0ZM1220.3,656.9 1215.3,653.1 1211.0,646.2 1210.6,639.2 1212.0,635.7 1225.7,621.8 1229.9,614.8 1234.1,605.3 1237.5,601.3 1241.0,600.7 1247.8,603.0 1253.5,607.8 1255.8,611.3 1257.2,618.3 1256.6,621.8 1254.7,625.3 1240.9,639.2 1234.1,653.1 1230.6,658.0 1227.2,659.0ZM1292.6,657.1 1287.3,653.1 1283.0,646.2 1282.6,639.2 1284.0,635.7 1297.7,621.8 1306.7,604.3 1309.8,601.2 1313.2,600.7 1316.7,601.5 1323.5,605.7 1327.0,609.9 1328.9,614.8 1328.6,621.8 1326.7,625.3 1312.9,639.2 1306.3,652.6 1302.9,657.8 1299.5,659.0ZM1185.9,855.3 1183.4,855.3 1185.9,853.9 1192.8,852.8 1196.2,855.3ZM1258.2,855.3 1255.4,855.3 1261.6,852.8 1265.1,852.9 1268.1,855.3ZM1330.4,855.3 1327.3,855.3 1333.9,852.8 1337.3,853.0 1340.1,855.3ZM1130.9,838.8 1127.4,836.5 1124.0,829.7 1124.0,782.9 1132.3,799.5 1137.7,805.9 1145.9,813.4 1148.2,816.9 1149.2,820.4 1148.2,827.4 1144.6,832.8 1137.7,837.7ZM1203.1,838.9 1199.7,836.8 1191.5,820.4 1185.9,813.8 1177.9,806.5 1175.5,803.0 1174.5,799.5 1175.3,792.5 1177.2,789.0 1182.5,783.8 1189.4,780.8 1192.8,780.8 1196.2,783.2 1204.3,799.5 1210.0,806.1 1217.9,813.4 1220.2,816.9 1221.2,820.4 1220.2,827.4 1216.9,832.5 1210.0,837.5ZM1275.4,838.9 1271.9,837.0 1263.5,820.4 1258.2,814.0 1249.9,806.5 1247.5,803.0 1246.5,799.5 1247.3,792.5 1249.2,789.0 1254.7,783.6 1261.6,780.8 1265.1,780.9 1268.5,783.6 1276.3,799.5 1278.9,803.0 1289.9,813.4 1292.2,816.9 1293.2,820.4 1292.2,827.4 1289.1,832.3 1282.3,837.4ZM1347.6,838.9 1344.2,837.3 1335.5,820.4 1330.4,814.2 1321.9,806.5 1319.5,803.0 1318.5,799.5 1319.3,792.5 1321.1,789.0 1327.0,783.5 1333.9,780.7 1337.3,781.0 1340.7,783.9 1348.3,799.5 1351.1,803.2 1361.9,813.4 1364.2,816.9 1365.2,820.4 1364.2,827.4 1361.4,832.0 1354.5,837.3ZM1399.2,811.3 1393.9,806.5 1391.5,803.0 1390.5,796.0 1393.1,789.0 1399.2,783.3ZM1130.9,766.8 1127.4,764.4 1124.0,757.6 1124.0,710.9 1133.9,729.8 1144.9,740.3 1147.6,743.7 1149.0,747.2 1148.6,754.2 1144.6,760.9 1137.7,765.7ZM1199.7,764.7 1190.7,747.2 1177.0,733.3 1175.0,729.8 1174.4,726.3 1175.6,719.9 1178.0,715.9 1182.5,711.8 1189.4,708.8 1192.8,708.8 1196.2,711.2 1205.9,729.8 1216.9,740.3 1219.6,743.7 1221.0,747.2 1220.3,754.9 1216.9,760.6 1213.4,763.6 1206.6,766.7 1203.1,766.9ZM1271.9,765.0 1262.7,747.2 1249.0,733.3 1247.0,729.8 1246.4,726.3 1247.8,719.3 1250.0,715.9 1254.7,711.6 1261.6,708.8 1265.1,708.9 1268.5,711.6 1277.9,729.8 1289.1,740.6 1293.0,747.2 1292.6,754.3 1289.1,760.3 1285.7,763.4 1278.8,766.6 1275.4,766.9ZM1344.2,765.3 1334.7,747.2 1321.0,733.3 1319.0,729.8 1318.4,726.3 1319.8,719.3 1322.0,715.9 1327.0,711.5 1333.9,708.8 1337.3,709.0 1340.7,712.0 1345.7,722.8 1349.9,729.8 1360.8,740.3 1363.6,743.7 1365.0,747.2 1364.6,754.2 1361.4,760.0 1357.9,763.2 1351.1,766.6 1347.6,766.9ZM1399.2,739.3 1393.0,733.3 1391.0,729.8 1390.4,726.3 1390.7,722.8 1392.4,718.4 1395.8,713.9 1399.2,711.3ZM1127.4,692.5 1124.0,685.7 1124.0,639.0 1133.0,656.6 1146.8,670.6 1148.7,674.0 1149.2,677.5 1147.7,684.5 1144.6,688.9 1141.2,691.8 1134.3,694.7 1130.9,694.8ZM1199.7,692.8 1189.9,674.0 1179.0,663.6 1176.2,660.1 1174.7,656.6 1174.9,649.7 1179.0,642.7 1182.5,639.8 1189.4,636.8 1192.8,636.8 1196.2,639.3 1205.0,656.6 1216.9,668.4 1220.7,674.0 1220.9,681.0 1216.9,688.6 1213.4,691.6 1206.6,694.7 1203.1,694.8ZM1271.9,693.1 1261.9,674.0 1251.0,663.6 1248.1,660.1 1246.7,656.6 1246.9,649.7 1251.0,642.7 1254.7,639.6 1261.6,636.8 1265.1,636.9 1268.5,639.6 1277.0,656.6 1289.1,668.7 1292.7,674.0 1292.9,681.0 1289.1,688.3 1285.7,691.5 1278.8,694.6 1275.4,694.9ZM1344.2,693.3 1333.9,674.1 1323.0,663.6 1320.1,660.1 1318.7,656.6 1319.0,649.7 1323.0,642.7 1327.0,639.4 1333.9,636.8 1337.3,637.0 1340.7,640.0 1349.0,656.6 1362.8,670.6 1364.8,674.9 1364.9,681.0 1363.6,684.5 1361.5,688.0 1357.9,691.3 1351.1,694.6 1347.6,694.9ZM1399.2,667.4 1392.1,660.1 1390.4,653.1 1392.4,646.2 1395.8,641.9 1399.2,639.3ZM1130.9,622.8 1127.4,620.5 1124.0,613.7 1124.0,590.2 1138.3,590.4 1145.9,597.4 1148.2,600.9 1149.2,604.3 1148.2,611.3 1144.6,616.8 1137.7,621.7ZM1203.1,622.9 1199.7,620.8 1193.4,607.8 1189.4,601.4 1177.9,590.4 1210.3,590.4 1217.9,597.4 1220.2,600.9 1221.2,604.3 1220.3,611.0 1218.3,614.8 1215.1,618.3 1210.0,621.5ZM1275.4,622.9 1271.9,621.0 1261.6,601.8 1249.9,590.4 1282.3,590.4 1289.9,597.4 1292.2,600.9 1293.2,604.3 1292.6,610.0 1290.3,614.8 1287.1,618.3 1282.3,621.4ZM1347.6,622.9 1344.2,621.3 1335.5,604.3 1332.9,600.9 1321.9,590.4 1354.3,590.4 1361.9,597.4 1364.2,600.9 1365.2,604.3 1364.8,609.0 1362.3,614.8 1357.9,619.2 1354.5,621.3ZM1399.2,595.3 1393.9,590.4 1399.2,590.3Z"/>
+<path class="gy2" d="M1119.4,859.3 1118.8,858.7 1118.9,593.8 1141.2,593.8 1148.0,600.8 1151.8,607.7 1153.5,614.7 1153.8,625.2 1153.1,628.7 1151.0,632.1 1140.0,641.8 1137.0,646.1 1135.7,649.6 1135.6,656.5 1139.1,663.5 1146.9,671.6 1150.9,677.4 1153.1,684.4 1154.0,694.9 1152.6,701.8 1149.9,705.3 1138.5,715.8 1136.4,719.3 1135.3,726.2 1137.5,733.2 1147.0,743.7 1151.4,750.6 1153.3,757.6 1153.9,768.0 1151.9,775.0 1140.3,785.5 1137.7,789.0 1136.0,792.4 1135.4,799.4 1138.3,806.4 1148.0,816.8 1151.9,823.8 1153.5,830.8 1153.8,841.2 1153.1,844.7 1151.0,848.2 1139.3,858.7ZM1160.7,858.7 1162.3,851.7 1174.4,840.5 1177.9,835.2 1179.0,830.8 1178.2,823.8 1176.3,820.3 1166.6,809.9 1164.1,806.0 1161.6,799.4 1160.6,792.4 1161.3,782.0 1163.1,778.5 1174.9,768.0 1177.9,763.1 1179.1,757.6 1177.7,750.6 1174.4,745.9 1165.7,736.7 1163.6,733.2 1161.4,726.2 1160.5,719.3 1161.7,708.8 1164.3,705.3 1175.8,694.9 1177.9,691.3 1179.1,684.4 1177.0,677.4 1164.9,663.5 1161.1,653.1 1160.5,642.6 1162.3,635.6 1174.4,624.5 1177.9,619.2 1179.1,614.7 1178.2,607.7 1176.3,604.3 1166.6,593.8 1213.2,593.8 1219.9,600.8 1223.8,607.7 1225.5,614.7 1225.8,625.2 1225.1,628.7 1223.0,632.1 1212.3,641.5 1209.0,646.1 1207.7,649.6 1207.6,656.5 1211.1,663.5 1219.2,671.9 1222.9,677.4 1225.1,684.4 1226.0,694.9 1224.6,701.8 1221.9,705.3 1212.3,713.5 1208.8,718.5 1207.3,726.2 1209.5,733.2 1219.2,743.9 1223.4,750.6 1225.3,757.6 1225.9,768.0 1223.9,775.0 1212.3,785.5 1209.7,789.0 1208.0,792.4 1207.4,799.4 1210.3,806.4 1220.0,816.8 1223.9,823.8 1225.5,830.8 1225.8,841.2 1225.1,844.7 1222.9,848.2 1211.3,858.7 1184.8,859.3ZM1232.9,858.7 1233.0,855.2 1234.3,851.7 1246.7,840.2 1250.1,834.6 1251.1,830.8 1250.2,823.8 1248.3,820.3 1236.3,806.4 1233.6,799.4 1232.5,792.4 1232.5,785.5 1235.1,778.5 1246.9,768.0 1250.1,762.5 1251.1,757.6 1250.1,751.8 1247.5,747.1 1239.8,739.1 1235.6,733.2 1233.4,726.2 1232.4,719.3 1232.7,712.3 1233.7,708.8 1236.3,705.3 1247.8,694.9 1250.1,690.5 1251.1,684.4 1249.0,677.4 1236.4,662.5 1233.9,656.5 1232.6,649.6 1232.4,642.6 1234.3,635.6 1246.7,624.2 1250.1,618.6 1251.1,614.7 1250.2,607.7 1248.3,604.3 1238.6,593.8 1285.2,593.8 1291.9,600.8 1295.8,607.7 1297.5,614.7 1297.8,625.2 1297.1,628.7 1294.9,632.1 1284.5,641.3 1281.1,645.9 1279.7,649.6 1279.6,656.5 1283.1,663.5 1291.4,672.2 1294.8,677.4 1297.1,684.4 1298.0,694.9 1296.6,701.8 1293.9,705.3 1284.5,713.3 1281.1,718.0 1279.5,722.7 1279.3,726.2 1281.5,733.2 1291.4,744.2 1295.4,750.6 1297.3,757.6 1297.9,768.0 1295.9,775.0 1284.5,785.2 1281.7,789.0 1280.0,792.4 1279.4,799.4 1282.3,806.4 1292.0,816.8 1295.9,823.8 1297.5,830.8 1297.8,841.2 1297.1,844.7 1294.9,848.2 1283.3,858.7 1257.0,859.3ZM1305.2,858.7 1304.4,858.7 1304.9,855.2 1306.3,851.7 1318.9,839.9 1322.3,834.3 1323.1,830.8 1322.4,824.5 1320.3,820.3 1308.3,806.4 1305.6,799.4 1304.5,792.4 1304.5,785.5 1307.1,778.5 1318.9,768.0 1322.4,761.8 1323.1,757.6 1322.4,752.6 1319.5,747.1 1309.7,736.7 1307.6,733.2 1305.4,726.2 1304.4,719.3 1304.7,712.3 1305.7,708.8 1308.3,705.3 1319.8,694.9 1322.4,689.7 1323.1,684.4 1321.0,677.4 1311.6,667.0 1307.1,660.0 1304.6,649.6 1304.4,642.6 1306.3,635.6 1318.9,623.9 1322.3,618.2 1323.1,614.7 1322.4,608.5 1320.3,604.3 1310.6,593.8 1357.2,593.8 1363.9,600.8 1367.8,607.7 1369.5,614.7 1369.9,625.2 1369.1,628.7 1367.0,632.1 1356.8,641.0 1353.3,645.5 1351.7,649.6 1351.6,656.5 1355.2,663.5 1363.7,672.5 1366.8,677.4 1369.1,684.4 1370.0,694.9 1368.6,701.8 1366.0,705.3 1356.8,713.0 1353.3,717.6 1351.5,722.7 1351.3,726.2 1353.5,733.2 1363.7,744.5 1367.4,750.6 1369.3,757.6 1370.0,768.0 1367.9,775.0 1356.8,785.0 1353.6,789.0 1352.1,792.4 1351.4,799.4 1354.3,806.4 1364.0,816.8 1367.1,822.1 1369.5,830.8 1369.9,841.2 1369.1,844.7 1366.9,848.2 1355.3,858.7 1329.3,859.3ZM1377.4,858.7 1376.4,858.7 1378.3,851.7 1391.2,839.6 1394.6,832.8 1395.2,858.7 1394.6,859.3ZM1394.6,825.5 1392.3,820.3 1380.3,806.4 1377.6,799.4 1376.3,789.0 1377.3,782.0 1379.1,778.5 1390.9,768.0 1394.6,761.2 1395.3,792.4ZM1394.6,753.3 1391.5,747.1 1381.7,736.7 1379.6,733.2 1377.4,726.2 1376.3,715.8 1377.8,708.8 1380.2,705.3 1391.2,695.6 1394.6,688.9 1395.3,722.7ZM1394.6,681.2 1391.2,674.8 1383.6,667.0 1379.1,660.0 1377.1,653.1 1376.4,646.1 1376.9,639.1 1378.3,635.6 1391.2,623.6 1394.6,616.8 1395.3,649.6ZM1394.6,609.5 1392.3,604.3 1382.6,593.8 1395.0,593.8ZM1119.4,858.9 1119.4,593.7 1125.8,593.8 1128.4,597.3 1140.0,607.7 1142.9,614.7 1142.5,621.7 1140.9,625.2 1131.4,635.6 1127.0,642.6 1125.1,649.6 1124.3,656.5 1124.9,663.5 1126.6,667.0 1140.0,679.9 1142.3,684.4 1143.0,691.4 1140.2,698.4 1128.1,712.3 1125.5,719.3 1124.3,729.7 1125.3,736.7 1127.4,740.2 1140.0,751.9 1142.7,757.6 1143.2,761.1 1142.8,764.6 1140.0,770.4 1132.5,778.5 1127.5,785.5 1125.3,792.4 1124.3,802.9 1126.3,810.4 1128.4,813.4 1136.9,820.3 1141.9,827.3 1143.1,834.3 1142.5,837.7 1140.0,842.5 1131.4,851.7 1127.0,858.7ZM1174.4,858.7 1172.7,858.7 1174.4,855.8 1184.6,844.7 1186.8,841.2 1189.1,834.3 1190.1,823.8 1188.7,816.8 1186.3,813.4 1174.4,802.7 1171.5,795.9 1171.2,792.4 1173.4,785.5 1182.8,775.0 1187.3,768.0 1189.3,761.1 1190.0,750.6 1188.0,743.7 1173.8,729.7 1171.3,722.7 1171.4,719.3 1174.1,712.3 1186.2,698.4 1188.8,691.4 1190.1,680.9 1189.2,674.0 1187.2,670.5 1174.4,658.6 1171.8,653.1 1171.2,649.6 1172.8,642.6 1175.0,639.1 1184.6,628.7 1186.8,625.2 1189.1,618.2 1190.0,611.2 1189.8,604.3 1188.7,600.8 1186.2,597.3 1182.0,593.8 1197.8,593.8 1200.4,597.3 1212.0,607.7 1213.9,611.2 1215.1,618.2 1212.9,625.2 1203.4,635.6 1199.0,642.6 1196.6,653.1 1196.9,663.5 1198.6,667.0 1212.3,680.2 1215.1,687.9 1215.0,691.4 1212.3,698.2 1202.5,708.8 1198.6,715.8 1196.9,722.7 1196.5,733.2 1197.3,736.7 1199.4,740.2 1208.8,748.3 1212.3,752.3 1214.7,757.6 1215.1,761.1 1214.8,764.6 1212.3,770.1 1202.0,781.5 1199.5,785.5 1197.3,792.4 1196.3,802.9 1196.7,806.4 1198.5,810.8 1212.3,824.2 1214.9,830.8 1215.1,834.3 1212.9,841.2 1203.4,851.7 1199.0,858.7ZM1246.7,858.7 1244.7,858.7 1246.7,855.4 1256.6,844.7 1258.8,841.2 1261.0,834.3 1262.1,823.8 1260.6,816.8 1258.3,813.4 1246.6,802.9 1243.5,795.9 1243.2,792.4 1245.4,785.5 1254.8,775.0 1259.3,768.0 1261.3,761.1 1262.0,750.6 1260.0,743.7 1245.8,729.7 1243.3,722.7 1243.3,719.3 1246.1,712.3 1258.2,698.4 1260.8,691.4 1262.1,680.9 1261.2,674.0 1259.3,670.5 1246.7,658.9 1243.8,653.1 1243.2,649.2 1244.8,642.6 1246.9,639.1 1256.7,628.7 1258.8,625.2 1261.1,618.2 1262.0,611.2 1261.8,604.3 1260.6,600.8 1258.2,597.3 1254.0,593.8 1269.8,593.8 1272.4,597.3 1283.9,607.7 1285.9,611.2 1287.1,618.2 1284.9,625.2 1275.4,635.6 1271.0,642.6 1268.6,653.1 1268.9,663.5 1270.8,667.2 1284.5,680.6 1287.1,687.9 1287.0,691.4 1284.5,697.7 1274.5,708.8 1270.6,715.8 1268.9,722.7 1268.5,733.2 1269.3,736.7 1271.4,740.2 1281.1,748.5 1284.5,752.7 1286.7,757.6 1287.1,761.1 1286.8,764.6 1284.5,769.7 1274.2,781.2 1271.5,785.5 1269.3,792.4 1268.4,802.9 1268.7,806.4 1270.8,811.2 1281.1,820.4 1284.5,824.6 1286.9,830.8 1287.1,834.3 1284.9,841.2 1275.4,851.7 1271.0,858.7ZM1318.9,858.7 1316.7,858.7 1318.9,855.2 1328.6,844.7 1330.8,841.2 1333.0,834.3 1334.1,823.8 1332.6,816.8 1330.2,813.4 1318.6,802.9 1315.5,796.0 1315.2,792.4 1317.4,785.5 1326.8,775.0 1331.3,768.0 1333.3,761.1 1334.0,750.6 1332.1,743.7 1317.8,729.7 1315.5,723.7 1315.3,719.3 1318.1,712.3 1330.2,698.4 1332.8,691.4 1334.1,680.9 1333.1,674.0 1331.3,670.5 1322.4,662.9 1317.2,656.5 1315.7,653.1 1315.5,646.3 1318.9,639.1 1329.3,627.7 1333.0,618.2 1334.0,611.2 1333.8,604.3 1332.6,600.8 1330.2,597.3 1325.9,593.8 1341.8,593.8 1344.4,597.3 1355.9,607.7 1357.9,611.2 1359.1,618.2 1356.9,625.2 1347.4,635.6 1343.1,642.6 1340.6,653.1 1340.9,663.5 1342.5,667.0 1353.3,676.7 1356.8,680.9 1359.1,687.9 1359.0,691.4 1356.8,697.3 1346.5,708.8 1342.6,715.8 1340.9,722.7 1340.5,733.2 1341.3,736.7 1343.4,740.2 1353.3,748.8 1356.8,753.1 1359.1,761.1 1358.8,764.6 1356.8,769.3 1346.5,780.8 1343.5,785.5 1341.3,792.4 1340.4,802.9 1341.8,809.9 1344.4,813.4 1353.3,820.7 1356.8,825.1 1358.9,830.8 1359.1,834.3 1356.9,841.2 1347.4,851.7 1343.0,858.7ZM1391.2,858.7 1388.7,858.7 1394.6,851.1 1394.8,858.7ZM1394.6,807.1 1390.6,802.9 1388.6,799.4 1387.3,792.4 1389.4,785.5 1394.6,779.1ZM1394.6,735.1 1389.8,729.7 1387.3,722.7 1388.2,715.8 1390.1,712.3 1394.6,707.2ZM1394.6,663.2 1389.2,656.5 1387.2,649.6 1388.8,642.6 1394.6,635.1Z"/>
+<path class="gy1" d="M1114.8,862.7 1114.1,858.6 1114.1,639.0 1114.8,597.0 1127.9,597.2 1142.9,607.7 1156.1,622.8 1159.5,624.8 1163.0,625.4 1166.4,625.0 1173.3,621.2 1176.7,617.0 1179.0,611.1 1179.1,607.7 1177.5,604.2 1167.6,597.2 1169.8,597.2 1199.9,597.2 1214.9,607.7 1228.3,623.0 1231.8,624.9 1235.2,625.4 1242.1,623.4 1245.5,621.0 1249.0,616.6 1251.0,611.1 1251.1,607.7 1249.5,604.2 1239.6,597.2 1271.9,597.2 1286.9,607.7 1299.0,621.6 1304.0,625.0 1310.9,624.8 1316.8,621.6 1320.0,618.1 1323.0,611.1 1323.1,607.7 1321.5,604.2 1311.6,597.2 1343.9,597.2 1359.1,607.8 1372.8,623.4 1376.3,625.1 1379.7,625.4 1386.6,623.1 1390.0,620.5 1390.7,646.0 1390.0,673.2 1376.3,663.8 1366.0,651.2 1362.5,648.7 1359.1,647.9 1352.2,649.2 1346.9,653.0 1344.3,656.5 1342.0,663.4 1342.5,666.9 1345.0,670.4 1360.3,680.8 1372.8,695.4 1376.3,697.0 1379.7,697.4 1386.6,695.2 1390.0,692.5 1390.7,719.2 1390.0,745.3 1377.2,736.6 1366.0,723.2 1362.5,720.7 1359.1,719.8 1352.2,721.2 1345.8,726.1 1342.3,733.1 1342.0,736.6 1343.1,740.1 1345.3,742.5 1359.1,751.8 1372.8,767.4 1376.3,769.0 1379.7,769.4 1384.9,768.0 1390.0,764.6 1390.7,792.4 1390.0,817.2 1376.3,807.8 1366.0,795.2 1362.5,792.7 1359.1,791.8 1352.2,793.2 1348.1,795.8 1344.9,799.3 1342.1,806.3 1342.2,809.8 1343.9,813.3 1359.1,823.8 1372.8,839.4 1376.3,841.0 1379.7,841.4 1386.6,839.1 1390.0,836.5 1390.7,862.1 1390.0,862.7 1359.1,862.1 1324.7,862.8 1286.8,862.1ZM1163.0,841.4 1159.5,840.8 1156.1,838.8 1143.0,823.7 1127.9,813.3 1126.2,809.8 1127.1,802.8 1132.0,795.9 1135.4,793.6 1142.3,791.8 1145.8,792.4 1149.2,794.5 1159.5,807.0 1177.5,820.2 1179.1,823.7 1179.0,827.2 1176.0,834.2 1169.8,839.6ZM1235.2,841.4 1231.8,840.9 1228.3,839.0 1215.0,823.7 1199.9,813.3 1198.2,809.8 1199.1,802.8 1204.0,795.8 1207.7,793.5 1214.6,791.8 1218.0,792.5 1221.4,794.7 1231.8,807.3 1249.5,820.2 1251.1,823.7 1251.0,827.2 1248.0,834.2 1242.1,839.4ZM1307.5,841.4 1304.0,841.0 1300.6,839.2 1287.0,823.7 1271.9,813.3 1270.2,809.8 1270.1,806.3 1272.9,799.3 1276.5,795.5 1283.4,792.1 1290.3,792.6 1293.7,794.9 1306.6,809.8 1321.5,820.2 1323.1,823.7 1323.0,827.2 1320.0,834.2 1314.3,839.3ZM1159.5,768.8 1156.1,766.8 1142.3,751.2 1130.4,743.6 1127.1,740.1 1126.0,736.6 1127.6,729.6 1132.0,724.0 1135.4,721.6 1142.3,719.8 1145.8,720.4 1149.2,722.5 1161.2,736.6 1176.5,747.1 1178.8,750.5 1179.2,754.0 1178.4,757.5 1174.1,764.5 1169.8,767.6 1166.4,768.9ZM1231.8,768.9 1228.3,767.0 1214.6,751.4 1202.4,743.6 1199.1,740.1 1198.0,736.6 1199.6,729.6 1201.9,726.1 1207.7,721.5 1214.6,719.8 1218.0,720.5 1221.4,722.7 1231.8,735.3 1248.5,747.1 1250.8,750.5 1251.2,754.0 1250.4,757.5 1246.1,764.5 1238.6,768.9ZM1304.0,769.0 1300.6,767.2 1297.9,764.5 1286.8,751.6 1274.4,743.6 1271.1,740.1 1270.0,736.6 1271.6,729.6 1273.9,726.1 1279.9,721.3 1286.8,719.8 1290.3,720.6 1293.3,722.7 1304.0,735.5 1320.5,747.1 1322.8,750.5 1323.2,754.0 1322.4,757.5 1318.1,764.5 1310.9,768.8ZM1159.5,696.8 1156.1,694.8 1144.3,680.8 1129.0,670.4 1126.5,666.9 1126.0,663.4 1128.2,656.5 1130.9,653.0 1135.4,649.5 1142.3,647.8 1147.6,649.5 1151.5,653.0 1159.9,663.4 1175.1,673.9 1178.3,677.4 1179.2,680.8 1178.8,684.3 1175.1,691.3 1171.1,694.8 1166.4,696.9ZM1228.3,695.0 1216.3,680.8 1201.0,670.4 1198.5,666.9 1198.0,663.4 1200.2,656.5 1202.9,653.0 1207.7,649.4 1214.6,647.8 1219.6,649.5 1223.5,653.0 1231.9,663.4 1247.1,673.9 1250.3,677.4 1251.2,680.8 1250.8,684.3 1249.5,687.8 1245.5,692.9 1242.1,695.5 1235.2,697.4 1231.8,696.9ZM1300.6,695.2 1288.3,680.8 1273.0,670.4 1270.5,666.9 1270.0,663.4 1272.2,656.5 1274.9,653.0 1279.9,649.3 1286.8,647.8 1291.7,649.5 1293.7,650.9 1304.0,663.5 1319.1,673.9 1322.3,677.4 1323.2,680.8 1322.8,684.3 1321.5,687.8 1317.8,692.7 1314.3,695.3 1307.5,697.4 1304.0,697.0ZM1390.0,601.2 1383.6,597.2 1390.0,597.1ZM1114.8,862.3 1114.8,836.7 1119.9,830.7 1125.1,828.0 1128.5,827.9 1135.4,830.5 1139.4,834.2 1141.6,837.7 1143.2,844.6 1142.1,848.1 1138.7,851.6 1128.5,857.9 1123.6,862.1ZM1163.0,862.1 1162.0,862.1 1162.4,858.6 1164.7,855.1 1180.2,844.5 1190.5,832.0 1193.9,829.1 1197.4,827.9 1204.2,828.9 1207.7,830.7 1211.1,833.8 1213.6,837.7 1215.2,844.6 1214.1,848.1 1210.7,851.6 1200.8,857.7 1195.6,862.1ZM1235.2,862.1 1234.0,862.1 1234.4,858.6 1236.7,855.1 1252.0,844.6 1262.7,831.7 1266.2,829.0 1269.6,827.9 1276.5,829.0 1283.4,834.1 1285.6,837.7 1287.2,844.6 1286.1,848.1 1282.7,851.6 1273.1,857.6 1267.6,862.1ZM1307.5,862.1 1306.0,862.1 1306.4,858.6 1308.7,855.1 1324.0,844.6 1335.0,831.5 1338.4,828.9 1341.9,827.9 1348.7,829.1 1355.4,834.2 1357.6,837.7 1359.2,844.6 1358.1,848.1 1354.7,851.6 1345.3,857.4 1339.6,862.1ZM1379.7,862.1 1378.0,862.1 1378.4,858.6 1380.7,855.1 1390.0,849.0 1390.3,862.1ZM1173.3,804.4 1166.4,799.7 1163.8,795.8 1162.0,788.9 1162.9,785.4 1166.1,781.9 1180.2,772.5 1190.5,760.0 1193.9,757.1 1197.4,755.9 1200.8,756.0 1207.7,758.8 1211.1,761.9 1214.6,768.0 1215.2,771.4 1214.7,774.9 1212.2,778.4 1197.4,788.4 1187.0,800.9 1183.6,803.9 1180.2,805.2ZM1242.1,802.9 1238.1,799.3 1234.4,792.4 1234.0,788.9 1234.9,785.4 1238.1,781.9 1252.4,772.3 1262.7,759.7 1266.2,757.0 1269.6,755.9 1273.1,756.0 1277.5,757.5 1282.3,761.0 1285.0,764.5 1287.2,771.4 1286.7,774.9 1284.2,778.4 1269.6,788.2 1255.9,803.7 1252.4,805.2 1249.0,805.3ZM1314.3,803.0 1310.1,799.3 1306.4,792.4 1306.0,788.9 1306.9,785.4 1310.1,781.9 1324.7,772.0 1335.0,759.4 1338.4,756.9 1341.9,755.9 1345.3,756.0 1349.6,757.5 1354.3,761.0 1357.0,764.5 1359.2,771.4 1358.7,774.9 1356.2,778.4 1341.9,788.0 1328.1,803.6 1324.7,805.1 1321.2,805.3ZM1386.6,803.2 1382.1,799.3 1379.7,795.8 1378.0,788.9 1378.9,785.4 1382.1,781.9 1390.0,777.0 1390.0,804.7ZM1114.8,801.1 1114.8,764.7 1121.7,757.3 1125.1,756.0 1132.0,756.8 1138.3,761.0 1141.0,764.5 1143.2,771.4 1142.7,774.9 1140.2,778.4 1124.9,788.9ZM1176.7,733.3 1169.8,730.7 1165.2,726.1 1162.2,719.2 1162.1,715.7 1163.7,712.2 1180.2,700.5 1190.5,688.0 1193.9,685.1 1197.4,683.9 1200.8,683.9 1207.7,686.7 1211.1,689.9 1214.1,694.8 1215.0,701.8 1213.3,705.2 1197.4,716.4 1187.0,728.9 1183.6,731.9 1180.2,733.2ZM1249.0,733.3 1242.1,730.8 1237.2,726.1 1234.2,719.2 1234.1,715.7 1235.7,712.2 1252.4,700.3 1262.7,687.7 1266.2,685.0 1269.6,683.9 1273.1,684.0 1279.9,686.9 1284.2,691.3 1286.1,694.8 1287.0,701.8 1285.3,705.2 1269.6,716.2 1255.9,731.7 1252.4,733.2ZM1321.2,733.4 1314.3,731.0 1309.2,726.1 1306.2,719.2 1306.1,715.7 1307.7,712.2 1324.7,700.0 1335.0,687.4 1338.4,684.9 1341.9,683.9 1345.3,684.0 1352.2,687.1 1356.2,691.3 1359.1,698.3 1359.0,701.8 1357.3,705.2 1341.9,716.0 1328.1,731.6 1324.7,733.1ZM1386.6,731.1 1383.2,728.5 1379.7,723.7 1378.2,719.2 1378.1,715.7 1379.7,712.2 1390.0,705.0 1390.0,732.7ZM1114.8,729.1 1114.8,692.7 1121.7,685.3 1125.1,684.0 1132.0,684.8 1137.0,687.8 1140.2,691.3 1143.1,698.3 1143.0,701.8 1141.3,705.2 1138.9,707.3 1125.1,716.7ZM1173.3,660.5 1167.1,656.5 1162.7,649.5 1162.0,646.0 1162.4,642.5 1164.8,639.0 1180.0,628.6 1190.5,616.0 1193.9,613.1 1197.4,611.9 1200.8,612.0 1207.7,614.7 1211.4,618.1 1214.6,624.3 1215.2,628.6 1214.1,632.1 1210.8,635.5 1197.4,644.4 1187.0,656.9 1183.6,659.9 1180.2,661.2ZM1245.5,660.5 1239.1,656.5 1234.7,649.5 1234.0,646.0 1234.4,642.5 1236.8,639.0 1252.0,628.6 1262.7,615.7 1266.2,613.0 1269.6,611.9 1273.1,612.0 1279.9,614.9 1283.4,618.1 1286.9,625.1 1287.2,628.6 1286.1,632.1 1282.8,635.5 1269.6,644.2 1255.9,659.7 1252.4,661.2ZM1317.8,660.6 1311.1,656.5 1306.7,649.5 1306.0,646.0 1306.4,642.5 1308.8,639.0 1324.0,628.6 1335.0,615.5 1338.4,612.9 1341.9,611.9 1345.3,612.0 1352.2,615.1 1355.6,618.5 1358.9,625.1 1359.2,628.6 1358.1,632.1 1354.8,635.5 1341.9,644.0 1328.1,659.6 1324.7,661.1ZM1390.0,660.7 1383.1,656.5 1379.7,651.6 1378.0,646.0 1378.4,642.5 1380.8,639.0 1390.0,633.0ZM1114.8,657.1 1114.8,620.7 1121.7,613.3 1125.1,612.0 1132.0,612.8 1138.9,617.6 1141.6,621.6 1143.2,628.6 1142.1,632.1 1138.8,635.5 1125.1,644.6Z"/>
+<path class="gy0" d="M1110.2,866.0 1109.6,858.5 1110.2,832.1 1117.1,826.3 1120.5,824.9 1127.4,823.9 1134.3,824.0 1141.2,825.5 1148.0,830.3 1155.2,837.6 1161.4,841.1 1165.2,841.7 1170.4,841.1 1175.6,838.5 1185.9,828.5 1189.3,826.2 1196.2,824.2 1203.1,823.8 1213.4,825.6 1216.8,827.6 1227.2,837.6 1233.5,841.1 1237.5,841.8 1242.4,841.1 1247.8,838.3 1258.1,828.3 1261.6,826.1 1268.5,824.1 1275.3,823.8 1285.7,825.7 1289.1,827.7 1299.4,837.8 1306.3,841.3 1313.2,841.4 1316.6,840.3 1320.8,837.6 1330.4,828.1 1333.8,825.9 1340.7,824.1 1347.6,823.8 1357.9,825.8 1361.4,827.9 1371.2,837.6 1375.1,840.1 1378.6,841.4 1385.4,841.4 1386.1,865.5 1385.4,866.1ZM1154.9,814.5 1151.5,812.7 1137.7,800.3 1130.8,798.3 1124.6,799.2 1120.5,801.4 1110.2,811.4 1109.6,785.3 1110.2,760.2 1117.1,754.4 1123.9,752.2 1134.3,751.9 1141.2,753.5 1144.6,755.3 1158.4,767.8 1165.2,769.7 1172.1,768.5 1175.6,766.5 1185.9,756.5 1189.3,754.3 1196.2,752.1 1206.5,752.0 1213.4,753.7 1216.8,755.5 1230.5,767.9 1237.5,769.7 1244.4,768.4 1247.8,766.3 1258.1,756.3 1261.6,754.1 1268.5,752.1 1278.8,752.0 1285.7,753.8 1289.1,755.7 1297.9,764.4 1302.9,768.1 1309.7,769.7 1316.6,768.3 1320.1,766.1 1330.4,756.1 1333.8,754.0 1340.7,752.1 1347.6,751.8 1354.5,752.6 1361.4,755.9 1369.9,764.4 1375.1,768.2 1378.6,769.3 1385.4,769.3 1386.1,792.3 1385.4,816.1 1378.6,816.1 1371.7,814.8 1364.8,810.5 1354.5,800.8 1347.6,798.3 1340.5,799.2 1334.9,802.7 1323.5,813.3 1320.1,814.9 1313.2,816.1 1306.3,816.1 1299.4,814.7 1292.5,810.3 1282.2,800.6 1275.3,798.3 1268.5,799.2 1265.0,801.1 1254.7,811.0 1251.3,813.4 1244.4,815.8 1234.0,816.1 1227.2,814.6 1223.7,812.8 1210.0,800.5 1203.1,798.3 1196.5,799.2 1192.8,801.3 1182.4,811.2 1175.6,815.1 1165.2,816.2ZM1161.8,744.0 1154.9,742.5 1151.5,740.7 1139.6,729.5 1134.3,726.9 1130.8,726.2 1127.4,726.5 1120.5,729.4 1110.2,739.4 1109.6,712.1 1110.2,688.2 1117.1,682.3 1123.9,680.2 1134.3,680.0 1141.2,681.5 1145.7,684.2 1156.7,694.7 1161.8,697.2 1165.2,697.7 1168.7,697.5 1175.4,694.7 1189.3,682.2 1196.2,680.2 1206.5,680.0 1213.4,681.6 1216.8,683.5 1228.7,694.7 1234.0,697.2 1237.5,697.8 1240.9,697.5 1247.3,694.7 1258.1,684.4 1261.6,682.1 1268.5,680.1 1278.8,680.0 1285.7,681.7 1289.1,683.7 1300.7,694.7 1306.3,697.3 1309.7,697.8 1313.2,697.4 1319.3,694.7 1330.4,684.2 1333.8,682.0 1340.7,680.1 1347.6,679.8 1357.9,681.8 1361.4,683.9 1371.7,693.9 1375.1,696.1 1378.6,697.4 1385.4,697.4 1386.1,719.1 1385.4,744.1 1375.1,743.6 1368.2,741.2 1355.6,729.5 1347.6,726.3 1344.1,726.3 1337.3,728.9 1326.9,738.8 1320.1,742.9 1313.2,744.1 1302.9,743.6 1296.0,741.0 1282.2,728.6 1275.3,726.3 1271.9,726.4 1265.0,729.1 1251.3,741.5 1244.4,743.7 1234.0,744.1 1227.2,742.6 1220.3,738.1 1211.6,729.5 1206.5,726.9 1203.1,726.3 1199.6,726.4 1192.8,729.2 1179.0,741.6 1172.1,743.8ZM1154.9,670.5 1151.5,668.7 1137.9,656.4 1130.8,654.3 1123.9,655.5 1120.5,657.4 1110.2,667.4 1109.6,642.4 1110.2,616.1 1117.1,610.4 1123.9,608.2 1134.3,608.0 1141.2,609.5 1144.6,611.4 1158.4,623.7 1165.2,625.7 1170.6,625.0 1175.6,622.5 1185.9,612.5 1189.3,610.2 1196.2,608.2 1206.5,608.0 1213.4,609.6 1216.0,611.1 1227.2,621.6 1233.3,625.0 1237.5,625.8 1242.6,625.0 1247.8,622.3 1258.1,612.3 1261.6,610.1 1268.5,608.1 1278.8,608.0 1285.7,609.7 1289.1,611.7 1299.4,621.8 1305.3,625.0 1309.7,625.8 1314.6,625.0 1320.1,622.2 1330.4,612.1 1333.8,610.0 1340.7,608.1 1347.6,607.8 1357.9,609.8 1361.4,611.9 1371.1,621.5 1375.1,624.1 1378.6,625.4 1385.4,625.4 1386.1,649.4 1385.4,672.1 1375.1,671.7 1368.2,669.2 1354.5,656.7 1347.6,654.3 1344.1,654.4 1338.2,656.4 1323.5,669.3 1320.1,670.9 1313.2,672.2 1306.3,672.1 1298.6,670.3 1292.5,666.2 1282.2,656.6 1275.3,654.3 1271.9,654.4 1266.2,656.4 1251.3,669.5 1244.4,671.8 1234.0,672.1 1227.2,670.6 1221.2,666.8 1210.0,656.4 1203.1,654.3 1199.6,654.4 1194.2,656.4 1189.6,659.9 1182.4,667.2 1175.6,671.0 1165.2,672.3ZM1110.2,865.5 1110.2,847.4 1120.5,837.4 1127.4,834.5 1130.8,834.2 1134.3,834.9 1139.7,837.6 1151.5,848.7 1154.9,850.5 1161.8,852.0 1172.1,851.8 1179.0,849.6 1192.8,837.2 1199.6,834.4 1203.1,834.3 1206.5,834.9 1211.7,837.6 1220.3,846.1 1227.2,850.6 1234.0,852.1 1244.4,851.7 1251.3,849.5 1265.0,837.1 1271.9,834.4 1275.3,834.3 1282.2,836.6 1296.0,849.0 1302.9,851.6 1313.2,852.1 1320.1,850.9 1326.9,846.8 1337.3,836.9 1344.1,834.3 1347.6,834.3 1355.7,837.6 1368.2,849.2 1375.1,851.6 1385.4,852.1 1385.4,865.7 1363.1,865.5 1357.9,861.9 1347.6,859.8 1337.3,860.7 1333.8,862.0 1328.9,865.5 1309.7,865.7 1291.1,865.5 1285.7,861.8 1275.3,859.8 1265.0,860.8 1256.9,865.5 1219.1,865.5 1213.4,861.7 1203.1,859.8 1192.8,860.9 1184.9,865.5 1147.1,865.5 1144.6,863.3 1137.7,860.5 1127.4,859.8 1120.5,860.9 1112.9,865.5ZM1158.4,803.7 1144.6,791.4 1141.2,789.5 1134.3,788.0 1127.4,787.8 1120.5,789.0 1117.1,790.3 1110.2,796.2 1110.2,775.4 1120.5,765.4 1127.4,762.5 1134.3,762.9 1137.7,764.3 1151.5,776.7 1154.9,778.5 1161.8,780.1 1172.1,779.8 1179.0,777.6 1192.8,765.3 1196.2,763.4 1203.1,762.3 1210.0,764.4 1221.3,774.8 1227.2,778.6 1234.0,780.1 1244.4,779.8 1251.3,777.5 1266.2,764.4 1271.9,762.4 1275.3,762.3 1282.2,764.5 1296.0,777.0 1302.9,779.6 1313.2,780.2 1320.1,778.9 1326.9,774.7 1337.3,764.9 1340.7,763.2 1347.6,762.3 1354.5,764.7 1368.2,777.2 1375.1,779.7 1385.4,780.1 1385.4,805.4 1382.0,805.8 1378.6,805.4 1372.8,802.7 1361.4,791.9 1357.9,789.8 1347.6,787.8 1340.7,788.1 1333.8,790.0 1330.4,792.2 1319.3,802.7 1313.2,805.4 1309.7,805.8 1306.3,805.3 1300.8,802.7 1289.1,791.7 1285.7,789.7 1275.3,787.8 1268.5,788.1 1261.6,790.1 1258.1,792.4 1247.8,802.4 1240.9,805.5 1234.0,805.2 1230.6,803.9 1216.8,791.5 1210.0,788.6 1203.1,787.8 1196.2,788.2 1189.3,790.2 1175.6,802.6 1172.1,804.5 1165.2,805.7ZM1161.8,733.2 1155.1,729.5 1144.6,719.4 1137.7,716.5 1127.4,715.9 1120.5,716.9 1113.6,720.7 1110.2,724.1 1110.2,703.4 1120.5,693.4 1127.4,690.5 1134.3,690.8 1137.7,692.3 1151.5,704.7 1154.9,706.5 1161.8,708.0 1172.1,707.8 1179.0,705.6 1192.8,693.3 1196.6,691.2 1203.1,690.3 1210.0,692.5 1220.3,702.0 1227.2,706.6 1234.0,708.1 1244.4,707.8 1251.7,705.2 1265.0,693.1 1268.5,691.2 1275.3,690.3 1282.2,692.6 1296.0,705.0 1302.9,707.6 1313.2,708.1 1320.1,706.9 1326.9,702.8 1337.3,692.9 1340.7,691.1 1347.6,690.3 1354.5,692.8 1364.8,702.5 1371.7,706.8 1378.6,708.1 1385.4,708.1 1385.4,733.4 1378.6,733.4 1375.1,732.1 1371.1,729.5 1361.4,719.9 1357.9,717.8 1347.6,715.8 1340.7,716.1 1333.8,717.9 1330.4,720.1 1320.1,730.2 1313.2,733.4 1306.3,733.3 1302.9,732.0 1299.1,729.5 1288.0,719.1 1282.2,716.6 1275.3,715.8 1268.5,716.1 1261.6,718.1 1258.1,720.3 1247.8,730.3 1240.9,733.5 1234.0,733.3 1230.6,731.9 1227.1,729.5 1216.0,719.1 1210.0,716.5 1203.1,715.8 1196.2,716.2 1189.3,718.2 1185.9,720.5 1176.8,729.5 1172.1,732.5 1168.7,733.5ZM1161.8,661.2 1154.9,657.3 1144.6,647.3 1137.7,644.5 1127.4,643.8 1120.5,644.9 1113.6,648.7 1110.2,652.2 1110.2,631.4 1120.3,621.5 1127.4,618.5 1130.8,618.2 1137.7,620.3 1151.5,632.7 1154.9,634.5 1161.8,636.0 1172.1,635.8 1179.0,633.6 1192.8,621.2 1199.6,618.4 1203.1,618.3 1206.5,618.9 1211.6,621.5 1220.3,630.1 1227.2,634.6 1234.0,636.1 1244.4,635.7 1251.3,633.5 1265.0,621.1 1271.9,618.4 1275.3,618.3 1282.2,620.6 1296.0,633.0 1302.9,635.6 1313.2,636.1 1320.1,634.9 1326.9,630.8 1337.3,620.9 1344.1,618.3 1347.6,618.3 1355.6,621.5 1368.2,633.2 1375.1,635.6 1385.4,636.1 1385.4,661.3 1382.0,661.7 1374.5,659.9 1369.8,656.4 1361.4,647.9 1357.9,645.9 1347.6,643.8 1340.7,644.1 1333.8,646.0 1330.4,648.1 1322.2,656.4 1317.4,659.9 1309.7,661.7 1302.5,659.9 1297.8,656.4 1289.1,647.7 1285.7,645.8 1275.3,643.8 1268.5,644.1 1261.6,646.1 1258.1,648.3 1247.8,658.3 1240.9,661.5 1234.0,661.2 1230.6,659.9 1225.8,656.4 1216.8,647.5 1210.0,644.5 1203.1,643.8 1196.2,644.1 1189.3,646.3 1185.9,648.5 1178.2,656.4 1172.1,660.5 1168.7,661.5Z"/>
+  </g>
+  <rect x="1148" y="604" width="234" height="234" fill="none" stroke="#33454e" stroke-width="2"/>
+  <rect x="1154" y="610" width="150" height="18" rx="4" fill="#12242e" opacity="0.8"/>
+  <text x="1229" y="623" text-anchor="middle" fill="#ffffff" font-size="10" class="b">SOLID: graphite + TRISO</text>
+  <rect x="1226" y="814" width="150" height="18" rx="4" fill="#12242e" opacity="0.8"/>
+  <text x="1301" y="827" text-anchor="middle" fill="#ffffff" font-size="10" class="b">VOID: helium, ≈ 50 %</text>
+  <g class="dim">
+    <line x1="1148" y1="850" x2="1220" y2="850"/>
+    <line x1="1148" y1="845" x2="1148" y2="855"/><line x1="1220" y1="845" x2="1220" y2="855"/>
+  </g>
+  <text x="1226" y="854" class="ink b" font-size="10">17.5 mm — one unit cell</text>
+
+  <text x="1148" y="884" class="ink b sc" font-size="10.5">WHY A GYROID</text>
+  <text x="1148" y="900" class="mut" font-size="10">A triply periodic minimal surface splits the</text>
+  <text x="1148" y="913" class="mut" font-size="10">block into two interpenetrating labyrinths —</text>
+  <text x="1148" y="926" class="mut" font-size="10">one helium, one graphite — with zero mean</text>
+  <text x="1148" y="939" class="mut" font-size="10">curvature everywhere. No corners, no flow</text>
+  <text x="1148" y="952" class="mut" font-size="10">separation, maximum area per unit volume.</text>
+  <text x="1148" y="972" class="ink b" font-size="10.5">Nusselt number 20–40 % above a circular</text>
+  <text x="1148" y="986" class="ink b" font-size="10.5">tube; j/f ratio 15–30 % better.</text>
+  <text x="1148" y="1002" class="mut" font-size="10">That surplus is what buys a 4 MPa primary</text>
+  <text x="1148" y="1015" class="mut" font-size="10">circuit instead of 7 MPa.</text>
+  <line class="div" x1="1148" y1="1024" x2="1400" y2="1024"/>
+  <g font-size="10">
+    <text x="1148" y="1038" class="mut">unit cell</text><text x="1400" y="1038" class="ink b" text-anchor="end">15–20 mm</text>
+    <text x="1148" y="1052" class="mut">hydraulic diameter</text><text x="1400" y="1052" class="ink b" text-anchor="end">6–8 mm</text>
+    <text x="1148" y="1066" class="mut">Reynolds number</text><text x="1400" y="1066" class="ink b" text-anchor="end">30,000–80,000</text>
+    <text x="1148" y="1080" class="mut">min. wall thickness</text><text x="1400" y="1080" class="ink b" text-anchor="end">7.5 mm · needs ≥ 3 mm</text>
+  </g>
+
+  <!-- cascade loupe: one fuel compact -->
+  <rect x="923" y="820" width="20" height="20" class="loupe"/>
+</g>
+<!-- ==================================================================== -->
+<!-- STAGE 5 — FUEL COMPACT                                               -->
+<!-- ==================================================================== -->
+<g id="P5" clip-path="url(#cpP5)">
+  <rect x="450" y="540" width="360" height="52" class="phd" rx="9"/>
+  <rect x="450" y="578" width="360" height="14" class="phd"/>
+  <circle cx="476" cy="567" r="13" fill="#12242e"/>
+  <text x="476" y="571.5" text-anchor="middle" fill="#ffffff" font-size="13" class="b">5</text>
+  <text x="498" y="562" class="ink b sc" font-size="14.5">FUEL COMPACT</text>
+  <text x="498" y="577" class="mut" font-size="10.5">12.5 × 49 mm · ~5,000 TRISO</text>
+  <rect x="706" y="554" width="90" height="7" rx="2" fill="url(#rampHot)"/>
+  <text x="796" y="573" text-anchor="end" class="mut" font-size="10">surface ≈ 1,110 °C</text>
+  <text x="796" y="586" text-anchor="end" class="ink b" font-size="10">FIELD 55 mm · ×7.6</text>
+  <line class="div" x1="464" y1="592" x2="796" y2="592"/>
+
+  <!-- compact body, 7.2 px per mm -->
+  <path d="M490,636 L490,989 A45,15 0 0,0 580,989 L580,636 Z" fill="url(#compactG)"/>
+  <g clip-path="url(#cpCompact)">
+<circle cx="521.4" cy="698.7" r="3.3"/><circle cx="546.7" cy="673.1" r="3.3"/><circle cx="537.8" cy="769.0" r="3.3"/><circle cx="500.8" cy="815.4" r="3.3"/><circle cx="499.2" cy="791.3" r="3.3"/><circle cx="501.7" cy="679.0" r="3.3"/><circle cx="529.2" cy="920.0" r="3.3"/><circle cx="505.9" cy="722.4" r="3.3"/><circle cx="544.9" cy="959.5" r="3.3"/><circle cx="541.0" cy="779.2" r="3.3"/>
+<circle cx="571.8" cy="664.6" r="3.3"/><circle cx="562.7" cy="744.1" r="3.3"/><circle cx="507.5" cy="687.9" r="3.3"/><circle cx="520.2" cy="916.5" r="3.3"/><circle cx="510.3" cy="839.7" r="3.3"/><circle cx="545.7" cy="771.2" r="3.3"/><circle cx="538.7" cy="669.9" r="3.3"/><circle cx="501.0" cy="716.8" r="3.3"/><circle cx="548.9" cy="789.3" r="3.3"/><circle cx="520.6" cy="841.0" r="3.3"/>
+<circle cx="531.4" cy="747.5" r="3.3"/><circle cx="557.8" cy="878.1" r="3.3"/><circle cx="536.9" cy="935.8" r="3.3"/><circle cx="552.7" cy="743.6" r="3.3"/><circle cx="572.1" cy="688.0" r="3.3"/><circle cx="528.7" cy="897.2" r="3.3"/><circle cx="508.1" cy="809.4" r="3.3"/><circle cx="499.4" cy="868.1" r="3.3"/><circle cx="555.5" cy="836.9" r="3.3"/><circle cx="564.0" cy="752.0" r="3.3"/>
+<circle cx="550.1" cy="843.9" r="3.3"/><circle cx="541.2" cy="798.7" r="3.3"/><circle cx="561.3" cy="958.5" r="3.3"/><circle cx="533.0" cy="866.7" r="3.3"/><circle cx="501.0" cy="878.9" r="3.3"/><circle cx="546.4" cy="974.4" r="3.3"/><circle cx="498.1" cy="800.5" r="3.3"/><circle cx="500.9" cy="900.8" r="3.3"/><circle cx="506.3" cy="730.4" r="3.3"/><circle cx="526.6" cy="934.6" r="3.3"/>
+<circle cx="559.7" cy="932.1" r="3.3"/><circle cx="517.9" cy="785.3" r="3.3"/><circle cx="570.4" cy="698.7" r="3.3"/><circle cx="541.9" cy="735.3" r="3.3"/><circle cx="524.9" cy="834.7" r="3.3"/><circle cx="570.0" cy="875.3" r="3.3"/><circle cx="536.2" cy="851.5" r="3.3"/><circle cx="565.9" cy="904.6" r="3.3"/><circle cx="526.7" cy="779.9" r="3.3"/><circle cx="504.4" cy="857.0" r="3.3"/>
+<circle cx="501.2" cy="671.4" r="3.3"/><circle cx="512.5" cy="702.5" r="3.3"/><circle cx="522.6" cy="666.6" r="3.3"/><circle cx="496.4" cy="698.9" r="3.3"/><circle cx="504.2" cy="768.4" r="3.3"/><circle cx="498.3" cy="935.5" r="3.3"/><circle cx="543.8" cy="698.0" r="3.3"/><circle cx="515.8" cy="763.1" r="3.3"/><circle cx="524.5" cy="689.6" r="3.3"/><circle cx="562.0" cy="974.4" r="3.3"/>
+<circle cx="532.4" cy="807.7" r="3.3"/><circle cx="522.8" cy="736.0" r="3.3"/><circle cx="560.4" cy="702.2" r="3.3"/><circle cx="498.1" cy="960.6" r="3.3"/><circle cx="538.3" cy="658.2" r="3.3"/><circle cx="537.2" cy="969.6" r="3.3"/><circle cx="509.3" cy="902.0" r="3.3"/><circle cx="537.5" cy="904.3" r="3.3"/><circle cx="521.8" cy="722.4" r="3.3"/><circle cx="562.3" cy="913.2" r="3.3"/>
+<circle cx="559.6" cy="891.5" r="3.3"/><circle cx="513.9" cy="818.8" r="3.3"/><circle cx="523.8" cy="658.8" r="3.3"/><circle cx="498.5" cy="740.8" r="3.3"/><circle cx="516.4" cy="876.0" r="3.3"/><circle cx="570.3" cy="795.7" r="3.3"/><circle cx="570.2" cy="768.7" r="3.3"/><circle cx="513.4" cy="723.6" r="3.3"/><circle cx="511.6" cy="716.2" r="3.3"/><circle cx="544.6" cy="944.0" r="3.3"/>
+<circle cx="561.3" cy="806.3" r="3.3"/><circle cx="546.8" cy="911.1" r="3.3"/><circle cx="571.5" cy="778.9" r="3.3"/><circle cx="527.4" cy="959.2" r="3.3"/><circle cx="552.4" cy="705.0" r="3.3"/><circle cx="506.2" cy="698.8" r="3.3"/><circle cx="507.6" cy="919.9" r="3.3"/><circle cx="572.1" cy="864.5" r="3.3"/><circle cx="506.5" cy="654.0" r="3.3"/><circle cx="537.1" cy="954.9" r="3.3"/>
+<circle cx="560.2" cy="718.4" r="3.3"/><circle cx="515.8" cy="745.2" r="3.3"/><circle cx="506.5" cy="947.2" r="3.3"/><circle cx="523.7" cy="799.3" r="3.3"/><circle cx="528.9" cy="949.7" r="3.3"/><circle cx="535.1" cy="823.4" r="3.3"/><circle cx="530.4" cy="709.3" r="3.3"/><circle cx="496.7" cy="910.9" r="3.3"/><circle cx="521.5" cy="819.0" r="3.3"/><circle cx="504.6" cy="832.7" r="3.3"/>
+<circle cx="556.0" cy="815.5" r="3.3"/><circle cx="543.7" cy="814.8" r="3.3"/><circle cx="535.9" cy="876.1" r="3.3"/><circle cx="550.4" cy="936.2" r="3.3"/><circle cx="569.2" cy="734.3" r="3.3"/><circle cx="561.3" cy="694.2" r="3.3"/><circle cx="556.9" cy="942.9" r="3.3"/><circle cx="508.3" cy="883.7" r="3.3"/><circle cx="564.6" cy="966.0" r="3.3"/><circle cx="513.3" cy="961.1" r="3.3"/>
+<circle cx="572.9" cy="921.8" r="3.3"/><circle cx="508.8" cy="790.6" r="3.3"/><circle cx="536.2" cy="760.3" r="3.3"/><circle cx="511.5" cy="753.6" r="3.3"/><circle cx="552.2" cy="655.7" r="3.3"/><circle cx="497.7" cy="757.8" r="3.3"/><circle cx="501.3" cy="971.8" r="3.3"/><circle cx="557.3" cy="967.4" r="3.3"/><circle cx="517.3" cy="691.8" r="3.3"/><circle cx="559.7" cy="734.0" r="3.3"/>
+<circle cx="502.8" cy="929.6" r="3.3"/><circle cx="537.1" cy="727.4" r="3.3"/><circle cx="515.7" cy="654.4" r="3.3"/><circle cx="553.0" cy="829.7" r="3.3"/><circle cx="559.7" cy="790.8" r="3.3"/><circle cx="551.0" cy="857.5" r="3.3"/><circle cx="527.6" cy="763.1" r="3.3"/><circle cx="500.6" cy="691.8" r="3.3"/><circle cx="501.8" cy="891.8" r="3.3"/><circle cx="563.6" cy="868.8" r="3.3"/>
+<circle cx="571.5" cy="828.4" r="3.3"/><circle cx="496.4" cy="774.3" r="3.3"/><circle cx="503.3" cy="780.1" r="3.3"/><circle cx="499.6" cy="656.7" r="3.3"/><circle cx="554.4" cy="864.6" r="3.3"/><circle cx="499.7" cy="922.7" r="3.3"/><circle cx="565.3" cy="854.7" r="3.3"/><circle cx="553.1" cy="915.2" r="3.3"/><circle cx="558.6" cy="919.8" r="3.3"/><circle cx="549.1" cy="876.3" r="3.3"/>
+<circle cx="534.2" cy="650.4" r="3.3"/><circle cx="552.7" cy="716.5" r="3.3"/><circle cx="555.6" cy="851.3" r="3.3"/><circle cx="532.4" cy="688.1" r="3.3"/><circle cx="572.0" cy="955.8" r="3.3"/><circle cx="531.1" cy="737.3" r="3.3"/><circle cx="514.2" cy="943.2" r="3.3"/><circle cx="520.8" cy="924.4" r="3.3"/><circle cx="568.0" cy="882.7" r="3.3"/><circle cx="573.6" cy="842.2" r="3.3"/>
+<circle cx="524.2" cy="789.5" r="3.3"/><circle cx="518.4" cy="955.6" r="3.3"/><circle cx="515.6" cy="736.3" r="3.3"/><circle cx="552.0" cy="665.5" r="3.3"/><circle cx="553.0" cy="796.9" r="3.3"/><circle cx="519.4" cy="891.2" r="3.3"/><circle cx="511.2" cy="679.0" r="3.3"/><circle cx="522.8" cy="679.2" r="3.3"/><circle cx="554.3" cy="784.5" r="3.3"/><circle cx="563.8" cy="656.5" r="3.3"/>
+<circle cx="541.7" cy="649.4" r="3.3"/><circle cx="546.4" cy="899.7" r="3.3"/><circle cx="531.7" cy="829.9" r="3.3"/><circle cx="546.2" cy="748.8" r="3.3"/><circle cx="536.9" cy="840.1" r="3.3"/><circle cx="547.9" cy="952.2" r="3.3"/><circle cx="535.4" cy="716.5" r="3.3"/><circle cx="571.3" cy="751.4" r="3.3"/><circle cx="507.3" cy="666.3" r="3.3"/><circle cx="565.8" cy="938.5" r="3.3"/>
+<circle cx="570.9" cy="717.2" r="3.3"/><circle cx="516.6" cy="883.9" r="3.3"/><circle cx="514.4" cy="804.9" r="3.3"/><circle cx="568.1" cy="709.2" r="3.3"/><circle cx="543.3" cy="756.6" r="3.3"/><circle cx="556.8" cy="675.2" r="3.3"/><circle cx="515.5" cy="670.5" r="3.3"/><circle cx="521.5" cy="970.2" r="3.3"/><circle cx="544.3" cy="870.0" r="3.3"/><circle cx="554.2" cy="926.6" r="3.3"/>
+<circle cx="547.7" cy="689.0" r="3.3"/><circle cx="508.2" cy="938.7" r="3.3"/><circle cx="561.3" cy="948.6" r="3.3"/><circle cx="516.4" cy="903.9" r="3.3"/><circle cx="513.2" cy="770.0" r="3.3"/><circle cx="524.5" cy="713.9" r="3.3"/><circle cx="496.8" cy="944.5" r="3.3"/><circle cx="497.5" cy="829.9" r="3.3"/><circle cx="507.6" cy="742.1" r="3.3"/><circle cx="542.7" cy="829.4" r="3.3"/>
+<circle cx="530.9" cy="792.8" r="3.3"/><circle cx="498.2" cy="851.9" r="3.3"/><circle cx="555.4" cy="904.6" r="3.3"/><circle cx="511.3" cy="970.7" r="3.3"/><circle cx="534.4" cy="962.5" r="3.3"/><circle cx="499.2" cy="709.0" r="3.3"/><circle cx="505.2" cy="823.1" r="3.3"/><circle cx="563.8" cy="831.1" r="3.3"/><circle cx="496.6" cy="765.5" r="3.3"/><circle cx="506.8" cy="955.9" r="3.3"/>
+<circle cx="497.2" cy="860.4" r="3.3"/><circle cx="527.7" cy="727.1" r="3.3"/><circle cx="511.8" cy="848.4" r="3.3"/><circle cx="535.5" cy="859.3" r="3.3"/><circle cx="514.3" cy="662.1" r="3.3"/><circle cx="551.4" cy="736.4" r="3.3"/><circle cx="516.9" cy="859.5" r="3.3"/><circle cx="553.9" cy="958.5" r="3.3"/><circle cx="554.0" cy="756.3" r="3.3"/><circle cx="530.1" cy="886.5" r="3.3"/>
+<circle cx="550.2" cy="890.5" r="3.3"/><circle cx="501.4" cy="842.6" r="3.3"/><circle cx="545.4" cy="919.4" r="3.3"/><circle cx="498.0" cy="733.4" r="3.3"/><circle cx="524.8" cy="754.4" r="3.3"/><circle cx="570.9" cy="814.2" r="3.3"/><circle cx="523.2" cy="880.0" r="3.3"/><circle cx="563.0" cy="679.1" r="3.3"/><circle cx="537.4" cy="896.3" r="3.3"/><circle cx="506.1" cy="800.6" r="3.3"/>
+<circle cx="564.8" cy="727.2" r="3.3"/><circle cx="536.7" cy="702.0" r="3.3"/><circle cx="572.4" cy="909.5" r="3.3"/><circle cx="527.2" cy="908.2" r="3.3"/><circle cx="510.5" cy="863.6" r="3.3"/><circle cx="556.5" cy="776.6" r="3.3"/><circle cx="538.2" cy="884.1" r="3.3"/><circle cx="513.3" cy="911.7" r="3.3"/><circle cx="560.8" cy="765.5" r="3.3"/><circle cx="496.6" cy="885.6" r="3.3"/>
+<circle cx="518.1" cy="729.5" r="3.3"/><circle cx="568.1" cy="929.0" r="3.3"/><circle cx="570.6" cy="674.0" r="3.3"/><circle cx="544.0" cy="854.5" r="3.3"/><circle cx="555.3" cy="682.5" r="3.3"/><circle cx="572.2" cy="805.0" r="3.3"/><circle cx="505.8" cy="965.6" r="3.3"/><circle cx="552.0" cy="728.6" r="3.3"/><circle cx="524.4" cy="860.4" r="3.3"/><circle cx="529.0" cy="841.4" r="3.3"/>
+  </g>
+  <path d="M490,636 L490,989 A45,15 0 0,0 580,989 L580,636 Z" fill="none" stroke="#22323a" stroke-width="1.8"/>
+  <ellipse cx="535" cy="636" rx="45" ry="15" fill="#8b9aa2" stroke="#22323a" stroke-width="1.8"/>
+  <ellipse cx="535" cy="636" rx="45" ry="15" fill="url(#sphere3d)" opacity="0.5"/>
+  <g fill="#3d4b53" opacity="0.75">
+    <circle cx="518" cy="632" r="3.3"/><circle cx="532" cy="639" r="3.3"/><circle cx="549" cy="633" r="3.3"/>
+    <circle cx="524" cy="642" r="3.3"/><circle cx="543" cy="642" r="3.3"/><circle cx="509" cy="638" r="3.3"/>
+    <circle cx="560" cy="638" r="3.3"/><circle cx="535" cy="630" r="3.3"/>
+  </g>
+
+  <!-- dimensions -->
+  <g class="dim">
+    <line x1="478" y1="636" x2="478" y2="989"/>
+    <line x1="473" y1="636" x2="483" y2="636"/><line x1="473" y1="989" x2="483" y2="989"/>
+    <line x1="490" y1="1010" x2="580" y2="1010"/>
+    <line x1="490" y1="1005" x2="490" y2="1015"/><line x1="580" y1="1005" x2="580" y2="1015"/>
+  </g>
+  <text x="469" y="812" text-anchor="middle" class="ink b" font-size="10" transform="rotate(-90,469,812)">49 mm</text>
+  <text x="535" y="1026" text-anchor="middle" class="ink b" font-size="10">12.5 mm</text>
+  <g class="dim">
+    <line x1="490" y1="1046" x2="562" y2="1046"/>
+    <line x1="490" y1="1041" x2="490" y2="1051"/><line x1="562" y1="1041" x2="562" y2="1051"/>
+  </g>
+  <rect x="490" y="1043" width="36" height="6" fill="#12242e"/>
+  <text x="568" y="1050" class="ink b" font-size="10">10 mm</text>
+  <text x="466" y="1072" class="mut" font-size="10">Particles drawn at true relative size: each</text>
+  <text x="466" y="1085" class="mut" font-size="10">speck is a 0.93 mm coated pressure vessel.</text>
+
+  <!-- callout column -->
+  <text x="600" y="622" class="ink b sc" font-size="10.5">ONE COMPACT</text>
+  <g font-size="10">
+    <text x="600" y="642" class="mut">diameter</text><text x="794" y="642" text-anchor="end" class="ink b">12.5 mm</text>
+    <text x="600" y="660" class="mut">length</text><text x="794" y="660" text-anchor="end" class="ink b">49 mm</text>
+    <text x="600" y="678" class="mut">TRISO particles</text><text x="794" y="678" text-anchor="end" class="ink b">≈ 5,000</text>
+    <text x="600" y="696" class="mut">packing fraction</text><text x="794" y="696" text-anchor="end" class="ink b">35 % vol.</text>
+    <text x="600" y="714" class="mut">matrix</text><text x="794" y="714" text-anchor="end" class="ink b">IG-110 graphite</text>
+    <text x="600" y="732" class="mut">uranium</text><text x="794" y="732" text-anchor="end" class="ink b">3.0 g</text>
+    <text x="600" y="750" class="mut">²³⁵U at 4.8 %</text><text x="794" y="750" text-anchor="end" class="ink b">0.14 g</text>
+  </g>
+  <line class="div" x1="600" y1="762" x2="794" y2="762"/>
+  <text x="600" y="782" class="ink b sc" font-size="10.5">AND YET</text>
+  <text x="600" y="800" class="mut" font-size="10">0.14 g of ²³⁵U per compact, split</text>
+  <text x="600" y="813" class="mut" font-size="10">5,000 ways. Every particle is its</text>
+  <text x="600" y="826" class="mut" font-size="10">own pressure vessel, so a failure</text>
+  <text x="600" y="839" class="mut" font-size="10">is one particle — never the core.</text>
+  <line class="div" x1="600" y1="854" x2="794" y2="854"/>
+  <text x="600" y="874" class="ink b sc" font-size="10.5">TEMPERATURE HERE</text>
+  <g font-size="10">
+    <circle cx="606" cy="889" r="5" fill="#d94a1a"/><text x="618" y="893" class="mut">bulk helium ≈ 910 °C</text>
+    <circle cx="606" cy="907" r="5" fill="#c33f16"/><text x="618" y="911" class="mut">graphite surface ≈ 990 °C</text>
+    <circle cx="606" cy="925" r="5" fill="#a81d0e"/><text x="618" y="929" class="mut">TRISO surface ≈ 1,110 °C</text>
+    <circle cx="606" cy="943" r="5" fill="#7d1109"/><text x="618" y="947" class="ink b">kernel centre ≈ 1,240 °C</text>
+  </g>
+  <text x="600" y="968" class="mut" font-size="10">Each step is a thermal resistance:</text>
+  <text x="600" y="981" class="mut" font-size="10">film, wall, matrix, coating, kernel.</text>
+
+  <!-- cascade loupe on a single particle -->
+  <circle cx="505" cy="762" r="3.35" fill="#f6c250" stroke="#b06d18" stroke-width="0.8"/>
+  <rect x="496" y="753" width="18" height="18" class="loupe"/>
+</g>
+
+<!-- ==================================================================== -->
+<!-- STAGE 6 — TRISO PARTICLE                                             -->
+<!-- ==================================================================== -->
+<g id="P6" clip-path="url(#cpP6)">
+  <rect x="24" y="540" width="380" height="52" class="phd" rx="9"/>
+  <rect x="24" y="578" width="380" height="14" class="phd"/>
+  <circle cx="50" cy="567" r="13" fill="#12242e"/>
+  <text x="50" y="571.5" text-anchor="middle" fill="#ffffff" font-size="13" class="b">6</text>
+  <text x="72" y="562" class="ink b sc" font-size="14.5">TRISO PARTICLE</text>
+  <text x="72" y="577" class="mut" font-size="10.5">930 µm · five layers</text>
+  <rect x="300" y="554" width="90" height="7" rx="2" fill="url(#rampHot)"/>
+  <text x="390" y="573" text-anchor="end" class="mut" font-size="10">1,240 °C now · 1,600 °C limit</text>
+  <text x="390" y="586" text-anchor="end" class="ink b" font-size="10">FIELD 1.0 mm · ×55</text>
+  <line class="div" x1="38" y1="592" x2="390" y2="592"/>
+
+  <!-- concentric layers, 0.2366 px per µm, centre 150,714 -->
+  <circle cx="150" cy="714" r="110" fill="#56707c" stroke="#33454e" stroke-width="1.4"/>
+  <circle cx="150" cy="714" r="100.5" fill="#0f8074" stroke="#08514a" stroke-width="2.2"/>
+  <circle cx="150" cy="714" r="92.3" fill="#7d939c" stroke="#63767e" stroke-width="1"/>
+  <circle cx="150" cy="714" r="82.8" fill="#e3e9ec" stroke="#a9b7bd" stroke-width="1.3" stroke-dasharray="4 3"/>
+  <g fill="#b3c0c6" opacity="0.7">
+    <circle cx="98" cy="692" r="1.5"/><circle cx="106" cy="676" r="1.2"/><circle cx="90" cy="708" r="1.4"/>
+    <circle cx="94" cy="726" r="1.2"/><circle cx="102" cy="744" r="1.5"/><circle cx="114" cy="758" r="1.2"/>
+    <circle cx="130" cy="768" r="1.4"/><circle cx="150" cy="774" r="1.2"/><circle cx="170" cy="770" r="1.5"/>
+    <circle cx="188" cy="760" r="1.2"/><circle cx="200" cy="746" r="1.4"/><circle cx="208" cy="730" r="1.2"/>
+    <circle cx="210" cy="712" r="1.5"/><circle cx="204" cy="694" r="1.2"/><circle cx="194" cy="678" r="1.4"/>
+    <circle cx="178" cy="666" r="1.2"/><circle cx="160" cy="658" r="1.5"/><circle cx="140" cy="656" r="1.2"/>
+    <circle cx="122" cy="662" r="1.4"/><circle cx="110" cy="674" r="1.2"/>
+  </g>
+  <circle cx="150" cy="714" r="59.1" fill="url(#kernelG)" stroke="#7d2205" stroke-width="1.3"/>
+  <!-- sectioned wedge, −78° to −34° -->
+  <g stroke="#ffffff" stroke-width="0.7" opacity="0.92">
+    <path d="M150,714 L172.87,606.41 A110,110 0 0,1 241.19,652.49 Z" fill="#2f3e46"/>
+    <path d="M150,714 L170.90,615.71 A100.5,100.5 0 0,1 233.31,657.80 Z" fill="#08514a"/>
+    <path d="M150,714 L169.19,623.72 A92.3,92.3 0 0,1 226.52,662.38 Z" fill="#4c5f66"/>
+    <path d="M150,714 L167.21,633.01 A82.8,82.8 0 0,1 218.64,667.70 Z" fill="#b3bfc5"/>
+    <path d="M150,714 L162.29,656.20 A59.1,59.1 0 0,1 198.99,680.95 Z" fill="#8a2607"/>
+  </g>
+  <circle cx="150" cy="714" r="110" fill="url(#sphere3d)"/>
+  <circle cx="150" cy="714" r="110" fill="none" stroke="#33454e" stroke-width="1.6"/>
+  <text x="150" y="744" text-anchor="middle" fill="#ffffff" font-size="14" class="b">UO₂</text>
+  <text x="150" y="760" text-anchor="middle" fill="#ffd6c4" font-size="10.5">4.8 % ²³⁵U</text>
+
+  <!-- layer leaders -->
+  <g class="lead">
+    <path d="M253.4,676.4 L270,618"/><path d="M250.1,705.2 L270,660"/><path d="M240.9,730.0 L270,702"/>
+    <path d="M225.0,749.0 L270,744"/><path d="M191.8,755.8 L270,786"/>
+  </g>
+  <g>
+    <text x="272" y="618" class="ink b" font-size="11">OPyC 40 µm</text>
+    <text x="272" y="630" class="mut" font-size="10">dense PyC, abrasion</text>
+    <text x="272" y="660" font-size="11.5" class="b" fill="#08514a">SiC 35 µm ★</text>
+    <text x="272" y="672" font-size="10" fill="#0c6b60">β-SiC CVD — barrier</text>
+    <text x="272" y="702" class="ink b" font-size="11">IPyC 40 µm</text>
+    <text x="272" y="714" class="mut" font-size="10">gas-tight, backs SiC</text>
+    <text x="272" y="744" class="ink b" font-size="11">Buffer 100 µm</text>
+    <text x="272" y="756" class="mut" font-size="10">porous — fission gas</text>
+    <text x="272" y="786" class="ink b" font-size="11">Kernel ⌀500 µm</text>
+    <text x="272" y="798" class="mut" font-size="10">UO₂, 4.8 % ²³⁵U</text>
+  </g>
+
+  <!-- exploded layer stack, 0.602 px per µm of radius -->
+  <text x="50" y="848" class="mut b sc" font-size="10">LAYER STACK — TRUE PROPORTION, 0 → 465 µm RADIUS</text>
+  <rect x="50" y="856" width="150.5" height="26" fill="url(#kernelG)"/>
+  <rect x="200.5" y="856" width="60.2" height="26" fill="#e3e9ec"/>
+  <rect x="260.7" y="856" width="24.1" height="26" fill="#7d939c"/>
+  <rect x="284.8" y="856" width="21.1" height="26" fill="#0f8074"/>
+  <rect x="305.9" y="856" width="24.1" height="26" fill="#56707c"/>
+  <rect x="50" y="856" width="280" height="26" fill="none" stroke="#33454e" stroke-width="1.4"/>
+  <g stroke="#ffffff" stroke-width="1">
+    <line x1="200.5" y1="856" x2="200.5" y2="882"/><line x1="260.7" y1="856" x2="260.7" y2="882"/>
+    <line x1="284.8" y1="856" x2="284.8" y2="882"/><line x1="305.9" y1="856" x2="305.9" y2="882"/>
+  </g>
+  <text x="125" y="873" text-anchor="middle" fill="#ffffff" font-size="10" class="b">UO₂ kernel · 250 µm radius</text>
+  <text x="230.6" y="873" text-anchor="middle" class="ink" font-size="10">100 µm</text>
+  <g class="lead">
+    <path d="M272.7,882 L272.7,892 L240,896"/><path d="M295.3,882 L295.3,892 L300,896"/>
+    <path d="M318,882 L318,892 L356,896"/>
+  </g>
+  <g font-size="10" text-anchor="middle">
+    <text x="240" y="906" class="ink b">IPyC 40</text><text x="300" y="906" class="b" fill="#08514a">SiC 35</text>
+    <text x="356" y="906" class="ink b">OPyC 40</text>
+  </g>
+  <g class="dim">
+    <line x1="50" y1="926" x2="330" y2="926"/>
+    <line x1="50" y1="921" x2="50" y2="931"/><line x1="330" y1="921" x2="330" y2="931"/>
+  </g>
+  <text x="190" y="944" text-anchor="middle" class="ink b" font-size="10.5">465 µm radius · ⌀930 µm particle</text>
+
+  <rect x="50" y="956" width="290" height="38" rx="4" fill="#e6f4f1" stroke="#0c6b60" stroke-width="1.2"/>
+  <text x="195" y="972" text-anchor="middle" font-size="11" class="b" fill="#08514a">SiC ★ — primary fission-product barrier</text>
+  <text x="195" y="986" text-anchor="middle" font-size="10" fill="#0c6b60">35 µm of CVD β-SiC, intact to 1,600 °C</text>
+
+  <text x="50" y="1012" class="mut b sc" font-size="10">TEMPERATURE MARGIN</text>
+  <text x="307" y="1012" text-anchor="middle" class="b" font-size="10.5" fill="#a81d0e">360 °C margin</text>
+  <rect x="50" y="1020" width="224.8" height="18" fill="url(#rampFull)"/>
+  <rect x="274.8" y="1020" width="65.2" height="18" fill="#ffffff" stroke="#a81d0e" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <rect x="50" y="1020" width="290" height="18" fill="none" stroke="#33454e" stroke-width="1.2"/>
+  <g class="dim">
+    <line x1="274.8" y1="1038" x2="274.8" y2="1044"/><line x1="340" y1="1038" x2="340" y2="1044"/>
+  </g>
+  <g text-anchor="middle">
+    <text x="274.8" y="1056" class="ink b" font-size="10.5">1,240 °C</text>
+    <text x="340" y="1056" font-size="10.5" class="b" fill="#a81d0e">1,600 °C</text>
+    <text x="274.8" y="1068" class="mut" font-size="10">peak fuel</text>
+    <text x="340" y="1068" class="mut" font-size="10">TRISO limit</text>
+  </g>
+  <text x="50" y="1084" class="mut" font-size="10">360 °C of headroom — with no operator action, ever.</text>
+</g>
+
+</svg>

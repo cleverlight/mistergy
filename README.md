@@ -1,55 +1,62 @@
-# VHTR Design Project
+# Mistergy
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-A theoretical **Very High Temperature Reactor (VHTR)** design developed iteratively as a living document.
+Two theoretical engineering programmes, developed iteratively as living documents. Both are
+about helium, and that is not a coincidence: one burns uranium to make electricity and heat
+with helium as the working fluid, the other tries to make the helium isotope that a clean
+fusion cycle would need.
 
-## Concept
-
-A helium-cooled, graphite-moderated reactor using TRISO fuel particles, targeting a core outlet temperature of **≥950 °C**. The primary mission is **grid-connected AC electricity** from a self-contained unit no larger than 20 m × 20 m × 20 m. Secondary capability: carbon-free hydrogen production via high-temperature electrolysis.
-
-The same helium that cools the core drives the turbine directly — no intermediate heat exchanger, no secondary loop. Hard problems are solved with better materials and manufacturing, not more components.
-
-## Design Documents
-
-| # | Section | Status | Summary |
+| Programme | Directory | What it is | Status |
 |---|---|---|---|
-| — | [Design Summary](design/00-summary.md) | Draft | All key numbers consolidated — start here |
-| 01 | [Overview](design/01-overview.md) | Draft | Mission, requirements, key decisions, layout |
-| 02 | [Fuel](design/02-fuel.md) | Draft | TRISO particle spec, fuel compact, Gen 1/2 TPMS block design |
-| 03 | [Core](design/03-core.md) | Draft | Annular prismatic geometry, sizing, fuel management |
-| 04 | [Neutronics](design/04-neutronics.md) | Draft | C/U ratio, reactivity coefficients, burnup, power distribution, calculation requirements |
-| 05 | [Thermal-Hydraulics](design/05-thermal-hydraulics.md) | Draft | Flow circuit, TPMS heat transfer, peak fuel temp, DLOFC analysis |
-| 06 | [Materials](design/06-materials.md) | Draft | Helium chemistry, purification system, impurity limits, material stubs |
-| 07 | [Safety](design/07-safety.md) | Draft | Walk-away safety, air-cooled RCCS, DLOFC, confinement |
-| 08 | [Power Conversion](design/08-power-conversion.md) | Draft | Direct Brayton cycle, phased turbine strategy, precooler |
-| 09 | [Hydrogen Production](design/09-hydrogen.md) | Draft | HTE secondary capability via SOEC |
-| 10 | [Fuel Cycle](design/10-fuel-cycle.md) | Draft | LEU, burnup strategy, spent fuel composition, proliferation assessment |
-| 11 | [Siting](design/11-siting.md) | Draft | Below-grade installation, civil layout, refueling access, multi-unit sites |
-| 12 | [Economics](design/12-economics.md) | Draft | Capital cost, LCOE, comparison to alternatives, cost reduction pathway |
-| — | [References](references.md) | Draft | Prior programmes, standards, key papers |
+| **VHTR** | [`vhtr/`](vhtr/README.md) | Helium-cooled, graphite-moderated Very High Temperature Reactor. TRISO fuel, direct Brayton cycle, 950 °C core outlet, grid AC in a 20 m cube. | Draft design, 13 sections |
+| **He-3** | [`he3/`](he3/README.md) | A gamma-ray source and photonuclear instrument: a coherently combined laser array with AI-driven alignment, driving a wakefield accelerator and inverse Compton stage. Began as a helium-3 production scheme by photodisintegration; that mission has been assessed and reassigned. | Rescoped after feasibility assessment |
 
-## Key Decisions Made
+## Why these two sit in one repository
 
-| Topic | Decision |
-|---|---|
-| Primary output | AC electricity to grid |
-| Physical envelope | 20 m × 20 m × 20 m |
-| Coolant | Helium — direct Brayton (no IHX) |
-| Core geometry | Annular prismatic block |
-| Turbine rotor | Phased: Ni superalloy at 850 °C (FOAK) → SiC/SiC CMC ceramic blisk at 950 °C (target) |
-| Fuel enrichment | LEU < 5% ²³⁵U |
-| Fuel management | 6–10 batch, 12-month cycle, target 80–100 GWd/tHM |
-| Precooler | Air-cooled baseline; hot-climate bolt-on module |
-| RCCS | Air-cooled passive natural convection; ~20 m chimney height |
-| Installation | Below-grade; ~12 m cavity, ~8 m above-grade building |
-| Hydrogen | HTE/SOEC electrical secondary |
+They are the two halves of the same question: what does a self-contained, carbon-free power
+unit actually need, and can the fuel for the better version of it be made?
 
-## Design Heritage
+The VHTR is buildable now. Every hard problem in it is a materials or manufacturing problem
+with a known research path, and the design deliberately solves them with better materials
+rather than more components.
 
-This design draws on lessons from:
-- **HTTR** (Japan, 30 MW, 950 °C achieved 2004)
-- **HTR-10** (China, 10 MW pebble bed)
-- **GT-MHR** (General Atomics, prismatic block, direct Brayton)
-- **NGNP** (US DOE Very High Temperature Reactor program)
-- **X-energy Xe-100** (modern pebble-bed SMR regulatory approach)
+The He-3 programme reaches further. Deuterium-helium-3 fusion produces charged particles that
+can be converted to electricity directly, with none of the neutron flux that makes
+deuterium-tritium reactors an activation and shielding problem. The obstacle is not the
+reactor concept, it is that there is almost no helium-3 on Earth to fuel one.
+
+The link between the programmes is concrete rather than thematic. **The most viable route to
+helium-3 identified in this repository runs through the reactor, not the laser array**: lithium-6
+targets irradiated in a neutron flux breed tritium, which beta-decays to helium-3 with a 12.32
+year half-life. A 100 MW(th) VHTR could yield an estimated 12-60 g of helium-3 per year by that
+path. The laser photodisintegration route, assessed honestly in
+[`he3/design/03-feasibility.md`](he3/design/03-feasibility.md), falls short of that by eight to
+nine orders of magnitude at its realistic rate, and is retained as a physics instrument rather than
+a production method.
+
+Neither route is a fusion-fuel supply, and the repository is careful to say so. A deuterium-helium-3
+plant would need of order 90 kg of helium-3 per gigawatt-electric year; at 12 g/yr a single VHTR
+supplies about a ten-thousandth of that, so the lithium route addresses the existing
+instrumentation-scale market and nothing larger. That assessment is the most important document in the He-3 set and it should be read
+before the rest of it.
+
+Note that this cuts against a live VHTR decision: the reactor currently specifies low-lithium
+graphite specifically to suppress tritium generation. Breeding helium-3 deliberately means
+reversing that in a controlled, separable target rather than in the moderator. See
+[`he3/design/11-alternative-routes.md`](he3/design/11-alternative-routes.md).
+
+## Reading order
+
+- New here, want the reactor: [`vhtr/design/00-summary.md`](vhtr/design/00-summary.md).
+- New here, want the laser array: [`he3/design/00-summary.md`](he3/design/00-summary.md), then the feasibility assessment.
+- Want to know whether any of this is real: [`he3/design/03-feasibility.md`](he3/design/03-feasibility.md) is the most sceptical document in the repository and the best test of the rest.
+
+## Status and standing warning
+
+Every number in both programmes is an estimate awaiting calculation. Nothing here has been
+validated against a neutronics code, a CFD run, a particle-in-cell simulation or an experiment.
+The documents are written to be falsifiable - figures are given with their derivation so that
+a reader can check them - but they have not yet been falsified by anyone competent to do it.
+
+Licensed CC BY 4.0. See [LICENSE](LICENSE).

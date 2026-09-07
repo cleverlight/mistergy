@@ -23,6 +23,14 @@ character. Every guarantee in this repository is one a human or an agent maintai
 accordingly, and see the number discipline in `CODING_STANDARDS.md`, which is the closest thing this
 repository has to a test suite.
 
+## Git workflow
+
+Workspace-standard, with one exception worth knowing before you read the script and think it is
+half-finished. [`../AGENTS.md`](../AGENTS.md) says `merge-main.sh` runs a staging healthcheck and a
+prod migration gate before merging. Neither runs here, because neither thing exists: no deployed app
+to be unhealthy, no database to migrate. This repository's copy is the shared fast-forward core alone,
+and that is its finished state.
+
 ## The two programmes
 
 | Programme | Directory | Character |

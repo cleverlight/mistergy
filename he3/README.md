@@ -69,6 +69,8 @@ aperture, but multiplies available power only by N, and only the second constrai
 | 09 | [Roadmap](design/09-roadmap.md) | Draft | PoC to 20 to 100 to 500 beams |
 | 10 | [Economics](design/10-economics.md) | Draft | Budget, cost per gram, why the gamma-source framing changes it |
 | 11 | [Alternative Routes](design/11-alternative-routes.md) | Draft | Li-6 breeding, VHTR coupling, spallation, lunar regolith |
+| 12 | [Intensity Limits](design/12-intensity-limits.md) | Draft | What superposition buys, the focusing ceiling, the commercial laser survey, the temperature question |
+| 13 | [Neutron-Free Routes](design/13-neutron-free-routes.md) | Draft | Why the current route cannot be clean, the Li-7 window, and the proton route that needs no accelerator |
 | - | [References](references.md) | Draft | Nuclear data, coherent combining, wakefield sources |
 | - | [Origin Note](origin-note.md) | **Superseded** | The concept note this set restructures, kept only so its corrections stay checkable |
 
@@ -76,7 +78,7 @@ aperture, but multiplies available power only by N, and only the second constrai
 
 | Topic | Decision |
 |---|---|
-| Reaction channel | ⁴He(γ,n)³He at 20.578 MeV, single-photon, not multi-photon |
+| Reaction channel | ⁴He(γ,n)³He at 20.578 MeV, single-photon, not multi-photon. **Under review**, see [13-neutron-free-routes](design/13-neutron-free-routes.md) |
 | Multi-photon absorption | **Rejected.** He-4 has no bound excited state below breakup; there is no ladder to climb |
 | Gamma generation | Inverse Compton scattering off a laser-wakefield electron beam |
 | Electron energy | 1.06-1.21 GeV |

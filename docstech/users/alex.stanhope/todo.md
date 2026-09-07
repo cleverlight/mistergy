@@ -1,6 +1,55 @@
 # Todo
 
 
+### Decide the reaction channel, now that neutron-free routes exist [](?id=neutron-free-reaction-channel)
+
+`he3/design/13-neutron-free-routes.md` finds that ⁴He(γ,n)³He cannot be operated without producing a
+free neutron per reaction, and that two alternatives can. ⁶Li(p,α)³He is exothermic, neutron-free,
+tritium-free, roughly 180x the cross-section, 364x the canonical rate, and needs no GeV accelerator at
+all. That makes it a candidate to replace the reaction channel, which is a Key Decision, so the choice
+is the operator's rather than an edit.
+
++ [ ] read the measured ⁶Li(p,α)³He excitation function from EXFOR and replace the S-factor extrapolation in §4.2
++ [ ] establish the ⁷Li(γ,t)⁴He cross-section in the 2.468-7.251 MeV window, which section 13 does not have
++ [ ] compute the neutron floor set by residual ⁷Li, given ⁷Li(p,n)⁷Be at 1.880 MeV
++ [ ] establish whether TNSA conversion efficiency survives a 1 kHz renewable-foil target
++ [ ] decide the channel, then restage 02, 05, 06 and 09 against it, or record why the current channel stands
++ [ ] update the key-decisions tables in `00-summary.md` §11 and `he3/README.md` either way
++ note: adopting the proton route deletes `05-gamma-source.md` as a required subsystem, which is the largest structural change available to this programme
++ note: the production verdict does not move - 7.4e7 short at best - so this decides the instrument, not the mission
+
+
+### Price the commercial thin-disk array [](?id=commercial-array-quotation)
+
+`he3/design/12-intensity-limits.md` finds that 100 catalogue thin-disk amplifiers, coherently
+combined, reach 3.7 x 10²¹ W/cm² and 50 kW average power inside a 36-53 cm aperture. That is
+`04-laser-array.md` route (b) made concrete, and it is a live alternative to the ~10⁴-channel fibre
+route in [[he3-array-channel-count]]. The one number that decides between them is capital cost, and
+nobody has asked.
+
++ [ ] request quotations from TRUMPF, Light Conversion and Amplitude at N = 1, 10 and 100 [](?work=manual)
++ [ ] establish the volume discount slope, which is the figure that actually decides the architecture
++ [ ] recompute the combining efficiency for 1.5 cm thin-disk beamlets rather than inheriting 0.6 from the fibre case
++ [ ] establish whether thin-disk amplifiers can be phase-locked at all; every demonstration in the record is fibre
++ [ ] fold the answer into `10-economics.md` stage 3, which is currently staged on the fibre case
++ note: the shortfall verdict does not move either way, so this is an architecture and cost decision only
+
+
+### Decide whether the bremsstrahlung route replaces inverse Compton [](?id=bremsstrahlung-vs-ics)
+
+`he3/design/12-intensity-limits.md` §6 costs direct laser-driven bremsstrahlung for the first time and
+finds it roughly 260x more efficient than the inverse Compton route the set designs around, because it
+skips the wakefield stage entirely. It also produces a continuum rather than a quasi-monochromatic
+beam, which disqualifies it for the cross-section measurement that is the programme's best surviving
+justification.
+
++ [ ] compute the geometric collection factor properly, for a converter target and a 1 m cryogenic helium column
++ [ ] estimate the tritium-to-helium-3 branching under a bremsstrahlung continuum rather than a 26 MeV line
++ [ ] decide whether the set carries both routes or picks one, and record it in the key-decisions table
++ [ ] if both are carried, say in `05-gamma-source.md` which mission each serves
++ note: production is short by 1e9 on the better of the two routes, so this decides the instrument, not the verdict
+
+
 ### Settle the He-3 array channel count [](?id=he3-array-channel-count)
 
 `he3/design/04-laser-array.md` §2.4 concludes the originating 100-500 channels at 0.10 J each is not

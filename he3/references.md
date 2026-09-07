@@ -139,6 +139,32 @@ many of them coherently.
   fibre chirped-pulse amplification is limited to the millijoule scale per channel by nonlinearity and
   damage, and no combining scheme relaxes that per-channel limit.
 
+## Focused intensity, records and the commercial catalogue
+
+Added with [12-intensity-limits](design/12-intensity-limits.md), which is the only section that leans
+on vendor literature. Catalogue specifications change without notice, so every figure in that section
+should be re-checked against a current datasheet before it is relied on, and none of them has been
+confirmed by quotation.
+
+- **J. W. Yoon, Y. G. Kim, I. W. Choi, J. H. Sung, H. W. Lee, S. K. Lee and C. H. Nam, "Realization of
+  laser intensity over 10^23 W/cm^2", Optica 8(5), 630-635 (2021), doi:10.1364/OPTICA.420520.** The
+  standing world record for focused laser intensity and the benchmark section 12 validates its
+  focusing arithmetic against. Read it for the two-stage adaptive optics and the f/1.1 off-axis
+  parabola, and note the 0.1 Hz shot rate, which is the comparison that matters to an array.
+- **"First experimental demonstration of coherent beam combining of more than 100 beams", Photonics
+  Research 8(12), 1943 (2020).** The channel-count record for coherent combining, at 107 phase
+  modulators with fringe contrast above 96%. It is a continuous-wave fibre result, not femtosecond and
+  not thin-disk, which is exactly the gap section 12's open questions record.
+- **Manufacturer datasheets** for the systems tabulated in section 12 section 3.1: TRUMPF Scientific
+  Lasers (Dira series, thin-disk, to 1 J), Light Conversion (PHAROS and CARBIDE, to 5 mJ), Amplitude
+  (Satsuma and Tangor, fibre, to 1 mJ). All three publish specification tables and none publishes a
+  price.
+- **The high-average-power coherent combining literature from Jena and its collaborators**, covering
+  10.4 kW from twelve coherently combined step-index fibre amplifiers at 254 fs, and 10 mJ at 1 kW and
+  120 fs from sixteen rod-type amplifiers. These are the measured data points behind section 04's
+  claim that the millijoule per channel ceiling is physical rather than an effort problem, and they are
+  the closest thing in the record to the array this programme describes.
+
 ## Machine learning for adaptive optics and beam control
 
 An active field rather than a settled one, which is exactly why item 1 in the rescoped programme is worth

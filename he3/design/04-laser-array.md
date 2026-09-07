@@ -467,6 +467,72 @@ Three consequences:
   specific thing a learned model can exploit and a per-channel PID cannot, and it is the strongest
   technical argument in [07-ai-control](07-ai-control.md).
 
+### 4.5 Electrical supply, and why there is no capacitor bank
+
+High-energy laser facilities are normally associated with enormous pulsed-power installations, and the
+question of whether this array needs one has a clean answer that falls out of a single ratio: the
+**pulse period divided by the gain medium's upper-state lifetime**.
+
+A laser that fires more slowly than its gain medium can hold energy must buffer that energy somewhere
+else, and the only practical place is a capacitor bank. A laser whose pulse period is comparable to
+the storage time can be pumped continuously, because the medium itself is the store.
+
+| System | Rep rate | Pulse period | Period / τ | Consequence |
+|---|---|---|---|---|
+| **Dira 1000-1** | **1 kHz** | **1 ms** | **1.05** | **CW diode pumping, smooth mains draw, no bank** |
+| Typical Ti:sapphire PW | 10 Hz | 100 ms | 105 | flashlamp or QCW pumping, modest banks |
+| CoReLS at the 2021 record | 0.1 Hz | 10 s | 1.05 x 10⁴ | electrical buffering unavoidable |
+| NIF | ~1 per 4 hours | 4 h | 3.8 x 10⁶ | ~400 MJ capacitor bank |
+
+τ is the Yb:YAG upper-state lifetime, approximately 0.95 ms.
+
+**The array sits at the top row, and it sits there because of the repetition rate that
+[§2.4](#24-recommendation-route-a) and [12-intensity-limits](12-intensity-limits.md) §4.2 already
+identify as its whole advantage.** The two properties are the same design choice seen from different
+ends: a machine built for flux rather than for a single record shot is also a machine that draws
+its power steadily. This is worth stating explicitly because it removes what would otherwise be the
+largest single item of site infrastructure.
+
+What is stored per channel is optical, not electrical: about 1.7 J sitting in the Yb:YAG upper laser
+level, refilled by roughly 1.7 kW of continuous pump light. That is eight orders of magnitude below a
+NIF-class bank. The only electrical storage anywhere in the system is the local bulk capacitance
+inside each diode driver, which is ordinary switch-mode supply design at the joule scale.
+
+**The facility budget.** Wall-plug efficiency for a thin-disk CPA chain is the product of the
+optical-to-optical efficiency of the disk and regenerative amplifier (20 to 30%) and the diode
+wall-plug efficiency (50 to 55%), so 10 to 16.5% overall, with the stretcher, pulse picker and
+compressor losses inside the first figure.
+
+| Assumption | Laser heads | Chillers at COP 3 | Total | At 400 V three-phase |
+|---|---|---|---|---|
+| Optimistic, 16.5% | 303 kW | 84 kW | **387 kW** | 559 A |
+| Mid, 13.75% | 364 kW | 105 kW | **468 kW** | 676 A |
+| Conservative, 10% | 500 kW | 150 kW | **650 kW** | 938 A |
+
+**That is the electrical service of a small compute hall**, roughly 40 eight-GPU servers at 10 kW
+each, and it is an ordinary industrial connection rather than a special installation. Nothing about
+the supply requires site works beyond a transformer and a switchboard.
+
+**The requirement that does cost money is power quality, not power quantity.** Two consequences follow
+and both are harder than the connection:
+
+- **Pump current regulation feeds straight into optical phase.** Diode current sets gain, gain sets
+  the thermal and index state of the disk, and that sets optical path. The array must hold λ/20 =
+  51.5 nm ([§3.2](#32-what-phase-locking-actually-requires)), so per-channel drivers need low-noise
+  regulation across the disturbance band in [§3.4](#34-actuators-and-the-disturbance-spectrum), not
+  merely adequate average current. This is a specification on ripple and drift, and it is where the
+  per-channel electronics cost sits.
+- **A hundred switch-mode supplies in one hall is an EMI problem for the phase electronics.** The
+  inner phase loop runs at kHz to MHz, which is exactly the band switch-mode supplies pollute.
+  Grounding, screening and supply layout are a first-class design task rather than an installation
+  detail.
+
+And the residual difficulty is thermal rather than electrical, which [§4.2](#42-per-channel-load-and-why-route-a-changes-the-problem)
+already states: 250 to 450 kW of heat rejected from a hall whose optical paths must hold to tens of
+nanometres, where [§4.4](#44-why-thermal-drift-is-the-dominant-disturbance) shows one millikelvin over
+ten metres is already λ/9. The supply is easy. Keeping the building still while 400 kW passes through
+it is not.
+
 ---
 
 ## 5. Beam transport and combining architecture

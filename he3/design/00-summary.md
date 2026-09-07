@@ -268,7 +268,7 @@ without saying which it is.
 |---|---|
 | Programme mission | Gamma-ray source and photonuclear instrument |
 | Production mission | Reassigned to the Li-6 route, hosted by the VHTR |
-| Reaction channel | ⁴He(γ,n)³He at 20.578 MeV, single-photon, not multi-photon |
+| Reaction channel | ⁴He(γ,n)³He at 20.578 MeV, single-photon, not multi-photon. **Under review**: [13](13-neutron-free-routes.md) finds two neutron-free alternatives, one of them 364x faster and needing no accelerator |
 | Multi-photon absorption | **Rejected.** He-4 has no bound excited state below breakup; there is no ladder to climb |
 | Operating band | 25-27 MeV, design point 26 MeV |
 | Tritium co-production | Unavoidable; managed as a branching ratio, never eliminated |
@@ -279,7 +279,111 @@ without saying which it is.
 | **Channel count** | **Unsettled.** 04 recommends ~10⁴ × 1 mJ; the roadmap is still staged on 100-500 × 0.10 J |
 | Alignment control | Learned controller, camera feedback, no wavefront sensor at PoC scale |
 
-## 12. Sections
+## 12. Intensity, temperature and the commercial ceiling
+
+From [12-intensity-limits](12-intensity-limits.md). These are the figures that section introduces and
+they exist nowhere else in the set.
+
+**Focusing.** On-axis Airy irradiance I₀ = (π/4) P / (λ² (f/#)²), which at f/1 and 1.03 µm is
+7.4 x 10⁷ W/cm² per watt of peak power. A real system with adaptive optics lands a **factor of 2 to 4
+below** that, inferred from the 2021 world record.
+
+| Benchmark | Value |
+|---|---|
+| World intensity record (CoReLS, 2021) | (1.1 ± 0.2) x 10²³ W/cm², f/1.1, 1.1 µm FWHM, **at 0.1 Hz** |
+| Schwinger intensity (single plane wave) | 2.32 x 10²⁹ W/cm² |
+| Record as a fraction of Schwinger | 4.7 x 10⁻⁷ |
+
+**The commercial array.** 100 x TRUMPF Dira 1000-1 at 500 mJ and 1 kHz, tiled aperture, f/1,
+combining efficiency 0.6. This is [04-laser-array](04-laser-array.md) route (b) quantified, and it is
+buildable from catalogue parts today.
+
+| Parameter | Value |
+|---|---|
+| Peak power | 8.3 x 10¹³ W |
+| **Focused intensity** | **3.7 x 10²¹ W/cm²** |
+| Array average power | 50 kW |
+| Array aperture | 36 to 53 cm, focused by an OAP of the same diameter |
+| Against the 2021 record | **30x lower intensity, 10⁴x higher shot rate** |
+
+**Temperature at the focus.** a₀ = 0.854 sqrt(I λ² / 10¹⁸); T_pond = m_e c² [sqrt(1 + a₀²/2) - 1],
+which is the conservative of the two forms in the literature and the one this set quotes.
+
+| Focused intensity | a₀ | T_pond | In kelvin |
+|---|---|---|---|
+| 3.7 x 10²¹ W/cm² (100 commercial channels) | 53.5 | **18.83 MeV** | 2.2 x 10¹¹ K |
+| 2.2 x 10²² W/cm² (reference case, 500 ch, η = 0.6) | 130.5 | 46.63 MeV | 5.4 x 10¹¹ K |
+
+**The temperature is sufficient and the rate is not.** 18.83 MeV sits just under the 20.578 MeV
+threshold and the 500-channel case clears it outright, so the originating thermal intuition is
+vindicated. The shortfall is entirely in rate, which is fixed by average power, which is the one
+quantity coherent combination cannot increase.
+
+**Direct bremsstrahlung, costed for the first time.** Laser to hot electrons (0.30) to thick-target
+bremsstrahlung (0.50), of which the fraction of energy above threshold is exp(-E_th / T_hot).
+
+| Route, at 5 kW average power | Reactions/s | He-3 per year | Shortfall vs 50 g/day |
+|---|---|---|---|
+| Inverse Compton, canonical (§4.2) | 4.29 x 10⁸ | 6.78 x 10⁻⁸ g | 2.7 x 10¹¹ |
+| **Bremsstrahlung** | **1.12 x 10¹¹** | **1.78 x 10⁻⁵ g** | **1.0 x 10⁹** |
+
+**About 260x more efficient than inverse Compton at equal average power, and the verdict is
+unchanged.** It also produces a continuum rather than a quasi-monochromatic beam, which disqualifies it
+for the cross-section measurement that is the programme's best surviving justification.
+
+## 13. Neutron-free routes and array electrical supply
+
+From [13-neutron-free-routes](13-neutron-free-routes.md) and
+[04-laser-array](04-laser-array.md) §4.5. Thresholds are nuclear data computed from AME atomic
+masses; everything else is an estimate.
+
+**The current route cannot be made neutron-free.** ⁴He(γ,n)³He yields one neutron per reaction by
+construction, and the ⁴He(γ,p)³H channel opens 0.764 MeV lower, so a helium-4 target has no clean
+window in either neutron or tritium.
+
+**Two neutron-free routes exist.**
+
+| Route | Threshold or Q | Products | Neutron | Tritium |
+|---|---|---|---|---|
+| ⁷Li(γ,t)⁴He, operated in a window | 2.468 MeV, window closes at 7.251 MeV | ³H then ³He, plus ⁴He | **none in the window** | product |
+| **⁶Li(p,α)³He** | **Q = +4.020 MeV, exothermic** | **³He + ⁴He** | **none** | **none** |
+| ⁶Li(γ,t)³He, two ³He per photon | 15.794 MeV | ³He + ³H then ³He | ⁶Li(γ,n)⁵Li opens at 5.665 MeV | product |
+
+**Supporting thresholds, all computed:** ⁷Li(γ,n)⁶Li 7.251 MeV, ⁶Li(γ,d)⁴He 1.474 MeV,
+⁶Li(γ,n)⁵Li 5.665 MeV, ⁶Li(p,n)⁶Be 5.920 MeV lab, **⁷Li(p,n)⁷Be 1.880 MeV lab**,
+⁶Li(n,α)³H Q = +4.783 MeV.
+
+**⁶Li(p,α)³He rate.** σ ≈ 200 to 250 mb from S(0) = 3.52 MeV·b, about 180x the 1.3 mb of the current
+route. Thick-target yield 3.0 x 10⁻⁴ per 3 MeV proton in enriched ⁶Li metal.
+
+| Configuration | TNSA η | Reactions/s | He-3 per year | Shortfall vs 50 g/day |
+|---|---|---|---|---|
+| **5 kW array** | **5%** | **1.56 x 10¹¹** | **2.47 x 10⁻⁵ g** | **7.4 x 10⁸** |
+| 50 kW array | 5% | 1.56 x 10¹² | 2.47 x 10⁻⁴ g | 7.4 x 10⁷ |
+
+**364x the canonical inverse Compton rate at equal average power, the highest laser-route figure in
+this repository, and the verdict is unchanged.** 2.47 x 10⁻⁵ g/yr is about 55 pence of product per
+year at $3,000 per litre STP. The Li-6 breeding route remains better by five orders of magnitude.
+
+**Neutron-free operation requires a band-limited source**, which disqualifies the bremsstrahlung
+continuum of §12 for this mission and reinstates inverse Compton scattering.
+
+**Array electrical supply.** The pulsed-power question is decided by pulse period divided by
+upper-state lifetime (Yb:YAG, 0.95 ms). At 1 kHz that ratio is 1.05, so CW diode pumping is
+near-optimal and the mains load is smooth.
+
+| | Value |
+|---|---|
+| Ratio for the array at 1 kHz | 1.05, **no capacitor bank** |
+| Ratio for NIF | 3.8 x 10⁶, ~400 MJ bank |
+| Wall-plug efficiency, thin-disk CPA | 10 to 16.5% |
+| **100-channel facility, heads plus chillers** | **387 to 650 kW**, 559 to 938 A at 400 V three-phase |
+| Optical energy stored per channel | ~1.7 J in the Yb:YAG upper level, refilled by ~1.7 kW of pump |
+
+The binding requirement is power **quality**, not quantity: pump current ripple feeds directly into
+optical phase against a λ/20 = 51.5 nm budget.
+
+## 14. Sections
 
 | # | Section | Summary |
 |---|---|---|
@@ -295,6 +399,8 @@ without saying which it is.
 | 09 | [Roadmap](09-roadmap.md) | Staged path and the decision gate |
 | 10 | [Economics](10-economics.md) | Budget, cost per gram, the gamma-source framing |
 | 11 | [Alternative Routes](11-alternative-routes.md) | Li-6 breeding, VHTR coupling, spallation, lunar regolith |
+| 12 | [Intensity Limits](12-intensity-limits.md) | What superposition buys, the focusing ceiling, the commercial laser survey, the temperature question |
+| 13 | [Neutron-Free Routes](13-neutron-free-routes.md) | Why the current route cannot be clean, the Li-7 window, and the proton route that needs no accelerator |
 | - | [References](../references.md) | Nuclear data, coherent combining, wakefield sources |
 
 ---

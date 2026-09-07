@@ -12,7 +12,7 @@ Compared to HALEU (5–20%), LEU means:
 
 - **Lower reactivity** per unit fuel mass — requires more fuel or a larger core for equivalent power and cycle length
 - **Shorter burnup** per fuel cycle — LEU TRISO reaches criticality limits sooner
-- **More frequent refueling** (prismatic) or higher fuel throughput (pebble bed)
+- **More frequent refuelling** (prismatic) or higher fuel throughput (pebble bed)
 - **Larger core volume** to achieve the same k-effective with adequate shutdown margin
 
 These are real engineering penalties. They are accepted because the non-proliferation goal is not negotiable.
@@ -68,11 +68,11 @@ A 6–10 batch scheme is the baseline (see §04 neutronics). More batches push a
 
 ### Cycle Length
 
-**Refueling interval: 12 months** — fixed by the annual site visit model. Each visit inserts a fresh batch and removes the discharged batch. The reactor does not accumulate spent fuel on site beyond the current discharge batch.
+**Refuelling interval: 12 months** — fixed by the annual site visit model. Each visit inserts a fresh batch and removes the discharged batch. The reactor does not accumulate spent fuel on site beyond the current discharge batch.
 
 With a 12-month interval and 6–10 batch management, each fuel batch spends 6–10 years in the core before discharge. The exact discharge burnup achieved depends on the fissile loading and power density — this requires a full neutronics calculation (§04) to confirm. Preliminary estimate: **80–100 GWd/tHM** is achievable at reasonable power density with LEU at 4.8% enrichment.
 
-Refueling outages double as scheduled turbomachine maintenance windows. The outage is productive, not dead time.
+Refuelling outages double as scheduled turbomachine maintenance windows. The outage is productive, not dead time.
 
 ## Spent Fuel: A Manageable Waste Form
 
@@ -118,7 +118,7 @@ The combination of reactor-grade isotopics and a physically resistant form means
 
 ### Annual Removal Model
 
-Spent fuel is removed at every 12-month refueling visit — it does not accumulate on site. This limits the at-any-time on-site inventory to approximately one batch, keeps safeguards accounting straightforward, and allows central facility storage and monitoring. The annual service model is a natural fit with international safeguards frameworks.
+Spent fuel is removed at every 12-month refuelling visit — it does not accumulate on site. This limits the at-any-time on-site inventory to approximately one batch, keeps safeguards accounting straightforward, and allows central facility storage and monitoring. The annual service model is a natural fit with international safeguards frameworks.
 
 ### TRISO Spent Fuel as a Waste Form
 
@@ -145,13 +145,13 @@ To keep this waste stream manageable:
 - Fuel blocks (graphite + TRISO) are classified as high-level waste and managed with the TRISO spent fuel
 - Reflector blocks (no fuel) are ILW — lower activity, simpler disposal pathway
 
-Separating spent fuel blocks from reflector blocks at refueling is operationally straightforward and significantly simplifies the waste classification picture.
+Separating spent fuel blocks from reflector blocks at refuelling is operationally straightforward and significantly simplifies the waste classification picture.
 
 ## Fresh Fuel Supply Chain
 
 LEU TRISO fabrication requires:
 1. UO₂ kernel production from standard UF₆ feedstock (≤ 5% enriched)
-2. Fluidized-bed chemical vapor deposition (FBCVD) of PyC and SiC coatings
+2. Fluidized-bed chemical vapour deposition (FBCVD) of PyC and SiC coatings
 3. Overcoating and compaction into fuel compacts (prismatic) or graphite matrix pebbles
 
 The kernel and coating deposition process is specialized but not classified or proliferation-sensitive. Several vendors have demonstrated production-scale TRISO fabrication (BWXT in the US, INET in China, NFI in Japan).

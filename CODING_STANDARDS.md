@@ -6,7 +6,9 @@ in particular the ban on em dash and en dash characters, which is binding on eve
 
 ## Number discipline
 
-This is the most important rule in the repository and the one that replaces a test suite.
+This is the most important rule in the repository, and the test suite does not replace it. The suite
+checks the arithmetic a derivation writes out, which catches a slipped digit; it cannot tell you that a
+figure is the wrong figure, or that it disagrees with the summary page. That remains yours to hold.
 
 **Every quantitative claim traces to a summary page.** Each programme has one:
 [`vhtr/design/00-summary.md`](vhtr/design/00-summary.md) and

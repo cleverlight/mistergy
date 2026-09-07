@@ -1,0 +1,12 @@
+# Jest Test Results
+# Version: 0.0.1
+# Date: 2026-09-07T13:48:02+01:00
+# Command: pnpm -C /mnt/secure/home/alex/git/github.com/active_development/mistergy run test-jest
+# ---
+$ jest
+
+Test Suites: 4 passed, 4 total
+Tests:       43 passed, 43 total
+Snapshots:   0 total
+Time:        1.087 s
+Ran all test suites.

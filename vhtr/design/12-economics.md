@@ -120,7 +120,7 @@ This design targets minimal on-site staffing, enabled by passive safety and simp
 | Function | People | Frequency |
 |---|---|---|
 | Control room monitoring | 5–10 | Continuous (potentially remote) |
-| Annual refueling campaign | 20–30 | 2–4 weeks per year |
+| Annual refuelling campaign | 20–30 | 2–4 weeks per year |
 | Periodic maintenance & inspection | 5–10 | As scheduled |
 
 Estimated annual staffing cost: $3–5M.
@@ -146,7 +146,7 @@ These are FOAK estimates. For NOAK with operational experience, total O&M could 
 |---|---|
 | Discount rate (WACC) | 8% |
 | Plant life | 40 years |
-| Capacity factor | 92% (2-week annual refueling outage) |
+| Capacity factor | 92% (2-week annual refuelling outage) |
 | Annual generation | ~443,000 MWh (FOAK 850 °C, 55 MWe) / ~483,000 MWh (60 MWe variants) |
 | Capital recovery factor | 0.0839 |
 
@@ -190,7 +190,7 @@ The modular design is explicitly intended for scale by replication. A 4-unit sit
 | Single operating licence (design cert) | ~$25M capital |
 | Shared civil works (site, RCCS structure) | ~$15M capital (vs. 4× individual site works) |
 | Shared BOP & I&C infrastructure | ~$10M capital |
-| Sequential refueling (stagger outages) | Maintains ~75% site output during any refueling |
+| Sequential refuelling (stagger outages) | Maintains ~75% site output during any refuelling |
 
 Effective 4-unit NOAK site cost: ~$3,200/kW(e) for the cluster, with site LCOE approaching ~$48/MWh.
 
@@ -220,7 +220,7 @@ The ceramic blisk is the single highest-uncertainty cost item. GE Aviation's SiC
 | TRISO at scale | High | ±$3/MWh fuel cost | Projected but not demonstrated at volume |
 | Regulatory timeline | High | Indirect costs could double for FOAK | Novel design, no licensing precedent |
 | Factory learning rate | Moderate | Determines NOAK trajectory | Requires sustained order book |
-| Capacity factor | Low | ±$2–4/MWh | Prismatic HTGR refueling well understood |
+| Capacity factor | Low | ±$2–4/MWh | Prismatic HTGR refuelling well understood |
 | Discount rate | Moderate | ±$8–12/MWh per ±2% WACC | Capital-intensive; sensitive to financing |
 
 ### Financing Note

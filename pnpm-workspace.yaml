@@ -1,0 +1,4 @@
+allowBuilds:
+  # pulled in by npm-check-updates; a prebuilt binary resolves on linux-x64-gnu, so the compile step is never needed here
+  '@parcel/watcher': false
+  unrs-resolver: true

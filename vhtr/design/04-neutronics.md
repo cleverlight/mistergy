@@ -174,7 +174,7 @@ This is below the 80–100 GWd/tHM target. To reach higher burnup, we need eithe
 **The implication:** achieving 80–100 GWd/tHM with a 12-month cycle likely requires **6–10 batch management** rather than 3-batch. At 12 months per cycle and 10 batches, a fuel assembly spends 10 years in the core — reaching 73 GWd/tHM at 20 MW(th)/tHM specific power, or 80+ GWd/tHM at slightly higher specific power.
 
 This is an important finding that needs the neutronics calculation to resolve. The number of batches trades against:
-- Refueling complexity (more zones to manage at each outage)
+- Refuelling complexity (more zones to manage at each outage)
 - Spent fuel quantity (more batches = each discharge is smaller = more visits before accumulating a significant spent fuel volume)
 - Burnup uniformity
 

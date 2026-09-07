@@ -81,7 +81,7 @@ Each threshold is the difference of tabulated binding energies. No other input i
 ```
   ⁴He + γ -> ³H  + p     S_p = 28.2957 - 8.4818        = 19.8139 MeV
   ⁴He + γ -> ³He + n     S_n = 28.2957 - 7.7180        = 20.5777 MeV
-  ⁴He + γ -> d   + d     S_d = 28.2957 - 2 x 2.2246    = 23.8466 MeV
+  ⁴He + γ -> d   + d     S_d = 28.2957 - 2 x 2.2246    = 23.8465 MeV
 ```
 
 | Channel | Threshold | Products | Wanted? |
@@ -383,7 +383,7 @@ source at the **canonical realistic** rate gives, unshielded at 1 metre:
 
 ```
   flux at 1 m   = 4.29e8 / (4 pi x 1e4 cm2)   =  3.41e3 n/cm2/s
-  dose rate     = 3.41e3 x 4.0e-10            =  1.37e-6 Sv/s  =  4.9e-3 Sv/h
+  dose rate     = 3.41e3 x 4.0e-10            =  1.36e-6 Sv/s  =  4.9e-3 Sv/h
 ```
 
 Reaching an unrestricted-area target of about 1 µSv/h needs an attenuation of 4.9 × 10³, which is

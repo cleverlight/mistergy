@@ -78,9 +78,9 @@ The air path is entirely open to atmosphere — no valves, no dampers, no active
 
 ## Spent Fuel Interim Storage
 
-Each annual refueling visit discharges approximately one batch of spent fuel blocks. These are:
+Each annual refuelling visit discharges approximately one batch of spent fuel blocks. These are:
 
-1. Removed from the core by the refueling machine (below grade)
+1. Removed from the core by the refuelling machine (below grade)
 2. Transferred to a shielded transfer container
 3. Stored in the above-grade spent fuel bay pending collection
 
@@ -88,14 +88,14 @@ The spent fuel bay is sized for **two years' discharge** — providing a buffer 
 
 At the next annual visit, the previously discharged batch is loaded into the transport container and removed from site to a central storage or disposal facility.
 
-## Refueling Access
+## Refuelling Access
 
-The reactor vessel top head is accessed from above via the maintenance hatch and crane. Refueling sequence:
+The reactor vessel top head is accessed from above via the maintenance hatch and crane. Refuelling sequence:
 
 1. Shut down reactor; allow short decay heat cool-down
 2. Depressurise primary helium circuit; store helium in inventory cylinders
 3. Open top head
-4. Refueling machine removes discharged fuel blocks from designated zones; transfers to shielded storage
+4. Refuelling machine removes discharged fuel blocks from designated zones; transfers to shielded storage
 5. Fresh fuel blocks inserted into vacated positions; intermediate blocks shuffled
 6. Top head closed; system leak-checked
 7. Helium re-pressurised from inventory
@@ -116,7 +116,7 @@ A site can host multiple units in adjacent below-grade cavities. Units share:
 - Grid connection infrastructure
 - Site perimeter security
 - Control room (one control room can monitor multiple units)
-- Annual service team visit (all units refueled in sequence)
+- Annual service team visit (all units refuelled in sequence)
 
 Units are otherwise independent — no shared safety systems, no shared primary helium circuits. A fault in one unit does not affect adjacent units.
 
@@ -136,7 +136,7 @@ Units are otherwise independent — no shared safety systems, no shared primary 
 - [ ] Exact below-grade depth: optimise chimney height vs. excavation cost (10 m vs 12 m vs 14 m)
 - [ ] Cavity liner material and emissivity specification
 - [ ] Spent fuel bay shielding thickness and container standard
-- [ ] Refueling machine design: integral to vessel head or removable tool?
+- [ ] Refuelling machine design: integral to vessel head or removable tool?
 - [ ] Exclusion zone radius: requires source-term calculation from safety analysis (§07)
 - [ ] Seismic qualification basis: site-independent envelope or site-specific?
 

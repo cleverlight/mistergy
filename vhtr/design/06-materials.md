@@ -108,13 +108,13 @@ Continuous **on-line gas sampling and gamma spectrometry** at the purification s
 - Sudden step-change → potential fuel block damage or handling accident
 - Isotopic ratios → can indicate whether release is from fresh or aged failures
 
-This monitoring system provides early warning of fuel integrity issues well before any safety threshold is approached, and informs the fuel management strategy at refueling.
+This monitoring system provides early warning of fuel integrity issues well before any safety threshold is approached, and informs the fuel management strategy at refuelling.
 
 ### Helium Inventory Management
 
 At 4 MPa, the primary circuit helium inventory is approximately 57% of what it would be at 7 MPa for the same circuit volume — a direct consequence of the lower operating pressure. This reduces the cost of the initial helium charge, the volume of high-pressure storage required, and the total tritium inventory dissolved in the circuit at any time.
 
-During refueling, the circuit is depressurised — helium must be recovered rather than vented (both economic and radiological reasons).
+During refuelling, the circuit is depressurised — helium must be recovered rather than vented (both economic and radiological reasons).
 
 The **helium inventory system** consists of:
 - High-pressure storage cylinders (~30 MPa) for compressed helium storage during shutdown

@@ -12,16 +12,30 @@ repository. Document conventions are in [`CODING_STANDARDS.md`](CODING_STANDARDS
 Mistergy holds two theoretical engineering design programmes, written as markdown and SVG. See
 [`README.md`](README.md) for the index.
 
-**There is no code here.** No `package.json`, no `node_modules`, no lint, no tests, no dev server,
-no deployment. Do not add any of these. The workspace skills that sweep every project by discovering
-`package.json` files (`/project-status`, `/team-check-updates`, `/dev-status`, `/open-dev`) will pass
-over this repository correctly, and that is the intended behaviour rather than a gap to be closed.
+**There is no application here.** No server, no build step, no deployment, and nothing that runs in
+production. What the repository does carry is a `package.json` and a Jest suite whose entire purpose is
+to check the documents, so that `/prod-ready` and `/push-prod` work here as they do everywhere else.
+Do not add an application, a dev server or a deploy target; do extend the checks.
 
-The consequence for an agent working here is that **the usual safety nets do not exist**. There is no
-type checker to catch a wrong identifier, no test to catch a wrong number, no linter to catch a banned
-character. Every guarantee in this repository is one a human or an agent maintained by reading. Work
-accordingly, and see the number discipline in `CODING_STANDARDS.md`, which is the closest thing this
-repository has to a test suite.
+Because there is now a `package.json`, the workspace skills that sweep for one will find this
+repository. That is intended. `/team-check-updates` should include it in a dependency wave like any
+other project. `/dev-status` and `/open-dev` still have nothing to start, because there is no `dev`
+script and no port, and that remains correct rather than a gap to be closed.
+
+**Know exactly how far the checks reach**, because the gap between what they cover and what they
+appear to cover is where a false assurance would live:
+
+| Checked mechanically | Still maintained only by reading |
+|---|---|
+| arithmetic that a derivation writes out in full | whether a figure traces to its summary page |
+| relative links and heading anchors resolving | whether a number is the *right* number |
+| British spelling, on a curated word list | whether a citation is real |
+| new em dash and en dash glyphs | whether a diagram agrees with the prose |
+| section numbering, indexing and structure | everything in `vhtr/diagrams/HOUSE-STYLE.md` |
+
+The right-hand column is the larger one and contains every rule that actually matters most. A green
+suite means the mechanical floor holds, not that a document is correct, and the number discipline in
+`CODING_STANDARDS.md` remains the rule this repository is really built on.
 
 ## Git workflow
 
@@ -72,10 +86,15 @@ temperature ramp, which is specific to the reactor's working fluid.
 
 ## Verification
 
-There is nothing to run, so verification is reading. Before handing back a change:
+Run `pnpm run lint` and `pnpm run test-jest`, then read. The suite catches a narrow band of mistakes
+and reading catches the rest, so neither substitutes for the other. Before handing back a change:
 
 - Re-read the section you edited, in full, not just the diff.
-- If you changed a number, grep the whole repository for that number and for the figures derived from it.
-- If you changed a heading or a filename, grep for links to it. Cross-references between sections are
-  plain relative markdown links and nothing validates them.
+- If you changed a number, grep the whole repository for that number and for the figures derived from
+  it. The suite checks arithmetic a document writes out; it cannot tell you a figure is the wrong one.
+- If you changed a heading or a filename, run the suite: `__tests__/links.test.ts` resolves every
+  relative link and anchor, which is the one check that used to be a manual grep.
+- If you added prose carrying an em dash, the suite will fail. Use a hyphen. Do not regenerate the
+  baseline to silence it - that file records what predates the rule, and `sh/dash-baseline.sh` exists
+  for edits that legitimately move a count, not for new text.
 - If you rendered a diagram to check it, delete the PNG afterwards per the workspace browser-snapshot rule.

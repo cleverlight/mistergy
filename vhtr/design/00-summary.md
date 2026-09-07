@@ -106,7 +106,7 @@ A **Very High Temperature Reactor (VHTR)** — helium-cooled, graphite-moderated
 |---|---|
 | Enrichment limit | < 5% ²³⁵U (LEU) |
 | Target discharge burnup | 80–100 GWd/tHM |
-| Refueling interval | 12 months |
+| Refuelling interval | 12 months |
 | Batch management | 6–10 batches |
 | Cycle length (per batch in core) | 6–10 years |
 

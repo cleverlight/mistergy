@@ -59,4 +59,10 @@ validated against a neutronics code, a CFD run, a particle-in-cell simulation or
 The documents are written to be falsifiable - figures are given with their derivation so that
 a reader can check them - but they have not yet been falsified by anyone competent to do it.
 
+The sums, at least, are checked by machine. `pnpm run test-jest` re-computes every derivation the
+documents write out in full and fails if a stated result does not follow from the inputs beside it,
+alongside checks on links, structure and spelling. That is a check on the arithmetic and nothing more:
+it cannot tell you that a figure is the right figure, that a cross-section is current, or that a
+model applies. The standing warning above is unaffected by it.
+
 Licensed CC BY 4.0. See [LICENSE](LICENSE).

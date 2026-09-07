@@ -94,13 +94,13 @@ At 950 °C, blade metal temperatures approach 900–930 °C. Nickel superalloys 
 
 ### Selected Material: SiC/SiC Ceramic Matrix Composite (CMC)
 
-SiC fibers in a SiC matrix, typically manufactured by chemical vapor infiltration (CVI) of the SiC matrix around woven SiC fiber preforms.
+SiC fibres in a SiC matrix, typically manufactured by chemical vapour infiltration (CVI) of the SiC matrix around woven SiC fibre preforms.
 
 **Why CMC is a stronger choice here than in air-breathing turbines:**
 
-In jet engines, SiC/SiC faces a serious degradation mechanism: water vapor in the combustion gas reacts with SiO₂ (the native oxide on SiC surfaces) to form volatile Si(OH)₄, causing progressive material recession. Environmental barrier coatings (EBCs) are required to protect CMC hardware in aircraft engines.
+In jet engines, SiC/SiC faces a serious degradation mechanism: water vapour in the combustion gas reacts with SiO₂ (the native oxide on SiC surfaces) to form volatile Si(OH)₄, causing progressive material recession. Environmental barrier coatings (EBCs) are required to protect CMC hardware in aircraft engines.
 
-In pure helium, this mechanism does not exist. There is no water vapor, no oxygen, no sulfur. The degradation modes that make CMC challenging in air — oxidation, hot corrosion, EBC spallation — are simply absent. The material can operate at its intrinsic temperature and creep limits without protective coatings.
+In pure helium, this mechanism does not exist. There is no water vapour, no oxygen, no sulfur. The degradation modes that make CMC challenging in air — oxidation, hot corrosion, EBC spallation — are simply absent. The material can operate at its intrinsic temperature and creep limits without protective coatings.
 
 **Relevant properties of SiC/SiC:**
 
@@ -116,7 +116,7 @@ The density advantage is significant: CMC blades are ~70% lighter than equivalen
 
 **The TRISO connection:**
 
-SiC is already the pressure-retaining fission product barrier in TRISO fuel particles. This design uses the same material class as both the fuel's pressure vessel and the turbine blades. The high-temperature nuclear behavior of SiC is therefore already central to the design's safety case, and the material knowledge base applies across both applications.
+SiC is already the pressure-retaining fission product barrier in TRISO fuel particles. This design uses the same material class as both the fuel's pressure vessel and the turbine blades. The high-temperature nuclear behaviour of SiC is therefore already central to the design's safety case, and the material knowledge base applies across both applications.
 
 ### Rotor Architecture: Full Ceramic Blisk
 

@@ -5,8 +5,10 @@ solve it: how many degrees of freedom a coherently combined array actually has, 
 and on what timescales, what a camera watching a fringe pattern can and cannot measure, three
 candidate learning architectures with a recommendation between them, how synthetic training data
 should be generated (including a correction to the originating concept note's generator, which does
-not produce interference at all), the real-time loop and its latency budget, and what changes when
-the channel count goes from 10 to 100 to 500. Nothing in this section depends on the nuclear verdict
+not produce interference at all), the real-time loop and its latency budget, what changes when the
+channel count goes from 10 to 100 to 500, and finally the pairwise sampling architecture that has to
+replace the camera once a single global metric stops carrying usable information about any individual
+channel. Nothing in this section depends on the nuclear verdict
 in [03-feasibility](03-feasibility.md). The alignment problem is real whatever the array is pointed
 at, and it is the part of the programme that survives that verdict completely intact.
 
@@ -57,6 +59,14 @@ than a stepper motor can position.
 Pointing is looser but not loose. A sub-aperture of diameter D has a diffraction angle of about λ/D;
 for D = 5 mm that is 206 µrad. Holding pointing to a tenth of that, 21 µrad, on a kinematic mount
 with a 50 mm lever arm, requires the actuator to be positioned to about 1 µm.
+
+**Neither tolerance relaxes because the focal spot is large**, and it is worth saying so because the
+instinct runs the other way. [05-gamma-source](05-gamma-source.md) §4.2 records that the wakefield
+stage wants a *matched* spot of 18-30 µm radius, and that focusing harder than the plasma wants is
+actively wrong rather than merely wasteful. That decides the final optic and it leaves the phase
+budget untouched: λ/20 comes from the combining efficiency `exp(-sigma^2)` and λ/(10 D) comes from
+the sub-aperture diameter, and neither expression contains the spot size. The alignment problem is
+exactly as hard for a 30 µm spot as for a 1 µm one.
 
 ### 1.3 The disturbance spectrum spans eight decades
 
@@ -666,12 +676,19 @@ must change the *measurement*, not the algorithm.
 | **Sub-aperture grouping / hierarchical control** | combine in tiers of 7-19 hexagonal clusters; each tier is a small, well-conditioned problem with its own local metric, and the top tier sees ~30 super-channels | 500 and beyond | one extra combining stage and one detector per cluster |
 | **Permutation-equivariant policy** | parameterise the controller over the aperture lattice (a graph or convolution over sub-aperture index) so parameter count is independent of N | any N | none, it is a modelling choice, and it lets a policy trained at N = 19 transfer to N = 500 |
 | **Curriculum over N** | train at increasing channel counts with shared weights | any N | training time only |
+| **Pairwise pick-off sampling** (§9) | split a small fraction of each beam and interfere the pairs directly, so each measurement reads one relative phase at unit visibility rather than a 1/N share of a global intensity | indefinitely, subject to the graph-depth constraint in §9.4 | N beamsplitters, a sensing bench, and the non-common-path problem of §9.6 |
 
 The recommendation for the full array is hierarchical combining with local per-cluster sensing and a
 permutation-equivariant learned policy shared across clusters. The camera-only architecture that the
 proof of concept uses is correct at 10 channels and should not be assumed to scale; the transition
 point is where the fractional signal in the table above drops below what the sensor can measure in
 one frame, which on these numbers is somewhere between 30 and 100 channels.
+
+**Section 9 develops the last row of that table into the sensing architecture the full array should
+use**, because it is the only one of the five that changes the measurement in the way §8.2 demands
+without also being a variation on something already demonstrated. The hierarchical recommendation
+above survives intact and gains a second justification: §9.4 shows that the clustering chosen for
+combining reasons is also what keeps the sensing graph shallow enough to meet the phase budget.
 
 ### 8.4 Where the learned controller should actually earn its place
 
@@ -692,6 +709,326 @@ have no error signal, and does so at a scale where hand-tuning cannot reach".
 
 ---
 
+## 9. Pairwise sampling: the sensing architecture the full array needs
+
+Section 8 establishes that a single global metric cannot scale, and that what has to change is the
+measurement rather than the algorithm. This section works out what to change it to. The primitive is
+a beam-splitter pick-off feeding a pairwise interferogram; the multiplexing has to be spatial rather
+than temporal; the graph those pairs form has a depth constraint that disqualifies the obvious
+topology; and the redundancy the graph makes cheap is worth more as fault detection than as alignment
+speed. Nothing here is demonstrated. It is a design argument built on the disturbance figures in §1.3
+and the phase budget in §1.2, both of which are estimates.
+
+### 9.1 A pairwise interferogram does not dilute
+
+The dilution in §8.2 is a property of the far-field metric, not of interferometry. It arises because
+one channel's contribution to `I = N²a²` is a 1/N share. Two beams interfered against each other have
+no such denominator: the fringe visibility is order unity however many other channels exist, and the
+observable is the relative phase itself rather than a second-order intensity change.
+
+For a shot-noise-limited fringe of visibility V, the phase estimate has RMS error
+
+```
+  sigma_phi  ~  1 / (V sqrt(N_ph))
+```
+
+so reaching the 0.222 rad per-edge budget derived in §9.4, at V = 1, needs
+
+```
+  N_ph = 1 / (0.222 × 0.222) = 20.3
+```
+
+about twenty detected photons. Set against the global metric at the same channel count:
+
+| Measurement | What it observes | Detected photons required |
+|---|---|---|
+| Global far field, one channel dithered at δ = 0.3 rad, N = 500 | 1.8 × 10⁻⁴ fractional intensity change (§8.2) | 3.1 × 10⁷ for a 1σ detection |
+| Pairwise interferogram, V = 1 | the relative phase directly | ~20 for 0.222 rad RMS |
+
+The ratio between them is
+
+```
+  3.1 × 10⁷ / 20.3 = 1.5 × 10⁶
+```
+
+That factor is the whole argument for the architecture, and it is an information argument rather than
+a hardware one: the pairwise measurement is not more sensitive, it is asking a question whose answer
+is not shared out among 500 channels.
+
+Read it as an idealised bound in the same spirit as §4.1 of [00-summary](00-summary.md). Read noise,
+background, finite visibility, pick-off amplitude imbalance and the separate photon cost of the
+pointing measurement all erode it, and none of those is calculated here.
+
+### 9.2 Time multiplexing fails, and the arithmetic is the one in §1.4
+
+A scheme that cycles through pairs, aligning each in turn, is §1.4's inequality with a machine
+substituted for the operator:
+
+```
+  N * t_c  <  tau_drift
+```
+
+`t_c` is one pairwise measurement plus one actuator settle. A photodiode reads a fringe in
+microseconds and a piezo stack settles in 100 µs to 1 ms, so the actuator dominates and `t_c` = 1 ms
+is the realistic figure with 100 µs as the optimistic one.
+
+`tau_drift` is not one number. Each band in §1.3 consumes the λ/20 budget of 51.5 nm at its own rate,
+and for a band of amplitude A at frequency f the peak optical-path slew is `2 pi f A`. Worked at the
+top of each band, taking amplitudes from §1.3:
+
+```
+  peak OPD slew of a band at amplitude A and frequency f  =  2 pi f A
+  time to consume the budget                              =  51.5 nm / slew
+
+  thermal drift, 69 nm/min from §1.4
+  69 / 60 = 1.15 nm/s
+  51.5 / 1.15 = 44.8 s
+
+  convection, 100 nm at 10 Hz
+  2 × 3.1416 × 10 × 100 = 6,283 nm/s
+  51.5 / 6,283 = 8.2 × 10⁻³ s
+
+  building vibration, 1,000 nm at 200 Hz
+  2 × 3.1416 × 200 × 1,000 = 1.26 × 10⁶ nm/s
+  51.5 / 1.26 × 10⁶ = 4.1 × 10⁻⁵ s
+
+  acoustic, 100 nm at 5 kHz
+  2 × 3.1416 × 5,000 × 100 = 3.14 × 10⁶ nm/s
+  51.5 / 3.14 × 10⁶ = 1.6 × 10⁻⁵ s
+```
+
+| Disturbance (§1.3) | Amplitude and frequency used | Peak OPD slew | Time to consume 51.5 nm |
+|---|---|---|---|
+| Thermal drift | 69 nm/min, from §1.4 | 1.15 nm/s | 45 s |
+| Convection | 100 nm at 10 Hz | 6.28 µm/s | 8.2 ms |
+| Building vibration | 1,000 nm at 200 Hz | 1.26 mm/s | 41 µs |
+| Acoustic | 100 nm at 5 kHz | 3.14 mm/s | 16 µs |
+
+Which gives the channel ceiling a cycling scheme can hold, band by band:
+
+| Band | τ_drift | N_max at t_c = 1 ms | N_max at t_c = 100 µs |
+|---|---|---|---|
+| Thermal drift | 45 s | 45,000 | 450,000 |
+| Convection | 8.2 ms | 8 | 82 |
+| Building vibration | 41 µs | < 1 | < 1 |
+| Acoustic | 16 µs | < 1 | < 1 |
+
+**Sequential cycling is a thermal-drift controller and nothing else.** Against convection it tops out
+at single-digit channel counts, and against vibration it cannot hold one channel, which is the same
+conclusion §1.3 reaches for the 10 Hz camera loop and for the same reason. The fast inner loop has to
+be parallel and per-channel whatever else is true.
+
+The cycle-length arithmetic says the same thing from the other side. At 500 channels a spanning tree
+is 499 edges and the complete graph is
+
+```
+  500 × 499 / 2 = 124,750
+```
+
+At `t_c` = 1 ms the tree cycles in 0.499 s, a 2.0 Hz per-channel update, and the complete graph in
+124.75 s, a 0.0080 Hz update. Against the unity-gain bandwidths §1.3 requires - 0.1 Hz for thermal
+drift, 10 to 100 Hz for convection, 200 Hz to 2 kHz for vibration - tree cycling holds thermal drift
+with margin and misses convection by one to two orders. Cycling the complete graph fails to hold even
+thermal drift.
+
+**Rotation is therefore an outer-loop mechanism, not a scaling mechanism.** It has real work to do
+there, and §9.5 and §9.8 say what.
+
+### 9.3 Multiplex in space instead
+
+Every argument above is against time-division. None of it is against pairwise measurement. Fix a
+pick-off per channel, interfere the pairs simultaneously, and image the set onto one sensor as
+separate fringe patches: every edge is then measured every frame, and the per-edge update rate is the
+frame rate rather than the frame rate divided by the edge count. The cost moves from bandwidth, which
+is scarce, to beamsplitters and pixels, which are not.
+
+Two consequences follow from treating the result as a graph over channels, with an edge wherever a
+pair is interfered.
+
+**The graph needs N-1 edges, not N(N-1)/2.** Phase differences on a connected graph determine every
+node phase relative to a nominated reference, which is the same N-1 observable relative phases §2.3
+already identifies. At 500 channels that is 499 measurements rather than 124,750:
+
+```
+  124,750 / 499 = 250
+```
+
+Any scheme that visits all pairs is doing 250 times more work than the physics requires.
+
+**Redundant edges beyond the spanning tree are not waste**, but what they buy is noise averaging and
+fault detection rather than reach. See §9.5.
+
+### 9.4 Graph depth is the binding constraint, and it disqualifies a chain
+
+Phases propagate from the reference along paths. With independent per-edge measurement errors of RMS
+σ_e, the accumulated error at a node sitting d edges from the reference is
+
+```
+  sigma_node = sigma_e * sqrt(d)
+
+  chain of 500, d = 499, root d = 22.34
+  0.314 / 22.34 = 0.01406 rad
+
+  two tiers, d = 2, root d = 1.414
+  0.314 / 1.414 = 0.222 rad
+```
+
+Setting that against the λ/20 combining budget of 0.314 rad from §1.2 gives the per-edge measurement
+requirement for each candidate topology:
+
+| Topology | Depth from reference | Required per-edge σ_e | In waves |
+|---|---|---|---|
+| Chain of 500 | up to 499 | 0.01406 rad | λ/447 |
+| Two tiers, 27 clusters of 19 | 2 | 0.222 rad | λ/28 |
+| Star, one global reference | 1 | 0.314 rad | λ/20 |
+
+**A chain is disqualified outright**, and this is worth stating plainly because a chain is exactly
+what a naive "align each laser to its neighbour, working along the array" scheme produces. It demands
+a per-edge measurement thirty times better than the budget it is trying to meet.
+
+A star is optimal on depth and unacceptable on failure: one reference channel carries every
+measurement in the array, and [04-laser-array](04-laser-array.md) §6.2 treats a silent single-channel
+failure as more dangerous than a dead one.
+
+The two-tier hierarchy is the compromise and it costs nothing new, because it is the clustering §8.3
+already recommends on combining grounds. At 500 channels
+
+```
+  500 / 19 = 26.3
+```
+
+so 27 clusters of up to 19, and the top tier sees 27 super-channels, which is the ~30 §8.3 assumes.
+**The structure that makes the combining tractable is the same structure that keeps the sensing graph
+shallow**, and that coincidence is the strongest argument for it.
+
+### 9.5 Redundancy buys closure, and closure is what makes the graph self-diagnosing
+
+Around any closed loop in the graph the measured phase differences must sum to zero:
+
+```
+  delta_ij + delta_jk + delta_ki = 0   (mod 2 pi)
+```
+
+This holds identically whatever the true channel phases are, because each true phase enters twice with
+opposite sign. So a non-zero closure residual is a statement about the *measurement*, never about the
+array: a bad edge, a 2π wrap, a dropped sensor, a channel that has silently lost power. It is the only
+observable in this design that separates a sensing fault from a real drift, and
+[04-laser-array](04-laser-array.md) §6.2 is explicit that the silent failure is the one that matters.
+
+Redundancy is cheap on a near-field lattice. A hexagonal close-packed aperture has of order 3N
+nearest-neighbour edges, against the N-1 a spanning tree needs:
+
+| Quantity | Value at N = 500 |
+|---|---|
+| Spanning-tree edges | 499 |
+| Nearest-neighbour edges, hexagonal lattice | ~1,500 |
+| Independent closure loops, E - N + 1 | ~1,001 |
+| Redundancy factor | ~3 |
+| Noise improvement from a least-squares solve over the redundant graph | ~√3, about 1.7 |
+
+The closure-loop count is the cyclomatic number of the sensing graph:
+
+```
+  1,500 - 500 + 1 = 1,001
+```
+
+The ~3N edge estimate behind it is the interior count, where each vertex has six neighbours and each
+edge is shared between two. The boundary reduces it and by how much is not calculated here.
+
+**So triplets do earn a place in this design, and it is not the one intuition suggests.** They are not
+a faster way to align. They are a consistency check, a fringe-order disambiguator and the mechanism by
+which the sensor array detects its own faults, and they are worth having for that alone.
+
+### 9.6 Non-common-path error is what this architecture costs
+
+A routed pick-off measures the phase difference **at the sensor**, not at the aperture. Every drift in
+the pick-off path adds to the measurement and is indistinguishable from a real channel error, so the
+sensing bench inherits the whole disturbance problem of §1.3, at the same 51.5 nm tolerance, over paths
+that are not the ones being controlled. This is the classical non-common-path error and it is the
+reason the architecture is not free. It is also the weakness most likely to be discovered late, because
+a bench that is drifting coherently will look perfectly locked.
+
+Three mitigations, in increasing order of how much they actually solve:
+
+- **Keep the pick-off paths short, matched and inside one thermally stabilised enclosure.** Reduces the
+  drift; does not make it common. Cheapest and weakest.
+- **Calibrate the sensing bench periodically against the far-field metric.** Turns an unbounded drift
+  into a bounded one, at the cost of a slow outer loop that needs the far-field camera after all. This
+  is a legitimate use for the rotation §9.2 rejects as an inner loop.
+- **Shear the near field rather than routing it.** Interfere each sub-aperture against its neighbour at
+  the aperture plane, so the two arms of every interferometer share substantially the same path. This
+  is §8.3's nearest-neighbour option, and it is free of non-common-path error very nearly by
+  construction.
+
+**The recommendation is the shearing form for the intra-cluster tier**, with routed pick-offs kept only
+for the cluster-to-cluster tier, where the apertures are not adjacent and a routed path is unavoidable.
+That confines the non-common-path problem to the 26 top-tier edges instead of all ~1,500.
+
+### 9.7 A candidate answer to the group-delay multiplexing question
+
+The open questions below previously carried "what group-delay sensor architecture serves 500 channels?"
+on the grounds, from §2.2, that spectral interferometry and cross-correlation are both per-channel
+measurements against a reference. Spatial multiplexing offers a candidate answer. **This is a proposal,
+not a result.**
+
+Disperse each pairwise fringe along one axis with a grating and image the set onto a two-dimensional
+sensor, so that each edge occupies a row and carries a spectral interferogram rather than a single
+fringe. The physics is unchanged: this is the spectral interferometry §2.2 already lists. What changes
+is that it is acquired for every edge in one frame instead of one channel at a time, which is precisely
+the multiplexing the open question asks for.
+
+The unambiguous range follows from the synthetic wavelength of the two edges of the pulse spectrum. A
+100 fs transform-limited pulse at 1.03 µm carries 15.6 nm of bandwidth (§2.2), so with
+λ₁ = 1.0222 µm and λ₂ = 1.0378 µm:
+
+```
+  Lambda = lambda_1 lambda_2 / (lambda_2 - lambda_1)
+  1.0222 × 1.0378 / 0.0156 = 68.0 µm
+```
+
+against the 30 µm envelope length §2.2 gives. The synthetic wavelength exceeds the envelope, so the
+fringe order is determined everywhere the envelopes overlap at all, which is exactly the 29-fold
+ambiguity §2.2 identifies as unresolvable by a single fringe camera.
+
+What it does not solve is the other half of §2.2: where the envelopes do not overlap there are still no
+fringes, and that case still needs mechanical metrology to get within a picosecond first. The layered
+architecture §2.2 describes is unchanged. This proposal replaces the middle layer's per-channel scan
+with a parallel read and nothing else.
+
+Three things would settle whether it works, none of them done here:
+
+- the photon budget per spectral element, which is the frame photon count divided by the number of
+  resolved spectral elements and is not computed;
+- whether fringe visibility survives the dispersion and the pick-off amplitude imbalance;
+- whether a sensor exists with enough rows, well depth and frame rate to carry ~1,500 dispersed edges.
+
+### 9.8 What this leaves the learned controller
+
+Section 8.4 argues that the learned element should target what a classical loop does badly. A dense
+per-edge error signal sharpens that argument rather than weakening it, because it moves phase-holding
+firmly into the solved-problem column. What remains:
+
+- **capture from a large excursion**, unchanged from §8.4 and now better posed, because a pairwise
+  fringe carries a valid error signal across a full wave rather than only near the lock point;
+- **wrap resolution**, deciding which 2π branch each edge sits on, informed by the closure residuals of
+  §9.5 and the spectral read of §9.7;
+- **fault classification**, separating a sensing fault from a real drift from a dead channel using
+  closure residuals, which is a labelling problem with a physical ground truth rather than a control
+  problem;
+- **non-common-path estimation**, holding a slowly varying model of the sensing bench's own drift,
+  which is exactly the unmodelled non-stationary quantity §8.4 lists and which the classical loop has
+  no handle on at all;
+- **actuator inversion**, hysteresis and creep, unchanged from §8.4.
+
+Note what has left the list: regressing N phases from one far-field image, which is approach A in §3.1
+and what the originating concept note proposed. That formulation is correct at proof-of-concept scale,
+where §8.3 puts the crossover between 30 and 100 channels, and **it should not be carried into the
+full-array design**. The proof of concept in [08-proof-of-concept](08-proof-of-concept.md) tests the
+learning hypothesis on a camera-only bench, which remains the right experiment; this section is about
+what replaces the camera afterwards.
+
+---
+
 ## Open questions
 
 - **What is the actual disturbance spectrum of the bench?** Every bandwidth argument above uses
@@ -705,10 +1042,25 @@ have no error signal, and does so at a scale where hand-tuning cannot reach".
 - **Is the phase-sign degeneracy of section 2.3 a practical problem or only a theoretical one?** It is
   cheap to insure against by jittering the layout, so the question is whether the insurance is
   necessary. Testable in simulation before any hardware exists.
-- **What group-delay sensor architecture serves 500 channels?** Spectral interferometry and
-  cross-correlation are both fundamentally per-channel measurements against a reference. Multiplexing
-  either across hundreds of channels at a useful update rate is unresolved and is the least developed
-  part of the full-scale control design. See [04-laser-array](04-laser-array.md).
+- **Does the dispersed pick-off array of §9.7 actually multiplex the group-delay measurement?** This
+  replaces the flat "what group-delay sensor architecture serves 500 channels?" that stood here before
+  §9 was written. Spectral interferometry and cross-correlation are both per-channel measurements
+  against a reference, and §9.7 proposes reading all edges in one dispersed frame instead. The
+  synthetic wavelength arithmetic works, at 68.0 µm against a 30 µm envelope. The photon budget per
+  spectral element, the fringe visibility after dispersion, and whether a sensor of the required
+  format exists are all uncomputed. Awaiting calculation. See [04-laser-array](04-laser-array.md).
+- **What is the residual non-common-path drift of a routed pick-off bench?** This is the number that
+  decides whether §9.6's routed form is usable at all, and unlike most questions here it is a
+  measurement rather than a calculation: build two pick-off paths, interfere them against a common
+  source, and watch. If it exceeds the 51.5 nm budget over the control interval, the shearing form is
+  not merely preferable but mandatory. Awaiting measurement.
+- **What per-edge measurement error does a real bench achieve?** §9.4 derives a requirement of
+  0.222 rad RMS per edge for the two-tier graph, from the λ/20 budget and a √d accumulation. Nothing
+  here shows that a bench meets it, and §9.1's twenty-photon figure is a shot-noise bound that ignores
+  read noise, background and visibility loss. Awaiting measurement.
+- **Does the ~3N nearest-neighbour edge count survive the aperture boundary?** §9.5 uses the interior
+  count for a hexagonal lattice and says explicitly that the boundary reduces it. The closure-loop
+  count and the √3 noise improvement both scale with it. Awaiting calculation.
 - **Does a policy trained at small N genuinely transfer to large N?** The permutation-equivariant
   argument says it should. Nothing here demonstrates it, and the scaling steps in
   [09-roadmap](09-roadmap.md) are the place it would be tested.

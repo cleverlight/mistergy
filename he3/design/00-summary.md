@@ -252,15 +252,45 @@ The concept note's "~$12,000" bench figure is superseded: its eight rows sum to 
 phase actuation entirely, without which the experiment cannot demonstrate phase locking at all. See
 [08-proof-of-concept](08-proof-of-concept.md) §5.
 
-## 10. Phase-error criteria
+## 10. Phase and delay criteria
 
-Two different bars for two different stages. They are not in conflict and neither should be quoted
-without saying which it is.
+Phase and delay are **separate quantities with separate bars**, and the sensor that measures one does
+not see the other. Nothing here is in conflict and none of it should be quoted without saying which
+bar it is.
+
+### 10.1 Phase
 
 | Bar | Value | Applies to |
 |---|---|---|
 | **Full-system combining requirement** | **λ/20 RMS** (51.5 nm at 1.03 µm), target λ/40 | the 100-500 or 10⁴ channel array; gives 0.91 combining efficiency |
 | **Proof-of-concept acceptance** | **< 1 rad RMS, target π/4 rad (λ/8)** | the 5-10 beam bench in [08](08-proof-of-concept.md) |
+| **Per-edge sensing requirement** | **0.222 rad RMS (λ/28)** | each pairwise interferogram in the two-tier sensing graph of [07](07-ai-control.md) §9.4 |
+
+The third bar is derived from the first, not independent of it. Measurement errors accumulate as √d
+along a sensing graph of depth d, so the topology sets how good each individual measurement has to be:
+a depth-2 hierarchy needs λ/28 per edge, a single-reference star needs λ/20, and a chain of 500 would
+need λ/447, which is why [07](07-ai-control.md) §9.4 disqualifies chaining outright.
+
+### 10.2 Delay
+
+Two delay requirements, both of order **10 fs RMS**, both equal to **3 µm of optical path**, and both
+arising from the same cause: a tenth of the 100 fs pulse duration. They constrain different things and
+conflating them is a defect.
+
+| Bar | Value | Applies to |
+|---|---|---|
+| **Inter-channel group delay** | **~10 fs RMS (3 µm of OPD)** | envelope arrival time between the array's own channels; [04](04-laser-array.md) §3.2, [07](07-ai-control.md) §2.1 |
+| **Inter-arm timing jitter** | **~10 fs RMS (3 µm of OPD)** | differential path drift between the drive and scatter arms at the interaction point; [05](05-gamma-source.md) §5.4 |
+
+**Group delay is not a looser version of the piston bar.** It is 60× looser in absolute path terms,
+and that comparison misleads: piston is the carrier phase modulo 2π, group delay is the absolute
+envelope arrival time. A channel can be perfectly piston-locked and still be 500 fs late.
+
+The companion figure to both is the **68.0 µm synthetic wavelength** of the pulse spectrum's two edges,
+which is the unambiguous range of the dispersed pairwise read proposed in [07](07-ai-control.md) §9.7.
+It exceeds the 30 µm envelope length, so it covers the fringe-order ambiguity. It is a proposal rather
+than a specification, and it does **not** substitute for the 10 fs RMS requirement: it says which
+fringe order you are in, not that the envelopes have been brought together.
 
 ## 11. Key decisions made
 
@@ -277,7 +307,7 @@ without saying which it is.
 | Target | Superfluid He-II at ~2 K (2.18 × 10²² /cm³); gas targets are three orders of magnitude worse |
 | Array architecture | Coherently combined, tiled aperture, actively phase-locked |
 | **Channel count** | **Unsettled.** 04 recommends ~10⁴ × 1 mJ; the roadmap is still staged on 100-500 × 0.10 J |
-| Alignment control | Learned controller, camera feedback, no wavefront sensor at PoC scale |
+| Alignment control | Learned controller. Camera feedback and no wavefront sensor at PoC scale; **pairwise pick-off sensing on a two-tier graph at full scale**, because a global metric carries only a 1/N share of the information about any one channel. [07](07-ai-control.md) §9 |
 
 ## 12. Intensity, temperature and the commercial ceiling
 

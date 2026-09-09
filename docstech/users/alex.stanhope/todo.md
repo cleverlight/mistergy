@@ -1,6 +1,25 @@
 # Todo
 
 
+### Settle the pairwise sensing figures in section 07 [](?id=pairwise-sensing-figures)
+
+`he3/design/07-ai-control.md` §9 replaces the far-field camera with pairwise pick-off sensing for the
+full-scale array, on the grounds that a global metric carries only a 1/N share of the information about
+any one channel. The architecture argument closes; four of its figures do not, and they are recorded as
+open questions in that section rather than guessed. This story is those four figures and nothing else.
+
++ [ ] compute the photon budget per spectral element for the dispersed pick-off read in §9.7
++ [ ] establish whether fringe visibility survives the dispersion and the pick-off amplitude imbalance
++ [ ] establish whether a sensor exists with the rows, well depth and frame rate for ~1,500 dispersed edges
++ [ ] measure the residual non-common-path drift of a routed pick-off bench against the 51.5 nm budget
++ [ ] measure the per-edge phase error a real bench achieves, against the 0.222 rad requirement of §9.4
++ [ ] compute the nearest-neighbour edge count at the aperture boundary, which the ~3N interior figure overstates
++ [ ] fold each answer back into §9 and update `00-summary.md` §10 if a bar moves
++ note: the source of record is the Open questions list in `07-ai-control.md`; keep the figures there and tick here
++ note: this is full-scale sensing only, distinct from the camera-only bench in [[alignment-poc-bench]]
++ note: the non-common-path item is a measurement rather than a calculation, and it decides whether routed pick-offs are usable at all
+
+
 ### Decide the reaction channel, now that neutron-free routes exist [](?id=neutron-free-reaction-channel)
 
 `he3/design/13-neutron-free-routes.md` finds that ⁴He(γ,n)³He cannot be operated without producing a
@@ -104,6 +123,7 @@ cheapest way to learn whether the central control hypothesis holds. Scoped in
 + [ ] finalise the bill of materials, including the piezo stage the original concept note omitted
 + [ ] assemble the bench and establish the manual alignment baseline
 + [ ] close the loop and measure against the Phase 3 success criteria
++ note: pairwise pick-off sensing is full-scale only and out of scope here; this bench stays camera-only, per `07-ai-control.md` §9.8
 + manual: procurement and physical assembly
 
 

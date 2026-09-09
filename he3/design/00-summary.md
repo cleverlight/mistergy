@@ -368,6 +368,30 @@ year at $3,000 per litre STP. The Li-6 breeding route remains better by five ord
 **Neutron-free operation requires a band-limited source**, which disqualifies the bremsstrahlung
 continuum of §12 for this mission and reinstates inverse Compton scattering.
 
+**The array's design focus is 60x too intense for the proton route.** TNSA proton spectra are
+quasi-exponential with a slope of order the hot-electron temperature, so focal intensity sets the
+proton spectrum, and ⁶Li(p,n)⁶Be at 5.920 MeV caps it. Fractions are 1 - exp(-E_th / T_p) with T_p
+taken as T_hot.
+
+| Configuration | Focused intensity | a₀ | T_hot | Protons below 5.920 MeV |
+|---|---|---|---|---|
+| 100 channels combined, f/1 | 3.7 x 10²¹ W/cm² | 53.5 | 18.83 MeV | 27% |
+| **One channel at 500 mJ and f/1, or the array at f/7.8** | **6.2 x 10¹⁹ W/cm²** | **6.9** | **2.04 MeV** | **95%** |
+
+Correcting it is optically free, being a longer focal length, and costs about 30% of the yield per
+unit beam energy through the softer spectrum plus an unquantified fall in TNSA conversion efficiency.
+
+**Coherent combining is not required by the proton route.** It buys radiance (§12), and this route
+wants average power while actively not wanting focal intensity, so the array reduces to N independent
+lasers on a common target. That removes helium-3 production as a justification for the phase control
+of §07 but not the gamma-source mission of §03, which still requires it.
+
+**Expressed as a current the array is a sub-milliamp proton source**, 83 µA at 5 kW and 833 µA at
+50 kW, against 61.7 kA at 3 MeV needed for 50 g/day. A 1 mA radio-frequency quadrupole reaches
+2.96 x 10⁻⁴ g/yr and so outproduces the 50 kW array. The route costs 10 GeV of beam energy per
+helium-3 atom whatever supplies the protons, which is why the source choice moves the instrument and
+not the verdict.
+
 **Array electrical supply.** The pulsed-power question is decided by pulse period divided by
 upper-state lifetime (Yb:YAG, 0.95 ms). At 1 kHz that ratio is 1.05, so CW diode pumping is
 near-optimal and the mains load is smooth.

@@ -122,10 +122,12 @@ the only route in this repository that produces the product without a radioactiv
 
 ### 4.1 Why it suits this machine specifically
 
-The array is a poor gamma source and an excellent proton source. Target normal sheath acceleration
-converts a few percent of an ultraintense pulse into multi-MeV protons from a thin foil, it works at
-exactly the 10²⁰ to 10²¹ W/cm² [12-intensity-limits](12-intensity-limits.md) §4 shows the array
-reaches, and it is among the best demonstrated capabilities in high-intensity laser physics.
+The array is a poor gamma source and a capable proton source. Target normal sheath acceleration
+converts a few percent of an ultraintense pulse into multi-MeV protons from a thin foil, it operates
+across the 10¹⁹ to 10²¹ W/cm² range [12-intensity-limits](12-intensity-limits.md) §3 and §4 show the
+array covers, and it is among the best demonstrated capabilities in high-intensity laser physics.
+**It wants the bottom of that range rather than the top**, which is the largest qualification on this
+route and is §4.5 below.
 
 **It deletes the whole gamma chain.** No wakefield stage, no GeV electron beam, no scattering laser
 arm, no femtosecond synchronisation between two arms, no inverse Compton conversion at 10⁻⁴. Section
@@ -191,6 +193,138 @@ repository for the laser route.
 - **Deuterium contamination of the TNSA foil** drives ⁶Li(d,n)⁷Be. TNSA protons come from
   hydrocarbon and water contamination layers, so foil preparation is a neutron-control step.
 
+### 4.5 The array's design intensity is sixty times too high
+
+TNSA does not produce a monoenergetic beam. The proton spectrum is quasi-exponential with a slope
+temperature of the order of the hot-electron temperature, so **the focal intensity sets the proton
+spectrum**, and this route cares about the proton spectrum in a way the gamma route never did. §4.4
+caps proton energy at 5.920 MeV. What the array delivers at its design focus is not close to that.
+
+Hot-electron temperature from the ponderomotive scaling of
+[12-intensity-limits](12-intensity-limits.md) §5, with the fraction of an exponential proton spectrum
+lying below each neutron threshold taken as 1 - exp(-E_th / T_p) and T_p set equal to T_hot:
+
+| Configuration | Focused intensity | a₀ | T_hot | Below 5.920 MeV | Below 1.880 MeV |
+|---|---|---|---|---|---|
+| 100 channels, coherently combined, f/1 | 3.7 x 10²¹ W/cm² | 53.5 | 18.83 MeV | 27% | 10% |
+| 10 channels, coherently combined, f/1 | 3.7 x 10²⁰ W/cm² | 16.9 | 5.63 MeV | 65% | 28% |
+| **one channel at 500 mJ, f/1** | **6.2 x 10¹⁹ W/cm²** | **6.9** | **2.04 MeV** | **95%** | **60%** |
+
+The single-channel row is one Dira 1000-1 at the 500 mJ, 1 kHz point
+[12-intensity-limits](12-intensity-limits.md) §4 adopts, not the 1 J point of its §3.2 table, which
+is a peak-power figure the box cannot sustain at 1 kHz. That is why this row reads 6.2 x 10¹⁹ where
+§3.2 reads 1.2 x 10²⁰ for the same hardware.
+
+**At the array's design focus roughly three protons in four are above the ⁶Li(p,n)⁶Be threshold**,
+which inverts the reason this route was chosen: the reaction channel is neutron-free and the proton
+source is not. [12-intensity-limits](12-intensity-limits.md) §5 reports 18.83 MeV as the array's
+headline achievement because the gamma route needs 20.578 MeV. This route needs about 2 MeV, so
+18.83 MeV is not a margin over the requirement but an overshoot of a factor of nine.
+
+**Correcting it costs nothing optically.** Focal intensity goes as the inverse square of the focal
+ratio ([12-intensity-limits](12-intensity-limits.md) §2.1), so the required derate is bought with a
+longer focal length and nothing else.
+
+```
+  intensity ratio    = 3.7 x 10²¹ / 6.2 x 10¹⁹ = 60      → the design focus is 60x too intense
+  focal ratio needed = 7.75 x 7.75 = 60.06               → f/1 becomes f/8
+  cross-check        = 100 x 0.6 / 60 = 1.0              → the array defocused 60x is one channel at f/1
+```
+
+The array focused at f/8 rather than f/1 puts 6.2 x 10¹⁹ W/cm² on one target while keeping all 100
+channels, all 50 kW of average power, and one foil per shot. No exotic optic is involved and no power
+is lost; the light lands on a spot about eight times wider. The single-channel row above is the same
+operating point reached from the other direction, which is what the cross-check states.
+
+**It is not free in rate, and the cost has two parts.**
+
+- **The softer spectrum costs about 30% of the yield per unit of beam energy**, from the §4.2 table:
+
+```
+  three MeV protons = 3.0 x 10⁻⁴ / 3 = 1.0 x 10⁻⁴ reactions per MeV of beam
+  two MeV protons   = 1.4 x 10⁻⁴ / 2 = 7.0 x 10⁻⁵ reactions per MeV of beam
+  ratio             = 7.0 x 10⁻⁵ / 1.0 x 10⁻⁴ = 0.70
+```
+
+  Against that, a 2 MeV operating point sits below the 1.880 MeV ⁷Li(p,n)⁷Be threshold for 60% of its
+  protons rather than 10%, so the enrichment requirement of §4.4 eases in proportion.
+- **TNSA conversion efficiency falls with intensity by an amount this section cannot state.** The 1 to
+  15% band in §4.3 is drawn from experiments spanning orders of magnitude in intensity, and the high
+  figures come from the high-intensity end of it. Moving from 3.7 x 10²¹ to 6.2 x 10¹⁹ W/cm² moves
+  down that band, and the 5% working figure should not be assumed to survive. This is now the second
+  largest uncertainty in the section, after the excitation function itself.
+
+### 4.6 What the route deletes, which is more than the gamma chain
+
+§4.1 says this route deletes the gamma chain. §4.5 extends that, and the extension is uncomfortable
+because it reaches the part of the programme most worth keeping. The argument is three steps.
+
+- **Coherent combining buys radiance and nothing else.**
+  [12-intensity-limits](12-intensity-limits.md) §1.2 establishes this as a theorem: phase-locked
+  beamlets diffract as one aperture, so focal intensity rises by N² against one beamlet and by N
+  against the same beamlets combined incoherently. Total delivered power is N x P in every case.
+- **This route wants average power and specifically does not want focal intensity.** The rate chain
+  in §4.3 is average power, times conversion efficiency, times yield. Focal intensity enters only
+  through the proton spectrum, and §4.5 shows it enters with the wrong sign: more intensity is more
+  neutrons.
+- **So the second factor of N is not merely unused, it is deliberately discarded.** Defocusing to f/8
+  throws away the factor of 60 that coherent combining exists to deliver. An incoherent array of the
+  same hundred lasers, focused onto the same spot, reaches the same operating point.
+
+**For this reaction the array reduces to N independent lasers pointed at a common target.** No phase
+locking, no pairwise pick-off sensing, no closed-loop phase control, and therefore no requirement for
+the alignment work in [07-ai-control](07-ai-control.md).
+
+Two things follow, and they point in opposite directions.
+
+- **This is not a verdict on the combining or the control architecture.**
+  [03-feasibility](03-feasibility.md) has already reassigned the mission: the surviving justification
+  for this machine is a quasi-monochromatic gamma source, and that mission needs the intensity, the
+  coherence and the control. Adopting ⁶Li(p,α)³He removes helium-3 production as a justification for
+  coherent combining. It does not remove the justification.
+- **It raises a question this set has not asked, which is why a laser at all.** If the requirement is
+  protons at about 2 MeV, and neither intensity nor coherence nor pulse duration is wanted, then TNSA
+  is being asked for the one thing it is worst at, which is time-averaged current.
+
+Expressed as a current, the §4.3 rate chain at 5 kW and 5% delivers 250 W of protons at 3 MeV:
+
+```
+  protons per second = 250 / (3 x 1.602 x 10⁻¹³) = 5.20 x 10¹⁴
+  beam current       = 5.20 x 10¹⁴ x 1.602 x 10⁻¹⁹ = 8.33 x 10⁻⁵ A
+```
+
+| Proton source | Current | Beam power at 3 MeV | Reactions/s | He-3 per year |
+|---|---|---|---|---|
+| 5 kW array, TNSA at 5% | 83 µA | 250 W | 1.56 x 10¹¹ | 2.47 x 10⁻⁵ g |
+| 50 kW array, TNSA at 5% | 833 µA | 2.5 kW | 1.56 x 10¹² | 2.47 x 10⁻⁴ g |
+| **A 1 mA radio-frequency quadrupole** | **1,000 µA** | **3 kW** | **1.87 x 10¹²** | **2.96 x 10⁻⁴ g** |
+| A 100 mA machine | 100,000 µA | 300 kW | 1.87 x 10¹⁴ | 2.96 x 10⁻² g |
+
+**One ordinary 1 mA proton accelerator outproduces the entire hundred-amplifier array**, which is a
+seven or eight figure capital item, and it converts wall power to protons at tens of percent rather
+than at the few percent TNSA manages. Continuous-wave machines of the 100 mA class have been built;
+LEDA at Los Alamos and the IFMIF/LIPAc injector are where to look for the demonstrated current.
+
+The comparison is not one-sided and should not be quoted as though it were. An accelerator brings an
+ion source, an RF plant, a vacuum system and its own shielding, it delivers a beam that has to be
+swept across a target it is heating, and it makes no gammas, so it cannot serve the gamma-source
+mission that is the reason this machine exists at all. For a **demonstration** of ⁶Li(p,α)³He on
+hardware the programme already owns, TNSA costs no new capital and that is a real argument. For
+production it does not compete, and neither does anything else. The scale the mission asks for, at
+50 g/day and the §4.2 thick-target yield:
+
+```
+  product atoms per second      = 50 / 3.016 x 6.022 x 10²³ / 86,400 = 1.155 x 10²⁰
+  protons per second            = 1.155 x 10²⁰ / 3.0 x 10⁻⁴ = 3.85 x 10²³
+  beam current                  = 3.85 x 10²³ x 1.602 x 10⁻¹⁹ = 6.17 x 10⁴ A
+  beam energy per product atom  = 3 / 3.0 x 10⁻⁴ = 1.0 x 10⁴ MeV
+```
+
+**61.7 kA of protons at 3 MeV, or 10 GeV of beam energy per helium-3 atom.** The highest-current
+continuous proton machines ever built are of order 100 mA, so the requirement is about 617,000 of
+them run in parallel. That figure is a property of the reaction and the stopping power, not of the proton source, so
+the choice of source moves the instrument and never the verdict.
+
 ---
 
 ## 5. What this does not change
@@ -215,6 +349,9 @@ What does change:
 | The best of them needs no GeV accelerator | **Yes.** ⁶Li(p,α)³He is proton-driven and exothermic |
 | It is the highest laser-route rate in the repository | **Yes**, 364x the canonical inverse Compton figure |
 | Neutron-free operation forbids a bremsstrahlung continuum | **Yes**, which reverses [12](12-intensity-limits.md) §6 for this mission |
+| The array's design focus suits this route | **No**, §4.5. It is 60x too intense and three protons in four exceed the ⁶Li(p,n)⁶Be threshold |
+| Coherent combining is required by this route | **No**, §4.6. It buys radiance, which this route discards; the gamma-source mission still requires it |
+| A laser is the natural proton source for this route | **No**, §4.6. A 1 mA accelerator outproduces the whole array, and the verdict moves either way |
 | The reaction channel decision in [00-summary](00-summary.md) §11 | **Now open.** It is a scope decision and is not taken here |
 | The production verdict | **Unchanged.** Short by 10⁷ to 10⁹ |
 
@@ -237,6 +374,14 @@ What does change:
 - [ ] **The neutron floor set by residual ⁷Li has not been computed.** It is the number that decides
       whether "neutron-free" is literal or merely "a few orders of magnitude better", and it follows
       directly from the enrichment fraction and the ⁷Li(p,n)⁷Be cross-section.
+- [ ] **TNSA conversion efficiency at the defocused operating point is unknown, and §4.5 requires
+      that operating point.** The 5% working figure in §4.3 comes from the high-intensity end of the
+      published band, and the neutron window needs the array run at 6.2 x 10¹⁹ W/cm² rather than
+      3.7 x 10²¹. Every rate in §4.3 is staged on an efficiency measured somewhere this route does
+      not operate.
+- [ ] **Whether a conventional proton accelerator is the correct instrument has not been assessed.**
+      §4.6 shows a 1 mA radio-frequency quadrupole outproducing the hundred-channel array. That is a
+      comparison, not a costing, and it has to be one before the reaction channel is decided.
 - [ ] **Helium-3 extraction from a solid lithium target is undesigned.** [06-target-and-capture](06-target-and-capture.md)
       designs for a cryogenic helium fluid, which is a different problem from recovering helium
       implanted in a metal at a few hundred micrometres depth.

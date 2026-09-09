@@ -13,9 +13,11 @@ is the operator's rather than an edit.
 + [ ] establish the ⁷Li(γ,t)⁴He cross-section in the 2.468-7.251 MeV window, which section 13 does not have
 + [ ] compute the neutron floor set by residual ⁷Li, given ⁷Li(p,n)⁷Be at 1.880 MeV
 + [ ] establish whether TNSA conversion efficiency survives a 1 kHz renewable-foil target
-+ [ ] decide the channel, then restage 02, 05, 06 and 09 against it, or record why the current channel stands
++ [ ] establish TNSA conversion efficiency at 6.2 x 10¹⁹ W/cm², which §4.5 shows the neutron window requires
++ [ ] assess whether a conventional proton accelerator replaces the laser as the source, per §4.6
++ [ ] decide the channel, then restage 02, 04, 05, 06, 07 and 09 against it, or record why the current channel stands
 + [ ] update the key-decisions tables in `00-summary.md` §11 and `he3/README.md` either way
-+ note: adopting the proton route deletes `05-gamma-source.md` as a required subsystem, which is the largest structural change available to this programme
++ note: adopting the proton route deletes `05-gamma-source.md` as a required subsystem and, per §4.6, removes the He-3 mission as a justification for the coherent combining of `04` and the phase control of `07`; that is the largest structural change available to this programme
 + note: the production verdict does not move - 7.4e7 short at best - so this decides the instrument, not the mission
 
 

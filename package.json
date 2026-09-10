@@ -1,6 +1,6 @@
 {
   "name": "mistergy",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "private": true,
   "description": "Document checks for the VHTR and He-3 design programmes. There is no application here; this manifest exists only so the repository can be linted and tested like every other project in the workspace.",
   "scripts": {

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1060" viewBox="0 0 1600 1060">
+  <defs>
+    <style>
+      text { font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif; fill: #12242E; }
+      .title { font-size: 32px; font-weight: 700; letter-spacing: -0.2px; }
+      .subtitle { font-size: 12.5px; font-weight: 400; letter-spacing: 0.3px; fill: #5A7280; }
+      .marker { font-size: 9.5px; font-weight: 700; letter-spacing: 1.1px; fill: #5A7280; }
+      .panelhdr { font-size: 12px; font-weight: 700; letter-spacing: 1.1px; }
+      .panelnote { font-size: 9.5px; font-weight: 400; fill: #5A7280; }
+      .callhdr { font-size: 11px; font-weight: 700; letter-spacing: 0.2px; }
+      .callbody { font-size: 9.5px; font-weight: 400; }
+      .dlabel { font-size: 10px; font-weight: 400; }
+      .dvalue { font-size: 10px; font-weight: 700; }
+      .statval { font-size: 19px; font-weight: 700; }
+      .statlbl { font-size: 8.5px; font-weight: 400; letter-spacing: 0.6px; fill: #90A4AE; }
+      .tick { font-size: 9px; font-weight: 400; fill: #5A7280; }
+      .foot { font-size: 8.5px; font-weight: 400; fill: #90A4AE; }
+      .muted { fill: #5A7280; }
+    </style>
+    <marker id="arrIR2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#B3261E"/>
+    </marker>
+    <marker id="arrE2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#4B3F9E"/>
+    </marker>
+    <marker id="arrG2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#2F6FD0"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="1060" fill="#FBFAF7"/>
+
+  <text class="title" x="40" y="52">He-3 Programme - Two-Arm Split and Synchronisation</text>
+  <text class="subtitle" x="40" y="74">One pulse train becomes two arms that must meet again inside ten femtoseconds. This is a constraint that reads as a detail in prose.</text>
+  <text class="marker" x="1560" y="52" text-anchor="end">HE-3 PROGRAMME · SYSTEM SET · SHEET 2 OF 3</text>
+  <line x1="40" y1="88" x2="1560" y2="88" stroke="#DBE4E9" stroke-width="1"/>
+
+  <g>
+    <text class="statval" x="40" y="128">1-30 MeV</text><text class="statlbl" x="40" y="146">GAMMA BEAM BAND</text>
+    <text class="statval" x="230" y="128">1.06-1.21 GeV</text><text class="statlbl" x="230" y="146">ELECTRON BEAM ENERGY</text>
+    <text class="statval" x="450" y="128">1.7 x 10⁷</text><text class="statlbl" x="450" y="146">INVERSE COMPTON LEAP, 4γ²</text>
+    <text class="statval" x="670" y="128">1-5 kW</text><text class="statlbl" x="670" y="146">ARRAY AVERAGE POWER</text>
+    <text class="statval" x="860" y="128">100-500 TW</text><text class="statlbl" x="860" y="146">ARRAY PEAK POWER</text>
+    <text class="statval" x="1060" y="128">10⁻⁴</text><text class="statlbl" x="1060" y="146">LASER TO GAMMA CONVERSION</text>
+    <text class="statval" x="1260" y="128">~10 fs</text><text class="statlbl" x="1260" y="146">INTER-ARM TIMING BUDGET</text>
+    <text class="statval" x="1430" y="128">1.5 x 10¹¹ /s</text><text class="statlbl" x="1430" y="146">GAMMA FLUX AT 5 kW</text>
+  </g>
+  <line x1="40" y1="168" x2="1560" y2="168" stroke="#DBE4E9" stroke-width="1"/>
+
+  <g>
+    <rect x="40" y="196" width="740" height="410" rx="3" fill="#FFFFFF" stroke="#CCD8DE" stroke-width="1.4"/>
+    <rect x="40" y="196" width="740" height="22" rx="3" fill="#F2F6F8"/>
+    <text class="panelhdr" x="50" y="212">THE SPLIT, AS OPTICS</text>
+    <text class="panelnote" x="770" y="212" text-anchor="end">05-gamma-source §5.4</text>
+
+    <rect x="66" y="286" width="110" height="60" rx="3" fill="#FFFFFF" stroke="#CCD8DE" stroke-width="1.4"/>
+    <text class="callhdr" x="78" y="312">COMBINED</text>
+    <text class="callhdr" x="78" y="328">ARRAY</text>
+    <line x1="176" y1="316" x2="212" y2="316" stroke="#B3261E" stroke-width="3" marker-end="url(#arrIR2)"/>
+
+    <polygon points="222,300 250,316 222,332" fill="#FFFFFF" stroke="#12242E" stroke-width="1.4"/>
+    <text class="callbody" x="206" y="356">splitter</text>
+
+    <path d="M240,308 L300,308 L300,250 L420,250" fill="none" stroke="#B3261E" stroke-width="3" marker-end="url(#arrIR2)"/>
+    <text class="callbody" x="306" y="242">DRIVE ARM</text>
+    <path d="M240,326 L300,326 L300,470 L620,470 L620,392" fill="none" stroke="#B3261E" stroke-width="2" marker-end="url(#arrIR2)"/>
+    <text class="callbody" x="306" y="462">SCATTERING ARM</text>
+
+    <rect x="424" y="216" width="180" height="70" rx="3" fill="#FFFFFF" stroke="#E8701A" stroke-width="2.2"/>
+    <rect x="424" y="216" width="180" height="20" rx="3" fill="#FDEDE0"/>
+    <text class="panelhdr" x="434" y="231" fill="#E8701A">WAKEFIELD STAGE</text>
+    <text class="callbody" x="434" y="254">plasma, centimetres</text>
+    <text class="dvalue" x="434" y="272">out: 1.06-1.21 GeV e⁻</text>
+
+    <path d="M604,250 L640,250 L640,300" fill="none" stroke="#4B3F9E" stroke-width="3" marker-end="url(#arrE2)"/>
+    <text class="callbody" x="648" y="268" fill="#4B3F9E">electron bunch</text>
+
+    <circle cx="620" cy="330" r="26" fill="#E7F0FB" stroke="#2F6FD0" stroke-width="2.2"/>
+    <text class="callhdr" x="620" y="334" text-anchor="middle" fill="#2F6FD0">IP</text>
+    <text class="callbody" x="586" y="378">interaction point</text>
+
+    <line x1="646" y1="330" x2="700" y2="330" stroke="#2F6FD0" stroke-width="3" marker-end="url(#arrG2)"/>
+    <text class="callbody" x="654" y="320" fill="#2F6FD0">γ</text>
+
+    <path d="M300,308 L300,326" fill="none" stroke="#C2410C" stroke-width="1.4" stroke-dasharray="4,3"/>
+    <text class="callbody" x="60" y="530" fill="#C2410C">The two arms leave together and must arrive together. Everything between them,</text>
+    <text class="callbody" x="60" y="546" fill="#C2410C">every mirror mount and every metre of air, is a term in the timing error budget.</text>
+    <text class="callbody muted" x="60" y="574">The drive arm passes through the plasma stage and the scattering arm goes around it, so the two</text>
+    <text class="callbody muted" x="60" y="590">path lengths are set by different physics and drift independently.</text>
+  </g>
+
+  <g>
+    <rect x="810" y="196" width="750" height="410" rx="3" fill="#FFFFFF" stroke="#CCD8DE" stroke-width="1.4"/>
+    <rect x="810" y="196" width="750" height="22" rx="3" fill="#F2F6F8"/>
+    <text class="panelhdr" x="820" y="212">THE SAME CONSTRAINT, AS TIME</text>
+    <text class="panelnote" x="1550" y="212" text-anchor="end">00-summary §10.2</text>
+
+    <line x1="860" y1="400" x2="1520" y2="400" stroke="#12242E" stroke-width="1"/>
+    <text class="tick" x="860" y="418" text-anchor="middle">-100</text>
+    <text class="tick" x="1030" y="418" text-anchor="middle">-50</text>
+    <text class="tick" x="1190" y="418" text-anchor="middle">0</text>
+    <text class="tick" x="1350" y="418" text-anchor="middle">+50</text>
+    <text class="tick" x="1510" y="418" text-anchor="middle">+100</text>
+    <text class="tick" x="1190" y="436" text-anchor="middle">femtoseconds</text>
+
+    <path d="M1030,400 Q1110,268 1190,268 Q1270,268 1350,400 Z" fill="#B3261E" fill-opacity="0.16" stroke="#B3261E" stroke-width="2"/>
+    <text class="callbody" x="1360" y="286" fill="#B3261E">scattering pulse, 100 fs</text>
+
+    <rect x="1178" y="300" width="24" height="100" fill="#4B3F9E" fill-opacity="0.22" stroke="#4B3F9E" stroke-width="2"/>
+    <text class="callbody" x="1210" y="316" fill="#4B3F9E">electron bunch</text>
+
+    <rect x="1174" y="252" width="32" height="18" fill="#C2410C" fill-opacity="0.25" stroke="#C2410C" stroke-width="1.4"/>
+    <text class="callbody" x="1214" y="264" fill="#C2410C">10 fs budget</text>
+
+    <text class="callhdr" x="860" y="470">Why ten femtoseconds</text>
+    <text class="callbody" x="860" y="492">A tenth of the 100 fs pulse duration. Slip further and the electron bunch arrives</text>
+    <text class="callbody" x="860" y="508">while the scattering pulse is not there, and the gamma yield falls off the overlap.</text>
+    <text class="callhdr" x="860" y="538">What ten femtoseconds is, in a length</text>
+    <text class="dlabel" x="860" y="560">c x 10 fs</text><text class="dvalue" x="960" y="560">3 µm of optical path</text>
+    <text class="callbody muted" x="860" y="582">A human hair is about 70 µm. The budget is a twentieth of one, held continuously.</text>
+  </g>
+
+  <g>
+    <rect x="40" y="636" width="490" height="324" rx="3" fill="#FFFFFF" stroke="#CCD8DE" stroke-width="1.4"/>
+    <rect x="40" y="636" width="490" height="22" rx="3" fill="#F2F6F8"/>
+    <text class="panelhdr" x="50" y="652">TWO DELAY BARS, NOT ONE</text>
+    <text class="callbody" x="60" y="684">Both are of order 10 fs RMS and both equal 3 µm of path, and they</text>
+    <text class="callbody" x="60" y="700">constrain different things. Conflating them is a defect.</text>
+    <text class="callhdr" x="60" y="732">Inter-channel group delay</text>
+    <text class="callbody" x="60" y="752">envelope arrival time between the array's own channels</text>
+    <text class="callbody muted" x="60" y="768">04-laser-array §3.2, 07-ai-control §2.1</text>
+    <text class="callhdr" x="60" y="800">Inter-arm timing jitter</text>
+    <text class="callbody" x="60" y="820">differential drift between drive and scatter at the IP</text>
+    <text class="callbody muted" x="60" y="836">05-gamma-source §5.4</text>
+    <line x1="60" y1="856" x2="510" y2="856" stroke="#DBE4E9" stroke-width="1"/>
+    <text class="callbody" x="60" y="878">Group delay is not a looser version of the piston phase bar. It is 60x</text>
+    <text class="callbody" x="60" y="894">looser in path and it measures a different thing: piston is carrier</text>
+    <text class="callbody" x="60" y="910">phase modulo 2π, group delay is absolute envelope arrival.</text>
+    <text class="callbody muted" x="60" y="936">A channel can be perfectly piston-locked and still be 500 fs late.</text>
+  </g>
+
+  <g>
+    <rect x="560" y="636" width="500" height="324" rx="3" fill="#FFFFFF" stroke="#CCD8DE" stroke-width="1.4"/>
+    <rect x="560" y="636" width="500" height="22" rx="3" fill="#F2F6F8"/>
+    <text class="panelhdr" x="570" y="652">WHAT IT COSTS TO HOLD</text>
+    <text class="callbody" x="580" y="684">The array already needs λ/20 RMS piston control, which is 51.5 nm.</text>
+    <text class="callbody" x="580" y="700">The timing budget is 3 µm, roughly sixty times looser, so the</text>
+    <text class="callbody" x="580" y="716">actuators that hold phase can hold delay as well.</text>
+    <text class="callhdr" x="580" y="748">What is genuinely new</text>
+    <text class="callbody" x="580" y="770">The two arms do not share a path, so a phase sensor watching the</text>
+    <text class="callbody" x="580" y="786">array tells you nothing about the arm-to-arm difference. It needs</text>
+    <text class="callbody" x="580" y="802">its own measurement.</text>
+    <text class="callbody" x="580" y="834">07-ai-control §9.7 proposes a dispersed pairwise read with a</text>
+    <text class="callbody" x="580" y="850">68.0 µm synthetic wavelength, which exceeds the 30 µm envelope</text>
+    <text class="callbody" x="580" y="866">length and so resolves the fringe order.</text>
+    <text class="callbody muted" x="580" y="898">That is a proposal, not a specification. It says which fringe you are</text>
+    <text class="callbody muted" x="580" y="914">in, not that the envelopes have been brought together.</text>
+    <text class="callbody muted" x="580" y="940">The photon budget and the fringe visibility are both uncomputed.</text>
+  </g>
+
+  <g>
+    <rect x="1090" y="636" width="470" height="324" rx="3" fill="#FFFFFF" stroke="#CCD8DE" stroke-width="1.4"/>
+    <rect x="1090" y="636" width="470" height="22" rx="3" fill="#F2F6F8"/>
+    <text class="panelhdr" x="1100" y="652">IF THE TIMING IS LOST</text>
+    <text class="callbody" x="1110" y="684">The failure is quiet, which is what makes it expensive.</text>
+    <text class="callbody" x="1110" y="716">The array still runs. The wakefield stage still makes electrons.</text>
+    <text class="callbody" x="1110" y="732">The scattering arm still fires. Every subsystem reports healthy</text>
+    <text class="callbody" x="1110" y="748">and the gamma flux simply falls.</text>
+    <text class="callbody" x="1110" y="780">There is no alarm to raise because nothing has broken. The</text>
+    <text class="callbody" x="1110" y="796">instrument is just quietly worth less than it was.</text>
+    <line x1="1110" y1="820" x2="1540" y2="820" stroke="#DBE4E9" stroke-width="1"/>
+    <text class="callhdr" x="1110" y="844">Same shape as the silent failure in 04-laser-array §6.2</text>
+    <text class="callbody" x="1110" y="866">A closure residual across a redundant sensing graph is the one</text>
+    <text class="callbody" x="1110" y="882">observable that separates a sensing fault from a real drift.</text>
+    <text class="callbody muted" x="1110" y="912">Whatever holds the arms together needs the same property, and</text>
+    <text class="callbody muted" x="1110" y="928">no section of this set has yet specified it.</text>
+  </g>
+
+  <line x1="40" y1="1000" x2="1560" y2="1000" stroke="#DBE4E9" stroke-width="1"/>
+  <text class="foot" x="40" y="1018">Preliminary design - every value is an estimate awaiting calculation. All values traced to design/00-summary.md and the linked sections.</text>
+</svg>

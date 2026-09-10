@@ -64,13 +64,14 @@ aperture, but multiplies available power only by N, and only the second constrai
 | 04 | [Laser Array](design/04-laser-array.md) | Draft | Sources, coherent combining, thermal management, pulse energy |
 | 05 | [Gamma Source](design/05-gamma-source.md) | Draft | Wakefield acceleration and inverse Compton scattering |
 | 06 | [Target and Capture](design/06-target-and-capture.md) | Draft | Helium-4 target, product separation, neutron handling |
-| 07 | [AI Control](design/07-ai-control.md) | Draft | Alignment as a learning problem; three approaches |
+| 07 | [AI Control](design/07-ai-control.md) | Draft | Alignment as a learning problem; pairwise sampling at full scale |
 | 08 | [Proof of Concept](design/08-proof-of-concept.md) | Draft | The $16,700 bench, phases, success criteria |
 | 09 | [Roadmap](design/09-roadmap.md) | Draft | PoC to 20 to 100 to 500 beams |
 | 10 | [Economics](design/10-economics.md) | Draft | Budget, cost per gram, why the gamma-source framing changes it |
 | 11 | [Alternative Routes](design/11-alternative-routes.md) | Draft | Li-6 breeding, VHTR coupling, spallation, lunar regolith |
 | 12 | [Intensity Limits](design/12-intensity-limits.md) | Draft | What superposition buys, the focusing ceiling, the commercial laser survey, the temperature question |
 | 13 | [Neutron-Free Routes](design/13-neutron-free-routes.md) | Draft | Why the current route cannot be clean, the Li-7 window, and the proton route that needs no accelerator |
+| 14 | [The Surviving Mission](design/14-surviving-mission.md) | Draft | What the gamma source is for, why inverse Compton, the applications and the market |
 | - | [References](references.md) | Draft | Nuclear data, coherent combining, wakefield sources |
 | - | [Origin Note](origin-note.md) | **Superseded** | The concept note this set restructures, kept only so its corrections stay checkable |
 
@@ -84,7 +85,7 @@ aperture, but multiplies available power only by N, and only the second constrai
 | Electron energy | 1.06-1.21 GeV |
 | Target | Superfluid He-II at ~2 K (2.18 × 10²² /cm³); gas targets are three orders of magnitude worse |
 | Array architecture | Coherently combined, tiled aperture, actively phase-locked |
-| Alignment control | Learned controller, camera feedback, no wavefront sensor at PoC scale |
+| Alignment control | Learned controller. Camera feedback and no wavefront sensor at PoC scale; **pairwise pick-off sensing on a two-tier graph at full scale**, because a global metric carries only a 1/N share of the information about any one channel. [07](design/07-ai-control.md) §9 |
 | Primary mission | Gamma-ray source and photonuclear instrument |
 | Production mission | Reassigned to the Li-6 route, hosted by the VHTR |
 

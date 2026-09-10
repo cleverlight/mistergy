@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1060" viewBox="0 0 1600 1060">
+  <defs>
+    <style>
+      text { font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif; fill: #12242E; }
+      .title { font-size: 32px; font-weight: 700; letter-spacing: -0.2px; }
+      .subtitle { font-size: 12.5px; font-weight: 400; letter-spacing: 0.3px; fill: #5A7280; }
+      .marker { font-size: 9.5px; font-weight: 700; letter-spacing: 1.1px; fill: #5A7280; }
+      .panelhdr { font-size: 12px; font-weight: 700; letter-spacing: 1.1px; }
+      .panelnote { font-size: 9.5px; font-weight: 400; fill: #5A7280; }
+      .callhdr { font-size: 11px; font-weight: 700; letter-spacing: 0.2px; }
+      .callbody { font-size: 9.5px; font-weight: 400; }
+      .dlabel { font-size: 10px; font-weight: 400; }
+      .dvalue { font-size: 10px; font-weight: 700; }
+      .statval { font-size: 19px; font-weight: 700; }
+      .statlbl { font-size: 8.5px; font-weight: 400; letter-spacing: 0.6px; fill: #90A4AE; }
+      .tick { font-size: 9px; font-weight: 400; fill: #5A7280; }
+      .foot { font-size: 8.5px; font-weight: 400; fill: #90A4AE; }
+      .muted { fill: #5A7280; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1060" fill="#FBFAF7"/>
+
+  <text class="title" x="40" y="52">He-3 Programme - Where the Energy Goes</text>
+  <text class="subtitle" x="40" y="74">The programme is not lost in any one component. It is lost in the conversions between them, and the axis below has to be logarithmic to show it.</text>
+  <text class="marker" x="1560" y="52" text-anchor="end">HE-3 PROGRAMME · SYSTEM SET · SHEET 3 OF 3</text>
+  <line x1="40" y1="88" x2="1560" y2="88" stroke="#DBE4E9" stroke-width="1"/>
+
+  <g>
+    <text class="statval" x="40" y="128">1-30 MeV</text><text class="statlbl" x="40" y="146">GAMMA BEAM BAND</text>
+    <text class="statval" x="230" y="128">1.06-1.21 GeV</text><text class="statlbl" x="230" y="146">ELECTRON BEAM ENERGY</text>
+    <text class="statval" x="450" y="128">1.7 x 10⁷</text><text class="statlbl" x="450" y="146">INVERSE COMPTON LEAP, 4γ²</text>
+    <text class="statval" x="670" y="128">1-5 kW</text><text class="statlbl" x="670" y="146">ARRAY AVERAGE POWER</text>
+    <text class="statval" x="860" y="128">100-500 TW</text><text class="statlbl" x="860" y="146">ARRAY PEAK POWER</text>
+    <text class="statval" x="1060" y="128">10⁻⁴</text><text class="statlbl" x="1060" y="146">LASER TO GAMMA CONVERSION</text>
+    <text class="statval" x="1260" y="128">~10 fs</text><text class="statlbl" x="1260" y="146">INTER-ARM TIMING BUDGET</text>
+    <text class="statval" x="1430" y="128">1.5 x 10¹¹ /s</text><text class="statlbl" x="1430" y="146">GAMMA FLUX AT 5 kW</text>
+  </g>
+  <line x1="40" y1="168" x2="1560" y2="168" stroke="#DBE4E9" stroke-width="1"/>
+
+  <g>
+    <rect x="40" y="196" width="1520" height="446" rx="3" fill="#FFFFFF" stroke="#CCD8DE" stroke-width="1.4"/>
+    <rect x="40" y="196" width="1520" height="22" rx="3" fill="#F2F6F8"/>
+    <text class="panelhdr" x="50" y="212">THE CANONICAL CHAIN, 5 kW ARRAY ONTO A LIQUID HELIUM TARGET</text>
+    <text class="panelnote" x="1550" y="212" text-anchor="end">03-feasibility Step 6, nominal row</text>
+
+    <line x1="300" y1="576" x2="1300" y2="576" stroke="#12242E" stroke-width="1"/>
+    <text class="tick" x="300" y="594" text-anchor="middle">1 mW</text>
+    <text class="tick" x="550" y="594" text-anchor="middle">1 W</text>
+    <text class="tick" x="800" y="594" text-anchor="middle">1 kW</text>
+    <text class="tick" x="1050" y="594" text-anchor="middle">1 MW</text>
+    <text class="tick" x="1175" y="594" text-anchor="middle">10 MW</text>
+    <text class="tick" x="800" y="614" text-anchor="middle">power surviving the stage, logarithmic</text>
+
+    <rect x="300" y="256" width="948" height="30" fill="#90A4AE" fill-opacity="0.45" stroke="#5A7280" stroke-width="1.2"/>
+    <text class="dvalue" x="1258" y="277">38.5 kW</text>
+    <text class="callhdr" x="60" y="270">1  WALL POWER</text>
+    <text class="callbody muted" x="60" y="286">heads plus chillers</text>
+
+    <rect x="300" y="316" width="837" height="30" fill="#B3261E" fill-opacity="0.55" stroke="#B3261E" stroke-width="1.2"/>
+    <text class="dvalue" x="1147" y="337">5 kW</text>
+    <text class="callhdr" x="60" y="330">2  LASER LIGHT</text>
+    <text class="callbody muted" x="60" y="346">wall plug 10-16.5%</text>
+
+    <rect x="300" y="376" width="337" height="30" fill="#2F6FD0" fill-opacity="0.55" stroke="#2F6FD0" stroke-width="1.2"/>
+    <text class="dvalue" x="647" y="397">0.5 W</text>
+    <text class="callhdr" x="60" y="390">3  GAMMA BEAM</text>
+    <text class="callbody muted" x="60" y="406">inverse Compton, 10⁻⁴</text>
+
+    <rect x="300" y="436" width="18" height="30" fill="#2FA88C" fill-opacity="0.55" stroke="#2FA88C" stroke-width="1.2"/>
+    <text class="dvalue" x="328" y="457">1.4 mW</text>
+    <text class="callhdr" x="60" y="450">4  ABSORBED IN TARGET</text>
+    <text class="callbody muted" x="60" y="466">n σ L = 2.83 x 10⁻³</text>
+
+    <path d="M1137,346 L1137,370" stroke="#90A4AE" stroke-width="10" stroke-opacity="0.5"/>
+    <text class="callbody muted" x="1150" y="366">4,999.5 W lost: unscattered light</text>
+    <path d="M637,406 L637,430" stroke="#90A4AE" stroke-width="10" stroke-opacity="0.5"/>
+    <text class="callbody muted" x="650" y="426">0.4986 W lost: gammas that miss a nucleus</text>
+    <path d="M1248,286 L1248,310" stroke="#90A4AE" stroke-width="10" stroke-opacity="0.5"/>
+    <text class="callbody muted" x="1150" y="306" text-anchor="end">33.5 kW lost as heat in the diodes and chillers</text>
+
+    <text class="callhdr" x="60" y="512">END TO END</text>
+    <text class="dvalue" x="60" y="532">3.7 x 10⁻⁸ of wall power reaches a nucleus</text>
+    <text class="callbody" x="60" y="550">4.29 x 10⁸ reactions/s, 68 ng/yr</text>
+
+    <text class="callbody" x="700" y="512">The two conversions in the middle cost seven of the eight decades between them.</text>
+    <text class="callbody" x="700" y="530">No component on this sheet is inefficient by the standards of its own field. The</text>
+    <text class="callbody" x="700" y="548">chain is the problem, and multiplying four modest numbers is what makes it one.</text>
+  </g>
+
+  <g>
+    <rect x="40" y="672" width="740" height="288" rx="3" fill="#FFFFFF" stroke="#CCD8DE" stroke-width="1.4"/>
+    <rect x="40" y="672" width="740" height="22" rx="3" fill="#F2F6F8"/>
+    <text class="panelhdr" x="50" y="688">THE SAME CHAIN, FOUR WAYS</text>
+    <text class="panelnote" x="770" y="688" text-anchor="end">03-feasibility Step 6</text>
+
+    <text class="callbody muted" x="60" y="716">Case</text>
+    <text class="callbody muted" x="300" y="716">Laser to γ</text>
+    <text class="callbody muted" x="420" y="716">γ reacting</text>
+    <text class="callbody muted" x="550" y="716">Reactions/s</text>
+    <text class="callbody muted" x="690" y="716">Output</text>
+    <line x1="60" y1="724" x2="760" y2="724" stroke="#DBE4E9" stroke-width="1"/>
+
+    <text class="callbody" x="60" y="746">Thermodynamic floor</text>
+    <text class="callbody" x="300" y="746">1</text><text class="callbody" x="420" y="746">1</text>
+    <text class="callbody" x="550" y="746">1.52 x 10¹⁵</text><text class="callbody" x="690" y="746">0.656 mg/day</text>
+    <text class="callbody muted" x="60" y="762">impossible, both terms are bounded above by 1</text>
+
+    <text class="callbody" x="60" y="792">Upper bound on the argument</text>
+    <text class="callbody" x="300" y="792">10⁻²</text><text class="callbody" x="420" y="792">2.83 x 10⁻³</text>
+    <text class="callbody" x="550" y="792">4.3 x 10¹⁰</text><text class="callbody" x="690" y="792">6.8 µg/yr</text>
+    <text class="callbody muted" x="60" y="808">granted for the sake of argument; nobody can build it</text>
+
+    <rect x="56" y="826" width="708" height="40" rx="3" fill="#E7F0FB"/>
+    <text class="dvalue" x="60" y="844">Nominal, canonical</text>
+    <text class="dvalue" x="300" y="844">10⁻⁴</text><text class="dvalue" x="420" y="844">2.83 x 10⁻³</text>
+    <text class="dvalue" x="550" y="844">4.29 x 10⁸</text><text class="dvalue" x="690" y="844">68 ng/yr</text>
+    <text class="callbody muted" x="60" y="860">the row every other section quotes</text>
+
+    <text class="callbody" x="60" y="890">Concept note architecture</text>
+    <text class="callbody" x="300" y="890">10⁻⁴</text><text class="callbody" x="420" y="890">3.14 x 10⁻⁶</text>
+    <text class="callbody" x="550" y="890">9.5 x 10⁴</text><text class="callbody" x="690" y="890">15 pg/yr</text>
+    <text class="callbody muted" x="60" y="906">1 kW array onto a 10 bar gas cell</text>
+
+    <line x1="60" y1="920" x2="760" y2="920" stroke="#DBE4E9" stroke-width="1"/>
+    <text class="callbody" x="60" y="942">Shortfall against 50 g/day is 10⁹ to 10¹¹, and 10¹¹ is the realistic end.</text>
+  </g>
+
+  <g>
+    <rect x="810" y="672" width="750" height="288" rx="3" fill="#FFFFFF" stroke="#2F6FD0" stroke-width="2.2"/>
+    <rect x="810" y="672" width="750" height="22" rx="3" fill="#E7F0FB"/>
+    <text class="panelhdr" x="820" y="688" fill="#2F6FD0">THE INVERSION THAT SAVES THE MACHINE</text>
+    <text class="panelnote" x="1550" y="688" text-anchor="end">section 14</text>
+
+    <text class="callbody" x="820" y="718">Read the chain as a production line and it fails by eleven orders. Read it as an</text>
+    <text class="callbody" x="820" y="734">instrument and stage 3 is not a loss at all, it is the product.</text>
+
+    <line x1="820" y1="752" x2="1550" y2="752" stroke="#DBE4E9" stroke-width="1"/>
+
+    <text class="callhdr" x="820" y="776">Per photon, the chain is a gain, not a loss</text>
+    <text class="callbody" x="820" y="796">Beam power falls by 10⁻⁴ at the interaction point. The energy of each surviving</text>
+    <text class="callbody" x="820" y="812">photon rises by 4γ² = 1.7 x 10⁷ at the same moment.</text>
+    <text class="callbody" x="820" y="828">Nothing else in the chain concentrates anything. That stage is the whole point.</text>
+
+    <text class="callhdr" x="820" y="860">What 0.5 W of gammas actually is</text>
+    <text class="dvalue" x="820" y="882">1.5 x 10¹¹ γ/s at 5 kW</text>
+    <text class="callbody" x="1010" y="882">against ~3 x 10¹⁰ γ/s at HIgS, the record holder</text>
+    <text class="callbody muted" x="820" y="902">Optimistic: at the 10⁻⁵ conversion of 05 §6.2 the 5 kW case sits below HIgS and</text>
+    <text class="callbody muted" x="820" y="918">the 50 kW case sits about 5x above it. The honest claim is that the range brackets</text>
+    <text class="callbody muted" x="820" y="934">the world record, not that it clears it.</text>
+    <text class="callbody muted" x="820" y="950">Total flux is not spectral density; bandwidth is uncosted. See section 14.</text>
+  </g>
+
+  <line x1="40" y1="1000" x2="1560" y2="1000" stroke="#DBE4E9" stroke-width="1"/>
+  <text class="foot" x="40" y="1018">Preliminary design - every value is an estimate awaiting calculation. All values traced to design/00-summary.md and the linked sections.</text>
+</svg>

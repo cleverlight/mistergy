@@ -685,9 +685,11 @@ point is where the fractional signal in the table above drops below what the sen
 one frame, which on these numbers is somewhere between 30 and 100 channels.
 
 **Section 9 develops the last row of that table into the sensing architecture the full array should
-use**, because it is the only one of the five that changes the measurement in the way §8.2 demands
-without also being a variation on something already demonstrated. The hierarchical recommendation
-above survives intact and gains a second justification: §9.4 shows that the clustering chosen for
+use.** It is not an alternative to the rows above it: frequency tagging and nearest-neighbour locking
+also change the measurement in the way §8.2 demands, and §9.6's recommended intra-cluster form is the
+nearest-neighbour option. What §9 adds is the composition, pairwise sensing carried on the
+hierarchical clustering already recommended here. That recommendation survives intact and gains a
+second justification: §9.4 shows that the clustering chosen for
 combining reasons is also what keeps the sensing graph shallow enough to meet the phase budget.
 
 ### 8.4 Where the learned controller should actually earn its place
@@ -916,9 +918,15 @@ observable in this design that separates a sensing fault from a real drift, and
 [04-laser-array](04-laser-array.md) §6.2 is explicit that the silent failure is the one that matters.
 
 Redundancy is cheap on a near-field lattice. A hexagonal close-packed aperture has of order 3N
-nearest-neighbour edges, against the N-1 a spanning tree needs:
+nearest-neighbour edges, against the N-1 a spanning tree needs.
 
-| Quantity | Value at N = 500 |
+**The table below is the all-neighbour ceiling, not the recommended graph.** It instruments every
+nearest-neighbour pair on a flat lattice of 500, whereas §9.4 and §9.6 recommend 27 sheared clusters
+plus a tree of 26 routed top-tier edges, which instruments far fewer pairs and has no top-tier
+closures at all. Read it as the redundancy available if you pay for every edge, and as the bound the
+recommended topology trades away in exchange for confining the non-common-path problem to 26 edges.
+
+| Quantity | Value at N = 500, all neighbours instrumented |
 |---|---|
 | Spanning-tree edges | 499 |
 | Nearest-neighbour edges, hexagonal lattice | ~1,500 |
@@ -1060,7 +1068,9 @@ what replaces the camera afterwards.
   read noise, background and visibility loss. Awaiting measurement.
 - **Does the ~3N nearest-neighbour edge count survive the aperture boundary?** §9.5 uses the interior
   count for a hexagonal lattice and says explicitly that the boundary reduces it. The closure-loop
-  count and the √3 noise improvement both scale with it. Awaiting calculation.
+  count and the √3 noise improvement both scale with it. This bounds the all-neighbour ceiling rather
+  than the recommended 27-cluster topology, whose intra-cluster edge counts and 26 top-tier edges are
+  fixed by §9.4 and do not depend on it. Awaiting calculation.
 - **Does a policy trained at small N genuinely transfer to large N?** The permutation-equivariant
   argument says it should. Nothing here demonstrates it, and the scaling steps in
   [09-roadmap](09-roadmap.md) are the place it would be tested.

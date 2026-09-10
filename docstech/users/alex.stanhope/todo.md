@@ -5,15 +5,17 @@
 
 `he3/design/07-ai-control.md` §9 replaces the far-field camera with pairwise pick-off sensing for the
 full-scale array, on the grounds that a global metric carries only a 1/N share of the information about
-any one channel. The architecture argument closes; four of its figures do not, and they are recorded as
-open questions in that section rather than guessed. This story is those four figures and nothing else.
+any one channel. The architecture argument closes; four of its open questions do not, and they are
+recorded in that section rather than guessed. Those four questions carry six figures between them,
+three of them under the §9.7 question alone, so this story is those six figures plus the fold-back:
+seven boxes, one per line below, and nothing else.
 
 + [ ] compute the photon budget per spectral element for the dispersed pick-off read in §9.7
 + [ ] establish whether fringe visibility survives the dispersion and the pick-off amplitude imbalance
-+ [ ] establish whether a sensor exists with the rows, well depth and frame rate for ~1,500 dispersed edges
++ [ ] establish whether a sensor exists with the rows, well depth and frame rate for the edges the chosen topology instruments, which §9.5 bounds above at ~1,500
 + [ ] measure the residual non-common-path drift of a routed pick-off bench against the 51.5 nm budget
 + [ ] measure the per-edge phase error a real bench achieves, against the 0.222 rad requirement of §9.4
-+ [ ] compute the nearest-neighbour edge count at the aperture boundary, which the ~3N interior figure overstates
++ [ ] compute the nearest-neighbour edge count at the aperture boundary, which the ~3N interior figure overstates; it bounds §9.5's all-neighbour ceiling, not the recommended 27-cluster topology
 + [ ] fold each answer back into §9 and update `00-summary.md` §10 if a bar moves
 + note: the source of record is the Open questions list in `07-ai-control.md`; keep the figures there and tick here
 + note: this is full-scale sensing only, distinct from the camera-only bench in [[alignment-poc-bench]]
@@ -125,17 +127,6 @@ cheapest way to learn whether the central control hypothesis holds. Scoped in
 + [ ] close the loop and measure against the Phase 3 success criteria
 + note: pairwise pick-off sensing is full-scale only and out of scope here; this bench stays camera-only, per `07-ai-control.md` §9.8
 + manual: procurement and physical assembly
-
-
-### Draw the He-3 system diagrams [](?id=he3-diagrams)
-
-`he3/diagrams/` is empty. The corrected architecture is the thing most likely to be misunderstood from
-prose alone, particularly that the gamma conversion stage is a GeV accelerator rather than an optic.
-
-+ [ ] system block diagram: array, combining, wakefield stage, ICS, target, separation
-+ [ ] the two-arm split and the femtosecond synchronisation requirement between drive and scattering pulses
-+ [ ] an energy-flow sheet carrying the conversion efficiencies, since that is where the programme is lost
-+ [ ] extend `vhtr/diagrams/HOUSE-STYLE.md` or write a He-3 companion covering what the two sets share
 
 
 ### Reconcile the VHTR design against a neutronics code [](?id=vhtr-neutronics-validation)

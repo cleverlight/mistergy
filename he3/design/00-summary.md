@@ -271,6 +271,22 @@ along a sensing graph of depth d, so the topology sets how good each individual 
 a depth-2 hierarchy needs λ/28 per edge, a single-reference star needs λ/20, and a chain of 500 would
 need λ/447, which is why [07](07-ai-control.md) §9.4 disqualifies chaining outright.
 
+**The sensing topology and its photon budget**, from [07](07-ai-control.md) §9. These are the figures
+the per-edge bar above depends on, so they belong here rather than only in the section.
+
+| Quantity | Value | Where |
+|---|---|---|
+| Photons per edge to reach 0.222 rad | **~20 detected**, a shot-noise bound | §9.1 |
+| Advantage over a global metric at N = 500 | **1.5 x 10⁶** | §9.1 |
+| Recommended topology | **27 clusters of up to 19, graph depth 2**, top tier sees 27 super-channels | §9.4, §9.6 |
+| Routed top-tier edges carrying non-common-path error | **26** | §9.6 |
+
+**The ~3N nearest-neighbour edge count in §9.5 is the all-neighbour ceiling, not the recommended
+graph.** Instrumenting every neighbour pair on a flat lattice of 500 gives ~1,500 edges and ~1,001
+closure loops; the 27-cluster topology above instruments far fewer and has no top-tier closures. The
+twenty-photon figure ignores read noise, background and visibility loss, and the per-edge error a real
+bench achieves is unmeasured, so both are bounds rather than expectations.
+
 ### 10.2 Delay
 
 Two delay requirements, both of order **10 fs RMS**, both equal to **3 µm of optical path**, and both
@@ -437,7 +453,54 @@ near-optimal and the mains load is smooth.
 The binding requirement is power **quality**, not quantity: pump current ripple feeds directly into
 optical phase against a λ/20 = 51.5 nm budget.
 
-## 14. Sections
+## 14. The surviving mission
+
+From [14-surviving-mission](14-surviving-mission.md) and [03-feasibility](03-feasibility.md) Part 5.
+Facility figures are published specifications; everything else is an estimate.
+
+**The mission is a gamma source, and the gamma beam is the product.** Tunable, quasi-monochromatic,
+polarised, 1-30 MeV, from inverse Compton scattering off a 1.06-1.21 GeV wakefield electron beam. Two
+things survive the assessment and they differ in kind: the learned alignment control of §7 survives
+unconditionally because it serves any phase-locked array, and the gamma source survives as the thing
+the programme should be about.
+
+**Gamma flux, and the order of magnitude the set has not closed.**
+
+| Case | Laser to gamma | Gamma power at 5 kW | Flux at 20.578 MeV |
+|---|---|---|---|
+| **Canonical, optimistic** | **10⁻⁴** | **0.5 W** | **1.5 x 10¹¹ γ/s** |
+| §6.2 illustrative, this machine | 4.1 x 10⁻⁵ | 0.05 W | 1.5 x 10¹⁰ γ/s |
+| §6.2 again, collimated to 1% bandwidth at 100 Hz | - | - | **2.5 x 10⁷ γ/s** |
+
+**Against the two facilities that define the field:** HIgS at TUNL delivers about 3 x 10¹⁰ γ/s near
+10 MeV across 1-100 MeV and runs roughly 1,500 hours a year; ELI-NP's VEGA system is specified at
+1-19.5 MeV, better than 0.5% relative bandwidth, above 95% linear polarisation and spectral density
+above 5 x 10³ photons/eV/s. **The plausible range for this design brackets the record rather than
+clearing it**, and total flux is not spectral density. The collimated row is the only spectral-density
+figure the set holds, it sits three orders below HIgS, and nothing carries it to the array's operating
+point. §14 Open questions.
+
+**The differentiator is footprint, not flux.** A wakefield stage reaches 1 GeV in centimetres where a
+storage ring or an RF linac needs a hall, so the claim is university-scale delivery of
+national-facility performance. No laser-wakefield-driven Compton source is a user facility anywhere,
+which is the opportunity and the risk in one sentence.
+
+**Applications, ranked, unchanged from §03 Part 4.**
+
+| Rank | Application | Band | Binding constraint |
+|---|---|---|---|
+| 1 | Photonuclear cross-section measurement | 8-30 MeV | none serious; it is what the instrument is for |
+| 1b | Nuclear astrophysics, the gamma process | 5-15 MeV | same measurement, better-defined demand |
+| 2 | Nuclear resonance fluorescence assay | 2-8 MeV | average flux limits scan throughput |
+| 3 | Photofission studies | 6-20 MeV | actinide licensing, not the beam |
+| 4 | Medical isotope production | 12-25 MeV | **five orders short**; photonuclear route is 3,700x below fission |
+
+**The market is sized in facilities, not units.** The customers are national nuclear data programmes,
+university groups and safeguards agencies, and the funding model is institutional rather than
+commercial. The applied markets that are genuinely commercial, NRF portals and medical isotopes, are
+both gated on average flux this design does not have.
+
+## 15. Sections
 
 | # | Section | Summary |
 |---|---|---|
@@ -448,13 +511,14 @@ optical phase against a λ/20 = 51.5 nm budget.
 | 04 | [Laser Array](04-laser-array.md) | Sources, coherent combining, thermal management, pulse energy |
 | 05 | [Gamma Source](05-gamma-source.md) | Wakefield acceleration and inverse Compton scattering |
 | 06 | [Target and Capture](06-target-and-capture.md) | Helium-4 target, product separation, neutron handling |
-| 07 | [AI Control](07-ai-control.md) | Alignment as a learning problem; three approaches |
+| 07 | [AI Control](07-ai-control.md) | Alignment as a learning problem; pairwise sampling at full scale |
 | 08 | [Proof of Concept](08-proof-of-concept.md) | The bench, phases, success criteria |
 | 09 | [Roadmap](09-roadmap.md) | Staged path and the decision gate |
 | 10 | [Economics](10-economics.md) | Budget, cost per gram, the gamma-source framing |
 | 11 | [Alternative Routes](11-alternative-routes.md) | Li-6 breeding, VHTR coupling, spallation, lunar regolith |
 | 12 | [Intensity Limits](12-intensity-limits.md) | What superposition buys, the focusing ceiling, the commercial laser survey, the temperature question |
 | 13 | [Neutron-Free Routes](13-neutron-free-routes.md) | Why the current route cannot be clean, the Li-7 window, and the proton route that needs no accelerator |
+| 14 | [The Surviving Mission](14-surviving-mission.md) | What the gamma source is for, why inverse Compton, the applications and the market |
 | - | [References](../references.md) | Nuclear data, coherent combining, wakefield sources |
 
 ---

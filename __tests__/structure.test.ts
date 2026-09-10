@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { designSections, PROGRAMMES, readFile, REPO_ROOT } from './helpers';
+import { designSections, PROGRAMMES, readFile, readLines, REPO_ROOT } from './helpers';
 
 /*
  * The layout CODING_STANDARDS.md > Structure describes:
@@ -71,5 +71,24 @@ describe('the repository', () => {
         };
         walk(REPO_ROOT);
         expect(executables.sort()).toEqual(['sh/dash-baseline.sh', 'sh/lint.sh', 'sh/git/merge-main.sh'].sort());
+    });
+});
+
+/*
+ * The He-3 key decisions are recorded in three places and 01-overview.md says so itself, stating that
+ * a divergence from 00-summary.md section 11 is a defect to report rather than a local variation.
+ * Nothing mechanical enforced that, so when section 07 section 9 replaced the full-scale sensing
+ * architecture the summary moved and the other two tables did not, with a green suite throughout.
+ * Asserting the shared term rather than the shared sentence keeps 01's extra reasoning column legal.
+ */
+describe('the he3 alignment decision', () => {
+    const TABLES = ['he3/README.md', 'he3/design/00-summary.md', 'he3/design/01-overview.md'];
+
+    it('names the full-scale sensing architecture in every key-decision table', () => {
+        const stale = TABLES.filter((file) => {
+            const row = readLines(file).find((line) => /^\|\s*Alignment control\s*\|/i.test(line.text));
+            return row === undefined || !row.text.toLowerCase().includes('pairwise');
+        });
+        expect(stale).toEqual([]);
     });
 });

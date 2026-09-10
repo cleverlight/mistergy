@@ -1,17 +1,14 @@
 # Jest Test Results
-# Version: 0.0.4
-# Date: 2026-09-09T17:43:35+01:00
+# Version: 0.0.6
+# Date: 2026-09-10T19:32:33+01:00
 # Command: pnpm -C /mnt/secure/home/alex/git/github.com/active_development/mistergy run test-jest
+# Exit status: 0
+# Tree: HEAD 45bc7b6 plus 18 changed paths
 # ---
-✓ Lockfile passes supply-chain policies (verified 2d ago)
-Lockfile is up to date, resolution step is skipped
-Already up to date
-
-Done in 635ms using pnpm v11.25.0
 $ jest
 
 Test Suites: 4 passed, 4 total
-Tests:       43 passed, 43 total
+Tests:       44 passed, 44 total
 Snapshots:   0 total
-Time:        1.104 s
+Time:        1.777 s, estimated 2 s
 Ran all test suites.

@@ -294,7 +294,9 @@ the most consequential gap in the original design.
    |
    |    +-----------------------------------------------------------+
    +----+  8. AI ALIGNMENT CONTROLLER                               |
-        |     camera -> learned model -> actuator commands, ~10 Hz  |
+        |     PoC: camera -> learned model -> actuators, ~10 Hz     |
+        |     full scale: pairwise pick-off sensing on a            |
+        |       two-tier graph -> learned model (07 §9)             |
         |     objective: far-field concentration and ICS yield      |
         +-----------------------------------------------------------+
                                   ^
@@ -316,6 +318,11 @@ Two further features of this diagram differ from the original in ways worth stat
 
 - **Block 3 is new and it is large.** It is not a component, it is a subsystem with its own vacuum,
   gas handling, plasma diagnostics, electron spectrometer, beam dump and radiation envelope.
+- **The camera formulation is the proof of concept, not the programme.** Block 8 shows both because
+  they are two different machines. A far-field camera is the correct and sufficient sensor at bench
+  scale, and [07-ai-control](07-ai-control.md) §9 shows it does not survive the scale-up, because a
+  global metric carries only a 1/N share of the information about any one channel. The full array
+  senses pairs directly. See [00-summary](00-summary.md) §11.
 - **The control loop closes on the physics output, not just on the optics.** The original loop ran
   from a camera back to beam alignment. The corrected loop can also use wakefield pointing and
   measured gamma yield as its objective, which is a far stronger training signal than fringe contrast
@@ -344,7 +351,7 @@ defect to report.
 | Electron energy | 1.06-1.21 GeV ideal; specify the accelerator to 1.25 GeV | 1.06 GeV puts the backscattered photon at the 20.578 MeV threshold; 1.21 GeV puts it at 27 MeV near the cross-section peak. The Compton recoil correction adds about 1%, taking the top of the band to ~1.22 GeV, so 1.25 GeV covers the whole range with margin |
 | Target | superfluid He-II at ~2 K | 2.18 × 10²² /cm³ against 2.41 × 10²⁰ for 10 bar gas; three orders of magnitude in reacting fraction, and the only configuration worth designing around |
 | Array architecture | coherently combined, tiled aperture, actively phase-locked | tiled aperture keeps per-element optics simple and makes element count a manufacturing variable rather than a redesign |
-| Alignment control | learned controller, camera feedback, no wavefront sensor at proof-of-concept scale | the point of the demonstration is that commodity sensing suffices; adding a wavefront sensor at bench scale would prove a different and less interesting claim |
+| Alignment control | learned controller; camera feedback and no wavefront sensor at proof-of-concept scale, pairwise pick-off sensing on a two-tier graph at full scale ([07](07-ai-control.md) §9) | at bench scale the point of the demonstration is that commodity sensing suffices, and adding a wavefront sensor would prove a different and less interesting claim; at full scale a global metric carries only a 1/N share of the information about any one channel, so the camera formulation does not survive the scale-up |
 | Primary mission | gamma-ray source and photonuclear instrument | it is achievable with the specified hardware and has real users |
 | Production mission | reassigned to the ⁶Li route hosted by the VHTR | 12-60 g/yr against ≤ 0.24 g/yr at an unreachable 100% efficiency. [11-alternative-routes](11-alternative-routes.md) |
 

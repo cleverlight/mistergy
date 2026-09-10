@@ -414,7 +414,9 @@ super-linear scaling result would **not** show that learned control cannot align
 would show that a single scalar metric built from the whole array carries a 1/N share of the
 information about each channel, which is the quantitative argument in
 [07-ai-control](07-ai-control.md) section 8.2, and that the 100-channel system therefore needs
-frequency-tagged or nearest-neighbour sensing rather than a camera watching one combined pattern.
+per-channel sensing rather than a camera watching one combined pattern. [07-ai-control](07-ai-control.md)
+§9 develops that specification into pairwise pick-off sensing on a two-tier graph. The bench itself
+stays camera-only, which is the whole point of it.
 That is a specification for the next machine, extracted for $16,700 instead of discovered at
 $3,000,000. It is the most valuable thing this bench can produce short of outright success.
 

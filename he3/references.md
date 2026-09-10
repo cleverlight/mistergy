@@ -173,9 +173,11 @@ so they are deliberately not reproduced here; what follows describes where the f
 
 - **Wavefront-sensorless adaptive optics using learned controllers.** Reinforcement learning and
   supervised approaches that optimise a metric read off a camera rather than reconstructing a wavefront
-  from a Shack-Hartmann sensor. This is the shape of the control problem in
+  from a Shack-Hartmann sensor. This is the shape of the control problem at proof-of-concept scale in
   [07-ai-control](design/07-ai-control.md) and the reason the proof-of-concept bench in
-  [08-proof-of-concept](design/08-proof-of-concept.md) can omit a wavefront sensor entirely.
+  [08-proof-of-concept](design/08-proof-of-concept.md) can omit a wavefront sensor entirely. It is not
+  the full-scale formulation: §9 of that section replaces the camera metric with pairwise pick-off
+  sensing, so this literature covers the bench rather than the array.
 - **Deep learning applied to coherent beam combining phase control**, which has been an actively
   published topic in the optics literature over the last several years. Search on deep learning or
   reinforcement learning together with coherent beam combining and phase locking; results appear across

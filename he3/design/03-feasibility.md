@@ -399,7 +399,9 @@ low hundreds; 100-500 elements with autonomous recovery from disturbance is beyo
 The problem is unusually well suited to a learned controller, for structural reasons rather than
 fashionable ones:
 
-- The map from a far-field intensity image to per-element phase is a high-dimensional, nonlinear inverse
+- The map from a far-field intensity image to per-element phase, which is the proof-of-concept
+  formulation rather than the full-scale one ([07-ai-control](07-ai-control.md) §9 replaces the camera
+  with pairwise sensing above roughly 30 to 100 channels), is a high-dimensional, nonlinear inverse
   problem with no closed-form solution, which is the class of problem where learned inverses do well.
 - The forward model is cheap and differentiable, so synthetic training data is effectively free and
   model-based approaches are available. This is what makes the $16,700 bench in

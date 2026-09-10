@@ -359,11 +359,16 @@ Second, **a 10 Hz camera loop cannot do phase either.** It can do beam pointing,
 optimisation, slow thermal drift, and group-delay acquisition, all of which are genuinely useful and
 all of which are what the proof-of-concept bench should target. It cannot close a kHz phase loop.
 
-Third, the correct architecture is therefore **two-tier**: a fast, local, per-channel electronic phase
-lock (dither-and-demodulate tagging in the LOCSET style, or stochastic parallel gradient descent, with
-an electro-optic modulator as the actuator) running at kHz to MHz, underneath a slow global controller
-working on camera imagery that handles alignment, group delay, fill factor, drift and fault
-reconfiguration. **The learned controller belongs in the upper tier.** This reconciles the concept
+Third, the correct architecture is therefore a **two-rate loop**: a fast, local, per-channel
+electronic phase lock (dither-and-demodulate tagging in the LOCSET style, or stochastic parallel
+gradient descent, with an electro-optic modulator as the actuator) running at kHz to MHz, underneath a
+slow global controller that handles alignment, group delay, fill factor, drift and fault
+reconfiguration. **The learned controller belongs in the upper tier.** That upper tier reads pairwise
+pick-off sensing on the two-tier graph of [07-ai-control](07-ai-control.md) §9 rather than camera
+imagery, which §9.1 shows carries only a 1/N share of the information about any one channel; a camera
+remains the right sensor for the slow non-common-path calibration of §9.6 and for the bench. The
+"two-rate" name is deliberate here, because §9.4's "two-tier" names the sensing graph's depth and the
+two are different structures. This reconciles the concept
 note's camera-and-motor scheme with what phase-locking requires: the scheme is right for the layer it
 can reach, and a second layer beneath it is not optional.
 

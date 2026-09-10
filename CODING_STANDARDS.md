@@ -39,8 +39,15 @@ cannot verify. This is not a style preference: a plausible-looking fake referenc
 reference, because it survives casual review and propagates.
 
 Where a specific source cannot be verified, name the facility, programme, database or evaluating body
-instead and describe what a reader should look for. Both `references.md` files are written as reading
-maps for exactly this reason.
+instead and describe what a reader should look for. `he3/references.md` is written as a reading map for
+exactly this reason, and opens by saying so. `vhtr/references.md` is not: it is a conventional
+bibliography of formatted citations, with authors, journals, volumes and page ranges. Both are
+acceptable - the rule above bans inventing a citation, not formatting one - but they are maintained
+differently, and anything added to the VHTR file has to be a citation you can actually verify.
+
+> **Correction, verified 2026-09-09.** This read "Both `references.md` files are written as reading maps
+> for exactly this reason." Only one is. Checking `vhtr/references.md` against the reading-map rule was
+> therefore checking it against a convention it never followed.
 
 ## Prose conventions
 
@@ -62,11 +69,20 @@ maps for exactly this reason.
   README.md        programme index, design document table, key decisions
   design/          00-summary.md is canonical; sections numbered from 01
   diagrams/        hand-authored SVG, no build step
-  references.md    reading map, not a formal bibliography
+  references.md    he3: a reading map; vhtr: a formatted bibliography
 ```
 
-Sections are numbered with a two-digit prefix and referenced by relative link. Nothing validates those
-links, so grep after any rename.
+Sections are numbered with a two-digit prefix and referenced by relative link. **`__tests__/links.test.ts`
+validates them**: every relative link target exists, every heading fragment resolves, every in-page
+anchor resolves, and no link is an absolute filesystem path. Run `pnpm run test-jest` after a rename
+rather than grepping.
+
+> **Correction, verified 2026-09-09.** This read "Nothing validates those links, so grep after any
+> rename", and the `references.md` line in the block above read "reading map, not a formal bibliography"
+> for both programmes. The links test was written to replace that first sentence and quotes it verbatim
+> at `__tests__/links.test.ts:5-9`; `AGENTS.md` has meanwhile described it as "the one check that used to
+> be a manual grep". A doc that says nothing checks a thing that is checked sends the next reader to do
+> the work by hand and, worse, stops them trusting the check that would have caught them.
 
 ## Diagrams
 

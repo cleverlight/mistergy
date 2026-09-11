@@ -60,7 +60,11 @@ differently, and anything added to the VHTR file has to be a citation you can ac
   genuinely stronger (GWd/tHM, barn, eV and its multiples).
 - **Sections open with what they cover and close with `## Open questions`.** The open-questions list is
   not decoration. It is how a reader tells a settled decision from an unexamined assumption, and it is
-  the first thing to update when something is resolved.
+  the first thing to update when something is resolved. Three VHTR sections predate the convention and
+  are exempt: `vhtr/design/01-overview.md`, `06-materials.md` and `12-economics.md`, listed in
+  `NO_OPEN_QUESTIONS` in `__tests__/formatting.test.ts` so the gap is recorded rather than filled with
+  invented questions. The suite fails if one of them gains the heading and stays on the list; every
+  other section is checked.
 
 ## Structure
 
@@ -69,7 +73,10 @@ differently, and anything added to the VHTR file has to be a citation you can ac
   README.md        programme index, design document table, key decisions
   design/          00-summary.md is canonical; sections numbered from 01
   diagrams/        hand-authored SVG, no build step
+    HOUSE-STYLE.md binding drawing rules; he3's is a companion to vhtr's and restates none of it
+    README.md      he3 only: the sheet index
   references.md    he3: a reading map; vhtr: a formatted bibliography
+  origin-note.md   he3 only: the superseded concept note, preserved with its errors
 ```
 
 Sections are numbered with a two-digit prefix and referenced by relative link. **`__tests__/links.test.ts`

@@ -14,7 +14,13 @@ Mistergy holds two theoretical engineering design programmes, written as markdow
 
 **There is no application here.** No server, no build step, no deployment, and nothing that runs in
 production. What the repository does carry is a `package.json` and a Jest suite whose entire purpose is
-to check the documents, so that `/prod-ready` and `/push-prod` work here as they do everywhere else.
+to check the documents, so that `/prod-ready` has a real gate here: it runs `lint` and `test-jest` as
+it does everywhere else, and reports Playwright as skipped because there is none. `/push-prod` does
+less. It still records the story done, commits, pushes to `staging` and runs `merge-main.sh`, but its
+deployment table gives mistergy `n/a` for both healthchecks and both Playwright suites, so the two
+deploy waits and the two Playwright runs all report skipped. A green `/push-prod` here means the tree
+shipped, never that anything was verified live, because nothing is live. (Corrected 2026-09-11: this
+said both skills "work here as they do everywhere else".)
 Do not add an application, a dev server or a deploy target; do extend the checks.
 
 Because there is now a `package.json`, the workspace skills that sweep for one will find this
@@ -40,10 +46,12 @@ suite means the mechanical floor holds, not that a document is correct, and the 
 ## Git workflow
 
 Workspace-standard, with one exception worth knowing before you read the script and think it is
-half-finished. [`../AGENTS.md`](../AGENTS.md) says `merge-main.sh` runs a staging healthcheck and a
-prod migration gate before merging. Neither runs here, because neither thing exists: no deployed app
-to be unhealthy, no database to migrate. This repository's copy is the shared fast-forward core alone,
-and that is its finished state.
+half-finished. [`../AGENTS.md`](../AGENTS.md) says that in most projects `merge-main.sh` also runs a
+staging-healthcheck gate, a prod `migrate deploy`, or both before merging, and that `/push-prod` step 6
+tables which script runs which. Neither runs here, because neither thing exists: no deployed app to be
+unhealthy, no database to migrate. That table lists mistergy under neither. This repository's copy is
+the shared fast-forward core alone, and that is its finished state. (Corrected 2026-09-11: this quoted
+the workspace file as saying `merge-main.sh` runs both gates, which it no longer says.)
 
 ## The two programmes
 
@@ -60,10 +68,16 @@ VHTR's current low-lithium graphite decision. If you touch either side of that, 
 
 ## Do not quietly make the He-3 programme sound better than it is
 
-The feasibility assessment in [`he3/design/03-feasibility.md`](he3/design/03-feasibility.md) concludes
-that the photodisintegration route misses a useful production rate by roughly nine orders of magnitude,
-for thermodynamic rather than engineering reasons. That conclusion is load-bearing and it was reached
-by working the arithmetic, not by taste.
+The feasibility assessment in [`he3/design/03-feasibility.md`](he3/design/03-feasibility.md) states
+its own headline: "The production target is unreachable by **2.7 × 10¹¹** at the canonical realistic
+rate, even granting a working single-photon mechanism, and by 2.7 × 10⁹ on a conversion efficiency two
+orders of magnitude better than anything [05-gamma-source](he3/design/05-gamma-source.md) believes is
+reachable." The verdict is the first figure, roughly eleven orders of magnitude. The second is the
+optimistic case and is only ever quoted labelled as one. The reasons are thermodynamic rather than
+engineering. That conclusion is load-bearing and it was reached by working the arithmetic, not by
+taste. (Corrected 2026-09-11: this said the route misses "by roughly nine orders of magnitude", which
+matches only the optimistic case. The "eight to nine orders" elsewhere in the set is a different
+comparison, the lithium-6 route against the laser route's realistic rate.)
 
 An agent asked to "improve", "polish" or "expand" these documents will feel pressure to soften it,
 because the surrounding material is enthusiastic and the conclusion is not. Do not. If you think the
@@ -94,7 +108,11 @@ and reading catches the rest, so neither substitutes for the other. Before handi
   it. The suite checks arithmetic a document writes out; it cannot tell you a figure is the wrong one.
 - If you changed a heading or a filename, run the suite: `__tests__/links.test.ts` resolves every
   relative link and anchor, which is the one check that used to be a manual grep.
-- If you added prose carrying an em dash, the suite will fail. Use a hyphen. Do not regenerate the
-  baseline to silence it - that file records what predates the rule, and `sh/dash-baseline.sh` exists
-  for edits that legitimately move a count, not for new text.
+- If you added an em dash or en dash, or either HTML entity, to a markdown or SVG file, the suite will
+  fail - but only outside `docstech/`, `node_modules/`, `.git/` and `test-results/`, which
+  `__tests__/helpers.ts` excludes from discovery and `sh/dash-baseline.sh` excludes too. A glyph
+  written into the story board under `docstech/` passes silently; the ban still applies there.
+  (Corrected 2026-09-11: this said the suite fails on any new em dash, without naming where the check
+  stops.) Use a hyphen. Do not regenerate the baseline to silence it - that file records what predates
+  the rule, and `sh/dash-baseline.sh` exists for edits that legitimately move a count, not for new text.
 - If you rendered a diagram to check it, delete the PNG afterwards per the workspace browser-snapshot rule.

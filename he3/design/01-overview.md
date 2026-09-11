@@ -353,7 +353,7 @@ defect to report.
 | Array architecture | coherently combined, tiled aperture, actively phase-locked | tiled aperture keeps per-element optics simple and makes element count a manufacturing variable rather than a redesign |
 | Alignment control | learned controller; camera feedback and no wavefront sensor at proof-of-concept scale, pairwise pick-off sensing on a two-tier graph at full scale ([07](07-ai-control.md) §9) | at bench scale the point of the demonstration is that commodity sensing suffices, and adding a wavefront sensor would prove a different and less interesting claim; at full scale a global metric carries only a 1/N share of the information about any one channel, so the camera formulation does not survive the scale-up |
 | Primary mission | gamma-ray source and photonuclear instrument | it is achievable with the specified hardware and has real users |
-| Production mission | reassigned to the ⁶Li route hosted by the VHTR | 12-60 g/yr against ≤ 0.24 g/yr at an unreachable 100% efficiency. [11-alternative-routes](11-alternative-routes.md) |
+| Production mission | **closed** (operator decision 2026-09-11); the ⁶Li route is a recorded finding | 12-60 g/yr against ≤ 0.24 g/yr at an unreachable 100% efficiency, so the assessment stands and is worth keeping. What changed is that this programme no longer carries the requirement. [11-alternative-routes](11-alternative-routes.md) |
 
 ---
 
@@ -397,7 +397,7 @@ the 50-100 g/day *target* misapplied to the ceiling. The correction is recorded 
 [00-summary](00-summary.md) §4.2 and it changes no verdict. The efficiency chain used here is owned
 by [03-feasibility](03-feasibility.md).
 
-### 7.2 Production mission (reassigned)
+### 7.2 Production mission (closed)
 
 The originating requirement was 50-100 g/day of helium-3. Against the canonical figures that means:
 
@@ -408,7 +408,9 @@ The originating requirement was 50-100 g/day of helium-3. Against the canonical 
 
 A 1-5 kW array cannot supply 381 MW of absorbed gamma power, and no amount of coherent combining
 changes that, because combining multiplies available power by N and the N is already counted. The
-requirement is therefore reassigned:
+The requirement was therefore reassigned to the route below, and on 2026-09-11 the operator closed it
+outright: this programme pursues the gamma source only. The table is kept because the analysis behind it
+is sound and someone will ask where the requirement went, not because anything here is being built.
 
 | Ref | Requirement | Owner |
 |---|---|---|

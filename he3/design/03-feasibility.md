@@ -33,7 +33,9 @@ improvements are bounded and, when driven to their physical limits, still leave 
 
 **The programme is worth continuing with a different mission.** The recommendation in Part 5 is to proceed
 with the alignment work unchanged, proceed with the gamma-source design, and hand the production mission to
-the lithium-6 route in [11-alternative-routes](11-alternative-routes.md).
+the lithium-6 route in [11-alternative-routes](11-alternative-routes.md). The operator closed that
+production mission outright on 2026-09-11, so the lithium-6 analysis stands as a finding and this
+programme carries no production requirement at all.
 
 ---
 
@@ -470,7 +472,7 @@ neutron handling has to be designed for in any case. See [06-target-and-capture]
 | **Gamma source design** | **Go** | Single-photon inverse Compton off a 1.06-1.21 GeV wakefield beam. This is the correct use of 100-500 TW at 100 Hz and it is what the programme should be about |
 | **Multi-photon absorption** | **No-go, permanently** | Rejected on nuclear structure in Part 1. Not an engineering difficulty, not addressable by intensity, not worth a line item |
 | **Helium-3 production by this route** | **Do not fund** | Short by 10⁹ to 10¹¹ for thermodynamic reasons. No combination of the four available levers reaches the target |
-| **Helium-3 production mission** | **Reassign** | Hand it to the lithium-6 route in [11-alternative-routes](11-alternative-routes.md) |
+| **Helium-3 production mission** | **Closed** | Assessed here, reassigned to the lithium-6 route in [11-alternative-routes](11-alternative-routes.md), and closed outright by operator decision 2026-09-11. The lithium-6 analysis stands as a finding; this programme does not carry the requirement |
 
 ### On the reassignment
 

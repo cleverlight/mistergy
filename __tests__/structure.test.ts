@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { designSections, PROGRAMMES, readFile, readLines, REPO_ROOT } from './helpers';
+import { designSections, markdownFiles, PROGRAMMES, readFile, readLines, REPO_ROOT } from './helpers';
 
 /*
  * The layout CODING_STANDARDS.md > Structure describes:
@@ -90,5 +90,42 @@ describe('the he3 alignment decision', () => {
             return row === undefined || !row.text.toLowerCase().includes('pairwise');
         });
         expect(stale).toEqual([]);
+    });
+});
+
+/*
+ * The He-3 price is quoted in three places and drifted in two more. 00-summary.md section 9 sets the
+ * canonical band at $1,000-2,000 per litre at STP, and two sections had acquired a $3,000 per litre
+ * figure that put every derived value 1.5x out, in the flattering direction. Per-litre is the form
+ * that drifted, so per-litre is what this asserts; per-gram figures are left alone because the
+ * documents legitimately quote costs, targets and criticised concept-note goals in that unit.
+ */
+describe('the he3 price', () => {
+    const MIN_PER_LITRE = 1000;
+    const MAX_PER_LITRE = 2000;
+
+    // only amounts bound to the unit: a conversion to $/g on the same line is not a per-litre claim
+    const PER_LITRE = /\$([\d,]+)(?:\s*(?:-|to)\s*\$?([\d,]+))?\s+per litre/gi;
+
+    it('quotes no per-litre figure outside the canonical band', () => {
+        const offenders: string[] = [];
+        let seen = 0;
+        for (const file of markdownFiles().filter((f) => f.startsWith('he3/'))) {
+            for (const line of readLines(file)) {
+                for (const match of line.text.matchAll(PER_LITRE)) {
+                    for (const raw of [match[1], match[2]]) {
+                        if (raw === undefined) continue;
+                        seen += 1;
+                        const amount = parseInt(raw.replace(/,/g, ''), 10);
+                        if (amount < MIN_PER_LITRE || amount > MAX_PER_LITRE) {
+                            offenders.push(`${file}:${line.number} -> $${raw}`);
+                        }
+                    }
+                }
+            }
+        }
+        expect(offenders).toEqual([]);
+        // a regex that matches nothing would pass vacuously, which is the failure this guards against
+        expect(seen).toBeGreaterThanOrEqual(4);
     });
 });

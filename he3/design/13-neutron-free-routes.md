@@ -335,11 +335,14 @@ levers analysis in [03-feasibility](03-feasibility.md) Part 3 applies unchanged:
 nuclear data, the target absorbed fraction and the conversion efficiency are both bounded above by 1,
 and only average power is unbounded and it is unbounded at a price nobody will pay.
 
-The clearest way to say it: **2.47 x 10⁻⁵ g/yr of helium-3, at roughly $3,000 per litre at standard
-temperature and pressure, is about 55 pence of product per year** from a facility whose laser array
-alone is a seven- or eight-figure capital item. The lithium-6 breeding route in
+The clearest way to say it: **2.47 x 10⁻⁵ g/yr of helium-3, at the $10,000 per gram working reference
+of [00-summary](00-summary.md) §9, is about 25 cents of product per year** from a facility whose laser
+array alone is a seven- or eight-figure capital item. Across the $7,400 to $14,900 per gram band that
+reference sits in, the range is 18 to 37 cents, which changes nothing. The lithium-6 breeding route in
 [11-alternative-routes](11-alternative-routes.md) remains better by five orders of magnitude and
-remains the only production recommendation in this repository.
+remains the best production route this repository has assessed. That route is a recorded finding
+rather than a live recommendation: the operator closed the production mission on 2026-09-11, so
+nothing in this section is work the programme intends to do.
 
 What does change:
 

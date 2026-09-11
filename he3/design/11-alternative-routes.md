@@ -506,6 +506,13 @@ real control-systems problem and a legitimate route to a disputed cross-section 
 ([00-summary](00-summary.md) §8). It is not a way to make helium-3, and continuing to describe it as
 one costs the credibility of the parts that are genuinely sound.
 
+**As of 2026-09-11 it does not claim it.** The operator closed the production mission outright, so this
+section is a recorded finding rather than a recommendation this programme acts on. Everything above is
+unchanged and none of it is withdrawn: the arithmetic is the same, ⁶Li(n,α)T in a VHTR-sized core is
+still the only route in this repository that reaches grams per year, and it remains the right answer for
+anyone who wants helium-3. It is simply no longer this programme's answer, because this programme now
+builds a gamma source. See [14-surviving-mission](14-surviving-mission.md).
+
 ## Open questions
 
 - [ ] **Monte Carlo capture fraction for reflector-sited lithium targets.** The 1 to 5% range is an

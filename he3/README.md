@@ -25,8 +25,10 @@ a Very High Temperature Reactor design, and for how the two connect.
 > hardware closes it.
 >
 > The programme is therefore **rescoped, not abandoned**: it is now a gamma-ray source and photonuclear
-> instrument, with the production mission handed to the lithium-6 breeding route in
-> [11-alternative-routes](design/11-alternative-routes.md).
+> instrument. The production mission was handed to the lithium-6 breeding route in
+> [11-alternative-routes](design/11-alternative-routes.md) and then **closed outright on 2026-09-11**.
+> That route is kept as a recorded finding and is the right answer for anyone who wants helium-3; it is
+> simply not what this programme builds. See [14-surviving-mission](design/14-surviving-mission.md).
 >
 > **If you want to test whether the rest of this set is trustworthy, read
 > [03-feasibility](design/03-feasibility.md) first.** It is the document that makes the negative case,
@@ -87,7 +89,7 @@ aperture, but multiplies available power only by N, and only the second constrai
 | Array architecture | Coherently combined, tiled aperture, actively phase-locked |
 | Alignment control | Learned controller. Camera feedback and no wavefront sensor at PoC scale; **pairwise pick-off sensing on a two-tier graph at full scale**, because a global metric carries only a 1/N share of the information about any one channel. [07](design/07-ai-control.md) §9 |
 | Primary mission | Gamma-ray source and photonuclear instrument |
-| Production mission | Reassigned to the Li-6 route, hosted by the VHTR |
+| Production mission | **Closed** (operator decision 2026-09-11). The Li-6 breeding route in [11](design/11-alternative-routes.md) is a recorded finding, not work this programme takes on |
 
 ## What the programme is for, now
 

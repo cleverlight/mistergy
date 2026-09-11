@@ -261,7 +261,7 @@ because they are easy to conflate.
 | He-3 by ⁴He photodisintegration | closed, short by 10⁹ to 10¹¹ | [03](03-feasibility.md) |
 | Multi-photon absorption | closed permanently, on nuclear structure | [03](03-feasibility.md) Part 1 |
 | He-3 by ⁶Li(p,α) with laser-driven protons | open as a channel decision, closed as a business | [13](13-neutron-free-routes.md) §4 |
-| He-3 production as a mission | **reassigned** to ⁶Li breeding in a reactor | [11](11-alternative-routes.md) |
+| He-3 production as a mission | **closed** 2026-09-11; ⁶Li breeding kept as a finding | [11](11-alternative-routes.md) |
 | Aneutronic fusion power | not assessed in this set; see Open questions | - |
 
 ---

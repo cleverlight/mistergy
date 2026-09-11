@@ -1,6 +1,6 @@
 {
   "name": "mistergy",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": true,
   "description": "Document checks for the VHTR and He-3 design programmes. There is no application here; this manifest exists only so the repository can be linted and tested like every other project in the workspace.",
   "scripts": {
@@ -11,12 +11,12 @@
   "engines": {
     "node": ">=22.18.0"
   },
-  "packageManager": "pnpm@11.25.0",
+  "packageManager": "pnpm@12.3.4",
   "devDependencies": {
-    "@jest/globals": "^30.5.0",
+    "@jest/globals": "^30.5.1",
     "@types/jest": "^30.0.0",
-    "@types/node": "^26.4.0",
-    "jest": "^30.5.0",
+    "@types/node": "^26.5.1",
+    "jest": "^30.5.1",
     "npm-check-updates": "^23.1.0",
     "ts-jest": "^29.4.12",
     "typescript": "^6.0.3"

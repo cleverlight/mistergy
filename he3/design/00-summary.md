@@ -14,9 +14,11 @@ Companion to the VHTR set's [`../../vhtr/design/00-summary.md`](../../vhtr/desig
 laser array whose alignment is maintained by a learned controller.**
 
 It did not start that way. It began as a scheme to produce helium-3 by photodisintegrating helium-4,
-and that mission has been assessed and reassigned: the energy balance does not close, by a margin
-that is thermodynamic rather than technological. [03-feasibility](03-feasibility.md) carries the
-argument and [11-alternative-routes](11-alternative-routes.md) carries the replacement route. The
+and that mission has been assessed, reassigned and then closed outright on 2026-09-11: the energy
+balance does not close, by a margin that is thermodynamic rather than technological.
+[03-feasibility](03-feasibility.md) carries the argument and
+[11-alternative-routes](11-alternative-routes.md) carries the route that would work, which is now a
+recorded finding rather than work this programme takes on. The
 production claim is the thing that failed; the array, the control problem and the gamma source it can
 drive are what the programme is now for, and none of them are weakened by the failure.
 
@@ -243,7 +245,7 @@ One set of figures, so sections 10 and 11 cannot tell different stories.
 | Quantity | Canonical value | Note |
 |---|---|---|
 | He-3 market price | $1,000-2,000 per litre at STP | 0.135 g/litre, so **$7,400-14,900/g** |
-| He-3 working reference | **~$10,000/g** | approximate and volatile; does not change any verdict |
+| He-3 working reference | **~$10,000/g** | approximate and volatile; does not change any verdict. **Quote this, or the band above it, and never a per-litre figure outside $1,000-2,000** |
 | Electricity price | **$50/MWh** sale price | the VHTR's ~$88/MWh LCOE is a **cost**, never a revenue |
 | Proof-of-concept bench | **$16,700** hardware | 08's itemised BOM including the piezo stage; cap $20,000 |
 | Lunar regolith grade | 4-10 ppb by mass in mature mare | **100-250 t of regolith per gram** at full recovery |
@@ -313,7 +315,7 @@ fringe order you are in, not that the envelopes have been brought together.
 | Topic | Decision |
 |---|---|
 | Programme mission | Gamma-ray source and photonuclear instrument |
-| Production mission | Reassigned to the Li-6 route, hosted by the VHTR |
+| Production mission | **Closed** (operator decision 2026-09-11). The Li-6 breeding route of §11 is a recorded finding, not work this programme takes on |
 | Reaction channel | ⁴He(γ,n)³He at 20.578 MeV, single-photon, not multi-photon. **Under review**: [13](13-neutron-free-routes.md) finds two neutron-free alternatives, one of them 364x faster and needing no accelerator |
 | Multi-photon absorption | **Rejected.** He-4 has no bound excited state below breakup; there is no ladder to climb |
 | Operating band | 25-27 MeV, design point 26 MeV |
@@ -408,8 +410,9 @@ route. Thick-target yield 3.0 x 10⁻⁴ per 3 MeV proton in enriched ⁶Li meta
 | 50 kW array | 5% | 1.56 x 10¹² | 2.47 x 10⁻⁴ g | 7.4 x 10⁷ |
 
 **364x the canonical inverse Compton rate at equal average power, the highest laser-route figure in
-this repository, and the verdict is unchanged.** 2.47 x 10⁻⁵ g/yr is about 55 pence of product per
-year at $3,000 per litre STP. The Li-6 breeding route remains better by five orders of magnitude.
+this repository, and the verdict is unchanged.** 2.47 x 10⁻⁵ g/yr is about 25 cents of product per
+year at the §9 working reference of $10,000/g, and 18 to 37 cents across the $7,400-14,900/g band. The
+Li-6 breeding route remains better by five orders of magnitude.
 
 **Neutron-free operation requires a band-limited source**, which disqualifies the bremsstrahlung
 continuum of §12 for this mission and reinstates inverse Compton scattering.

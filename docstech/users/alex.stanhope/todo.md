@@ -30,6 +30,11 @@ tritium-free, roughly 180x the cross-section, 364x the canonical rate, and needs
 all. That makes it a candidate to replace the reaction channel, which is a Key Decision, so the choice
 is the operator's rather than an edit.
 
+**CLOSED 2026-09-11 by operator decision: the helium-3 production mission is closed and this programme
+pursues the gamma source only.** The channel question is moot because no channel will be operated. The
+boxes below stay unticked because the work was never done, and the section 13 analysis stands as a
+recorded finding. Do not pick this up. See `he3/design/14-surviving-mission.md`.
+
 + [ ] read the measured ⁶Li(p,α)³He excitation function from EXFOR and replace the S-factor extrapolation in §4.2
 + [ ] establish the ⁷Li(γ,t)⁴He cross-section in the 2.468-7.251 MeV window, which section 13 does not have
 + [ ] compute the neutron floor set by residual ⁷Li, given ⁷Li(p,n)⁷Be at 1.880 MeV
@@ -102,6 +107,13 @@ the He-3 set inherits that uncertainty.
 
 
 ### Resolve the lithium tension between the two programmes [](?id=lithium-tension)
+
+**CLOSED 2026-09-11 by operator decision: the helium-3 production mission is closed.** The tension
+dissolves rather than resolving. It existed because the He-3 programme wanted ⁶Li breeding hosted by a
+VHTR-sized core while `vhtr/design/06-materials.md` specifies low-lithium graphite to suppress tritium.
+With production closed the He-3 side no longer makes that claim, so the VHTR's low-lithium decision
+stands unqualified and needs no reconciliation. The boxes below stay unticked because the work was
+never done. Do not pick this up.
 
 `he3/design/11-alternative-routes.md` recommends Li-6 breeding in a VHTR-sized core as the only viable
 He-3 route in this repository. `vhtr/design/06-materials.md` specifies low-lithium graphite to suppress

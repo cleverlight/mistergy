@@ -503,7 +503,32 @@ university groups and safeguards agencies, and the funding model is institutiona
 commercial. The applied markets that are genuinely commercial, NRF portals and medical isotopes, are
 both gated on average flux this design does not have.
 
-## 15. Sections
+## 15. Kilogram-scale closure
+
+The figures that close the production question at fusion-fuel scale, from
+[15-kilogram-scale-closure](15-kilogram-scale-closure.md). Section 8 compares the routes with each
+other; this compares the best of them with what a customer actually needs.
+
+| Quantity | Canonical value | Note |
+|---|---|---|
+| D-³He fuel demand | **90 kg of ³He per GW(e)-yr** | [01-overview](01-overview.md) §1.4 |
+| Mission band tested | **3 to 30 kg/yr** | fuels 33 to 333 MW(e) of D-³He plant |
+| Tritium decay constant | **0.0563 /yr** | from ln2 over the 12.32 yr half-life; nuclear data |
+| Mean tritium holding time | **17.8 yr** | the reciprocal of the decay constant |
+| Tritium held at the mission floor | **53.4 kg** | at 3 kg/yr. ITER's whole site licence is about 4 kg |
+| D-D fusion power for the mission floor | **22.2 MW** | at a gain equivalent to Q(D-T) of 17.5, so circular |
+| ⁶Li(p,α)³He beam cost | **10.6 GeV per atom** | thick-target yield near 10⁻⁴; 32 GW for 3 kg/yr |
+| World helium stream processed for 3 kg/yr | **14%** | at a 10⁻⁶ helium-3 abundance; over 100% at 10⁻⁷ |
+
+Tritium held in kg is the helium-3 production rate in kg/yr multiplied by 17.8, because the two
+nuclides share a molar mass of 3.016 g/mol to four figures.
+
+**No route in this repository reaches the mission band**, and extraction from natural helium is the
+only origin that touches it. The closure is categorical rather than technological: the tritium routes
+are bounded by the decay constant, which is a weak-interaction property that no machine architecture,
+hybrid or applied field alters.
+
+## 16. Sections
 
 | # | Section | Summary |
 |---|---|---|
@@ -522,6 +547,7 @@ both gated on average flux this design does not have.
 | 12 | [Intensity Limits](12-intensity-limits.md) | What superposition buys, the focusing ceiling, the commercial laser survey, the temperature question |
 | 13 | [Neutron-Free Routes](13-neutron-free-routes.md) | Why the current route cannot be clean, the Li-7 window, and the proton route that needs no accelerator |
 | 14 | [The Surviving Mission](14-surviving-mission.md) | What the gamma source is for, why inverse Compton, the applications and the market |
+| 15 | [Kilogram-Scale Closure](15-kilogram-scale-closure.md) | The 3-30 kg/yr mission, the four origins of a helium-3 nucleus, and why none of them reaches it |
 | - | [References](../references.md) | Nuclear data, coherent combining, wakefield sources |
 
 ---

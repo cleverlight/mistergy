@@ -74,6 +74,7 @@ aperture, but multiplies available power only by N, and only the second constrai
 | 12 | [Intensity Limits](design/12-intensity-limits.md) | Draft | What superposition buys, the focusing ceiling, the commercial laser survey, the temperature question |
 | 13 | [Neutron-Free Routes](design/13-neutron-free-routes.md) | Draft | Why the current route cannot be clean, the Li-7 window, and the proton route that needs no accelerator |
 | 14 | [The Surviving Mission](design/14-surviving-mission.md) | Draft | What the gamma source is for, why inverse Compton, the applications and the market |
+| 15 | [Kilogram-Scale Closure](design/15-kilogram-scale-closure.md) | Draft | The 3-30 kg/yr mission, the four origins of a helium-3 nucleus, and why none of them reaches it |
 | - | [References](references.md) | Draft | Nuclear data, coherent combining, wakefield sources |
 | - | [Origin Note](origin-note.md) | **Superseded** | The concept note this set restructures, kept only so its corrections stay checkable |
 

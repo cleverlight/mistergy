@@ -37,6 +37,7 @@ Pins in effect after this wave (snapshot):
 - glob @10.5.0 (transitive, deprecated) - structural - `test-exclude`@7.0.2 under `babel-plugin-istanbul`@8.0.0 declares `glob ^10`, so regeneration cannot move it; coverage is not run here; clears when jest's istanbul chain moves to a newer glob
 Unpinned this wave:
 - none (first upgrade story for this project, no prior pins)
++ note: `759f1a6` removed this toolchain when the checks went dependency-free, so the pin list above is historical only
 
 
 ### Make the document checks dependency-free
@@ -47,7 +48,7 @@ The checks are 45 tests and an SVG parse, but they ran on seven npm packages tha
   + the seven packages resolved to ~555 lockfile entries and 101 MB of `node_modules`, two with native build scripts
   + Jest caused both standing holds: typescript at 6 (ts-jest peers `<7`) and deprecated `glob@10.5.0` via its coverage chain
   + Node 24 runs the `.ts` suite natively: 45/45 under `node --test` on a scratch copy with no `node_modules` (2026-10-02)
-  + replaces the 2026-09-30 minor/patch upgrade story, whose `package.json` and lockfile changes this removes (operator decision)
+  + replaces the 2026-09-30 minor/patch upgrade story, discarded uncommitted (operator decision); this change deletes the committed 0.0.8 lockfile and devDependencies
 + decisions
   + drop `tsc` type-checking rather than keep typescript as the only dependency (operator decision)
   + keep the `test-jest` script name, which the workspace tooling looks up (operator decision)

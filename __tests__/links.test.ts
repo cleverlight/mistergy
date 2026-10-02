@@ -1,11 +1,14 @@
+import assert from 'node:assert/strict';
+import { describe, it } from 'node:test';
 import * as fs from 'fs';
 import * as path from 'path';
-import { markdownFiles, readLines, REPO_ROOT } from './helpers';
+import { markdownFiles, readLines, REPO_ROOT } from './helpers.ts';
 
 /*
- * CODING_STANDARDS.md says of the section cross-references: "Nothing validates those links, so grep
- * after any rename." This is that validation. It is the check most likely to catch a real mistake,
- * because a renamed section breaks silently and a reader only finds out by clicking.
+ * CODING_STANDARDS.md > Structure names this file as what validates the section cross-references,
+ * and says to run the suite after a rename rather than grepping. It is the check most likely to
+ * catch a real mistake, because a renamed section breaks silently and a reader only finds out by
+ * clicking.
  */
 const LINK_PATTERN = /\[[^\]]*\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g;
 
@@ -49,7 +52,7 @@ describe('relative links', () => {
     const links = collectLinks().filter((l) => !/^(https?:|mailto:|#)/.test(l.target));
 
     it('are present in the document set at all', () => {
-        expect(links.length).toBeGreaterThan(30);
+        assert.ok(links.length > 30, `only ${links.length} relative links found`);
     });
 
     it('point at files that exist', () => {
@@ -61,7 +64,7 @@ describe('relative links', () => {
                 return !fs.existsSync(resolved);
             })
             .map((link) => `${link.file}:${link.line} -> ${link.target}`);
-        expect(broken).toEqual([]);
+        assert.deepEqual(broken, []);
     });
 
     it('point at headings that exist, where they name one', () => {
@@ -79,14 +82,14 @@ describe('relative links', () => {
                 broken.push(`${link.file}:${link.line} -> ${link.target}`);
             }
         }
-        expect(broken).toEqual([]);
+        assert.deepEqual(broken, []);
     });
 
     it('are relative, never absolute filesystem paths', () => {
         const absolute = links
             .filter((link) => link.target.startsWith('/'))
             .map((link) => `${link.file}:${link.line} -> ${link.target}`);
-        expect(absolute).toEqual([]);
+        assert.deepEqual(absolute, []);
     });
 });
 
@@ -100,6 +103,6 @@ describe('in-page anchors', () => {
                 return !headingSlugs(resolved).has(link.target.slice(1).toLowerCase());
             })
             .map((link) => `${link.file}:${link.line} -> ${link.target}`);
-        expect(broken).toEqual([]);
+        assert.deepEqual(broken, []);
     });
 });

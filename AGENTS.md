@@ -13,16 +13,25 @@ Mistergy holds two theoretical engineering design programmes, written as markdow
 [`README.md`](README.md) for the index.
 
 **There is no application here.** No server, no build step, no deployment, and nothing that runs in
-production. The `package.json` and Jest suite exist only to check the documents, so `/prod-ready` has a
+production. The `package.json` and check suite exist only to check the documents, so `/prod-ready` has a
 real gate: it runs `lint` and `test-jest` and reports Playwright as skipped. `/push-prod` records the
 story done, commits, pushes to `staging` and runs `merge-main.sh`, but its deployment table gives
 mistergy `n/a` for both healthchecks and both Playwright suites, so a green `/push-prod` here means the
 tree shipped, never that anything was verified live, because nothing is live.
 Do not add an application, a dev server or a deploy target; do extend the checks.
 
-The workspace skills that sweep for a `package.json` are meant to find this repository, and
-`/team-check-updates` includes it in a dependency wave. `/dev-status` and `/open-dev` have nothing to
-start, because there is no `dev` script and no port, and that is correct rather than a gap.
+The workspace skills that sweep for a `package.json` are meant to find this repository.
+`/dev-status` and `/open-dev` have nothing to start, because there is no `dev` script and no port,
+and `/team-check-updates` has nothing to upgrade, because there is no `check-updates` script. Both
+are correct rather than gaps.
+
+**The checks have no dependencies, deliberately** (operator decision). The suite runs on Node's
+built-in `node:test` and `node:assert`, under the `test-jest` script name the workspace skills look
+up, and Node strips the TypeScript types without checking them. There is no lockfile and nothing to
+upgrade, so do not add a package to make a check easier; write it against the standard library.
+Type stripping sets the authoring rules: a relative import names its `.ts` extension, a type-only
+import uses `import type`, and there is no `enum`, `namespace` or parameter property. Nothing
+type-checks the suite, so a type mistake surfaces only when the check runs.
 
 **Know exactly how far the checks reach**, because the gap between what they cover and what they
 appear to cover is where a false assurance would live:

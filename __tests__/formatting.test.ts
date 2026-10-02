@@ -1,3 +1,5 @@
+import assert from 'node:assert/strict';
+import { describe, it } from 'node:test';
 import * as fs from 'fs';
 import * as path from 'path';
 import {
@@ -9,7 +11,7 @@ import {
     REPO_ROOT,
     stripCode,
     svgFiles,
-} from './helpers';
+} from './helpers.ts';
 
 const DASH_PATTERN = /[—–]|&mdash;|&ndash;/g;
 
@@ -85,18 +87,18 @@ describe('dash glyphs', () => {
 
     it('appear in no file that did not already carry them', () => {
         const introduced = Object.keys(actual).filter((f) => !(f in baseline));
-        expect(introduced).toEqual([]);
+        assert.deepEqual(introduced, []);
     });
 
     it('have not increased in any file that already carried them', () => {
         const increased = Object.keys(actual)
             .filter((f) => f in baseline && actual[f] > baseline[f])
             .map((f) => `${f}: ${baseline[f]} -> ${actual[f]}`);
-        expect(increased).toEqual([]);
+        assert.deepEqual(increased, []);
     });
 
     it('match the recorded baseline exactly, so it cannot go stale', () => {
-        expect(actual).toEqual(baseline);
+        assert.deepEqual(actual, baseline);
     });
 });
 
@@ -118,7 +120,7 @@ describe('British spelling', () => {
     }
 
     it('is used throughout the design documents', () => {
-        expect(violations.join('\n')).toBe('');
+        assert.equal(violations.join('\n'), '');
     });
 });
 
@@ -126,26 +128,26 @@ describe('design sections', () => {
     const sections = PROGRAMMES.flatMap((programme) => designSections(programme));
 
     it('exist in both programmes', () => {
-        expect(sections.length).toBeGreaterThan(20);
+        assert.ok(sections.length > 20, `only ${sections.length} design sections found`);
     });
 
     it('close with an open-questions list', () => {
         const missing = sections
             .filter((f) => !NO_OPEN_QUESTIONS.has(f))
             .filter((f) => !/^##\s+open questions\s*$/im.test(readFile(f)));
-        expect(missing).toEqual([]);
+        assert.deepEqual(missing, []);
     });
 
     it('do not carry a stale entry in the open-questions exemption list', () => {
         const nowCompliant = [...NO_OPEN_QUESTIONS].filter((f) =>
             /^##\s+open questions\s*$/im.test(readFile(f)),
         );
-        expect(nowCompliant).toEqual([]);
+        assert.deepEqual(nowCompliant, []);
     });
 
     it('open with a level-one heading naming the section', () => {
         const bad = sections.filter((f) => !/^# \S/m.test(readFile(f).split('\n')[0]));
-        expect(bad).toEqual([]);
+        assert.deepEqual(bad, []);
     });
 });
 
@@ -157,13 +159,13 @@ describe('SVG diagrams', () => {
             if (!source.trimStart().startsWith('<')) broken.push(`${file}: does not open with a tag`);
             if (!/<\/svg>\s*$/.test(source)) broken.push(`${file}: does not close its svg element`);
         }
-        expect(broken).toEqual([]);
+        assert.deepEqual(broken, []);
     });
 
     it('are committed as source with no generated companion', () => {
         const generated = fs
             .readdirSync(path.join(REPO_ROOT, 'vhtr/diagrams'))
             .filter((f) => /\.(png|jpe?g|pdf)$/i.test(f));
-        expect(generated).toEqual([]);
+        assert.deepEqual(generated, []);
     });
 });

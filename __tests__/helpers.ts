@@ -12,7 +12,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-export const REPO_ROOT = path.resolve(__dirname, '..');
+export const REPO_ROOT = path.resolve(import.meta.dirname, '..');
 
 export const PROGRAMMES = ['vhtr', 'he3'] as const;
 

@@ -1,6 +1,8 @@
+import assert from 'node:assert/strict';
+import { describe, it } from 'node:test';
 import * as fs from 'fs';
 import * as path from 'path';
-import { designSections, markdownFiles, PROGRAMMES, readFile, readLines, REPO_ROOT } from './helpers';
+import { designSections, markdownFiles, PROGRAMMES, readFile, readLines, REPO_ROOT } from './helpers.ts';
 
 /*
  * The layout CODING_STANDARDS.md > Structure describes:
@@ -11,49 +13,51 @@ import { designSections, markdownFiles, PROGRAMMES, readFile, readLines, REPO_RO
  *     diagrams/        hand-authored SVG, no build step
  *     references.md    reading map, not a formal bibliography
  */
-describe.each(PROGRAMMES)('the %s programme', (programme) => {
-    it('has the four documents the structure requires', () => {
-        const required = ['README.md', 'design/00-summary.md', 'references.md'];
-        const missing = required.filter((f) => !fs.existsSync(path.join(REPO_ROOT, programme, f)));
-        expect(missing).toEqual([]);
-    });
+for (const programme of PROGRAMMES) {
+    describe(`the ${programme} programme`, () => {
+        it('has the four documents the structure requires', () => {
+            const required = ['README.md', 'design/00-summary.md', 'references.md'];
+            const missing = required.filter((f) => !fs.existsSync(path.join(REPO_ROOT, programme, f)));
+            assert.deepEqual(missing, []);
+        });
 
-    it('has a diagrams directory', () => {
-        expect(fs.existsSync(path.join(REPO_ROOT, programme, 'diagrams'))).toBe(true);
-    });
+        it('has a diagrams directory', () => {
+            assert.ok(fs.existsSync(path.join(REPO_ROOT, programme, 'diagrams')));
+        });
 
-    it('numbers its design sections contiguously from 01', () => {
-        const numbers = designSections(programme)
-            .map((f) => parseInt(path.basename(f).slice(0, 2), 10))
-            .sort((a, b) => a - b);
-        const expected = numbers.map((_, i) => i + 1);
-        expect(numbers).toEqual(expected);
-    });
+        it('numbers its design sections contiguously from 01', () => {
+            const numbers = designSections(programme)
+                .map((f) => parseInt(path.basename(f).slice(0, 2), 10))
+                .sort((a, b) => a - b);
+            const expected = numbers.map((_, i) => i + 1);
+            assert.deepEqual(numbers, expected);
+        });
 
-    it('indexes every design section in its README', () => {
-        const readme = readFile(`${programme}/README.md`);
-        const unindexed = designSections(programme)
-            .map((f) => f.replace(`${programme}/`, ''))
-            .filter((relative) => !readme.includes(`(${relative})`));
-        expect(unindexed).toEqual([]);
-    });
+        it('indexes every design section in its README', () => {
+            const readme = readFile(`${programme}/README.md`);
+            const unindexed = designSections(programme)
+                .map((f) => f.replace(`${programme}/`, ''))
+                .filter((relative) => !readme.includes(`(${relative})`));
+            assert.deepEqual(unindexed, []);
+        });
 
-    it('records the decisions that have been taken', () => {
-        expect(readFile(`${programme}/README.md`)).toMatch(/^##\s+key decisions/im);
-    });
+        it('records the decisions that have been taken', () => {
+            assert.match(readFile(`${programme}/README.md`), /^##\s+key decisions/im);
+        });
 
-    it('names its summary as the canonical source of numbers', () => {
-        const summary = readFile(`${programme}/design/00-summary.md`);
-        expect(summary.split('\n')[0]).toMatch(/^#\s/);
-        expect(summary.length).toBeGreaterThan(1000);
+        it('names its summary as the canonical source of numbers', () => {
+            const summary = readFile(`${programme}/design/00-summary.md`);
+            assert.match(summary.split('\n')[0], /^#\s/);
+            assert.ok(summary.length > 1000, `summary is only ${summary.length} characters`);
+        });
     });
-});
+}
 
 describe('the repository', () => {
     it('documents both programmes in the root README', () => {
         const readme = readFile('README.md');
         for (const programme of PROGRAMMES) {
-            expect(readme).toContain(`${programme}/`);
+            assert.ok(readme.includes(`${programme}/`), `root README does not mention ${programme}/`);
         }
     });
 
@@ -70,7 +74,7 @@ describe('the repository', () => {
             }
         };
         walk(REPO_ROOT);
-        expect(executables.sort()).toEqual(['sh/dash-baseline.sh', 'sh/lint.sh', 'sh/git/merge-main.sh'].sort());
+        assert.deepEqual(executables.sort(), ['sh/dash-baseline.sh', 'sh/lint.sh', 'sh/git/merge-main.sh'].sort());
     });
 });
 
@@ -89,7 +93,7 @@ describe('the he3 alignment decision', () => {
             const row = readLines(file).find((line) => /^\|\s*Alignment control\s*\|/i.test(line.text));
             return row === undefined || !row.text.toLowerCase().includes('pairwise');
         });
-        expect(stale).toEqual([]);
+        assert.deepEqual(stale, []);
     });
 });
 
@@ -124,8 +128,8 @@ describe('the he3 price', () => {
                 }
             }
         }
-        expect(offenders).toEqual([]);
+        assert.deepEqual(offenders, []);
         // a regex that matches nothing would pass vacuously, which is the failure this guards against
-        expect(seen).toBeGreaterThanOrEqual(4);
+        assert.ok(seen >= 4, `only ${seen} per-litre figures matched`);
     });
 });

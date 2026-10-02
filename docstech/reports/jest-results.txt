@@ -1,14 +1,94 @@
 # Jest Test Results
-# Version: 0.0.6
-# Date: 2026-09-10T19:32:33+01:00
-# Command: pnpm -C /mnt/secure/home/alex/git/github.com/active_development/mistergy run test-jest
+# Version: 0.0.9
+# Date: 2026-10-02T17:19:42Z
+# Command: pnpm run test-jest
 # Exit status: 0
-# Tree: HEAD 45bc7b6 plus 18 changed paths
+# Tree: HEAD d3bbd8a plus 15 changed paths
 # ---
-$ jest
 
-Test Suites: 4 passed, 4 total
-Tests:       44 passed, 44 total
-Snapshots:   0 total
-Time:        1.777 s, estimated 2 s
-Ran all test suites.
+> mistergy@0.0.9 test-jest mistergy
+> node --test --test-reporter=spec "__tests__/*.test.ts"
+
+▶ dash glyphs
+  ✔ appear in no file that did not already carry them (14.9028ms)
+  ✔ have not increased in any file that already carried them (7.610826ms)
+  ✔ match the recorded baseline exactly, so it cannot go stale (7.599018ms)
+✔ dash glyphs (31.585887ms)
+▶ British spelling
+  ✔ is used throughout the design documents (2.146664ms)
+✔ British spelling (2.660455ms)
+▶ design sections
+  ✔ exist in both programmes (3.915324ms)
+  ✔ close with an open-questions list (24.175048ms)
+  ✔ do not carry a stale entry in the open-questions exemption list (0.423447ms)
+  ✔ open with a level-one heading naming the section (23.366543ms)
+✔ design sections (59.926234ms)
+▶ SVG diagrams
+  ✔ are well-formed XML (64.912006ms)
+  ✔ are committed as source with no generated companion (0.554466ms)
+✔ SVG diagrams (65.671358ms)
+▶ relative links
+  ✔ are present in the document set at all (10.405493ms)
+  ✔ point at files that exist (46.032493ms)
+  ✔ point at headings that exist, where they name one (0.590499ms)
+  ✔ are relative, never absolute filesystem paths (0.252696ms)
+✔ relative links (72.980708ms)
+▶ in-page anchors
+  ✔ point at headings in their own file (61.751751ms)
+✔ in-page anchors (62.189614ms)
+▶ number parsing
+  ✔ reads a scientific literal as one value rather than a multiplication (18.452967ms)
+  ✔ binds the exponent tighter than a preceding division (0.275535ms)
+  ✔ reads thousands separators (0.148961ms)
+  ✔ reads a plain exponent (0.180566ms)
+  ✔ derives tolerance from the last quoted significant digit (0.154163ms)
+✔ number parsing (23.932349ms)
+▶ unit handling
+  ✔ does not read the solidus in a unit as division (0.331327ms)
+  ✔ checks a product carrying units between its factors (0.181623ms)
+  ✔ strips bold markers around a stated result (0.427975ms)
+✔ unit handling (3.137575ms)
+▶ detection
+  ✔ fails an arithmetic claim that is actually wrong (15.728385ms)
+  ✔ accepts a result rounded to the quoted precision (0.970983ms)
+  ✔ skips a symbolic line rather than guessing at it (3.286018ms)
+  ✔ skips a square root rather than reading half of it (0.439065ms)
+✔ detection (21.441524ms)
+▶ the design documents
+  ✔ state arithmetic that checks out (9.813661ms)
+  ✔ are actually being read, so a parser regression cannot pass silently (0.18608ms)
+✔ the design documents (25.793026ms)
+▶ the vhtr programme
+  ✔ has the four documents the structure requires (13.557285ms)
+  ✔ has a diagrams directory (4.88153ms)
+  ✔ numbers its design sections contiguously from 01 (14.456308ms)
+  ✔ indexes every design section in its README (16.599752ms)
+  ✔ records the decisions that have been taken (1.028392ms)
+  ✔ names its summary as the canonical source of numbers (11.366332ms)
+✔ the vhtr programme (64.731735ms)
+▶ the he3 programme
+  ✔ has the four documents the structure requires (0.594116ms)
+  ✔ has a diagrams directory (7.958927ms)
+  ✔ numbers its design sections contiguously from 01 (7.817384ms)
+  ✔ indexes every design section in its README (4.817726ms)
+  ✔ records the decisions that have been taken (3.497923ms)
+  ✔ names its summary as the canonical source of numbers (0.740952ms)
+✔ the he3 programme (26.362368ms)
+▶ the repository
+  ✔ documents both programmes in the root README (1.903844ms)
+  ✔ keeps the merge script the only executable it ships (5.556273ms)
+✔ the repository (7.686369ms)
+▶ the he3 alignment decision
+  ✔ names the full-scale sensing architecture in every key-decision table (10.141004ms)
+✔ the he3 alignment decision (10.267122ms)
+▶ the he3 price
+  ✔ quotes no per-litre figure outside the canonical band (62.813644ms)
+✔ the he3 price (66.743155ms)
+ℹ tests 45
+ℹ suites 15
+ℹ pass 45
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1338.532066

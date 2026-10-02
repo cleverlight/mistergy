@@ -1,18 +1,15 @@
 #!/usr/bin/env bash
-# Lint for a repository of documents: type-check the test suite, then parse every diagram.
+# Lint for a repository of documents: parse every diagram.
 #
-# The SVG parse is the part that earns its place. The drawings are hand-authored with no build step,
-# so nothing else in the workspace would ever notice an unclosed tag or a stray ampersand - the file
-# simply renders as a blank rectangle in whatever opens it next. Everything about the CONTENT of the
+# The drawings are hand-authored with no build step, so nothing else in the workspace would ever
+# notice an unclosed tag or a stray ampersand - the file simply renders as a blank rectangle in
+# whatever opens it next. Everything about the CONTENT of the
 # diagrams (colours, typography, terminology) is governed by vhtr/diagrams/HOUSE-STYLE.md and read by
 # a human; this only asserts the file is XML at all.
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO_DIR="$SCRIPT_DIR/.."
-
-echo "tsc: type-checking the document checks"
-pnpm -C "$REPO_DIR" exec tsc --noEmit
 
 echo "xml: parsing every SVG"
 python3 - "$REPO_DIR" <<'PY'

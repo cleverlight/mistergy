@@ -45,8 +45,7 @@ file to the reading-map form. Anything added to it has to be a citation you can 
 ## Prose conventions
 
 - **British spelling.** Metre, fibre, programme, analyse, optimise, modelling, behaviour.
-- **Plain hyphens only**, never U+2014 or U+2013, and never `&mdash;` or `&ndash;`. Existing text that
-  predates this rule is left alone; what you write follows it.
+- **Plain hyphens only** - see workspace [`../AGENTS.md`](../AGENTS.md) > Dashes.
 - **Tables for anything with more than two parallel facts.** These documents are read for their numbers
   and a table is scannable where a paragraph is not.
 - **Units on every quantity**, with a space before the unit, and SI unless an industry convention is

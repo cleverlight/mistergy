@@ -1,6 +1,19 @@
 # Todo
 
 
+### Pare mistergy's agent docs to what cannot be inspected [](?status=code-review&id=pare-mistergy-docs)
+
+mistergy/AGENTS.md opened by restating facts root AGENTS.md already states about this checks-only package (no application, no playwright, no dev script, no port, no dependencies), instead of starting from how far the checks reach, which root AGENTS.md says this file is authoritative on. mistergy/CODING_STANDARDS.md separately restated the dash ban and its grandfather clause in a prose-conventions bullet, even though the top of the same file already points at workspace AGENTS.md for it.
+
++ [X] open AGENTS.md's "What this repository is, and what it is not" section with a pointer to root AGENTS.md's mistergy paragraph, keeping only the genuinely new content (the /prod-ready and /push-prod gate behaviour, the /team-check-updates detail, the no-dependencies authoring rules)
+  + mistergy/AGENTS.md > What this repository is, and what it is not
++ [X] replace CODING_STANDARDS.md's restated dash-ban bullet with a pointer to workspace AGENTS.md > Dashes
+  + mistergy/CODING_STANDARDS.md > Prose conventions
++ [X] regenerate the dash baseline via `sh/dash-baseline.sh`, since the edit above removed its two literal `&mdash;`/`&ndash;` example mentions, and confirmed `pnpm run test-jest` green
+  + __tests__/fixtures/dash-baseline.json, 45 pass / 0 fail
++ acceptance: both docs shorter (`wc -w`: AGENTS.md 1105 -> 1072, CODING_STANDARDS.md 923 -> 906, combined 2028 -> 1978 words), `node ~/.claude/skills/scripts/standards-review-assess.mjs --project mistergy` reports 100% coherence/accuracy/compliance/uniformity with 0 doc-contract issues, and `pnpm -C mistergy run test-jest` passes 45/45
+
+
 ### Settle the pairwise sensing figures in section 07 [](?id=pairwise-sensing-figures)
 
 `he3/design/07-ai-control.md` §9 replaces the far-field camera with pairwise pick-off sensing for the

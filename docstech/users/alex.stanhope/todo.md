@@ -1,7 +1,24 @@
 # Todo
 
 
-### Pare mistergy's agent docs to what cannot be inspected [](?status=code-review&id=pare-mistergy-docs)
+### Wrap mistergy's lint and test-jest with green-stamp.sh [](?id=mistergy-green-stamp-wrap&status=code-review)
+
+mistergy ran its SVG lint and the full node:test suite unconditionally on every invocation, even when nothing in the tree had changed since the last green run, rerunning identical trees and wasting session time.
+
++ SOW item G1 (standards review 2026-10-15, https://claude.ai/artifact/4fDi2V43c7YhXf5TS1T8Nt); decision g1-first-everywhere: run G1 first in every lane so later gates in the lane reuse the stamp; this entry is the item's own canary, not a follower
++ mistergy is public (measured: `public_repo_scan.py visibility`), so the sibling lanes' literal shape (`bash <green-stamp.sh's path under the operator's tooling directory> run . <check> '<command>'` inline in `package.json`) is unsafe here too, for the same reason notethink's lane found: it names an operator-machine path in a published file and breaks the script for anyone without that exact tooling. Reused notethink's `sh/run-checked.sh` shape: execs through `green-stamp.sh` only when it can find it, the plain command otherwise
++ green-stamp.sh's `run` execs its command array directly rather than through a shell, so test-jest's quoted glob (`"__tests__/*.test.ts"`) cannot be passed to it as part of one literal argument - the quote characters would reach `node` literally; moved into new `sh/test-jest.sh`. lint's existing `bash sh/lint.sh` was already a single program, so it needed no new script
++ neither new script is `chmod +x`: both are run only as `bash <path>`, like `green-stamp.sh` itself, so `__tests__/structure.test.ts`'s "keeps the merge script the only executable it ships" assertion needed no change
++ no dependency added; `sh/run-checked.sh` and `sh/test-jest.sh` are plain scripts, consistent with the no-dependencies rule (AGENTS.md > mistergy carries a checks-only package)
++ [X] wrap lint: `package.json`'s `lint` now runs `bash sh/run-checked.sh lint 'bash sh/lint.sh'`
++ [X] wrap test-jest: `bash sh/run-checked.sh test-jest 'bash sh/test-jest.sh'`
++ [X] verify `pnpm run lint` and `pnpm run test-jest` both exit 0 and stamp correctly with the helper present
+  + measured 2026-10-17: lint exit 0, fresh `test-results/green-lint`; test-jest exit 0, 15 suites / 45 tests passed, fresh `test-results/green-test-jest`
++ [X] verify both checks still exit 0, with the real checks run, when the helper is unreachable
+  + measured 2026-10-17: `HOME=<empty dir> pnpm run lint` and `run test-jest` both exit 0 via the fallback branch, leaving both stamps' mtimes untouched
+
+
+### Pare mistergy's agent docs to what cannot be inspected [](?status=testing&id=pare-mistergy-docs)
 
 mistergy/AGENTS.md opened by restating facts root AGENTS.md already states about this checks-only package (no application, no playwright, no dev script, no port, no dependencies), instead of starting from how far the checks reach, which root AGENTS.md says this file is authoritative on. mistergy/CODING_STANDARDS.md separately restated the dash ban and its grandfather clause in a prose-conventions bullet, even though the top of the same file already points at workspace AGENTS.md for it.
 

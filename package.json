@@ -1,12 +1,12 @@
 {
   "name": "mistergy",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "private": true,
   "description": "Document checks for the VHTR and He-3 design programmes. There is no application here and no dependencies; this manifest exists only so the repository can be linted and tested like every other project in the workspace.",
   "type": "module",
   "scripts": {
-    "lint": "bash sh/lint.sh",
-    "test-jest": "node --test --test-reporter=spec \"__tests__/*.test.ts\""
+    "lint": "bash sh/run-checked.sh lint 'bash sh/lint.sh'",
+    "test-jest": "bash sh/run-checked.sh test-jest 'bash sh/test-jest.sh'"
   },
   "engines": {
     "node": ">=22.18.0"

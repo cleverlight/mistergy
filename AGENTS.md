@@ -21,7 +21,7 @@ deployment table gives mistergy `n/a` for both healthchecks and both Playwright 
 `/push-prod` here means the tree shipped, never that anything was verified live, because nothing is
 live. Do not add an application, a dev server or a deploy target; do extend the checks.
 
-`/team-check-updates` also has nothing to upgrade here, because there is no `check-updates` script, as
+`/fleet-check-updates` also has nothing to upgrade here, because there is no `check-updates` script, as
 [`../AGENTS.md`](../AGENTS.md) says of dependency waves, `/dev-status` and `/open-dev`.
 
 **The checks run with no dependencies, deliberately**, on Node's built-in `node:test` and `node:assert`,

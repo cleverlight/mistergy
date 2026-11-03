@@ -1,89 +1,85 @@
 # Jest Test Results
-# Version: 0.0.12
-# Date: 2026-10-31T15:25:06+00:00
+# Version: 0.0.13
+# Date: 2026-11-03T10:45:56Z
 # Command: pnpm run test-jest
-# Exit status: 0
-# Tree: b81906a plus __tests__/formatting.test.ts, docstech/users/alex.stanhope/todo.md, he3/README.md, he3/design/00-summary.md, he3/design/16-hafnium-isomer-propulsion.md, he3/references.md, package.json
+# Exit status: 0 (reused green run at 2026-11-03T10:45:56Z)
+# Tree: HEAD 89df294 + package.json, sh/run-checked.sh, he3/design/16-hafnium-isomer-propulsion.md (untracked), docstech/users/alex.stanhope/todo.md
 # ---
-
-> mistergy@0.0.12 test-jest
-> bash sh/run-checked.sh test-jest 'bash sh/test-jest.sh'
-
 ▶ dash glyphs
-  ✔ appear in no file that did not already carry them (1.951552ms)
-  ✔ have not increased in any file that already carried them (1.187575ms)
-  ✔ match the recorded baseline exactly, so it cannot go stale (0.522803ms)
-✔ dash glyphs (4.930471ms)
+  ✔ appear in no file that did not already carry them (5.480216ms)
+  ✔ have not increased in any file that already carried them (0.303533ms)
+  ✔ match the recorded baseline exactly, so it cannot go stale (4.311337ms)
+✔ dash glyphs (11.917742ms)
 ▶ British spelling
-  ✔ is used throughout the design documents (0.299723ms)
-✔ British spelling (0.482129ms)
+  ✔ is used throughout the design documents (0.481727ms)
+✔ British spelling (0.724382ms)
 ▶ design sections
-  ✔ exist in both programmes (0.3054ms)
-  ✔ close with an open-questions list (2.488488ms)
-  ✔ do not carry a stale entry in the open-questions exemption list (0.632825ms)
-  ✔ open with a level-one heading naming the section (4.306789ms)
-✔ design sections (8.233345ms)
+  ✔ exist in both programmes (0.760844ms)
+  ✔ close with an open-questions list (11.407903ms)
+  ✔ do not carry a stale entry in the open-questions exemption list (2.168859ms)
+  ✔ open with a level-one heading naming the section (11.46003ms)
+✔ design sections (26.507275ms)
 ▶ SVG diagrams
-  ✔ are well-formed XML (8.388757ms)
-  ✔ are committed as source with no generated companion (0.422715ms)
-✔ SVG diagrams (8.995499ms)
+  ✔ are well-formed XML (18.802721ms)
+  ✔ are committed as source with no generated companion (0.663887ms)
+✔ SVG diagrams (19.76334ms)
 ▶ relative links
-  ✔ are present in the document set at all (1.021551ms)
-  ✔ point at files that exist (10.078706ms)
-  ✔ point at headings that exist, where they name one (0.866761ms)
-  ✔ are relative, never absolute filesystem paths (0.533644ms)
-✔ relative links (14.197833ms)
+  ✔ are present in the document set at all (1.170139ms)
+  ✔ point at files that exist (21.016491ms)
+  ✔ point at headings that exist, where they name one (7.017417ms)
+  ✔ are relative, never absolute filesystem paths (5.242124ms)
+✔ relative links (43.001204ms)
 ▶ in-page anchors
-  ✔ point at headings in their own file (11.326756ms)
-✔ in-page anchors (15.134734ms)
+  ✔ point at headings in their own file (40.68235ms)
+✔ in-page anchors (40.938696ms)
 ▶ number parsing
-  ✔ reads a scientific literal as one value rather than a multiplication (3.574608ms)
-  ✔ binds the exponent tighter than a preceding division (1.488568ms)
-  ✔ reads thousands separators (0.451924ms)
-  ✔ reads a plain exponent (1.326552ms)
-  ✔ derives tolerance from the last quoted significant digit (0.273147ms)
-✔ number parsing (10.24603ms)
+  ✔ reads a scientific literal as one value rather than a multiplication (1.250934ms)
+  ✔ binds the exponent tighter than a preceding division (0.344955ms)
+  ✔ reads thousands separators (0.390951ms)
+  ✔ reads a plain exponent (0.219837ms)
+  ✔ derives tolerance from the last quoted significant digit (0.206632ms)
+✔ number parsing (14.453842ms)
 ▶ unit handling
-  ✔ does not read the solidus in a unit as division (0.451478ms)
-  ✔ checks a product carrying units between its factors (1.282592ms)
-  ✔ strips bold markers around a stated result (0.549134ms)
-✔ unit handling (3.072242ms)
+  ✔ does not read the solidus in a unit as division (0.348729ms)
+  ✔ checks a product carrying units between its factors (0.269557ms)
+  ✔ strips bold markers around a stated result (0.273436ms)
+✔ unit handling (1.322139ms)
 ▶ detection
-  ✔ fails an arithmetic claim that is actually wrong (1.30443ms)
-  ✔ accepts a result rounded to the quoted precision (0.732659ms)
-  ✔ skips a symbolic line rather than guessing at it (0.189641ms)
-  ✔ skips a square root rather than reading half of it (0.144827ms)
-✔ detection (3.019073ms)
+  ✔ fails an arithmetic claim that is actually wrong (0.522303ms)
+  ✔ accepts a result rounded to the quoted precision (0.382736ms)
+  ✔ skips a symbolic line rather than guessing at it (0.167361ms)
+  ✔ skips a square root rather than reading half of it (0.108383ms)
+✔ detection (3.740816ms)
 ▶ the design documents
-  ✔ state arithmetic that checks out (0.176498ms)
-  ✔ are actually being read, so a parser regression cannot pass silently (0.108292ms)
-✔ the design documents (0.879583ms)
+  ✔ state arithmetic that checks out (0.162216ms)
+  ✔ are actually being read, so a parser regression cannot pass silently (0.129577ms)
+✔ the design documents (0.486114ms)
 ▶ the vhtr programme
-  ✔ has the four documents the structure requires (1.86749ms)
-  ✔ has a diagrams directory (0.478674ms)
-  ✔ numbers its design sections contiguously from 01 (4.408358ms)
-  ✔ indexes every design section in its README (5.014007ms)
-  ✔ records the decisions that have been taken (0.426934ms)
-  ✔ names its summary as the canonical source of numbers (0.313096ms)
-✔ the vhtr programme (14.067129ms)
+  ✔ has the four documents the structure requires (4.340407ms)
+  ✔ has a diagrams directory (0.406825ms)
+  ✔ numbers its design sections contiguously from 01 (3.061076ms)
+  ✔ indexes every design section in its README (5.942573ms)
+  ✔ records the decisions that have been taken (0.545019ms)
+  ✔ names its summary as the canonical source of numbers (1.339684ms)
+✔ the vhtr programme (17.695098ms)
 ▶ the he3 programme
-  ✔ has the four documents the structure requires (0.302331ms)
-  ✔ has a diagrams directory (0.201172ms)
-  ✔ numbers its design sections contiguously from 01 (3.746207ms)
-  ✔ indexes every design section in its README (1.236396ms)
-  ✔ records the decisions that have been taken (0.269222ms)
-  ✔ names its summary as the canonical source of numbers (0.994266ms)
-✔ the he3 programme (7.304714ms)
+  ✔ has the four documents the structure requires (0.745206ms)
+  ✔ has a diagrams directory (1.463267ms)
+  ✔ numbers its design sections contiguously from 01 (2.12807ms)
+  ✔ indexes every design section in its README (1.61899ms)
+  ✔ records the decisions that have been taken (0.284019ms)
+  ✔ names its summary as the canonical source of numbers (0.997678ms)
+✔ the he3 programme (8.58918ms)
 ▶ the repository
-  ✔ documents both programmes in the root README (0.83995ms)
-  ✔ keeps the merge script the only executable it ships (2.321642ms)
-✔ the repository (3.371666ms)
+  ✔ documents both programmes in the root README (1.015813ms)
+  ✔ keeps the merge script the only executable it ships (2.641186ms)
+✔ the repository (3.97378ms)
 ▶ the he3 alignment decision
-  ✔ names the full-scale sensing architecture in every key-decision table (2.901931ms)
-✔ the he3 alignment decision (3.042442ms)
+  ✔ names the full-scale sensing architecture in every key-decision table (3.251872ms)
+✔ the he3 alignment decision (3.427782ms)
 ▶ the he3 price
-  ✔ quotes no per-litre figure outside the canonical band (22.749907ms)
-✔ the he3 price (23.02195ms)
+  ✔ quotes no per-litre figure outside the canonical band (29.610089ms)
+✔ the he3 price (29.917399ms)
 ℹ tests 45
 ℹ suites 15
 ℹ pass 45
@@ -91,8 +87,4 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 431.525502
-# --- re-run after the references.md reflow ---
-ℹ tests 45
-ℹ pass 45
-ℹ fail 0
+ℹ duration_ms 700.505645

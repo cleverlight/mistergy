@@ -1,0 +1,28 @@
+# Prod-ready Results
+# Version: 0.0.13
+# Date: 2026-11-03T17:35:01Z
+# Tree: HEAD 89df294 + package.json, sh/run-checked.sh, he3/design/16-hafnium-isomer-propulsion.md (untracked), docstech/users/alex.stanhope/todo.md, docstech/reports/jest-results.txt, docstech/reports/prod-ready-results.txt
+# Stories: hafnium-isomer-propulsion code-review -> testing
+# Ship verdict: ready to ship; /push-prod will move "Record the hafnium isomer rocket as a disproved idea" to done.md
+# ---
+Overseer inbox | in flight, answered later via /oversee-inbox | - | queued
+Story-state intake | 1 at code-review | 1 story | fresh
+Story reconciliation | all tasks already ticked | 5/5 | fresh
+Build | not applicable | no build script | skipped (checks-only package)
+Lint | pass | 16 SVG files parse | fresh (re-run over the finished tree)
+Project guards | covered by lint and Jest | - | skipped (checks-only row)
+Dependency audit | not applicable | no dependencies declared | skipped
+CODING_STANDARDS | mechanical checks and inline pass clean | 3 changed paths | fresh
+Exposure | public: scan and reading clean | 0 findings | fresh
+Fleet fix check | no shared-surface or new-dependency-class hit | 0 | fresh
+Jest (node:test) | pass | 45/45 tests, 15 suites | fresh (re-run over the finished tree)
+Playwright | not applicable | no Playwright in this package | skipped
+Todo/Done | format clean | - | fresh
+Story-state advance | code-review -> testing, move rehearsed | exit 0 | fresh
+Version bump | 0.0.13 | 0.0.12 at HEAD | fresh
+# --- Fixed during review ---
+none
+# --- Open ---
+Section 16 derivations recomputed by hand and agree; its citations of 00-summary section 14 (0.5 W), 14-surviving-mission (0.48 mrad) and 03-feasibility (no helium-4 ladder) match their sources.
+HEAD 89df294 links to he3/design/16-hafnium-isomer-propulsion.md from he3/README.md, he3/design/00-summary.md and he3/references.md while the file is untracked, so links at HEAD are broken until this commit lands.
+sh/run-checked.sh now forwards extra arguments to the wrapped check; it belongs to no story.

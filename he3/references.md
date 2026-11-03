@@ -238,6 +238,40 @@ neutron economy and containment, not physics ones.
   [`../vhtr/references.md`](../vhtr/references.md), which cover HTTR tritium measurements and helium
   circuit chemistry directly.
 
+## Nuclear isomers and gamma-ray lasers
+
+Added with [16-hafnium-isomer-propulsion](design/16-hafnium-isomer-propulsion.md), which records a
+disproved idea. The citations below were checked for existence and for the figures section 16 takes
+from them, mostly through abstracts and secondary accounts rather than the full primary text, so read
+the originals before relying on a detail beyond what section 16 quotes.
+
+- **ENSDF evaluation for A = 178**: E. Achterberg, O. A. Capurro and G. V. Marti, Nuclear Data Sheets
+  110, 1473 (2009). The authority for the isomer's 2.446 MeV excitation, 16⁺ spin, 31 yr half-life and
+  decay cascade. Quote the energy to four figures only; evaluations differ in the next digit.
+- **The triggering claim**: C. B. Collins et al., "Accelerated Emission of Gamma Rays from the 31-yr
+  Isomer of ¹⁷⁸Hf Induced by X-Ray Irradiation", Physical Review Letters 82, 695 (1999).
+- **The null repetitions**: I. Ahmad et al., Physical Review Letters 87, 072503 (2001), and I. Ahmad et
+  al., Physical Review C 67, 041305(R) (2003), both at Argonne's Advanced Photon Source. The 2001
+  paper sets limits more than five orders of magnitude below the claim over 20-60 keV.
+- **The reviews and the programme**: B. M. Schwarzschild, Physics Today 57(5) (May 2004),
+  doi:10.1063/1.1768663, is the accessible account of the 1999 JASON review, the 2002
+  Institute for Defense Analyses review and the funding history. The JASON report's own number and
+  title have not been verified and are deliberately not given. The 2004 congressional action on
+  DARPA's Stimulated Isomer Energy Release programme is in House Armed Services Committee Report
+  108-491. S. Weinberger, *Imaginary Weapons* (Nation Books, 2006), is a book-length history, not read
+  for this set.
+- **The graser dilemma**: G. C. Baldwin, J. C. Solem and V. I. Gol'danskii, "Approaches to the
+  development of gamma-ray lasers", Reviews of Modern Physics 53, 687 (1981), and the follow-up review
+  by G. C. Baldwin and J. C. Solem, Reviews of Modern Physics 69, 1085 (1997).
+- **Modern isomer depletion**: C. J. Chiara et al., Nature 554, 216 (2018), reporting nuclear
+  excitation by electron capture in molybdenum-93m at about 1% depletion probability, and S. Guo et
+  al., Physical Review Letters 128, 242502 (2022), which saw no signal and set an upper limit of
+  2 × 10⁻⁵.
+- **Comparison engines.** The NERVA XE-Prime and Project Orion specific impulses in section 16 come from
+  secondary accounts. For Orion, the primary sources are the General Dynamics "Nuclear Pulse Vehicle
+  Study Condensed Summary Report" (1964), F. J. Dyson, "Death of a Project", Science 149, 141 (1965),
+  and G. Dyson, *Project Orion* (2002). None has been read for a figure here.
+
 ## On the originating concept note's reference list
 
 The originating concept note is retained, superseded and clearly marked as such, at

@@ -56,7 +56,11 @@ const PROSE_EXEMPT = new Set(['he3/origin-note.md']);
  * for a broader exemption: a rule that skipped every capitalised word would miss a sentence-initial
  * violation, which is the commonest kind.
  */
-const PROPER_NOUNS = [/Natural Resources Defense Council/g, /National Nuclear Data Center/g];
+const PROPER_NOUNS = [
+    /Natural Resources Defense Council/g,
+    /National Nuclear Data Center/g,
+    /Institute for Defense Analyses/g,
+];
 
 function properNounSpans(text: string): Array<[number, number]> {
     const spans: Array<[number, number]> = [];

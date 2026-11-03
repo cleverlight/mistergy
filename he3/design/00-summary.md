@@ -528,7 +528,29 @@ only origin that touches it. The closure is categorical rather than technologica
 are bounded by the decay constant, which is a weak-interaction property that no machine architecture,
 hybrid or applied field alters.
 
-## 16. Sections
+## 16. Hafnium isomer propulsion
+
+The figures that close the hafnium-178m2 rocket, a considered idea recorded as disproved in
+[16-hafnium-isomer-propulsion](16-hafnium-isomer-propulsion.md). The isomer data are nuclear data; the
+rest is arithmetic on them.
+
+| Quantity | Canonical value | Note |
+|---|---|---|
+| Isomer excitation energy | **2.446 MeV** | spin 16⁺, half-life 31 yr; nuclear data |
+| Energy stored | **1.33 GJ/g** | about 317 kg of TNT per gram |
+| Gap to one 1.03 µm laser photon | **2.03 × 10⁶** | 1.204 eV per photon; plus a spin gap of 16 units |
+| Natural line width | **4.66 × 10⁻²⁵ eV** | from the 31 yr half-life; why stimulated emission fails |
+| Fraction of rest mass released | **1.476 × 10⁻⁵** | 2.446 MeV over 1.6575 × 10⁵ MeV |
+| **Specific impulse, ideal directed photon exhaust** | **451 s** | 4,425 m/s effective exhaust velocity; equal to hydrogen-oxygen |
+| Thrust advantage of matter at 10 km/s over photons | **6.0 × 10⁴** | 2c/v at equal exhaust power |
+| Spontaneous decay power | **0.939 W/g** | about 1.6 times plutonium-238 |
+
+**The idea fails three times over**: the array cannot charge the isomer, the release cannot be
+triggered or directed, and a perfectly directed photon exhaust would still only match a chemical
+engine. The version that works in principle absorbs the gammas in hydrogen, needs no trigger, and is
+beaten by a fission reactor doing the same job.
+
+## 17. Sections
 
 | # | Section | Summary |
 |---|---|---|
@@ -548,6 +570,7 @@ hybrid or applied field alters.
 | 13 | [Neutron-Free Routes](13-neutron-free-routes.md) | Why the current route cannot be clean, the Li-7 window, and the proton route that needs no accelerator |
 | 14 | [The Surviving Mission](14-surviving-mission.md) | What the gamma source is for, why inverse Compton, the applications and the market |
 | 15 | [Kilogram-Scale Closure](15-kilogram-scale-closure.md) | The 3-30 kg/yr mission, the four origins of a helium-3 nucleus, and why none of them reaches it |
+| 16 | [Hafnium Isomer Propulsion](16-hafnium-isomer-propulsion.md) | A considered idea, disproved: why a laser-triggered hafnium-178m2 gamma rocket fails three times over |
 | - | [References](../references.md) | Nuclear data, coherent combining, wakefield sources |
 
 ---

@@ -1,6 +1,19 @@
 # Todo
 
 
+### Record the hafnium isomer rocket as a disproved idea [](?id=hafnium-isomer-propulsion&status=code-review)
+
+The operator proposed using the He-3 array's lasers to charge hafnium-178m2, then trigger a directed, self-amplifying release of gamma rays as rocket thrust, taking Project Orion as the inspiration. The idea was worked through and fails at three independent points. This story writes it up as a recorded finding so the question does not need working again.
+
++ [X] verify the isomer data, the triggering history and the graser references against sources
++ [X] write `he3/design/16-hafnium-isomer-propulsion.md` with the derivations and an open-questions list
++ [X] add the canonical figures to `he3/design/00-summary.md` and index the section there and in `he3/README.md`
++ [X] add the isomer and gamma-ray laser sources to `he3/references.md`
++ [X] bump the version and run lint and the suite
++ note: the source check corrected one figure from the original discussion, the isomer line width, to 4.66 × 10⁻²⁵ eV; the JASON report number and the SIER end date could not be verified and are left out
++ note: added Institute for Defense Analyses to the spelling check's proper-noun list in `__tests__/formatting.test.ts`
+
+
 ### Settle the pairwise sensing figures in section 07 [](?id=pairwise-sensing-figures)
 
 `he3/design/07-ai-control.md` §9 replaces the far-field camera with pairwise pick-off sensing for the

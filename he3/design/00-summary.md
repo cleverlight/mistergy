@@ -544,6 +544,7 @@ rest is arithmetic on them.
 | **Specific impulse, ideal directed photon exhaust** | **451 s** | 4,425 m/s effective exhaust velocity; equal to hydrogen-oxygen |
 | Thrust advantage of matter at 10 km/s over photons | **6.0 × 10⁴** | 2c/v at equal exhaust power |
 | Spontaneous decay power | **0.939 W/g** | about 1.6 times plutonium-238 |
+| Radioisotope thermal rocket thrust | **0.23 N/kg** | per kilogram of isomer, at an assumed 8 km/s exhaust speed and 100% conversion |
 
 **The idea fails three times over**: the array cannot charge the isomer, the release cannot be
 triggered or directed, and a perfectly directed photon exhaust would still only match a chemical

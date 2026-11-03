@@ -112,3 +112,4 @@ The operator proposed using the He-3 array's lasers to charge hafnium-178m2, the
 + [X] bump the version and run lint and the suite
 + note: the source check corrected one figure from the original discussion, the isomer line width, to 4.66 × 10⁻²⁵ eV; the JASON report number and the SIER end date could not be verified and are left out
 + note: added Institute for Defense Analyses to the spelling check's proper-noun list in `__tests__/formatting.test.ts`
++ review 2026-11-03: overseer ok with 3 shortfalls; added the 0.23 N/kg radioisotope thermal rocket thrust to `he3/design/00-summary.md` §16 so the section introduces no headline figure of its own, kept 0.23 since 0.23475 is 0.23 at two significant figures, and the staging and commit-message items were already met by `6d10cfa`
